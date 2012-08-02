@@ -1,0 +1,175 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[spanish]{babel} % Corta palabras en español
+\usepackage[utf8]{inputenc} % Escribir con acentos, ñ,
+\usepackage{anysize} %para los márgenes
+\usepackage{fancyhdr}
+\pagestyle{fancy} %herramientas de encabezado
+%\usepackage[pdftex]{hyperref, graphicx} % utilizar enlaces y poder insertar gráficos
+\usepackage{indentfirst} %para identar despues de cada parrafo
+%\usepackage{gensymb} %para añadir el símbolo de los grados celsius, etc
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,pdftex]{hyperref} 
+
+%\title{PROYECTO FINAL\\ DE \\CARRERA \\ ROCAMGO\\}
+%\date{Version 1.0, \today}
+\author{David Medina Velasco \and Víctor Ramírez de la Corte}
+
+\fancyhead[R]{}
+\fancyhead[C]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{David Medina Velasco \\ Víctor Ramírez de la Corte}
+
+%fancyhdr --> paquete con bastantes herramientas para el encabezado y pie de página
+
+\begin{document}
+\part*{PROYECTO\\ FINAL\\ DE \\CARRERA \\ ROCAMGO\\}
+%\maketitle
+
+\marginsize{3cm}{2cm}{2cm}{2cm} % márgenes {izq}{der}{up}{down}.
+
+\tableofcontents  %indice
+
+
+\chapter{Conceptos}
+\section{¿Qué es el go?}
+El go es un juego de estrategia de dos jugadores por turnos, el cual tiene una antigüedad de 4000 años. Para más información [1]
+
+
+\section{¿Qué es un archivo .sgf, para que sirve y como podemos abrirlo?}\label{sgf}
+Un archivo .sgf es un archivo donde se guarda una partida de go. Como el formato es usado también para muchos juegos de tablero, está bastante extendido y casi todos los programas de go lo soportan.
+
+
+El archivo .sgf nos sirve para comentar una partida (como podemos ver en la imagen 7) y hacer pruebas directamente desde un programa. Otra de los usos que puede tener es guardar todas tus partidas para poderlas ver en un futuro. \\ \\
+
+
+
+\chapter{Objetivos}
+\section{Objetivos del programa}
+El objetivo principal del programa es informatizar el registro de una partida de go, dejandola guardada en un archivo .sgf [\ref{sgf}], en el cual podremos modificar con total libertad nuestra partida y comentarla a nuestro antojo. Para que este objetivo sea de una gran embergadura, solo usaremos una camara web (o un video de una partida grabada). Con este objetivo, pretendemos conseguir:
+\begin{itemize}
+\item Que un torneo pueda ser seguido por internet, en tiempo real, sin tener que ver un video, ya que muchos servidores son capaces de leer archivos .sgf y representarlos en un tablero digital. Asi hacemos que una persona con una conexion a internet pueda seguir un torneo sin problemas(evitando los posibles cortes en un video en streaming).
+\item Evitar que una persona tenga que estar registrando cada movimiento de go que se hace en los torneos, ya que nuestro programa lo haria en su lugar.
+\end{itemize}
+
+\section{Objetivos del proyecto}
+Con este proyecto pretendemos conocer el uso de diferentes herramientas y lenguajes de programacion. Los principales objetivos de aprendizaje son:
+\begin{itemize}
+\item Lenguajes de programación y librerias:
+	\begin{itemize}
+	\item  Python para el desarrollo del programa.
+	\item Libreria opencv para el tratamiento de imagenes.
+	\item Libreria Gtk para el entorno de ventanas del programa.
+	\item Unittest2 para el testeo del codigo.
+	\item Epydoc para la documentacion del codigo.
+	\end{itemize}
+\item Trabajo en grupo: 
+	\begin{itemize}
+	\item Subversion para el control de versiones. 
+	\item Redmine para el control de la carga de trabajo de cada miembro del grupo.
+	\end{itemize}
+\item Otros:
+	\begin{itemize}
+	\item Vim editor de texto.
+	\item Glade herramienta de desarrollo visual de interface grafica con gtk.
+	\item iPhython entorno de programacion de python.
+	\end{itemize}  
+	
+\end{itemize}
+
+ 
+
+
+\chapter{Motivación y antecedentes}
+
+Nuestra mayor motivación para hacer este software es que nos gusta el juego del
+go y queremos aprender a jugar mejor, ya sea aprendiendo de nuestros errores o de los
+errores de los demás. Los torneos de go son un buen lugar para mejorar tu nivel
+de go, ya que hay personas con buen nivel y la concentración es mayor que en
+otros momentos. 
+Al realizar este programa, tendríamos la posibilidad de ver y
+guardar estas partidas, y así poder aprender con ellas, incluso si no hemos
+asistido al torneo.
+\\
+En la actualidad existen dos formas de registrar estas partidas: 
+\begin{itemize}
+\item Un kifu en papel. Es una forma muy antigua de guardar las partidas, ya que
+una persona tiene que estar pendiende durante todo momento de la partida, o la
+propia persona que juega tiene que estar pendiente de apuntar la partida y
+jugarla, con lo cual puede perder la concentración. Además, al ser en formato
+papel, el reconstruir la partida es verdaderamente complicado. 
+\item Un kifu en formato digital. Es la forma en que actualmente se suelen
+registrar algunas partidas para mostrarlas por internet a los demás usuarios, a
+través de servidores en los que se pueden ir subiendo partidas. Seguimos
+teniendo el problema de que alguien tiene que estar atento en todo momento a la
+partida, para apuntarla. 
+\end{itemize}
+
+
+\chapter{Implementación}
+
+
+\chapter{Documentación del código del proyecto}
+
+
+\chapter{Conclusiones}
+
+
+\chapter{Presupuesto}
+
+
+\chapter{Futuro}
+
+
+La principal via de futuro y por la cual empezo este proyecto es la posibilidad de conectar un brazo robotico a un pc y que este sea capaz de jugar al go correctamente. Para ello es necesario la captacion de imagenes de forma precisa, que es lo que se intenta con nuestro proyecto. 
+
+Una vez conseguido que el brazo robotico funcione, tenemos varias posibilidades de juego, las cuales van desde jugar contra la maquina hasta jugar por internet sin tener que tocar el ordenador, haciendo que sea mas amigable el jugar por internet al go. Ademas damos la opcion de que personas invidentes puedan tambien jugar por internet, ya que existen tableros de go especiales para personas ciegas, los cuales son perfectamente detectados por nuestro programa.
+
+Otra via de futuro, es la posibilidad de conectarnos con nuestro programa a servidores de go, los cuales tienen numerosos jugadores, pudiendo jugar con ellos sin problemas, aunque no tengan el mismo programa que nosotros.
+
+Como vemos este proyecto abre varios campos interesantes en el mundo del go, haciendo que para nosotros tenga bastante sentido el estar haciendolo. 
+
+\chapter{Manual de usuario}
+\section{Guia de instalación}
+\section{Actualizaciones}
+\section{Guía paso a paso}
+
+
+
+\chapter{Agradecimientos}
+Nos gustaría agradecer a:
+\begin{itemize}
+\item Los compañeros de la asociación de software libre de Sevilla Sugus GNU/Linux, los cuales nos han enseñado y ayudado mucho.
+\item Los compañeros del club de go de Sevilla Ubicuo ki-in, los cuales nos han ofrecido lugar y materiales para probar el proyecto, nos han ayudado con el logo y siempre nos han apoyado. 
+\item A D.Francisco Sivianes Castillo, nuestro tutor del proyecto, el cual nos ha dedicado todo el tiempo que hemos requerido sin miramientos, ayudandonos con nuestras dudas y guiandonos para la correcta finalización del proyecto.
+\item A D.Carlos Manuel Martin Cornejo, el cual ha colaborado con la realización de la conexión con los servidores de go.
+\item A nuestros familiares, parejas y amigos, los cuales nos han soportado hablando de este proyecto hasta la saciedad.
+ 
+\end{itemize}
+
+
+\chapter{Licencia}
+
+\section{Licencia de este manual}
+
+\textbf{Reconocimiento - CompartirIgual (by-sa):} Se permite el uso comercial de la obra y de las posibles obras derivadas, la distribución de las cuales se debe hacer con una licencia igual a la que regula la obra original. \\ \\
+
+%\includegraphics[scale=5]{licencia.png} 
+
+Autores: 
+\begin{itemize}
+\item David Medina Velasco. \textbf{Email:} cuidadoconeltecho at gmail dot com 
+\item Víctor Ramírez de la Corte. \textbf{Email:} virako.9 at gmail dot com
+\end{itemize}
+
+\section{Licencia de Rocamgo}
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. \\
+\\
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. \\
+\\
+You should have received a copy of the GNU General Public License along with this program.  If not, see http://www.gnu.org/licenses/
+
+
+
+\chapter{Bibliografía}
+
+\end{document}
