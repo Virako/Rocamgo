@@ -4,9 +4,9 @@ import src
 
 setup(
     name='Rocamgo',
-    version=src.__version__,
+    version=0.1,
     description='Rocamgo is recogniter of the go games by processing digital images with opencv',
-    long_description=src.__doc__,
+    long_description='Rocamgo is recogniter of the go games by processing digital images with opencv extended',
     author='Victor Ramirez de la Corte',
     author_email='virako.9@gmail.com',
     url='https://github.com/virako/Rocamgo',
