@@ -26,7 +26,7 @@ from cv import WaitKey
 from cv import SetMouseCallback
 from cv import CV_EVENT_LBUTTONDBLCLK
 from cv import CV_EVENT_LBUTTONDOWN
-from Camera import Camera
+from src.camera import Camera
 
 class Cameras:
     """ Class for open cameras in the computer. """

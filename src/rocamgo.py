@@ -1,4 +1,4 @@
-from Cameras import Cameras
+from Rocamgo.src.cameras import Cameras
 from cv import ShowImage
 from cv import WaitKey
 

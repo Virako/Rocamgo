@@ -16,8 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
-from src.Camera import Camera
-from src.Cameras import Cameras
+from src.camera import Camera
+from src.cameras import Cameras
 import unittest
 from nose.tools import *
 from random import choice
