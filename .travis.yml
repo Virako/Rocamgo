@@ -1,10 +1,10 @@
 language: python
 python:
     - "2.7"
-
+before_install:
+  - sudo apt-get install python-opencv
 install:
     - pip install --use-mirrors nose 
     - python setup.py develop
-
 script:
     - nosetests tests
