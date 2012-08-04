@@ -4,6 +4,8 @@ python:
 before_install:
   - sudo apt-get install python-opencv
 install:
+    - ln -s /usr/lib/pymodules/cv2.so ~/virtualenv/python2.7/local/lib/python2.7/site-packages/.
+    - ln -s /usr/lib/pymodules/cv.py ~/virtualenv/python2.7/local/lib/python2.7/site-packages/.
     - pip install --use-mirrors nose 
     - python setup.py develop
 script:
