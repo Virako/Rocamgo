@@ -1,4 +1,6 @@
 from src.cameras import Cameras
+from sys import path
+path.append('/usr/lib/pymodules/python2.7')
 from cv import ShowImage
 from cv import WaitKey
 

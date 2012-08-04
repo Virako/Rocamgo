@@ -1,6 +1,8 @@
 from setuptools import setup, find_packages
 
 import src
+#from sys import path
+#path.append('/usr/lib/pymodules/python2.7')
 
 setup(
     name='Rocamgo',

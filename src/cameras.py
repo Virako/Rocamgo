@@ -18,7 +18,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
+from sys import path
+path.append('/usr/lib/pymodules/python2.7')
 from cv import CreateFileCapture
 from cv import DestroyAllWindows
 from cv import ShowImage
