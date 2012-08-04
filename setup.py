@@ -1,13 +1,12 @@
-
 from setuptools import setup, find_packages
 
 import src
 
 setup(
     name='Rocamgo',
-    version=Rocamgo.__version__,
+    version=src.__version__,
     description='Rocamgo is recogniter of the go games by processing digital images with opencv',
-    long_description=Rocamgo.__doc__,
+    long_description=src.__doc__,
     author='Victor Ramirez de la Corte',
     author_email='virako.9@gmail.com',
     url='https://github.com/virako/Rocamgo',
