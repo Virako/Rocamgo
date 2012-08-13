@@ -1,7 +1,9 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 # Rocamgo is recogniter of the go games by processing digital images with opencv.
-# Copyright (C) 2012 Víctor Ramirez de la Corte <virako.9@gmail.com>
+# Copyright (C) 2012 Víctor Ramirez de la Corte <virako.9 at gmail dot com>
+# Copyright (C) 2012 David Medina Velasco <cuidadoconeltecho at gmail dot com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,7 +17,8 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    
+ 
+
 from src.camera import Camera
 from src.cameras import Cameras
 import unittest

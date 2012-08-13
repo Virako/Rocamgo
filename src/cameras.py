@@ -28,6 +28,7 @@ from cv import SetMouseCallback
 from cv import CV_EVENT_LBUTTONDBLCLK
 from cv import CV_EVENT_LBUTTONDOWN
 from src.camera import Camera
+from src.cte import *
 
 class Cameras:
     """ Class for open cameras in the computer. """
@@ -47,10 +48,10 @@ class Cameras:
             self.camera = camera
             print "DOBLE CLICK"
 
-    def check_cameras(self, num=99):
+    def check_cameras(self, num=MAX_CAMERAS):
         """ Check cameras. """
         n = 0
-        while len(self.cameras) < num and n < 100: 
+        while len(self.cameras) < num and n <= MAX_CAMERAS: 
             camera = Camera() 
             camera.open_camera(n)
             if camera.get_frame(): 
@@ -64,7 +65,7 @@ class Cameras:
             return self.camera
         elif len(self.cameras) == 1:
             return self.cameras[0]
-        else:
+        elif len(self.cameras) > 1:
             while not self.camera:
                 for camera in self.cameras:
                     name_windows = str(camera.index)

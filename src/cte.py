@@ -18,23 +18,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
-from src.camera import Camera
-import unittest
-from nose.tools import *
-
-class Test_camera(unittest.TestCase):
-    
-    def setUp(self):
-        self.camera = Camera()
-        self.camera.capture = "Capture1"
-    
-    def tearDown(self):
-        self.camera.close_camera()
-    
-    def test_get_frame_from_camera_close(self):
-        self.camera.close_camera()
-        assert_equals(self.camera.capture, None)
-    
-if __name__ == '__main__':
-    print "Run test with nosetest"
+NUM_EDGES = 4
+RELATION_WEIGHT_HEIGHT = 14/15.0
+MAX_CAMERAS = 99
