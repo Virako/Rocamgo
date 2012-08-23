@@ -19,6 +19,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from src.cameras import Cameras
+from src.search_goban import search_goban
+from perspective import perspective
 from sys import path
 path.append('/usr/lib/pymodules/python2.7')
 from cv import ShowImage
@@ -37,17 +39,27 @@ def main():
         img = camera.get_frame()
         ShowImage("Camera", img)
 
+        # Check goban moved
+        check_goban_moved = True # TODO function
+
         # Detect goban
+        if check_goban_moved:
+            corners = search_goban(img)
+        
+        # Transform goban to ideal form
+        if corners:
+            ideal_img = perspective(img, corners)
+            ShowImage("Ideal", img)
         
         # Detect stone
         
         # Upload to internet
 
         # FPS
-        key = WaitKey(30)
+        key = WaitKey(50)
         if key == 27: # Esc
             break
 
-    
+
 if __name__ == "__main__":
     main()

@@ -32,13 +32,14 @@ class Goban:
             :type size: int"""
         self.matrix = [[None] * GOBAN_SIZE for i in range(GOBAN_SIZE)]
     
-    
+
     def change_stone(self, pos, stone):
         """Edit stone in goban. """
         self.matrix[pos[0]][pos[1]] = stone
 
-    def change_stones(self, pos_list, stones_list):
+    def change_stones(self, pos_list):
         """Edit stones in goban. """
+        # TODO
         for index in range(len(pos_list)):
             self.change_stone(pos_list[index], stones_list[index])
 

@@ -19,47 +19,203 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
 from src.search_goban import *
+from src.perspective import *
 from cv import LoadImage
 from math import sqrt
 import unittest
 from nose.tools import *
+import os
+import operator
+try:
+    import cPickle as pickle
+except ImportError:
+    import pickle
 
 class Test_camera(unittest.TestCase):
     
     def setUp(self):
-        self.images = []
-        self.corners = []
-        name_images = os.listdir("images")
-        png = lambda x: x[-4:] == "png"
-        name_images = filter(png, name_images)
-        img = os.path.join(os.path.dirname(__file__), "images")
-        for image in images:
-            img.append()
-            self.images.append(os.path.join(img, image))
-            txt = image.replace(".png", ".txt")
-            with open(txt) as f:
-                self.corners.append(f.readlines())
+        pass
     
     def tearDown(self):
         pass
 
     def distancia(self, p1, p2):
-        return sqrt(abs(p1[0]-p1[1])**2, abs(p2[0]-p2[1])**2)
+        return sqrt(abs(p1[0]-p2[0])**2 + abs(p1[1]-p2[1])**2)
 
-    def test_detect_goban(self):
-        for i in xrange(len(self.images)):
-            # open image
-            image = LoadImageM(self.image[i], CV_LOAD_IMAGE_COLOR)
-            find_corner = search_goban(image)
-            good_corner = self.corner[i]
-            check_corner = 0
-            for find_point in find_corner:
-                for good_point in good_corner:
-                    if self.distancia(find_point, good_point) < \
-                        self.distancia(good_point[0], good_point[1])/19:
-                        check_corner += 1
-                        break
-            assert_equals(check_corner, 4)
+    def get_corners_and_image(self, n):
+        path = 'tests/images/'
+        name_images = os.listdir(path)
+        png = lambda x: x[-4:] == ".png"
+        name_images = filter(png, name_images)
+        name_images.sort()
+        print name_images
+        filename = name_images[n]
+        name_txt = filename.replace('.png', '.txt')
+        with open(path + name_txt) as f:
+            return pickle.load(f), LoadImageM(path + filename, CV_LOAD_IMAGE_COLOR)
+
+    def get_max_edge(self, corners):
+        edges = []
+        for c in xrange(4):
+            edges.append(sqrt((corners[c][0]-corners[(c+1)%4][0])**2 + \
+                        (corners[c][1]-corners[(c+1)%4][1])**2))
+        return max(edges)
+
+
+    def test_detect_goban1(self):
+        corners, image = self.get_corners_and_image(0)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban2(self):
+        corners, image = self.get_corners_and_image(1)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban3(self):
+        corners, image = self.get_corners_and_image(2)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban4(self):
+        corners, image = self.get_corners_and_image(3)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban5(self):
+        corners, image = self.get_corners_and_image(4)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban6(self):
+        corners, image = self.get_corners_and_image(5)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban7(self):
+        corners, image = self.get_corners_and_image(6)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban8(self):
+        corners, image = self.get_corners_and_image(7)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban9(self):
+        corners, image = self.get_corners_and_image(8)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban10(self):
+        corners, image = self.get_corners_and_image(9)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban11(self):
+        corners, image = self.get_corners_and_image(10)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
+
+
+    def test_detect_goban12(self):
+        corners, image = self.get_corners_and_image(11)
+        find_corners = search_goban(image)
+        if not find_corners:
+            assert_true(False)
+        boolean = []
+        for i in xrange(4):
+            d1 = self.distancia(find_corners[i], corners[i])
+            dist_max = get_max_edge(corners)/19
+            boolean.append(d1 < dist_max)
+        assert_true(reduce(operator.mul, boolean))
 
 
 if __name__ == '__main__':

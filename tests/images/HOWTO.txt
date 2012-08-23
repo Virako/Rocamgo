@@ -1,0 +1,6 @@
+Use the select cam for found corners:
+
+"Left Click" in the 4 corners and press "Enter".
+If you wrong, click "r" and start. 
+If want the next image, press "n".
+"ESC" for exit. 
