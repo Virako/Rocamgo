@@ -19,7 +19,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
 from src.search_goban import *
-from src.check_goban_moved import *
+from src.cambiodeesquinas import *
 from cv import LoadImage
 import unittest
 from nose.tools import *
@@ -92,22 +92,22 @@ class Test_camera(unittest.TestCase):
 
     def test_check_goban_moved_false1(self):
         img1, img2, corners = self.select_image_and_corners_false(1)
-        assert_true(check_goban_moved(img1, img2, corners))
+        assert_false(check_goban_moved(img1, img2, corners))
 
 
     def test_check_goban_moved_false2(self):
         img1, img2, corners = self.select_image_and_corners_false(2)
-        assert_true(check_goban_moved(img1, img2, corners))
+        assert_false(check_goban_moved(img1, img2, corners))
 
 
     def test_check_goban_moved_false3(self):
         img1, img2, corners = self.select_image_and_corners_false(3)
-        assert_true(check_goban_moved(img1, img2, corners))
+        assert_false(check_goban_moved(img1, img2, corners))
 
 
     def test_check_goban_moved_false0(self):
         img1, img2, corners = self.select_image_and_corners_false(0)
-        assert_true(check_goban_moved(img1, img2, corners))
+        assert_false(check_goban_moved(img1, img2, corners))
 
 
 if __name__ == '__main__':

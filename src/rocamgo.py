@@ -51,7 +51,14 @@ def main():
             ideal_img = perspective(img, corners)
             ShowImage("Ideal", img)
         
-        # Detect stone
+        #########
+        # Stone #
+        #########
+
+        # Search stone Search_stone.py
+        # Add stone to goban 
+        # Add stone to sgf
+        
         
         # Upload to internet
 
