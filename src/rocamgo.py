@@ -20,6 +20,7 @@
 
 from src.cameras import Cameras
 from src.search_goban import search_goban
+from src.check_goban_moved import check_goban_moved
 from perspective import perspective
 from sys import path
 path.append('/usr/lib/pymodules/python2.7')
@@ -40,7 +41,7 @@ def main():
         ShowImage("Camera", img)
 
         # Check goban moved
-        check_goban_moved = True # TODO function
+        check_goban_moved = True # TODO add function
 
         # Detect goban
         if check_goban_moved:

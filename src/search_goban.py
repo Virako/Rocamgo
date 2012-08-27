@@ -49,16 +49,17 @@ def get_corners(contour):
         c2.reverse()
     return c1 + c2
 
+
 def filter_image(img):
     aux_1 = CreateMat(img.rows, img.cols, img.type)
     aux_2 = CreateMat(img.rows, img.cols, img.type)
-    #Canny(img, aux_2, 10, 50)
     Canny(img, aux_2, 50, 200, 3)
-    Smooth(aux_2, aux_1, CV_GAUSSIAN, 5, 5)
+    Smooth(aux_2, aux_1, CV_GAUSSIAN, 3, 3)
     return aux_1
 
+
 def detect_contour(img, img2):
-    """ From a image filtered previously, detect contours. """ # TODO rellenar doc
+    """ From a image filtered previously, detect contours. """ 
     storage = CreateMemStorage()
     seq = FindContours(img, storage, CV_RETR_TREE, CV_CHAIN_APPROX_NONE, 
       offset=(0, 0))
@@ -66,7 +67,7 @@ def detect_contour(img, img2):
     
     aprox = True
     while seq:
-        if len(seq) >= 4 and (img.cols*img.rows)*0.95 > ContourArea(seq) > \
+        if len(seq) >= 4 and (img.cols*img.rows) > ContourArea(seq) > \
             ((img.cols/2)*(img.rows/2)):
             perimeter = count_perimeter(seq)
             seq_app = ApproxPoly(seq, storage, CV_POLY_APPROX_DP, perimeter*0.02, 1)
@@ -79,18 +80,17 @@ def detect_contour(img, img2):
                 break
             else:
                 seq = seq.h_next()
+    return None
 
-def check_contour():
-    pass
 
-def search_goban(img): # Check previosly if exists movement. 
+def search_goban(img): 
     aux_gray = CreateImage((img.width, img.height), IPL_DEPTH_8U, 1)
     CvtColor(img, aux_gray, CV_RGB2GRAY)
     img_gray = GetMat(aux_gray, 0)
     img_filtered = filter_image(img_gray)
-    
     contour = detect_contour(img_filtered, img)
-
     if contour: 
         return get_corners(contour)
+    else:
+        return None
 
