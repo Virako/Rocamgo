@@ -26,32 +26,44 @@ from sys import path
 path.append('/usr/lib/pymodules/python2.7')
 from cv import ShowImage
 from cv import WaitKey
+from cv import CloneImage
 
 
 def main():
+
+    # vars
+    goban_moved = [True, False]
+    prev_img = None
+    corners = None
+
     # Select camera from computer
     cam = Cameras()
     cams_found = cam.check_cameras()
     camera = cam.show_and_select_camera()
-    
+
     while camera: 
-        
+
         # Show current camera
         img = camera.get_frame()
         ShowImage("Camera", img)
 
         # Check goban moved
-        check_goban_moved = True # TODO add function
+        if corners:
+            goban_moved = [goban_moved[1], check_goban_moved(prev_img, img, corners)]
 
         # Detect goban
-        if check_goban_moved:
+        if goban_moved == [True, False]:
             corners = search_goban(img)
-        
+            print "Moved"
+
+        # Save previous image.
+        prev_img = CloneImage(img)
+
         # Transform goban to ideal form
-        if corners:
-            ideal_img = perspective(img, corners)
-            ShowImage("Ideal", img)
-        
+        #if corners:
+            # ideal_img = perspective(img, corners)
+            # ShowImage("Ideal", img)
+
         #########
         # Stone #
         #########
@@ -63,8 +75,9 @@ def main():
         
         # Upload to internet
 
+
         # FPS
-        key = WaitKey(50)
+        key = WaitKey(250)
         if key == 27: # Esc
             break
 

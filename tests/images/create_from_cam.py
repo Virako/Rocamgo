@@ -8,14 +8,14 @@ from cv import WaitKey
 
 
 #capture = CaptureFromCAM(0)
-capture = CaptureFromFile('../../prueba2.avi')
+capture = CaptureFromFile('../videos/capture1.avi')
 
-num = 7
+num = 12
 while 1:
     num += 1
     img = QueryFrame(capture)
-    key = WaitKey(30)
-    if key != -1:
-        SaveImage('img%d.png' %num, img)
-    ShowImage("video", img)
+    key = WaitKey(250)
+    if not img:
+        break
+    SaveImage('img%04d.png' %num, img)
 

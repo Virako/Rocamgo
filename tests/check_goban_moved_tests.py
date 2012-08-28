@@ -18,9 +18,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
-from src.search_goban import *
-from src.cambiodeesquinas import *
-from cv import LoadImage
+from src.check_goban_moved import check_goban_moved
+from cv import LoadImageM
+from cv import CV_LOAD_IMAGE_COLOR
+
 import unittest
 from nose.tools import *
 import os
@@ -41,12 +42,12 @@ class Test_camera(unittest.TestCase):
 
 
     def images_true(self):
-        return (('img001.png', 'img002.png'), ('img001.png', 'img004.png'), 
-                ('img002.png', 'img001.png'), ('img004.png', 'img001.png'))
+        return (('img0001.png', 'img0002.png'), ('img0001.png', 'img0004.png'), 
+                ('img0002.png', 'img0001.png'), ('img0004.png', 'img0001.png'))
 
 
     def images_false(self):
-        return (('img001.png'), ('img004.png'), ('img007.png'), ('img010.png'))
+        return (('img0001.png'), ('img0004.png'), ('img0007.png'), ('img0010.png'))
 
 
     def select_image_and_corners_true(self, n):

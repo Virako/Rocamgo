@@ -26,7 +26,7 @@ def check_goban_moved(img1,img2,corners):
     if not (img1 and img2):
         return True 
  
-    change_final = []
+    change_total = []
     for c in corners[::3] :
         p1_x = c[0]
         p1_y = c[1]
@@ -42,7 +42,7 @@ def check_goban_moved(img1,img2,corners):
                 
             x = p1_x 
             y = p1_y
-            change_t = 0
+            change_sum = 0
             while x > p2_x: 
                 pixel = Get2D(img1,y,x)
                 pixel1 = Get2D(img2,y,x)
@@ -51,13 +51,9 @@ def check_goban_moved(img1,img2,corners):
                 change_sum += change
                 x = x-dist_x    
                 y = ((x - p1_x)*(p2_y - p1_y) / (p2_x - p1_x))+p1_y
-            change_sum = change_s / 20
-            change_t.append(changet)
-    
-    return min(change_t) > 40     
-                        
-      
-      
-      
-      
-      
+            change_sum /= 20
+            change_total.append(change_sum)
+
+    print change_total
+    return min(change_total) > 35 and max(change_total) > 85
+
