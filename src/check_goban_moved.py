@@ -34,7 +34,7 @@ def check_goban_moved(img1,img2,corners):
             p2_x = c2[0]
             p2_y = c2[1]
             
-            dist_x = abs(p1_x - p2_x) / NUM_POINTS
+            dist_x = abs(p1_x - p2_x) / float(NUM_POINTS)
                                 
             if p1_x < p2_x:
                 p1_x,p2_x = p2_x,p1_x
@@ -43,17 +43,18 @@ def check_goban_moved(img1,img2,corners):
             x = p1_x 
             y = p1_y
             change_sum = 0
-            while x > p2_x: 
-                pixel = Get2D(img1,y,x)
-                pixel1 = Get2D(img2,y,x)
+            acum = 0
+            while acum <= NUM_POINTS: 
+                pixel = Get2D(img1,int(y),int(x))
+                pixel1 = Get2D(img2,int(y),int(x))
                 change = abs(pixel[0]-pixel1[0]) + abs(pixel[1]-pixel1[1]) +\
                     abs(pixel[2]-pixel1[2])
                 change_sum += change
                 x = x-dist_x    
                 y = ((x - p1_x)*(p2_y - p1_y) / (p2_x - p1_x))+p1_y
+                acum += 1
             change_sum /= 20
             change_total.append(change_sum)
 
-    print change_total
     return min(change_total) > 35 and max(change_total) > 85
 
