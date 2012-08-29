@@ -47,11 +47,11 @@ class Goban:
         string = ""
         for x in range(GOBAN_SIZE):
             for y in range(GOBAN_SIZE):
-                if self.matrix[x][y] == BLACK:
+                if self.matrix[y][x] == BLACK:
                     string += " x "
-                elif self.matrix[x][y] == WHITE:
+                elif self.matrix[y][x] == WHITE:
                     string += " o "
-                elif not self.matrix[x][y]:
+                elif not self.matrix[y][x]:
                     string += " · "
             string += "   " + str(x+1) + "\n"
         return string
