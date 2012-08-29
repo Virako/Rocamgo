@@ -27,6 +27,7 @@ path.append('/usr/lib/pymodules/python2.7')
 from cv import ShowImage
 from cv import WaitKey
 from cv import CloneImage
+from cv import Circle
 
 
 def main():
@@ -45,11 +46,13 @@ def main():
 
         # Show current camera
         img = camera.get_frame()
-        ShowImage("Camera", img)
 
         # Check goban moved
         if corners:
             goban_moved = [goban_moved[1], check_goban_moved(prev_img, img, corners)]
+            for corner in corners:
+                Circle(img, corner, 4, (255,0,0), 4, 8, 0)
+        ShowImage("Camera", img)
 
         # Detect goban
         if goban_moved == [True, False]:
@@ -60,9 +63,9 @@ def main():
         prev_img = CloneImage(img)
 
         # Transform goban to ideal form
-        #if corners:
-            # ideal_img = perspective(img, corners)
-            # ShowImage("Ideal", img)
+        if corners:
+            ideal_img = perspective(img, corners)
+            ShowImage("Ideal", ideal_img)
 
         #########
         # Stone #
