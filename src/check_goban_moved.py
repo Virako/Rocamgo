@@ -21,7 +21,7 @@
 from src.cte import *
 from cv import *
 
-def search_sum_pixels_in_line_y(x, y, dist, img1, img2): # if x line: values order x, y
+def search_sum_pixels_in_line_y(x, y, dist, img1, img2): 
     change = 0
     acum = 0
     while acum < NUM_POINTS:
@@ -33,7 +33,7 @@ def search_sum_pixels_in_line_y(x, y, dist, img1, img2): # if x line: values ord
         acum += 1
     return change
 
-def search_sum_pixels_in_line_x(x, y, dist, img1, img2): # if x line: values order x, y
+def search_sum_pixels_in_line_x(x, y, dist, img1, img2): 
     change = 0
     acum = 0
     while acum < NUM_POINTS:
