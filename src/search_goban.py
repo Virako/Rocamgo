@@ -21,8 +21,7 @@
 
 from cv import *
 from math import sqrt
-from src.difference import difference
-from src.cte import *
+from src.cte import NUM_EDGES
 
 def count_perimeter(seq):
     """ Count perimeter from sequence (contour). """
@@ -67,11 +66,11 @@ def detect_contour(img, img2):
     
     aprox = True
     while seq:
-        if len(seq) >= 4 and (img.cols*img.rows) > ContourArea(seq) > \
+        if len(seq) >= NUM_EDGES and (img.cols*img.rows) > ContourArea(seq) > \
             ((img.cols/2)*(img.rows/2)):
             perimeter = count_perimeter(seq)
             seq_app = ApproxPoly(seq, storage, CV_POLY_APPROX_DP, perimeter*0.02, 1)
-            if len(seq_app) == 4:
+            if len(seq_app) == NUM_EDGES:
                 return seq_app
             else:
                 return None

@@ -32,11 +32,12 @@ def difference(img1, img2):
     # TODO """ """ 
     if isinstance(img1, cvmat) and isinstance(img2, cvmat) and \
       img1.rows == img2.rows and img1.cols == img2.cols: # same type and size
-        aux1 = aux2 = res = CreateMat(img1.rows, img1.cols, img1.type)
+        aux1 = res = CreateMat(img1.rows, img1.cols, img1.type)
+        aux2 = res = CreateMat(img2.rows, img2.cols, img2.type)
     elif isinstance(img1, iplimage) and isinstance(img2, iplimage) and \
      img1.width == img2.width and img1.height == img2.height: # same type and size
-        aux1 = aux2 = res = CreateImage((img1.width, img1.height),\
-         img1.depth, img1.nChannels)
+        aux1 = res = CreateImage((img1.width, img1.height), img1.depth, img1.nChannels)
+        aux2 = CreateImage((img2.width, img2.height), img2.depth, img2.nChannels)
     else:
         return -1
 
@@ -63,6 +64,4 @@ def add(img1, img2):
     
     Add(aux1, aux2, res) 
     return res
-
-
 
