@@ -29,6 +29,10 @@ from cv import WaitKey
 from cv import CloneImage
 from cv import Circle
 from difference import difference
+from src.search_stone import Search_stone
+from cv import *
+from src.goban import Goban
+from difference import difference
 
 def main():
 
@@ -36,7 +40,9 @@ def main():
     goban_moved = [True, False]
     prev_img = None
     corners = None
-
+    prev_ideal_img = None
+    tablero = Goban()
+    
     # Select camera from computer
     cam = Cameras()
     cams_found = cam.check_cameras()
@@ -48,6 +54,17 @@ def main():
         if prev_img:
             ShowImage("Diff", difference(img, prev_img))
 
+        # Show current camera
+        img = camera.get_frame()
+        
+        if prev_img :
+            ShowImage("Camera2", difference(img, prev_img))
+        
+        # Show current camera
+        img = camera.get_frame()
+        
+        if prev_img :
+            ShowImage("Camera2", difference(img, prev_img))
         # Check goban moved
         if corners:
             goban_moved = [goban_moved[1], check_goban_moved(prev_img, img, corners)]
@@ -62,7 +79,7 @@ def main():
 
         # Save previous image.
         prev_img = CloneImage(img)
-
+        
         # Transform goban to ideal form
         if corners:
             ideal_img = perspective(img, corners)
@@ -71,10 +88,25 @@ def main():
         #########
         # Stone #
         #########
+        
+            
+            buscador = Search_stone()
 
-        # Search stone Search_stone.py
-        # Add stone to goban 
+            # Search stone Search_stone.py
+            if (prev_ideal_img):
+                piedras = buscador.search_ston(prev_ideal_img,ideal_img)
+                print "PIEDRASSSSSSSSSSSSSSSSS"
+                print piedras
+                if not ((piedras == -1) or (not piedras)):
+                    for piedra in piedras:
+                        color = buscador.check_color(piedra,ideal_img)
+                        posicion = buscador.position_img_goban(piedra,ideal_img)  
+                        tablero.change_stone(posicion,color)
+                    
+           
+            prev_ideal_img = ideal_img   
         # Add stone to sgf
+        
         
         
         # Upload to internet
@@ -84,7 +116,8 @@ def main():
         key = WaitKey(250)
         if key == 27: # Esc
             break
-
+            
+    print tablero
 
 if __name__ == "__main__":
     main()

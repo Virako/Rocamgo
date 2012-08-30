@@ -22,21 +22,28 @@ from cv import *
 from src.difference import *
 from cte import GOBAN_SIZE
 class Search_stone:
-    """clase encargada de la deteccion de piedras, todas las funciones de esta clase
+    """Clase encargada de la deteccion de piedras, todas las funciones de esta clase
     se encargar de pasar de una imagen de un tablero con piedras donde el tablero
     esta detectado a un archivo .sfg"""
     def __init__(self):
         self.ultimaimagenbuena=None 
         
 
-    def search_ston(self,previusimg,imgcurrent):
+    def search_ston(self,previous_img,img_current):
         """esta funcion se encarga de ver si las imagenes que nos llegan son claras
         y en caso de serlo busca piedras en ella. Devuelve las piedras en caso de 
         encontrarlas"""
         stones=None
-        diff = difference(previusimg,imgcurrent)
+        diff = difference(previous_img,img_current)
+        if (diff == -1):
+            print "ha devuelto -1"
+            return -1
+            
+        ShowImage("diferencia",diff)
+        
         if not self.true_img(diff):
-            stones = self.search_circle(imgcurrent)
+            stones = self.search_circle(diff)
+        
         return stones
         
 
@@ -45,11 +52,11 @@ class Search_stone:
         podemos saber si la imagen es clara o no, pues puede que la imagen tenga 
         manos por medio. Devuelve si una imagen es valida o no """
 
-        while 1:
+        """while 1:
             ShowImage("Camera", diff)
             key = WaitKey(30)
             if key == 27: # Esc
-                break
+                break"""
         nx = diff.height/30     #valor salto x
         ny = diff.width/30      #valor salto y
         px,py = 0,0             # posicion actual de x e y
@@ -58,7 +65,7 @@ class Search_stone:
            
         while px<diff.height:
             while py<diff.width:
-                pixel=Get2D(diff,px,py)
+                pixel=Get2D(diff,py,px)
                 cambio=pixel[0]+pixel[1]+pixel[2]
                 if cambio>60:
                    cont_pix_change += 1
@@ -67,30 +74,35 @@ class Search_stone:
             py=0
             px+=nx
             
-        print  cont_pix_change>(n_samples/8)
+        
         return cont_pix_change>(n_samples/8)
 
 
     #dp estaba a 1.6
-    def search_circle(self, image, dp = 1.6):
+    def search_circle(self, image, dp = 1.8):
         """Función que trata la imagen luminosa con los filtros Canny y Smooth y 
            busca cincunferencias. Devuelve los centros de las cincunferencias 
            encontradas """ 
         
         stones = []
-
-        gray = CreateImage((image.width, image.height), IPL_DEPTH_8U, 1)
+        gray = CreateMat(image.width, image.height,CV_8UC1)
+        #gray = Create((image.width, image.height), IPL_DEPTH_8U, 1)
         CvtColor(image, gray, CV_BGR2GRAY)
         
         # creamos dos imagenes auxiliares para aplicar los filtros
-        gray_aux = CreateImage((gray.width, gray.height), gray.depth, \
-         gray.nChannels)
-        gray_aux_2 = CreateImage((gray.width, gray.height), gray.depth, \
-         gray.nChannels)
-        
+        #gray_aux = CreateImage((gray.width, gray.height), gray.depth, \
+        # gray.nChannels)
+        #gray_aux_2 = CreateImage((gray.width, gray.height), gray.depth, \
+        # gray.nChannels)
+        gray_aux = CloneMat(gray)
+        gray_aux_2 = CloneMat(gray)
+        #gray_aux_2 = CloneImage(gray)
+        #Sobel(gray,gray_aux_2,1,1,3)
         Canny(gray, gray_aux_2, 50,55,3)
-        Smooth(gray_aux_2, gray_aux, CV_GAUSSIAN, 5, 5)
+        Smooth(gray_aux_2, gray_aux, CV_GAUSSIAN, 3, 5)
+        print "----------------------------------------------------------"
         
+        #gray_aux_2
         # creo una matriz de para guardar los circulos encontrados
         storage = CreateMat(1, gray_aux.height*gray_aux.width, CV_32FC3)
 
@@ -101,6 +113,7 @@ class Search_stone:
         tamcelda2 = image.height/GOBAN_SIZE
         border = tamcelda/4
         
+        
         circles = HoughCircles( gray_aux, storage, CV_HOUGH_GRADIENT, dp, \
          tamcelda/2+border, 50, 55, tamcelda/4+border,  tamcelda/2+border ) 
          
@@ -109,19 +122,16 @@ class Search_stone:
                 p = Get1D(storage, n)
                 pt = (Round(p[0]), Round(p[1]))
                 stones.append(pt)
-                Circle(gray, pt, Round(p[2]), CV_RGB(255, 255, 255), 2) # pinta el circulo encontrado
+                Circle(gray, pt, Round(p[2]), CV_RGB(0,0, 255), 2) # pinta el circulo encontrado
             print "Hay ", len(stones), " circulos en la imagen"
         except:
             print "No hemos podido recorrer el storage de cvHoughCircles.\
              No se han encontrado circunferencias"
+             
         
-        while 1:
-            ShowImage("pepito",gray)
-            key = WaitKey(30)
-            if key == 27: # Esc
-                break
+        ShowImage("pepito",gray)
         
-        
+               
             
         #try: cvSaveImage("images/circunferencias.png", gray)
         #except: print "Error al guardar la imagen con cincunferencias. " # para chequeo
@@ -141,14 +151,17 @@ class Search_stone:
         tamcelda = img.width/20
         colorn=0
         colorb=0
+        
+        if (stone[0]+tamcelda>img.width or stone[1]+tamcelda>img.height or stone[0]-tamcelda<0 or stone[1]-tamcelda<0):
+            return "peta"
         for x in range(stone[0]-tamcelda,stone[0]+tamcelda):
-            pixel=Get2D(img,x,stone[1])
+            pixel=Get2D(img,stone[1],x)
             if pixel[0]>200 and pixel[1]>200 and pixel[2]>200:
                 colorb += 1
             if pixel[0]<50 and pixel[1]<50 and pixel[2]<50:
                 colorn += 1
         for y in range(stone[1]-tamcelda,stone[0]+tamcelda):
-            pixel=Get2D(img,stone[0],y)
+            pixel=Get2D(img,y,stone[0])
             if pixel[0]>200 and pixel[1]>200 and pixel[2]>200:
                 colorb += 1
             if pixel[0]<50 and pixel[1]<50 and pixel[2]<50:
@@ -165,6 +178,7 @@ class Search_stone:
         posx = stone[0]/distx
         posy = stone[1]/disty
         return [posx,posy]
+
         
         
         
