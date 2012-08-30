@@ -62,7 +62,7 @@ class Cameras:
     def show_and_select_camera(self):
         """ Show cameras in different windows for select one camera. """
         if not self.cameras:
-            return self.camera
+            return None
         elif len(self.cameras) == 1:
             return self.cameras[0]
         elif len(self.cameras) > 1:
@@ -71,10 +71,10 @@ class Cameras:
                     name_windows = str(camera.index)
                     img = camera.get_frame()
                     ShowImage(name_windows, img)
-                    key = WaitKey(60)
+                    key = WaitKey(250)
                     # TODO select camera push the key
                     SetMouseCallback(name_windows, self.on_mouse, camera) 
             DestroyAllWindows()
-
+            # TODO close others cameras
         return self.camera
 

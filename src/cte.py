@@ -29,26 +29,18 @@ GOBAN_SIZE = 19
 BLACK = 0
 WHITE = 1
 
-PLAYER_B = "player_b"
-RANK_B = "20k"
-PLAYER_W = "player_w"
-RANK_W = "20k"
-
 fecha_actual = time.strftime("%d %b %Y")
 #tiempo = 1800
 
-INITSGF = ( "(;FF[4]GM[1]SZ[%d]" %(GOBAN_SIZE),
-            "\nAP[Tablerogo]",  
-            "\nPB[%s]" %PLAYER_B,
-            "\nBR[%s]" %RANK_B, 
+HEADER_SGF = [ "(;FF[4]GM[1]SZ[%d]" %(GOBAN_SIZE),
+            "\nAP[Rocamgo]",  
             "\nHA[0]", 
-            "\nPW[%s]" %PLAYER_W,
-            "\nWR[%s]" %RANK_W,
-            "\nKM[6.5]DT[%s]" %fecha_actual,
+            "\nKM[6.5]",
+            "\nSZ[%s]" %GOBAN_SIZE,
+            "\nDT[%s]" %fecha_actual,
             #"\nTM[%d]" %tiempo,
             "\nRU[Japanese]",
-            "\n("
-          )
+          ]
 
 """
 CARACTERISTICAS DE LOS ARCHIVOS .SGF
