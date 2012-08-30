@@ -28,7 +28,7 @@ from cv import ShowImage
 from cv import WaitKey
 from cv import CloneImage
 from cv import Circle
-
+from difference import difference
 
 def main():
 
@@ -43,9 +43,10 @@ def main():
     camera = cam.show_and_select_camera()
 
     while camera: 
-
         # Show current camera
         img = camera.get_frame()
+        if prev_img:
+            ShowImage("Diff", difference(img, prev_img))
 
         # Check goban moved
         if corners:
@@ -57,7 +58,7 @@ def main():
         # Detect goban
         if goban_moved == [True, False]:
             corners = search_goban(img)
-            print "Moved"
+            print corners
 
         # Save previous image.
         prev_img = CloneImage(img)
