@@ -19,10 +19,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from src.cameras import Cameras
+from src.search_goban import search_goban
 from sys import path
 path.append('/usr/lib/pymodules/python2.7')
 from cv import ShowImage
 from cv import WaitKey
+from cv import Circle
 
 
 def main():
@@ -30,14 +32,25 @@ def main():
     cam = Cameras()
     cams_found = cam.check_cameras()
     camera = cam.show_and_select_camera()
+    corners = None
     
     while camera: 
         
         # Show current camera
         img = camera.get_frame()
-        ShowImage("Camera", img)
+
+        # TODO Check goban moved 
+        goban_moved = True
 
         # Detect goban
+        if goban_moved:
+            corners = search_goban(img)
+        if corners:
+            for corner in corners:
+                Circle(img, corner, 4, (255,0,0), 4, 8, 0)
+        ShowImage("Camera", img)
+
+        # Transform goban to ideal form
         
         # Detect stone
         
