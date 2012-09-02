@@ -29,6 +29,7 @@ from cv import WaitKey
 from cv import Circle
 from cv import CaptureFromFile
 from cv import QueryFrame
+from perspective import perspective
 
 
 def main():
@@ -63,11 +64,14 @@ def main():
             # Paint corners for tested 
             for corner in good_corners:
                 Circle(img, corner, 4, (255,0,0), 4, 8, 0)
+            # Transform goban to ideal form
+            ideal_img = perspective(img, good_corners) # TODO no hallar 2 veces
+            ShowImage("Ideal", ideal_img)
+
 
         # Show image
         ShowImage("Camera", img)
 
-        # Transform goban to ideal form
         
         # Detect stone
         
@@ -78,6 +82,5 @@ def main():
         if key == 27: # Esc
             break
 
-    
 if __name__ == "__main__":
     main()
