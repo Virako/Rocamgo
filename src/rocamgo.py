@@ -20,11 +20,15 @@
 
 from src.cameras import Cameras
 from src.search_goban import search_goban
+from copy import copy
+from check_goban_moved import check_goban_moved
 from sys import path
 path.append('/usr/lib/pymodules/python2.7')
 from cv import ShowImage
 from cv import WaitKey
 from cv import Circle
+from cv import CaptureFromFile
+from cv import QueryFrame
 
 
 def main():
@@ -32,22 +36,35 @@ def main():
     cam = Cameras()
     cams_found = cam.check_cameras()
     camera = cam.show_and_select_camera()
-    corners = None
-    
-    while camera: 
-        
-        # Show current camera
-        img = camera.get_frame()
+    #camera = CaptureFromFile('tests/videos/capture1.avi') # Test videos
+    prev_corners = None
+    current_corners = None
+    good_corners = None
 
-        # TODO Check goban moved 
-        goban_moved = True
+    while camera: 
+        # Select image from camera 
+        img = camera.get_frame()
+        #img = QueryFrame(camera) # Test videos
+
+        # previous corners
+        prev_corners = copy(current_corners)
 
         # Detect goban
-        if goban_moved:
-            corners = search_goban(img)
-        if corners:
-            for corner in corners:
+        current_corners = search_goban(img)
+        if not current_corners:
+            current_corners = copy(prev_corners)
+
+        # Check goban moved 
+        if check_goban_moved(prev_corners, current_corners):
+            good_corners = copy(current_corners)
+            print "MOVED"
+        
+        if good_corners:
+            # Paint corners for tested 
+            for corner in good_corners:
                 Circle(img, corner, 4, (255,0,0), 4, 8, 0)
+
+        # Show image
         ShowImage("Camera", img)
 
         # Transform goban to ideal form
