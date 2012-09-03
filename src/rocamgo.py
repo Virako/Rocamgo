@@ -20,8 +20,16 @@
 
 from src.cameras import Cameras
 from src.search_goban import search_goban
+from src.check_goban_moved import check_goban_moved
+from src.perspective import perspective
+from src.search_stones import search_stones
+from src.search_stones import check_color_stone
+from src.stone import Stone
+from src.goban import Goban
+from src.cte import BLACK
+from src.cte import WHITE
+from src.cte import GOBAN_SIZE
 from copy import copy
-from check_goban_moved import check_goban_moved
 from sys import path
 path.append('/usr/lib/pymodules/python2.7')
 from cv import ShowImage
@@ -29,18 +37,24 @@ from cv import WaitKey
 from cv import Circle
 from cv import CaptureFromFile
 from cv import QueryFrame
-from perspective import perspective
+from cv import Get1D
+from cv import Round
+from cv import CV_RGB
 
 
 def main():
     # Select camera from computer
     cam = Cameras()
     cams_found = cam.check_cameras()
-    camera = cam.show_and_select_camera()
-    #camera = CaptureFromFile('tests/videos/capture1.avi') # Test videos
+    camera = cam.show_and_select_camera(); threshold=190
+    #camera = CaptureFromFile('tests/videos/capture1.avi'); threshold=190  # Test videos
+    #camera = CaptureFromFile('prueba2.avi'); threshold=150 # Test videos
     prev_corners = None
     current_corners = None
     good_corners = None
+    ideal_img = None
+    goban = Goban(GOBAN_SIZE)
+
 
     while camera: 
         # Select image from camera 
@@ -66,8 +80,35 @@ def main():
                 Circle(img, corner, 4, (255,0,0), 4, 8, 0)
             # Transform goban to ideal form
             ideal_img = perspective(img, good_corners) # TODO no hallar 2 veces
-            ShowImage("Ideal", ideal_img)
 
+        if ideal_img:
+            circles = search_stones(ideal_img, good_corners)
+            false_stones = 0
+            stones = []
+            for n in range(circles.cols):
+                pixel = Get1D(circles, n)
+                pt = (Round(pixel[0]), Round(pixel[1]))
+                radious = Round(pixel[2])
+                # Comprobar el color en la imagen
+                color = check_color_stone(pt, radious, ideal_img, threshold)
+                if color == BLACK:
+                    #print "BLACK"
+                    Circle(ideal_img, pt, radious, CV_RGB(255,0,0),2)
+                    stones.append(Stone(color, img=ideal_img, pix=pt))
+                elif color == WHITE:
+                    #print "WHITE"
+                    Circle(ideal_img, pt, radious, CV_RGB(0,255,0),2)
+                    stones.append(Stone(color, img=ideal_img, pix=pt))
+                else:
+                    #Circle(ideal_img, pt, radious, CV_RGB(255,255,0),2)
+                    false_stones += 1
+
+            #print "Hay %d piedras. " %(circles.cols - false_stones)
+            # Añadimos las piedras para trabajar con ellas estadísticamente 
+            goban.add_stones_to_statistical(stones)
+
+            ShowImage("Ideal", ideal_img)
+            
 
         # Show image
         ShowImage("Camera", img)
@@ -78,7 +119,7 @@ def main():
         # Upload to internet
 
         # FPS
-        key = WaitKey(30)
+        key = WaitKey(100)
         if key == 27: # Esc
             break
 
