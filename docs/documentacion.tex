@@ -55,6 +55,8 @@ El objetivo principal del programa es informatizar el registro de una partida de
 \item Evitar que una persona tenga que estar registrando cada movimiento de go que se hace en los torneos, ya que nuestro programa lo haria en su lugar.
 \end{itemize}
 
+
+
 \section{Objetivos del proyecto}
 Con este proyecto pretendemos conocer el uso de diferentes herramientas y lenguajes de programacion. Ademas pretendemos adentrarnos en el amplio mundo del tratamiento de imagenes, el cual esta ahora mismo en pleno auge. Al ser un proyecto de dos personas nos hemos dado cuenta que tambien debemos aprender a tratar a los compañeros de proyecto con respeto, entender sus puntos de vista y debatir ampliamente los puntos en los que no estamos de acuerdo,  llegando finalmente a un punto de union de ideas, en el cual los dos estemos de acuerdo. Los principales objetivos de aprendizaje son:
 \begin{itemize}
@@ -111,6 +113,77 @@ partida, para apuntarla.
 
 
 \chapter{Implementación}
+Como todo proyecto la implementacion la hemos dividido en funcionalidades que queriamos que tuviese el proyecto. Las principales funcionalidades que a su vez las hemos dividido para hacer un codigo mas legible y modular, son la de detectar el tablero, detectar las piedras y finalmente la comunicacion con el servidor para emitir la partida en internet.
+
+\section{Deteccion del tablero}
+En esta funcionalidad del proyecto, queremos que, a partir de unas imagenes que recibimos a traves de una camara web o de un video realizado anteriormente, pudieramos sacar la posicion del tablero.
+Cuando empezamos este proyecto, nunca imaginamos la cantidad de cambios que se podia llegar a realizar debido a diferentes problemas con la implementacion.Para la deteccion del tablero hemos realizado varias implementaciones, las cuales hemos tenido que ir descartando por los diferentes motivos expuestos posteriormente hasta finalmente dar con una implementacion que cumple con los requisitos que nosotros necesitamos.
+
+\subsection{Primera implementacion}
+ Al principio, en una primera toma de contacto con OpenCV, intentamos buscar el tablero a partir de lineas, con la funcion HoughLines de openCV, esta funcion devuelve el lugar donde estan las lineas detectadas de una imagen. Pensabamos que seria sencillo procesar esas lineas hasta dar con el lugar exacto del tablero.
+ El principal problema que tiene esta forma de abordar el problema, es que debemos tener en cuenta que la camara no esta encima del tablero y por lo tanto, en la imagen no vamos a tener un cuadrado, sino un cuadrado deformado por la perspectiva que hay, debido a que la camara esta en el lateral del tablero y no justo encima. Esto hace que esta funcion se vuelva muy compleja de manejar y hacia que el tratamiento de cada linea detectada fuera demasiado complejo. Por ello esta implementacion quedo descartada, evolucionando el programa a la siguiente implementacion.
+ 
+\subsection{Segunda implementacion}
+
+Despues de entender que esa forma anterior de buscar el tablero no era efectiva, decidimos ponernos a trabajar en otra idea. Esta vez decidimos hacerlo, atacando a las intersecciones, usando templates.
+Esta forma consiste en buscar en la imagen que recibimos de la camara web el template de una interseccion(Una imagen que contine solo la interseccion).
+A parte del coste de ejecucion que conllevaba esta forma de hacerlo, nos topamos con el mismo problema que anteriormente, la imagen que recibimos de la camara web, no es perfecta y esta en una perspectiva, la cual no sabemos, pues cada usuario puede poner la camara desde un lado distinto. Esto hacia que el template no tomase bien las intersecciones en muchos casos.
+Ademas nos topamos con otro gran problema, conforme se fuese jugando la partida, las intersecciones se van tapando con las piedras, esto hace que en caso de movimiento del tablero, no pudiesemos volver a detectarlo en tiempo real.
+
+
+\subsection{Tercera implementacion}
+
+Tras dos intentos fallidos, comenzamos a estudiar la siguiente idea, sacada de distintos programas de camaras de fotos, los cuales detectan y recuadran la cara. 
+Esta forma de hacerlo se llama HaarTraining, consiste en enseñarle al ordenador a buscar un tablero, introduciendo en un programa de aprendizaje imagenes donde esten los tableros, indicandole la posicion. En ese proceso de aprendizaje tambien hay que enseñarle fotos que no contengan el tablero.
+Despues de estudiarlo, nos dimos cuenta de varias cosas que hicieron que no continuasemos por este camino.
+La primera de ellas es el tiempo dedicado a la realizacion de las fotos y posterior analisis manual, para indicar el lugar del tablero.
+La segunda el tiempo de ejecucion del aprendizaje, suele llevar unas dos semanas, en un ordenador potente.
+La tercera y mas importante, es que despues de las dos primeras, nadie te aseguraba con una minima certeza que esta posibilidad fuese a funcionar.
+De todas las implementaciones esta a sido la unica que hemos estudiado sin llegar a llevarla a cabo. No descartamos poder hacerla en un futuro.
+
+\subsection{Cuarta implementacion}
+
+Finalmente y tras tres intentos fallidos, decidimos hacerlo buscando contornos. Gracias a una funcion de openCv conseguimos encontrar la forma que menos fallos da, cumple con los requisitos y soluciona casi todos los problemas.
+Esta funcion devuelve contornos, por ello uno de los requisitos que debemos pedir para la correcta ejecucion de este programa es que el fondo, donde esta colocado el tablero, sea lo mas liso posible, dicho requisito, pensamos que es bastante facil de conseguir, pues casi todas las mesas son lisas.
+Debido a la gran cantidad de test que ha pasado correctamente esta implementacion y dado que los test que ha fallado son debido a la pesima calidad de las imagenes(sobre todo la falta de luz), hemos considerado que es la correcta. Ademas, perdemos el problema de la perspectiva, pues lo que detectamos es el contorno, y no solo la forma cuadrada del tablero.
+
+\section{Deteccion de piedras}
+Una vez detectado el tablero correctamente, pensabamos que la deteccion de piedras iba a ser mucho mas facil, aun asi, la deteccion de piedras tambien ha pasado por un ciclo evolutivo de modificaciones hasta madurar lo suficiente la idea, para conseguir finalmente un programa que funciona tal y como teniamos pensado desde un primer momento.
+En un principio nos pusimos manos a la obra con la busqueda de piedras con las diferentes implementaciones que os presentamos a continuacion, pero en mitad del camino nos dimos cuenta que las librerias de openCv contienen funciones para cambiar la perspectiva de las imagenes.
+Tambien debemos recordar, que la deteccion de piedras, no solo es detectar donde esta cada piedra, debemos detectarles en el orden que han sido colocadas(turnos) y el color de la piedra que se coloca o retira del tablero.
+
+\subsection{Idealizando el tablero -TODO}
+
+Una vez detectado el tablero correctamente y antes de ponernos a buscar piedras por toda la imagen, llegamos a la conclusion que seria mas conveniente conseguir el tablero en un modelo ideal, como si las imagenes que recibimos fuesen tomadas como nosotros las queremos, que es desde arriba, sin perspectivas. 
+Gracias a openCv conseguimos con la funcion TODO que la imagen se ponga con una perspectiva perfecta, recortando las partes de la imagen donde no esta el tablero, haciendo asi que la busqueda de piedras sea una labor mucho mas sencilla. 
+Para conseguir que esta funcion nos sirva, tuvimos que hacer un testeo bastante amplio, pues las imagenes necesitan ser tratadas anteriormente para el correcto funcionamiento de dicha funcion.
+
+\subsection{Primera implementacion}
+
+En los principios del programa, las piedras se detectaban de una forma poco ortodoxa, pues en gran parte, los jugadores debian decirnos cuando terminaban su turno, para asi tomar la foto en el momento justo, y poder analizarla correctamente.
+La forma de la busqueda de la piedra se hacia por diferencia de imagenes, asi, cada vez que un jugador nos indicaba mediante un boton que habia terminado el turno, captabamos una imagen y la comparabamos con la anterior, la funcion "diff" de OpenCv nos devuelve marcadas las diferencias, que este caso serian las piedras, despues dentro de esta imagen, buscamos circulos y conseguiamos encontrar las piedras. 
+Esta forma fue eliminada al poco tiempo, pues una de nuestras ideas, es que el jugador no tenga que preocuparse del programa, pues esta concentrado jugando. Ademas, los factores externos eran demasiados, pues pensamos en modificar los relojes de tiempo, para que el propio boton que indicaba al reloj el final del tiempo, fuese el mismo que nos indicase a nosotros el momento de tomar la foto. Con todo esto, lo unico que podiamos conseguir es que nuestro programa no fuese funcional, ya que nadie podria hacer uso de nuestro programa sin dicho reloj. Tras pensar distintas formas de solucionar los problemas que daba dicha implementacion, decidimos cambiar por completo la idea.
+
+\subsection{Segunda implementacion}
+
+Despues de esta forma, pensamos en suprimir que se usasen botones y decidimos hacerlo haciendo la diferencia de cada imagen con la siguiente, buscando circulos en esa diferencia. Esta solucion nos parecio mucho mejor que la anterior, pero empezamos a darnos cuenta, que detectaba toda la trayectoria que hacia la piedra hasta estar colocada en su sitio, haciendo que el programa nos detectase piedras donde realmente no se habian puesto, esto se podria haber solucionado haciendo estadistica temporal de las imagenes, pero este metodo lo hemos descubierto mas tarde, asi que en ese momento se descarto esta idea y enfocamos la solucion de otra forma. Ademas el hacer la diferencia de todas las imagenes conlleva un coste de procesamiento al cual hay que añadirle la busqueda de circulos, suma que es demasiado elevada y creaba un tiempo de retreso que se iba acumulando, haciendo que en determinado momento fallase el programa.
+
+\subsection{Tercera implementacion}
+
+Y como dice el refran, a la tercera va la vencida. Esta vez, ya teniamos mas experiencia y el tablero ya estaba idealizado. Por esto, pensamos que la mejor solucion podria ser la mas sencilla, para ello, sin hacer tratamiento ni diferencias, buscamos circulos en la imagen ideal. Con una matriz de estadistica temporal, vamos buscando si los circulos se quedan de forma estable en una posicion, y en tal caso, podemos asegurar que la piedra esta colocada en ese lugar, esta solucion, ademas permite llevar bien la cuenta de los turnos y el momento en el que se puso la piedra, pues aunque tenga que pasar un tiempo para asegurar que esta la piedra, sabemos el momento en el que se puso. Ademas el coste de ejecucion es asumible.
+
+\subsection{Buscando colores}
+
+Como en cada parte del proyecto, esta tambien ha tenido su evolucion desde que empezamos a plantearlo hasta el resultado final, mucho mas pulido y funcional. En un principio y dado que los jugadores nos iban a ir marcando el ritmo de turnos, simplemnte debiamos saber si le tocaba colocar a blancas o negras, como siempre empiezan negras, por reglas del propio juego, solo debiamos detectar la piedra que se colocaba y automaticamente teniamos el color.
+Debido a que esto cambio a lo largo del tiempo y en la actualidad la forma de encontrar piedras es distinta, debemos saber de que color es la piedra que se ha detectado en cada momento, para ello una vez que detectamos una piedra, debemos asegurarnos de que color es. La forma de hacerlo es buscando en el punto central donde esta situada la piedra e ir a su pixel y analizar el color. Gracias a openCv esta labor es relativamente sencilla, pero nos dimos cuenta, debido a la calidad de las imagenes, que no todo iba a ser color de rosa. El gran problema que tenemos es que las piedras al ser redondeadas, la camara capta reflejos de dichas piedras haciendo que el color de las piedras pueda llegar a confundirse facilmente si no cogen un numero amplio de muestras para saber el color. Aun asi, los test dan fallos a veces, para evitar esto, hay que variar una variable, siendo este uno de los puntos a seguir trabajando en un futuro en nuestro programa.
+
+\section{Conexion con el servidor}
+
+Para la conexion al servidor comenzamos intentandolo a los servidores de KGS, pero la falta de documentacion de protocolos de dicho servidor hizo imposible esta tarea. Aun asi, queremos hacer posible la  Actualmente el programa se conecta a IGS a traves de un usuario registrado siguiendo el protocolo de dicho servidor. 
+
+
+Intentamos primeramente utilizando el servidor de KGS, pero no fuimos capaces (esto quiero probarlo durante una mañana o tarde para ver si soy capaz de subir la partida ahí, no tiene que ser tan complicado).
+Actualmente la partida la subimos utilizando un usuario registrado al servidor de IGS. 
 
 
 \chapter{Documentación del código del proyecto}
@@ -120,7 +193,7 @@ partida, para apuntarla.
 
 
 \chapter{Presupuesto}
-
+El presupuesto ha sido de menos 3 euros.
 
 \chapter{Futuro}
 
