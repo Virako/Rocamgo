@@ -8,7 +8,7 @@
 \usepackage{indentfirst} %para identar despues de cada parrafo
 %\usepackage{gensymb} %para añadir el símbolo de los grados celsius, etc
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,pdftex]{hyperref} 
-
+\usepackage{hyperref}
 %\title{PROYECTO FINAL\\ DE \\CARRERA \\ ROCAMGO\\}
 %\date{Version 1.0, \today}
 \author{David Medina Velasco \and Víctor Ramírez de la Corte}
@@ -27,31 +27,68 @@
 \marginsize{3cm}{2cm}{2cm}{2cm} % márgenes {izq}{der}{up}{down}.
 
 \tableofcontents  %indice
+ 
+
+ 
+\chapter*{Preambulo} 
+
+Nos gustaría agradecer a:
+\begin{itemize}
+\item Los compañeros de la asociación de software libre de Sevilla Sugus GNU/Linux, los cuales nos han enseñado y ayudado mucho.
+\item Los compañeros del club de go de Sevilla Ubicuo ki-in, los cuales nos han ofrecido lugar y materiales para probar el proyecto, nos han ayudado con el logo y siempre nos han apoyado. 
+\item A D.Francisco Sivianes Castillo, nuestro tutor del proyecto, el cual nos ha dedicado todo el tiempo que hemos requerido sin miramientos, ayudandonos con nuestras dudas y guiandonos para la correcta finalización del proyecto.
+\item A D.Carlos Manuel Martin Cornejo, el cual ha colaborado con la realización de la conexión con los servidores de go.
+\item A nuestros familiares, parejas y amigos, los cuales nos han soportado hablando de este proyecto hasta la saciedad.
+ 
+\end{itemize}
 
 
 \chapter{Conceptos}
 \section{¿Qué es el go?}
-El go es un juego de estrategia de dos jugadores por turnos, el cual tiene una antigüedad de 4000 años. Para más información [1]
+
+El go es un juego de mesa estratégico para dos jugadores. Es también conocido como igo (japonés), weiqi (chino) o baduk (coreano). El go es notable por ser rico en complejas estrategias a pesar de sus simples reglas.
+
+El juego se realiza por dos jugadores que alternativamente colocan piedras blancas y negras sobre las intersecciones libres de una cuadrícula de 19x19 líneas. El objetivo del juego es controlar una porción más grande del tablero que el oponente. Una piedra o grupo de piedras se captura y retira del juego si no tiene intersecciones vacías adyacentes, esto es, si se encuentra completamente rodeada de piedras del color contrario.
+
+Ubicar piedras juntas ayuda a protegerlas entre sí y evitar ser capturadas. Por otro lado, colocarlas separadas hace que se tenga influencia sobre una mayor porción del tablero. Parte de la dificultad estratégica del juego surge a la hora de encontrar un equilibrio entre estas dos alternativas. Los jugadores luchan tanto de manera ofensiva como defensiva y deben elegir entre tácticas de urgencia y planes a largo plazo más estratégicos.
+
+El go se originó en China hace más de 2 500 años y aunque no se sabe con exactitud cuándo fue inventado, hacia el 300 a. C. era ya un pasatiempo popular, como viene indicado en una referencia al juego en los Analectas de Confucio. Restos arqueológicos muestran que este antiguo juego se jugaba en un tablero de una cuadrícula de 17 x 17, pero en la época en la que el juego ya había llegado a Corea y Japón, sobre el Siglo VII, los tableros habituales eran ya de 19 x 19.
+
+El juego es muy popular en Asia Oriental, pero recientemente ha ganado cierta popularidad en otras partes del mundo. El go llegó a Europa a través de Japón, por ello es más conocido internacionalmente por su nombre japonés.
 
 
-\section{¿Qué es un archivo .sgf, para que sirve y como podemos abrirlo?}\label{sgf}
+
+
+
+\section{¿Qué es un archivo .sgf?, para que sirve y como podemos abrirlo}\label{sgf}
 Un archivo .sgf es un archivo donde se guarda una partida de go. Como el formato es usado también para muchos juegos de tablero, está bastante extendido y casi todos los programas de go lo soportan.
 
 
-El archivo .sgf nos sirve para comentar una partida (como podemos ver en la imagen 7) y hacer pruebas directamente desde un programa. Otra de los usos que puede tener es guardar todas tus partidas para poderlas ver en un futuro. \\ \\
+El archivo .sgf nos sirve para comentar una partida (como podemos ver en la imagen 7) y hacer pruebas directamente desde un programa. Otro de los muchos usos que tiene es guardar todas tus partidas para poder verlas en un futuro sin ocupar apenas espacio en el disco. \\ \\
 
+\section{Servidor IGS}
 
+\section{Servidor KGS}
+El KGS Go Server, o simplemente KGS, es un servidor de Go popular que se puede acceder en http://www.gokgs.com/. Es común tener más de 1500 personas conectadas en cualquier momento, por lo que es uno de los servidores más grandes en el mundo. Muchas de las partidas de perfil alto de los torneos se retransmiten en KGS.
+
+El KGS Go Server abrió por primera vez bajo el nombre Igoweb en abril de 2000. El anuncio original de rec.games.go se puede encontrar aquí. Apenas un mes después, el autor hizo un acuerdo con Kiseido y fue rebautizado con el Kiseido Ir Server. Su nombre se cambió a KGS Go Server en 2006. William M. Shubert es el desarrollador de KGS.
+
+Además de su uso obvio como en línea Go-software de reproducción, también tiene características especiales para fines didácticos. Es muy fácil moverse a través de la partida una vez que has terminado para añadir variaciones y comentarios. Puedes pedir a un observador que añada sus propias variaciones y se puede guardar todo en los archivos del FPS. También puedes cargar partidas desde el disco duro y su correspondiente revisión en el servidor con tus amigos.
+
+El cliente (conocido como CGoban3) ha sido escrito en Inglés, y ha sido traducido a los idiomas japonés, francés, italiano, alemán, chino y otros. Más traducciones son bienvenidos! El principal "sala" se llama la sala de juegos Inglés, pero en realidad es una sala internacional. También hay habitaciones donde los hablantes de chino, holandés, esperanto, finlandés, francés, alemán, hebreo, húngaro, italiano, japonés, coreano, polaco, portugués, rumano, ruso, español, sueco y turco se les anima a cumplir. Además, hay salas de muchos, muchos otros de los que puede elegir, y usted también puede crear nuevas habitaciones si así lo desea.
 
 \chapter{Objetivos}
 \section{Objetivos del programa}
-El objetivo principal del programa es informatizar el registro de una partida de go, dejandola guardada en un archivo .sgf [\ref{sgf}], en el cual podremos modificar con total libertad nuestra partida y comentarla a nuestro antojo. Para que este objetivo sea de una gran embergadura, solo usaremos una camara web (o un video de una partida grabada). Con este objetivo, pretendemos conseguir:
+El objetivo principal del programa es informatizar el registro de una partida de go, dejandola guardada en un archivo .sgf [\ref{sgf}], en el cual podremos modificar con total libertad nuestra partida y comentarla a nuestro antojo. Para que este objetivo sea de una gran envergadura, solo usaremos una camara web (o un video de una partida grabada). Con este objetivo, pretendemos conseguir:
 \begin{itemize}
-\item Que un torneo pueda ser seguido por internet, en tiempo real, sin tener que ver un video, ya que muchos servidores son capaces de leer archivos .sgf y representarlos en un tablero digital. Asi hacemos que una persona con una conexion a internet pueda seguir un torneo sin problemas(evitando los posibles cortes en un video en streaming).
-\item Evitar que una persona tenga que estar registrando cada movimiento de go que se hace en los torneos, ya que nuestro programa lo haria en su lugar.
+\item Que un torneo pueda ser seguido por internet, en tiempo real, sin tener que ver un video, ya que muchos servidores son capaces de leer archivos .sgf y representarlos en un tablero digital. Asi hacemos que una persona con una conexion a internet con un ancho de banda bajo pueda seguir un torneo sin cortes, evitando los posibles problemas que conllevan un video en streaming.
+\item En los torneos go, siempre hay una persona por partida que se encarga de forma manual de registrar cada movimiento que hacen los jugadores de la partida. Nosotros pensamos que este proceso se puede informatizar, y es lo que se intenta con este proyecto.
 \end{itemize}
 
+
+
 \section{Objetivos del proyecto}
-Con este proyecto pretendemos conocer el uso de diferentes herramientas y lenguajes de programacion. Los principales objetivos de aprendizaje son:
+Con este proyecto pretendemos conocer el uso de diferentes herramientas y lenguajes de programacion. Ademas pretendemos adentrarnos en el amplio mundo del tratamiento de imagenes, el cual esta ahora mismo en pleno auge. Al ser un proyecto de dos personas nos hemos dado cuenta que tambien debemos aprender a tratar a los compañeros de proyecto con respeto, entender sus puntos de vista y debatir ampliamente los puntos en los que no estamos de acuerdo,  llegando finalmente a un punto de union de ideas, en el cual los dos estemos de acuerdo. Los principales objetivos de aprendizaje son:
 \begin{itemize}
 \item Lenguajes de programación y librerias:
 	\begin{itemize}
@@ -104,22 +141,104 @@ partida, para apuntarla.
 \end{itemize}
 
 
+
 \chapter{Implementación}
+Como todo proyecto la implementacion la hemos dividido en funcionalidades que queriamos que tuviese el proyecto. Las principales funcionalidades que a su vez las hemos dividido para hacer un codigo mas legible y modular, son la de detectar el tablero, detectar las piedras y finalmente la comunicacion con el servidor para emitir la partida en internet.
+
+\section{Deteccion del tablero}
+En esta funcionalidad del proyecto, queremos que, a partir de unas imagenes que recibimos a traves de una camara web o de un video realizado anteriormente, pudieramos sacar la posicion del tablero.
+Cuando empezamos este proyecto, nunca imaginamos la cantidad de cambios que se podia llegar a realizar debido a diferentes problemas con la implementacion.Para la deteccion del tablero hemos realizado varias implementaciones, las cuales hemos tenido que ir descartando por los diferentes motivos expuestos posteriormente hasta finalmente dar con una implementacion que cumple con los requisitos que nosotros necesitamos.
+
+\subsection{Primera implementacion}
+ Al principio, en una primera toma de contacto con OpenCV, intentamos buscar el tablero a partir de lineas, con la funcion HoughLines de openCV, esta funcion devuelve el lugar donde estan las lineas detectadas de una imagen. Pensabamos que seria sencillo procesar esas lineas hasta dar con el lugar exacto del tablero.
+ El principal problema que tiene esta forma de abordar el problema, es que debemos tener en cuenta que la camara no esta encima del tablero y por lo tanto, en la imagen no vamos a tener un cuadrado, sino un cuadrado deformado por la perspectiva que hay, debido a que la camara esta en el lateral del tablero y no justo encima. Esto hace que esta funcion se vuelva muy compleja de manejar y hacia que el tratamiento de cada linea detectada fuera demasiado complejo. Por ello esta implementacion quedo descartada, evolucionando el programa a la siguiente implementacion.
+%TODO el problema mayor aqui era la cantidad de lineas que habia que procesar,
+%era muy costoso en tiempo y existía mucha dificultad
+ 
+\subsection{Segunda implementacion}
+
+Despues de entender que esa forma anterior de buscar el tablero no era efectiva, decidimos ponernos a trabajar en otra idea. Esta vez decidimos hacerlo, atacando a las intersecciones, usando templates.
+Esta forma consiste en buscar en la imagen que recibimos de la camara web el template de una interseccion(Una imagen que contine solo la interseccion).
+A parte del coste de ejecucion que conllevaba esta forma de hacerlo, nos topamos con el mismo problema que anteriormente, la imagen que recibimos de la camara web, no es perfecta y esta en una perspectiva, la cual no sabemos, pues cada usuario puede poner la camara desde un lado distinto. Esto hacia que el template no tomase bien las intersecciones en muchos casos.
+Ademas nos topamos con otro gran problema, conforme se fuese jugando la partida, las intersecciones se van tapando con las piedras, esto hace que en caso de movimiento del tablero, no pudiesemos volver a detectarlo en tiempo real.
+% TODO problema del tiempo, tardaba unos 4-5seg. en detectar las intersecciones
 
 
-\chapter{Documentación del código del proyecto}
+\subsection{Tercera implementacion}
+
+Tras dos intentos fallidos, comenzamos a estudiar la siguiente idea, sacada de distintos programas de camaras de fotos, los cuales detectan y recuadran la cara. 
+Esta forma de hacerlo se llama HaarTraining, consiste en enseñarle al ordenador a buscar un tablero, introduciendo en un programa de aprendizaje imagenes donde esten los tableros, indicandole la posicion. En ese proceso de aprendizaje tambien hay que enseñarle fotos que no contengan el tablero.
+Despues de estudiarlo, nos dimos cuenta de varias cosas que hicieron que no continuasemos por este camino.
+La primera de ellas es el tiempo dedicado a la realizacion de las fotos y posterior analisis manual, para indicar el lugar del tablero.
+La segunda el tiempo de ejecucion del aprendizaje, suele llevar unas dos semanas, en un ordenador potente.
+La tercera y mas importante, es que despues de las dos primeras, nadie te aseguraba con una minima certeza que esta posibilidad fuese a funcionar.
+De todas las implementaciones esta a sido la unica que hemos estudiado sin llegar a llevarla a cabo. No descartamos poder hacerla en un futuro.
+%TODO en verdad la lleve a cabo dandole unas 30-50 imagenes pero no detectaba
+%nada. Ni se inmutó, y mira que paseé el tablero bastante delante de la camara.
+
+\subsection{Cuarta implementacion}
+
+Finalmente y tras tres intentos fallidos, decidimos hacerlo buscando contornos. Gracias a una funcion de openCv conseguimos encontrar la forma que menos fallos da, cumple con los requisitos y soluciona casi todos los problemas.
+Esta funcion devuelve contornos, por ello uno de los requisitos que debemos pedir para la correcta ejecucion de este programa es que el fondo, donde esta colocado el tablero, sea lo mas liso posible, dicho requisito, pensamos que es bastante facil de conseguir, pues casi todas las mesas son lisas.
+Debido a la gran cantidad de test que ha pasado correctamente esta implementacion y dado que los test que ha fallado son debido a la pesima calidad de las imagenes(sobre todo la falta de luz), hemos considerado que es la correcta. Ademas, perdemos el problema de la perspectiva, pues lo que detectamos es el contorno, y no solo la forma cuadrada del tablero.
+%La facilidad de usar cualquier tipo de hule, mantel o algo así podría ayudar
+%bastante. Hay que probar ciertas cosas todavía que me dan un pocode miedo.
+%Igual con una superficie de fondo que se distinga mucho del tablero, detectaría
+%el tablero por el borde, y habría que quitar lo que le añadí para que cogiera
+%los bordes. 
+
+\section{Deteccion de piedras}
+Una vez detectado el tablero correctamente, pensabamos que la deteccion de piedras iba a ser mucho mas facil, aun asi, la deteccion de piedras tambien ha pasado por un ciclo evolutivo de modificaciones hasta madurar lo suficiente la idea, para conseguir finalmente un programa que funciona tal y como teniamos pensado desde un primer momento.
+En un principio nos pusimos manos a la obra con la busqueda de piedras con las diferentes implementaciones que os presentamos a continuacion, pero en mitad del camino nos dimos cuenta que las librerias de openCv contienen funciones para cambiar la perspectiva de las imagenes.
+Tambien debemos recordar, que la deteccion de piedras, no solo es detectar donde esta cada piedra, debemos detectarles en el orden que han sido colocadas(turnos) y el color de la piedra que se coloca o retira del tablero.
+
+\subsection{Idealizando el tablero -TODO}%TODO como un camion si :P En principio 
+        % no se ponia el tablero en modelo ideal, se detectaban las piedras y se
+        % buscaba en las interseciones ya encontradas anteriormente
+
+Una vez detectado el tablero correctamente y antes de ponernos a buscar piedras por toda la imagen, llegamos a la conclusion que seria mas conveniente conseguir el tablero en un modelo ideal, como si las imagenes que recibimos fuesen tomadas como nosotros las queremos, que es desde arriba, sin perspectivas. 
+Gracias a openCv conseguimos con la funcion TODO que la imagen se ponga con una perspectiva perfecta, recortando las partes de la imagen donde no esta el tablero, haciendo asi que la busqueda de piedras sea una labor mucho mas sencilla. 
+Para conseguir que esta funcion nos sirva, tuvimos que hacer un testeo bastante amplio, pues las imagenes necesitan ser tratadas anteriormente para el correcto funcionamiento de dicha funcion.
+
+\subsection{Primera implementacion}% me gusta
+
+En los principios del programa, las piedras se detectaban de una forma poco ortodoxa, pues en gran parte, los jugadores debian decirnos cuando terminaban su turno, para asi tomar la foto en el momento justo, y poder analizarla correctamente.
+La forma de la busqueda de la piedra se hacia por diferencia de imagenes, asi, cada vez que un jugador nos indicaba mediante un boton que habia terminado el turno, captabamos una imagen y la comparabamos con la anterior, la funcion "diff" de OpenCv nos devuelve marcadas las diferencias, que este caso serian las piedras, despues dentro de esta imagen, buscamos circulos y conseguiamos encontrar las piedras. 
+Esta forma fue eliminada al poco tiempo, pues una de nuestras ideas, es que el jugador no tenga que preocuparse del programa, pues esta concentrado jugando. Ademas, los factores externos eran demasiados, pues pensamos en modificar los relojes de tiempo, para que el propio boton que indicaba al reloj el final del tiempo, fuese el mismo que nos indicase a nosotros el momento de tomar la foto. Con todo esto, lo unico que podiamos conseguir es que nuestro programa no fuese funcional, ya que nadie podria hacer uso de nuestro programa sin dicho reloj. Tras pensar distintas formas de solucionar los problemas que daba dicha implementacion, decidimos cambiar por completo la idea.
+
+\subsection{Segunda implementacion} %hacerlo haciendo 
+
+Despues de esta forma, pensamos en suprimir que se usasen botones y decidimos hacerlo haciendo la diferencia de cada imagen con la siguiente, buscando circulos en esa diferencia. Esta solucion nos parecio mucho mejor que la anterior, pero empezamos a darnos cuenta, que detectaba toda la trayectoria que hacia la piedra hasta estar colocada en su sitio, haciendo que el programa nos detectase piedras donde realmente no se habian puesto, esto se podria haber solucionado haciendo estadistica temporal de las imagenes, pero este metodo lo hemos descubierto mas tarde, asi que en ese momento se descarto esta idea y enfocamos la solucion de otra forma. Ademas el hacer la diferencia de todas las imagenes conlleva un coste de procesamiento al cual hay que añadirle la busqueda de circulos, suma que es demasiado elevada y creaba un tiempo de retreso que se iba acumulando, haciendo que en determinado momento fallase el programa.
+
+\subsection{Tercera implementacion}% es un poco costoso, muchos for de listas
+
+Y como dice el refran, a la tercera va la vencida. Esta vez, ya teniamos mas experiencia y el tablero ya estaba idealizado. Por esto, pensamos que la mejor solucion podria ser la mas sencilla, para ello, sin hacer tratamiento ni diferencias, buscamos circulos en la imagen ideal. Con una matriz de estadistica temporal, vamos buscando si los circulos se quedan de forma estable en una posicion, y en tal caso, podemos asegurar que la piedra esta colocada en ese lugar, esta solucion, ademas permite llevar bien la cuenta de los turnos y el momento en el que se puso la piedra, pues aunque tenga que pasar un tiempo para asegurar que esta la piedra, sabemos el momento en el que se puso. Ademas el coste de ejecucion es asumible.
+
+\subsection{Buscando colores}%variar una variable. Cambiar el umbral de brillo
+
+Como en cada parte del proyecto, esta tambien ha tenido su evolucion desde que empezamos a plantearlo hasta el resultado final, mucho mas pulido y funcional. En un principio y dado que los jugadores nos iban a ir marcando el ritmo de turnos, simplemnte debiamos saber si le tocaba colocar a blancas o negras, como siempre empiezan negras, por reglas del propio juego, solo debiamos detectar la piedra que se colocaba y automaticamente teniamos el color.
+Debido a que esto cambio a lo largo del tiempo y en la actualidad la forma de encontrar piedras es distinta, debemos saber de que color es la piedra que se ha detectado en cada momento, para ello una vez que detectamos una piedra, debemos asegurarnos de que color es. La forma de hacerlo es buscando en el punto central donde esta situada la piedra e ir a su pixel y analizar el color. Gracias a openCv esta labor es relativamente sencilla, pero nos dimos cuenta, debido a la calidad de las imagenes, que no todo iba a ser color de rosa. El gran problema que tenemos es que las piedras al ser redondeadas, la camara capta reflejos de dichas piedras haciendo que el color de las piedras pueda llegar a confundirse facilmente si no cogen un numero amplio de muestras para saber el color. Aun asi, los test dan fallos a veces, para evitar esto, hay que variar una variable, siendo este uno de los puntos a seguir trabajando en un futuro en nuestro programa.
+
+\section{Conexion con el servidor}
+
+Para la conexion al servidor comenzamos intentandolo con los servidores de KGS, pero la falta de documentacion de protocolos de dicho servidor y el tener un protocolo cerrado hizo imposible esta tarea. Aun asi, queremos hacer posible la conexion a este servidor, pues es de los mas usados. Actualmente el programa se conecta a IGS a traves de un usuario registrado siguiendo el protocolo de dicho servidorl, que es libre.
+
+
+ 
+\chapter{Manual de usuario}
+
 
 
 \chapter{Conclusiones}
 
 
 \chapter{Presupuesto}
+El presupuesto ha sido de menos 3 euros.
+
+\chapter{Lineas futuras}
 
 
-\chapter{Futuro}
-
-
-La principal via de futuro y por la cual empezo este proyecto es la posibilidad de conectar un brazo robotico a un pc y que este sea capaz de jugar al go correctamente. Para ello es necesario la captacion de imagenes de forma precisa, que es lo que se intenta con nuestro proyecto. 
+La principal via de futuro es la posibilidad de conectar un brazo robotico a un pc y que este sea capaz de jugar al go correctamente. Para ello es necesario la captacion de imagenes y su correcto procesamiento que es lo que se intenta con nuestro proyecto. 
 
 Una vez conseguido que el brazo robotico funcione, tenemos varias posibilidades de juego, las cuales van desde jugar contra la maquina hasta jugar por internet sin tener que tocar el ordenador, haciendo que sea mas amigable el jugar por internet al go. Ademas damos la opcion de que personas invidentes puedan tambien jugar por internet, ya que existen tableros de go especiales para personas ciegas, los cuales son perfectamente detectados por nuestro programa.
 
@@ -127,23 +246,13 @@ Otra via de futuro, es la posibilidad de conectarnos con nuestro programa a serv
 
 Como vemos este proyecto abre varios campos interesantes en el mundo del go, haciendo que para nosotros tenga bastante sentido el estar haciendolo. 
 
-\chapter{Manual de usuario}
+Otra via de futuro que nos gustaria llevar a cabo, debido a que nos encanta la tecnologia rasperry PI y en general casi todas las placas que estan saliendo ahora mismo, poder instalar el programa en una placa de este tipo y con una camara conectada por puerto usb, que el usuario pueda ejecutar nuestro programa, sin tener que cargar con un pesado portatil. 
+
 \section{Guia de instalación}
 \section{Actualizaciones}
 \section{Guía paso a paso}
 
 
-
-\chapter{Agradecimientos}
-Nos gustaría agradecer a:
-\begin{itemize}
-\item Los compañeros de la asociación de software libre de Sevilla Sugus GNU/Linux, los cuales nos han enseñado y ayudado mucho.
-\item Los compañeros del club de go de Sevilla Ubicuo ki-in, los cuales nos han ofrecido lugar y materiales para probar el proyecto, nos han ayudado con el logo y siempre nos han apoyado. 
-\item A D.Francisco Sivianes Castillo, nuestro tutor del proyecto, el cual nos ha dedicado todo el tiempo que hemos requerido sin miramientos, ayudandonos con nuestras dudas y guiandonos para la correcta finalización del proyecto.
-\item A D.Carlos Manuel Martin Cornejo, el cual ha colaborado con la realización de la conexión con los servidores de go.
-\item A nuestros familiares, parejas y amigos, los cuales nos han soportado hablando de este proyecto hasta la saciedad.
- 
-\end{itemize}
 
 
 \chapter{Licencia}
@@ -172,4 +281,8 @@ You should have received a copy of the GNU General Public License along with thi
 
 \chapter{Bibliografía}
 
+
+\chapter{Apendices}
+\section{Documentación del código del proyecto}
+\section{Que es el go}
 \end{document}
