@@ -119,8 +119,10 @@ def main():
         # Upload to internet
 
         # FPS
-        key = WaitKey(100)
+        key = WaitKey(20)
         if key == 27: # Esc
+            goban.kifu.end_file()
+            goban.igs.close()
             break
 
 if __name__ == "__main__":

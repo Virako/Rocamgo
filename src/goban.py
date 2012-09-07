@@ -22,6 +22,8 @@
 from src.cte import GOBAN_SIZE
 from src.cte import WHITE
 from src.cte import BLACK
+from src.kifu import Kifu
+from igs import Igs
 
 class Goban:
     """Contains a matrix of stones and other matrix for statistical. """
@@ -31,10 +33,15 @@ class Goban:
             :param size: goban's size
             :type size: int"""
         self.size = size
-        self.goban = [[None] * size for i in range(size)]
         # El valor 0 es para ir sumando(hay piedra) o restando(no hay)
         # El valor 8 es el nº de veces a buscar antes de hacer la estadística
+        self.goban = [[None] * size for i in range(size)]
         self.statistical = [[[0, 8]] * size for i in range(size)]
+        self.stones = set()
+        self.kifu = Kifu()
+        user = raw_input("Insert your user: ")
+        password = raw_input("Insert your password: ")
+        self.igs = Igs(user, password)
     
 
     def add_stones_to_statistical(self, stones):
@@ -47,33 +54,40 @@ class Goban:
         
         Por último recorremos las piedras que nos han quedado sueltas, las
         cuales sabemos que no las hemos detectado, por lo cual restamos. """
-        reviews = []
-        for x in range(self.size):
-            for y in range(self.size):
-                values = self.statistical[x][y]
-                if values[1] <= 0: 
-                    if values[0] > 0:
-                        print "Add", x+1, y+1 # los informaticos empezamos por 0
-                        self.goban[x][y] = True
-                    else:
-                        self.goban[x][y] = False # TODO mirar bien
-                    self.statistical[x][y] = [0, 8]
-                elif values[1] != 8:
-                    reviews.append((x, y))
-                else:
-                    pass
         
-        for stone in stones:
-            if not self.goban[stone.x][stone.y]:
-                self.statistical[stone.x][stone.y][0] += 1
-                self.statistical[stone.x][stone.y][1] -= 1
-            try:
-                reviews.remove((stone.x, stone.y)) 
-            except:
-                pass
-        for st in reviews:
-            self.statistical[st[0]][st[1]][0] -= 1
-            self.statistical[st[0]][st[1]][1] -= 1
+        for st in stones:
+            self.statistical[st.x][st.y][0] += 1
+            self.statistical[st.x][st.y][1] -= 1
+            values = self.statistical[st.x][st.y]
+            if values[1] <= 0 and values[0] > 0: 
+                if self.goban[st.x][st.y] != True:
+                    print "Add", st.x+1, st.y+1 
+                    # add kifu e igs
+                    self.kifu.add_stone((st.x, st.y), st.color)
+                    self.igs.add_stone((st.x, st.y))
+                    self.statistical[st.x][st.y] = [0, 8]
+                    self.goban[st.x][st.y] = True
+            
+        for st in self.stones.difference(stones):
+            self.statistical[st.x][st.y][0] -= 1
+            self.statistical[st.x][st.y][1] -= 1
+            values = self.statistical[st.x][st.y]
+            if values[1] <= 0 and values[0] > 0: 
+                if self.goban[st.x][st.y] != True:
+                    print "Add", st.x+1, st.y+1
+                    # add kifu e igs
+                    self.kifu.add_stone((st.x, st.y), st.color)
+                    self.igs.add_stone((st.x, st.y))
+                    self.statistical[st.x][st.y] = [0, 8]
+                    self.goban[st.x][st.y] = True
+            elif values[1] <= 0 and values[0] > 0:
+                self.statistical[st.x][st.y] = [0, 8]
+                if self.goban[st.x][st.y] == True:
+                    print "Piedra %d, %d quitada?." %(st.x, st.y)
+
+                # falsa piedra
+        self.stones.update(stones)
+
 
 
     def print_st(self):

@@ -46,14 +46,19 @@ class Stone:
         return "(%d, %d) --> %s" %(self.x, self.y, color)
 
     
-    #def __cmp__(self, pt):
-    #    x = self.pt.x - pt.x
-    #    y = self.pt.y - pt.y
-    #    if x > 0:
-    #        return x+GOBAN_SIZE
-    #    elif y != 0:
-    #        return y
-    #    else:
-    #        return self.pt == pt and self.color == pt.color
-    #        
+    def __eq__(self, st):
+        return self.pt == st.pt and self.color == st.color
 
+    def __cmp__(self, st):
+        x = self.st.x - st.x
+        y = self.st.y - st.y
+        if x > 0:
+            return x
+        elif x == 0:
+            if x == y:
+                return self.color - st.color
+            else:
+                return y
+
+    def __hash__(self):
+        return hash(self.x)^hash(self.y)^hash(self.color)
