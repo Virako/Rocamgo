@@ -20,12 +20,19 @@
 
 
 from socket import socket
+from cte import GOBAN_SIZE
 
 
 class Igs:
-    """ """
+    """ Clase que se comunica con el servidor de IGS. """
     def __init__(self, user='rocamgo', pwd='qwe'):
-
+        """ Inicializamos la conexión con el servidor y creamos un tablero de
+        aprendizaje dentro del servidor para comenzar a subir la partida. 
+        :param user: usuario que se conectará al servidor
+        :type user: str
+        :param password: contraseña del usuario para conetarse al servidor
+        :type password: str """
+        # TODO comprobar que se conecta al servidor
         self.s = socket()
         self.s.connect(('igs.joyjoy.net', 7777))
         self.s.recv(4096)
@@ -33,16 +40,21 @@ class Igs:
         self.s.recv(4096)
         self.s.send("%s\n" %pwd)
         self.s.recv(4096)
-        self.s.send("teach 19\n")
+        self.s.send("teach %d\n" %GOBAN_SIZE)
         self.s.send("title 'Rocamgo'\n")
 
     
     def add_stone(self, pos):
+        """ Añadimos piedra al servidor. 
+        :param pos: posición de la piedra a añadir 
+        :type pos: tuple """
         if pos[0] >= ord('I')-65:
             pos_igs = chr(pos[0]+66) + str(19-pos[1]) 
         else:
             pos_igs = chr(pos[0]+65) + str(19-pos[1]) 
         self.s.send("%s\n" %pos_igs)
 
+
     def close(self):
+        """ Cerramos la conexión con el servidor. """
         self.s.close()

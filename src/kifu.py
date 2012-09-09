@@ -26,16 +26,34 @@ from cte import HEADER_SGF
 import cte
 
 class Kifu:
-    """Create file(.sgf) for save the game. """
+    """ Clase para crear un fichero .sgf y guardar la partida. """
 
     def __init__(self, player1="j1", player2="j2", handicap=0, path="sgf", \
             rank_player1='20k', rank_player2='20k'):
-        """ TODO Add information about players, path, filename. """
+        """ Inicializamos configuración del archivo sgf. 
+        :param  player1: nombre del jugador 1
+        :type  player1: str
+        :keyword  player1: j1 por defecto
+        :param  player2: nombre del jugador 2
+        :type  player2: str
+        :keyword  player2: j2 por defecto
+        :param  handicap: handicap dado en la partida
+        :type  handicap: int
+        :keyword  handicap: ninguno por defecto (0)
+        :param  path: ruta relativa donde guardamos el fichero
+        :type  path: str
+        :keyword  path: carpeta sgf por defecto
+        :param  rank_player1: rango del jugador 1
+        :type  rank_player1: str
+        :keyword  rank_player1: 20k por defecto, nivel de inicio en el go
+        :param  rank_player2: rango del jugador 2
+        :type  rank_player2: str
+        :keyword  rank_player2: 20k por defecto, nivel de inicio en el go """
         self.num_jug = 0
         self.player_black = player1
         self.player_white = player2
         filename = str(datetime.now())  + "_" + player1 + "_vs_" + player2
-        self.dir = os.path.join(path, filename + ".sgf") # TODO with module os
+        self.dir = os.path.join(path, filename + ".sgf") 
         header_file = HEADER_SGF
         header_file += [ "\nPB[%s]" %player1, "\nBR[%s]" %rank_player1, \
                          "\nPW[%s]" %player2, "\nWR[%s]" %rank_player2]
@@ -44,7 +62,11 @@ class Kifu:
 
 
     def add_stone(self, pos, color):
-        """ TODO """
+        """ Añadir piedra al sgf. 
+        :param pos: posición de la piedra
+        :type pos: tuple
+        :param color: color de la piedra 
+        :type color: int """
         coord = chr(pos[0]+97) + chr(pos[1]+97) 
         with open(self.dir, "a") as f:
             if color == BLACK:
@@ -55,9 +77,8 @@ class Kifu:
                 print _("el color debe ser BLACK or WHITE")
 
 
-    def end_file(self, part=None):
-        """Part es para guardar en otro archivo, lo que llevemos de partida."""
-        # TODO hacer la parte de part
+    def end_file(self):
+        """ Cerrar el fichero y dejarlo listo para poder abrirlo."""
         with open(self.dir, "a") as f:
             f.write(")")
 

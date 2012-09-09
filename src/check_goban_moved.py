@@ -32,11 +32,25 @@ from math import hypot
 
 
 def is_same_quadrant(v1, v2):
+    """ Comprueba si dos vectores pasados por parámetros se encuentran en el
+    mismo cuadrante. 
+    :param v1: vector
+    :type v1: tuple
+    :param v2: vector
+    :type v2: tuple
+    :return: True si se encuentran los vectores en el mismo cuadrante. 
+    :rtype: bool """
     return v1[0]*v2[0] >= 0 and v1[1]*v2[1] >= 0
 
 
 def degress_between_two_vectors(v1, v2):
-    # Get unit vectors
+    """ Halla los grados que existen entre dos vectores dados. 
+    :param v1: vector
+    :type v1: tuple
+    :param v2: vector
+    :type v2: tuple
+    :return: grados en radianes
+    :rtype: float """
     if v1 == v2:
         return 0
     try:
@@ -54,6 +68,13 @@ def degress_between_two_vectors(v1, v2):
 
 
 def check_directions(directions):
+    """ Comprueba si las direcciones entre los 4 vecores de movimiento de los
+    corners del tablego tienen la misma dirección. 
+    :param directions: lista de vectores directores
+    :type directions: list
+    :return: True si todos o ninguno de los vectores tienen la misma dirección.
+    :rtype: bool
+    """
     boolean = []
     for x in range(len(directions)-1):
         for y in range(x+1, len(directions)):
@@ -68,12 +89,18 @@ def check_directions(directions):
 
 
 def check_goban_moved(prev_corners, current_corners):
-    """ Comprobamos si es posible el movimiento de tablero detectado. """
+    """ Comprobamos si es posible el movimiento de tablero detectado.
+    :param prev_corners: corners detectados anteriormente
+    :type prev_corners: list
+    :param current_corners: corners detectados actualmente
+    :type current_corners: list
+    :return: True si el tablero se ha movido
+    :rtype: bool """
 
     if not prev_corners or not current_corners:
         return True
     dist_min_of_movement = get_max_edge(prev_corners)/(2*GOBAN_SIZE)
-    " Comprobamos primeramente si existe mucho movimiento. "
+    " Comprobamos primero si existe mucho movimiento. "
     dist = []
     directions = []
     for i in xrange(NUM_EDGES):

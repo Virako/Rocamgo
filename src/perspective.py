@@ -21,43 +21,30 @@
 
 from cv import GetPerspectiveTransform
 from cv import WarpPerspective
-from cv import Canny
-from cv import Smooth
+#from cv import Canny
+#from cv import Smooth
 from cv import CreateMat
 from cv import CV_32FC1
-from cv import CV_RGB2GRAY
+#from cv import CV_RGB2GRAY
 from cv import CreateImage
-from cv import IPL_DEPTH_8U
-from cv import CvtColor
-from cv import GetMat
-from math import sqrt
-from src.cte import NUM_EDGES
-from src.cte import GOBAN_SIZE
+#from cv import IPL_DEPTH_8U
+#from cv import CvtColor
+#from cv import GetMat
 from functions import get_max_edge
 from functions import distance_between_two_points
-
-
-def get_external_corners(corners):
-    external_corners = [] # the orden of corners are ul, dl, dr, ur
-    for c in range(len(corners)):
-        if c >= 2:
-            x = corners[c][0] + distance_between_two_points(corners[c],\
-            corners[(c+2)%4])/GOBAN_SIZE/2
-        else:
-            x = corners[c][0] - distance_between_two_points(corners[c],\
-            corners[(c+2)%4])/GOBAN_SIZE/2
-        if c == 1 or c == 3:
-            y = corners[c][1] + distance_between_two_points(corners[c],\
-            corners[(c+2)%4])/GOBAN_SIZE/2
-        else:
-            y = corners[c][1] - distance_between_two_points(corners[c],\
-            corners[(c+2)%4])/GOBAN_SIZE/2
-        external_corners.append((x,y))
-    return external_corners
+from functions import get_external_corners
 
 
 def perspective(img, corners): 
-    """ Create a transform in perspective from img in corners. """
+    """ Crea una imagen en modelo ideal del tablero dado en perspectiva.
+    :param img: imagen con el tablero en perspectiva
+    :todo comprobar de que tipo es la imagen TODO
+    :type img: IplImage or CvMat
+    :param corners: lista de las esquinas del tablero
+    :type corners: list
+    :return: imagen en modelo ideal
+    :rtype: IplImage
+    """
 
     max_edge = get_max_edge(corners)
     corners = get_external_corners(corners)

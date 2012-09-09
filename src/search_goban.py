@@ -24,7 +24,12 @@ from math import sqrt
 from src.cte import NUM_EDGES
 
 def count_perimeter(seq):
-    """ Count perimeter from sequence (contour). """
+    """ Contamos el perímetro de una secuencia dada. 
+    :param seq: secuencia de puntos
+    :type seq: CvSeq
+    :return: distancia del perímetro
+    :rtype: float
+    """
     ant = False
     for (a,b) in seq:
         if ant:
@@ -35,7 +40,12 @@ def count_perimeter(seq):
     return perimeter
 
 def get_corners(contour):
-    """ Get corner sorted: ul, dl, ur, dr """
+    """ Hallamos las esquinas a partir de un contorno y las ordenamos de la 
+    siguiente manera: ul, dl, ur, dr.  u = up, l = left, d = down, r = right.
+    :param contour: contorno del tablero obtenido
+    :type contour: CvSeq
+    :return: lista de esquinas
+    :rtype: list """
     corners = []
     for (x,y) in contour:
         corners.append((x,y))
@@ -50,6 +60,12 @@ def get_corners(contour):
 
 
 def filter_image(img):
+    """ Aplicamos unos filtros a las iḿagenes para facilitar su tratamiento.
+    Buscamos contornos y suavizamos. 
+    :param img: imagen sin filtrar
+    :type img: CvMat
+    :return: imagen filtrada
+    :rtype: CvMat """
     aux_1 = CreateMat(img.rows, img.cols, img.type)
     aux_2 = CreateMat(img.rows, img.cols, img.type)
     Canny(img, aux_2, 50, 200, 3)
@@ -57,8 +73,13 @@ def filter_image(img):
     return aux_1
 
 
-def detect_contour(img, img2):
-    """ From a image filtered previously, detect contours. """ 
+def detect_contour(img):
+    """ Buscamos contornos con unas características determinadas para encontrar
+    un tablero de go en una imagen. 
+    :param img: imagen filtrada para buscar contornos en ella
+    :type img: CvMat
+    :return: Contorno si no lo encuentra, sino None
+    :rtype: CvSeq """ 
     storage = CreateMemStorage()
     seq = FindContours(img, storage, CV_RETR_TREE, CV_CHAIN_APPROX_NONE, 
       offset=(0, 0))
@@ -83,11 +104,16 @@ def detect_contour(img, img2):
 
 
 def search_goban(img): 
+    """ Busca el tablero en una imagen. 
+    :param img: imagen del tablero
+    :type img: IplImage # TODO comprobar tipo imagen
+    :return: lista de esquinas si las encuentra, sino None
+    :rtype: list or None """
     aux_gray = CreateImage((img.width, img.height), IPL_DEPTH_8U, 1)
     CvtColor(img, aux_gray, CV_RGB2GRAY)
     img_gray = GetMat(aux_gray, 0)
     img_filtered = filter_image(img_gray)
-    contour = detect_contour(img_filtered, img)
+    contour = detect_contour(img_filtered)
     if contour: 
         return get_corners(contour)
     else:

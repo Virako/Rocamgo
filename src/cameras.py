@@ -31,7 +31,7 @@ from src.camera import Camera
 from src.cte import *
 
 class Cameras:
-    """ Class for open cameras in the computer. """
+    """ Clase para abrir las cámaras disponibles en el ordenador. """
 
     def __init__(self):
         #cam = Camera()
@@ -41,15 +41,28 @@ class Cameras:
         self.camera = None
 
     def on_mouse(self, event, x, y, flags, camera):
-        """ Event for clicks of mouse. """
-        if event == CV_EVENT_LBUTTONDOWN:
-            print "SIMPLE CLICK"
-        elif event == CV_EVENT_LBUTTONDBLCLK: 
+        """ Capturador de eventos de click de ratón. 
+        :param event: Evento capturado.  
+        :type event: int
+        :param x: posición x del ratón. 
+        :type x: int
+        :param y: posición y del ratón. 
+        :type y: int
+        :param camera: objeto Camera. 
+        :type camera: Camera
+        """
+        if event == CV_EVENT_LBUTTONDBLCLK: 
             self.camera = camera
-            print "DOBLE CLICK"
 
     def check_cameras(self, num=MAX_CAMERAS):
-        """ Check cameras. """
+        """ Comprueba las cámaras disponibles. 
+        :param num: máximo número de cámaras a comprobar
+        :keyword num: el valor por defecto es 99, ya que en Linux es lo
+        permitido
+        :param num: int
+        :return: lista de cámaras disponibles
+        :rtype: list of Camera
+        """
         n = 0
         while len(self.cameras) < num and n <= MAX_CAMERAS: 
             camera = Camera() 
@@ -60,7 +73,10 @@ class Cameras:
         return len(self.cameras)
 
     def show_and_select_camera(self):
-        """ Show cameras in different windows for select one camera. """
+        """ Muestra las cámaras disponibles en ventanas y da la opción de
+        seleccionar una de ellas pulsando doble click.
+        :return: cámara seleccionada
+        :rtype: Camera """
         if not self.cameras:
             return self.camera
         elif len(self.cameras) == 1:

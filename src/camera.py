@@ -24,24 +24,27 @@ from cv import QueryFrame
 from cv import CaptureFromCAM
 
 class Camera:
-    """ Class for initialite camera. """
+    """ Clase para inicializar la cámara. """
     def __init__(self):
         self.capture = None
         self.index = None
     
     def open_camera(self, index):
-        """ Open camera with opencv. """
+        """ Abrir cámara con opencv. 
+        :param index: índice de la cámara. 
+        :type index: int. """
         self.capture = CaptureFromCAM(index)
         self.index = index
 
     def get_frame(self):
-        """ Get image from camera. """
+        """ Obtener una imagen desde la cámara. """
         return QueryFrame( self.capture )
 
     def is_open(self):
+        """ Comprueba si la cámara está abierta. """
         return self.capture
         
     def close_camera(self):
-        """ Close open camera. """
+        """ Cierra la cámara. """
         self.capture = None
 

@@ -25,8 +25,21 @@ from src.cte import BLACK
 
 
 class Stone:
-
+    """ Clase piedra. """
     def __init__(self, color, img=None, pix=None, pt=None):
+        """ Inicializamos una piedra, si no tenemos la posición, buscamos cual
+        es esa posición dado una imagen ideal y un pixel. 
+        :param color: color de la piedra, BLACK or WHITE
+        :type color: int 
+        :param img: imagen en formato ideal
+        :type img: IplImage
+        :keyword img: None si no le pasamos ninguna imagen por parámetro
+        :param pix: pixel donde se encuentra la piedra en la imagen
+        :type pix: tuple
+        :keyword pix: None si no le pasamos ningun pixel por parámetro
+        :param pt: punto donde se encuentra la piedra en el tablero
+        :type pt: tuple
+        :keyword pt: None si no le pasamos ningún punto parámetro. """
         if not img and not pix:
             self.pt = pt
         elif not pt:

@@ -26,12 +26,17 @@ from src.kifu import Kifu
 from igs import Igs
 
 class Goban:
-    """Contains a matrix of stones and other matrix for statistical. """
+    """ Clase tablero, contiene la matriz de estadíticas y funciones para
+    rellenar el tablero. """
 
     def __init__(self, size):
-        """ Create empty matrix. 
-            :param size: goban's size
-            :type size: int"""
+        """ Crea dos matrices de tamaño pasado por parámetro, una para
+        estadísticas y otra para guardar el estado de las piedras. Creamos un
+        set de piedras para ir guardando las piedras que estemos comprobando.
+        También inicializa un kifu para guardar la partida y un el objetos igs 
+        que se encargará de conectarse con el servidor que subirá la partida. 
+        :param size: tamaño del tablero
+        :type size: int """
         self.size = size
         # El valor 0 es para ir sumando(hay piedra) o restando(no hay)
         # El valor 8 es el nº de veces a buscar antes de hacer la estadística
@@ -45,15 +50,13 @@ class Goban:
     
 
     def add_stones_to_statistical(self, stones):
-        """ Recorremos la matriz statistical para buscar los cambios que se
-        hayan realizado anteriormente en alguna intersección, para buscar de
-        nuevo y comprobar si existe piedra o no nuevamente. TODO danger capturas 
-        
-        Recorremos las piedras que actualmente hemos detectado para añadirlas a
-        las estadísticas. 
-        
-        Por último recorremos las piedras que nos han quedado sueltas, las
-        cuales sabemos que no las hemos detectado, por lo cual restamos. """
+        """ Recorremos la lista de piedras pasadas por parámetros para buscar
+        hacer comprobaciones estadísticas en esas piedras, luego recorremos la
+        lista de piedras guardada y la actualizamos. Actualiza kifu, igs y el
+        tablero donde guardamos el estado de las piedras cuando detecta
+        estadísticamente que una piedra se ha puesto.
+        :param stones: lista de piedras
+        :type stones: list """
         
         for st in stones:
             self.statistical[st.x][st.y][0] += 1
@@ -84,7 +87,7 @@ class Goban:
                 self.statistical[st.x][st.y] = [0, 8]
                 if self.goban[st.x][st.y] == True:
                     print "Piedra %d, %d quitada?." %(st.x, st.y)
-
+                    # TODO comprobar piedras capturadas
                 # falsa piedra
         self.stones.update(stones)
 
