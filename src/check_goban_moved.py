@@ -25,19 +25,60 @@ from cv import CaptureFromCAM
 from cte import NUM_EDGES
 from cte import GOBAN_SIZE
 from functions import distance_between_two_points as distance
+from functions import direction_between_two_points as direction
 from functions import get_max_edge
+from math import acos
+from math import hypot
+
+
+def is_same_quadrant(v1, v2):
+    return v1[0]*v2[0] >= 0 and v1[1]*v2[1] >= 0
+
+
+def degress_between_two_vectors(v1, v2):
+    # Get unit vectors
+    if v1 == v2:
+        return 0
+    try:
+        v1_mod = hypot(v1[0], v1[1])
+        v2_mod = hypot(v2[0], v2[1])
+        v1 = (v1[0]/v1_mod, v1[1]/v1_mod)
+        v2 = (v2[0]/v2_mod, v2[1]/v2_mod)
+        value = abs(v1[0]*v2[0] + v1[1]*v2[1]) / \
+        (hypot(v1[0], v2[0]) * hypot(v1[1], v2[1])) 
+        return acos(value)
+    except ZeroDivisionError:
+        return 0
+    except ValueError:
+        print "ValueError" # TODO
+
+
+def check_directions(directions):
+    boolean = []
+    for x in range(len(directions)-1):
+        for y in range(x+1, len(directions)):
+            if is_same_quadrant(directions[x], directions[y]) and \
+                degress_between_two_vectors(directions[x], directions[y]) < 30:
+                # misma direccion
+                boolean.append(True)
+            else:
+                #distinta dirección
+                boolean.append(False)
+    return sum(boolean) in (0, len(boolean))
 
 
 def check_goban_moved(prev_corners, current_corners):
     """ Comprobamos si es posible el movimiento de tablero detectado. """
 
     if not prev_corners or not current_corners:
-        return False
+        return True
     dist_min_of_movement = get_max_edge(prev_corners)/(2*GOBAN_SIZE)
     " Comprobamos primeramente si existe mucho movimiento. "
     dist = []
+    directions = []
     for i in xrange(NUM_EDGES):
         dist.append(abs(distance(prev_corners[i], current_corners[i])))
+        directions.append(direction(prev_corners[i], current_corners[i]))
     f = lambda x: x>1
     dist_list = filter(f, dist)
     if len(dist_list) > 2:
@@ -45,9 +86,9 @@ def check_goban_moved(prev_corners, current_corners):
         min_mov = get_max_edge(prev_corners)/((GOBAN_SIZE-1)*3.0)
         dist_list.sort()
         if (dist_list[-1] - dist_list[0]) < min_mov:
-            return True
+            return check_directions(directions)
         elif (dist_list[-1] - dist_list[-3]) < min_mov:
-            return True
+            return check_directions(directions)
         else:
             return False
     else:

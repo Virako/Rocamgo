@@ -20,17 +20,21 @@
 
 from cte import NUM_EDGES
 from cte import GOBAN_SIZE
-from math import sqrt
+from math import hypot
 
 def distance_between_two_points(p1, p2):
-    return sqrt(abs(p1[0]-p2[0])**2 + abs(p1[1]-p2[1])**2)
+    return hypot( p1[0]-p2[0], p1[1]-p2[1] )
+
+
+def direction_between_two_points(p1, p2):
+    return (p2[0]-p1[0], p2[1]-p1[1])
 
 
 def get_max_edge(corners):
     edges = []
     for c in xrange(NUM_EDGES):
-        edges.append(sqrt((corners[c][0]-corners[(c+1)%4][0])**2 + \
-                    (corners[c][1]-corners[(c+1)%4][1])**2))
+        edges.append( hypot(corners[c][0]-corners[(c+1)%4][0], \
+          corners[c][1]-corners[(c+1)%4][1] ) )
     return int(max(edges)*((GOBAN_SIZE+2.0)/GOBAN_SIZE))
 
 
