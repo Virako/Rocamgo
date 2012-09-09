@@ -163,6 +163,189 @@ partida, para apuntarla.
 
 
 \chapter{Implementación}
+
+\section{Herramientas utilizadas}
+
+\subsection{TravisCI}
+
+Como la integración continua aplicada al desarrollo distribuido está cogiendo
+cada vez más fuerza, hemo aprovechado la herramienta de Travis CI, que es un
+sistema distribuido de generación e integración continua libre.
+
+Travis CI te permite conectar tu repositorio de Github y probar tus tests
+después de cada push. Soporta múltiples lenguajes, entre los cuales se 
+encuentra python, que es el usado por nosotros.
+
+Travis CI tiene otras ventajas que no hemos usado todavía, pero que no
+descartamos utilizar en un futuro, que es que el entorno de integración 
+continua esta compuesto de multiples runtimes o data stores. De este modo, 
+podemos probar nuestras librerías o aplicaciones contra distintas 
+configuraciones sin tener que tenerlas instaladas localmente. Tienen varias 
+maquinas virtuales preparadas para cada combinación, allí puedes instalar MySQL 
+o lo que necesites.
+
+Lo podemos enganchar sencillamente con nuestro repositorio público de Github en
+un par de pasos para darle acceso de lectura a nuestro código y definir los test
+necesarios. Tanto la documentación, como las herramientas para terceros y la
+guía de desarrolladores con la propia API de Travis CI están bastante bien
+explicadas y detalladas. 
+
+\subsection{Geany, Gedit y Vim}
+
+Geany es un editor de texto ligero basado en Scintilla con características
+básicas de entorno de desarrollo integrado (IDE). Está disponible para distintos
+sistemas operativos, como GNU/Linux, Mac OS X, BSD, Solaris y Microsoft Windows.
+Es distribuido como software libre bajo la Licencia Pública General de GNU.
+Nostros empezamos a utilizar este editor ya que nos facilitaba el autocompletado
+y era bastante liviano, tenía coloreado de sintaxis y permitía la programación
+con el lenguaje usado por nosotros, Python. 
+
+\parskip 2ex
+
+Gedit es un editor de textos compatible con UTF-8 para GNU/Linux, Mac OS X y
+Microsoft Windows. Diseñado como un editor de textos de propósito general, gedit
+enfatiza la simplicidad y facilidad de uso. Incluye herramientas para la edición
+de código fuente y textos estructurados, como lenguajes de marcado. Distribuido 
+bajo las condiciones de la licencia GPL, gedit es software libre.
+Nosotros cambiamos a este editor por que aún era más simple y liviano que Geany,
+y aunque no nos daba un buen autocompletado, tenía todo lo que queríamos,
+coloreado de sintáxis, facilidad de uso, y también hay que tener en cuenta que
+es el editor por defecto del entorno de escritorio GNOME, el cual hemos
+utilizado bastante. 
+
+\parskip 2ex
+
+Vim es un editor hecho por programadores para programadores. Para facilitar la
+programación, Vim dispone de un modo "editar, compilar, corregir". De la misma
+forma que los entornos de desarrollo integrados, puede editar el código fuente
+además llamar a un compilador externo, e interpretar sus resultados. Si hay
+errores de compilación, éstos se muestran en una ventana. Los mensajes de error
+dirigen al usuario a la zona en la que se han encontrado para poder así
+corregirlos. Entonces vuelve a empezar el ciclo "editar, compilar, corregir" y,
+si es necesario, corregir nuevos errores. El trabajo del programador también se
+ve facilitado por el resaltado de sintaxis y la funcionalidad de plegado de
+código. Empezamos a utilizar este editor ya que está preparado para
+programadores, y su filosofía se basa es hacerlo todo con el mínimo número de
+pulsaciones de teclado, lo cual, cuando nos acostumbremos a utilizarlo,
+conseguiremos una gran mejora de productividad. También decir que Vim es el
+programa que actualmente más plugins tiene, y es altamente configurable, para
+adecuarse al perfil de cada programador, cosa que nos ha gustado muchísimo. 
+
+\subsection{Subversion y Git}
+
+Subversion es un sistema de control de versiones centralizado diseñado 
+específicamente para reemplazar a CVS. Es software libre bajo una licencia de 
+tipo Apache/BSD y se le conoce también como svn por ser el nombre de la 
+herramienta utilizada en la línea de comando. 
+Una característica importante de Subversion es que, a diferencia de CVS, los
+demas archivos con versionamiento no tienen cada uno un número de revisión
+independiente, en cambio, todo el repositorio tiene un único número de versión
+que identifica un estado común de todos los archivos del repositorio en un
+instante determinado del repositoro que se esta trabajando.
+Subversion puede acceder al repositorio a través de redes, lo que le permite ser
+usado por personas que se encuentran en distintas computadoras. A cierto nivel,
+la posibilidad de que varias personas puedan modificar y administrar el mismo
+conjunto de datos desde sus respectivas ubicaciones fomenta la colaboración. Se
+puede progresar más rápidamente sin un único conducto por el cual deban pasar
+todas las modificaciones. Y puesto que el trabajo se encuentra bajo el control
+de versiones, no hay razón para temer por que la calidad del mismo vaya a verse
+afectada, si se ha hecho un cambio incorrecto a los datos, simplemente deshaga
+ese cambio. 
+Subversion ya lo habíamos utilizado anteriormente, y es una herramienta que nos
+parece bastante buena, sobre todo por que al ser dos personas, nos facilitaba
+mucho el trabajo, y para las cosas básicas, es bastane fácil de utilizar. 
+
+\parskip 2ex
+
+Git es un software de control de versiones distribuido diseñado por Linus 
+Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de
+versiones de aplicaciones cuando estas tienen un gran número de archivos de 
+código fuente. Al principio, Git se pensó como un motor de bajo nivel sobre el
+cual otros pudieran escribir la interfaz de usuario o front end. Sin embargo, 
+Git se ha convertido desde entonces en un sistema de control de versiones con 
+funcionalidad plena. Hay algunos proyectos de mucha relevancia que ya usan Git, 
+en particular, el grupo de programación del kernel de Linux.
+Git no lo habíamos utilizado nunca, pero teníamos ganas de aprender y empezamos
+a usarla. Esta herramienta nos ha dado un poco de dolores de cabeza, pero
+finalmente nos está gustando y le estamos viendo bastante ventajas respecto a
+Subversion. 
+
+\subsection{Debian y Linux Mint}
+
+Debian Linux es un sistema operativo libre, desarrollado por más de mil
+voluntarios alrededor del mundo, que colaboran a través de Internet.
+La dedicación de Debian al software libre, su base de voluntarios, su naturaleza
+no comercial y su modelo de desarrollo abierto la distingue de otras
+distribuciones del sistema operativo GNU. Todos estos aspectos y más se recogen
+en el llamado Contrato Social de Debian.
+Nació en el año 1993, de la mano del proyecto Debian, con la idea de crear un
+sistema GNU usando Linux como núcleo ya que el proyecto Debian, organización
+responsable de su mantenimiento en la actualidad, también desarrolla sistemas
+GNU basados en otros núcleos (Debian GNU/Hurd, Debian GNU/NetBSD y Debian
+GNU/kFreeBSD).
+Uno de sus principales objetivos es separar en sus versiones el software libre
+del software no libre. El modelo de desarrollo es independiente a empresas,
+creado por los propios usuarios, sin depender de ninguna manera de necesidades
+comerciales. Debian no vende directamente su software, lo pone a disposición de
+cualquiera en Internet, aunque sí permite a personas o empresas distribuir
+comercialmente este software mientras se respete su licencia.
+Debian Linux puede instalarse utilizando distintos mecanismos de instalación,
+como DVD, CD, Blu-Ray, memorias USB y diskettes, e incluso directamente desde la
+red.
+
+\parskip 2ex
+
+Linux Mint es una distribución del sistema operativo GNU/Linux, basado en la
+distribución Ubuntu (que a su vez está basada en Debian). A partir del 7 de
+septiembre de 2010 también está disponible una edición basada en Debian.
+Linux Mint mantiene un inventario actualizado, un sistema operativo estable para
+el usuario medio, con un fuerte énfasis en la usabilidad y facilidad de
+instalación. Es reconocido por ser fácil de usar, especialmente para los
+usuarios sin experiencia previa en Linux.
+Linux Mint se compone de muchos paquetes de software, los cuales se distribuyen
+la mayor parte bajo una licencia de software libre. La principal licencia
+utilizada es la GNU General Public License (GNU GPL) que, junto con la GNU
+Lesser General Public License (GNU LGPL), declara explícitamente que los
+usuarios tienen libertad para ejecutar, copiar, distribuir, estudiar, cambiar,
+desarrollar y mejorar el software. Linux Mint es financiada por su comunidad de
+usuarios. Los usuarios individuales y empresas que utilizan el sistema operativo
+pueden actuar como donantes, patrocinadores y socios de la distribución. El
+apoyo financiero de la comunidad y la publicidad en el sitio web ayuda a
+mantener Linux Mint libre y abierta.
+
+\parskip 2ex
+
+Como puede observarse, hemos intentado utilizar todas las herramientas libres
+que hemos podido, incluyendo, como no, el sistema operativo. 
+
+
+\subsection{Awesome-wm y Cinnamon}
+
+Awesome es un gestor de ventanas para X Window System desarrollado en C y
+lenguaje de programación Lua. Este último también se utiliza para configurar y
+ampliar el gestor de ventanas. Al igual que muchos gestores de ventanas del tipo
+tiling window manager (tipo mosaico), hace lo posible para que el usuario pueda
+manejar productivamente las ventanas sin el uso del ratón.
+El programa se incorpora en los repositorios de Debian GNU/Linux desde la
+versión lenny en su versión 2. La nueva versión, 3.4.2 For The Restless, se
+encuentra en los repositorios de Ubuntu y en la versión estable de Debian.
+
+\parskip 2ex
+
+Cinnamon es una bifurcación de GNOME Shell, desarrollado inicialmente por Linux
+Mint. Intenta proveer un entorno de escritorio más tradicional basado en la
+metáfora de escritorio, como GNOME 2. Cinnamon usa Muffin, una bifurcación del
+gestor de ventanas de GNOME 3 Mutter, como su gestor de ventanas desde la
+versión 1.2.
+
+\parskip 2ex
+
+Cada uno hemos usado entornos diferentes, ya que se ofrecen infinidad de ellos y
+con características totalmente diferentes, para todos los gustos.
+% ===========
+
+\parskip 2ex
+
 Como todo proyecto la implementacion la hemos dividido en funcionalidades que queriamos que tuviese el proyecto. Las principales funcionalidades que a su vez las hemos dividido para hacer un codigo mas legible y modular, son la de detectar el tablero, detectar las piedras y finalmente la comunicacion con el servidor para emitir la partida en internet.
 
 \section{Deteccion del tablero}
