@@ -44,11 +44,11 @@ from cv import CV_RGB
 
 def main():
     # Select camera from computer
-    cam = Cameras()
-    cams_found = cam.check_cameras()
-    camera = cam.show_and_select_camera(); threshold=190
+    #cam = Cameras()
+    #cams_found = cam.check_cameras()
+    #camera = cam.show_and_select_camera(); threshold=190
     #camera = CaptureFromFile('tests/videos/capture1.avi'); threshold=190  # Test videos
-    #camera = CaptureFromFile('prueba2.avi'); threshold=150 # Test videos
+    camera = CaptureFromFile('prueba2.avi'); threshold=150 # Test videos
     prev_corners = None
     current_corners = None
     good_corners = None
@@ -58,8 +58,8 @@ def main():
 
     while camera: 
         # Select image from camera 
-        img = camera.get_frame()
-        #img = QueryFrame(camera) # Test videos
+        #img = camera.get_frame()
+        img = QueryFrame(camera) # Test videos
 
         # previous corners
         prev_corners = copy(current_corners)

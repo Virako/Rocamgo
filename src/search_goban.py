@@ -19,7 +19,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from cv import *
+from cv import Canny
+from cv import Smooth
+from cv import CreateMat
+from cv import CreateMemStorage
+from cv import CreateImage
+from cv import FindContours
+from cv import CV_RETR_TREE
+from cv import CV_CHAIN_APPROX_NONE
+from cv import CV_POLY_APPROX_DP
+from cv import CV_RGB2GRAY
+from cv import ContourArea
+from cv import IPL_DEPTH_8U
+from cv import CvtColor
+from cv import GetMat
+from cv import CV_GAUSSIAN
+from cv import ApproxPoly
 from math import sqrt
 from src.cte import NUM_EDGES
 
@@ -60,7 +75,7 @@ def get_corners(contour):
 
 
 def filter_image(img):
-    """ Aplicamos unos filtros a las iḿagenes para facilitar su tratamiento.
+    """ Aplicamos unos filtros a las imágenes para facilitar su tratamiento.
     Buscamos contornos y suavizamos. 
     :param img: imagen sin filtrar
     :type img: CvMat

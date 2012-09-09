@@ -18,14 +18,32 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from cv import *
+from cv import CV_8UC1
+from cv import CV_BGR2GRAY
+from cv import CloneMat
+from cv import CvtColor
+from cv import Canny
+from cv import Smooth
+from cv import CV_GAUSSIAN
+from cv import CV_32FC3
+from cv import CV_HOUGH_GRADIENT
+from cv import HoughCircles
+from cv import Get2D 
+from cv import CreateMat
 from src.cte import GOBAN_SIZE
 from src.cte import BLACK
 from src.cte import WHITE
 
 
 def search_stones(img, corners, dp=1.7):
-    """ Devuelve las circunferencias encontradas en una imagen. """
+    """ Devuelve las circunferencias encontradas en una imagen.
+    :param img: imagen donde buscaremos las circunferencias
+    :type img: IplImage
+    :param corners: lista de esquinas
+    :type corners: list
+    :param dp: profundidad de búsqueda de círculos
+    :type dp: int
+    :keyword dp: 1.7 era el valor que mejor funcionaba. Prueba y error """
     gray = CreateMat(img.width, img.height,CV_8UC1)
     CvtColor(img, gray, CV_BGR2GRAY)
     
@@ -50,7 +68,16 @@ def search_stones(img, corners, dp=1.7):
 
 def check_color_stone(pt, radious, img, threshold=190):
     """ Devuelve el color de la piedra dado el centro y el radio de la piedra y
-    una imagen. También desechamos las piedras que no sean negras o blancas. """
+    una imagen. También desechamos las piedras que no sean negras o blancas.
+    :param pt: centro de la piedra
+    :type pt: tuple
+    :param radious: radio de la piedra
+    :type radious: int
+    :param img: imagen donde comprobaremos el color de ciertos pixeles
+    :type img: IplImage
+    :param threshold: umbral de blanco
+    :type threshold: int
+    :keyword threshold: 190 cuando hay buena luminosidad """
     
     black_total = 0
     white_total = 0
