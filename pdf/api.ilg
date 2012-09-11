@@ -1,0 +1,60 @@
+This is makeindex, version 2.15 [TeX Live 2012] (kpathsea + Thai support).
+Scanning input file api.idx....
+!! Input index error (file = api.idx, line = 5):
+   -- Extra `!' at position 87 of first argument.
+!! Input index error (file = api.idx, line = 6):
+   -- Extra `!' at position 87 of first argument.
+!! Input index error (file = api.idx, line = 7):
+   -- Extra `!' at position 87 of first argument.
+!! Input index error (file = api.idx, line = 8):
+   -- Extra `!' at position 87 of first argument.
+!! Input index error (file = api.idx, line = 9):
+   -- Extra `!' at position 87 of first argument.
+
+!! Input index error (file = api.idx, line = 14):
+   -- Extra `!' at position 90 of first argument.
+!! Input index error (file = api.idx, line = 15):
+   -- Extra `!' at position 90 of first argument.
+!! Input index error (file = api.idx, line = 16):
+   -- Extra `!' at position 90 of first argument.
+!! Input index error (file = api.idx, line = 17):
+   -- Extra `!' at position 90 of first argument.
+
+!! Input index error (file = api.idx, line = 36):
+   -- Extra `!' at position 84 of first argument.
+!! Input index error (file = api.idx, line = 37):
+   -- Extra `!' at position 84 of first argument.
+!! Input index error (file = api.idx, line = 38):
+   -- Extra `!' at position 84 of first argument.
+!! Input index error (file = api.idx, line = 39):
+   -- Extra `!' at position 84 of first argument.
+
+!! Input index error (file = api.idx, line = 44):
+   -- Extra `!' at position 78 of first argument.
+!! Input index error (file = api.idx, line = 45):
+   -- Extra `!' at position 78 of first argument.
+!! Input index error (file = api.idx, line = 46):
+   -- Extra `!' at position 78 of first argument.
+
+!! Input index error (file = api.idx, line = 51):
+   -- Extra `!' at position 81 of first argument.
+!! Input index error (file = api.idx, line = 52):
+   -- Extra `!' at position 81 of first argument.
+!! Input index error (file = api.idx, line = 53):
+   -- Extra `!' at position 81 of first argument.
+
+!! Input index error (file = api.idx, line = 75):
+   -- Extra `!' at position 84 of first argument.
+!! Input index error (file = api.idx, line = 76):
+   -- Extra `!' at position 84 of first argument.
+!! Input index error (file = api.idx, line = 77):
+   -- Extra `!' at position 84 of first argument.
+!! Input index error (file = api.idx, line = 78):
+   -- Extra `!' at position 84 of first argument.
+!! Input index error (file = api.idx, line = 79):
+   -- Extra `!' at position 84 of first argument.
+done (57 entries accepted, 24 rejected).
+Sorting entries....done (307 comparisons).
+Generating output file api.ind....done (57 lines written, 0 warnings).
+Output written in api.ind.
+Transcript written in api.ilg.

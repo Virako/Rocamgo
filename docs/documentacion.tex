@@ -760,8 +760,102 @@ servidorl, que es libre.
 \chapter{Manual de usuario}
 
 \section{Guia de instalación} 
+
+Para la instalación del proyecto, al menos de lo que se encuentra activo
+actualmente, porque como hemos comentado, el proyecto no está terminado, pero
+podremos ver los últimos cambios utilizando la última versión disponible en
+GitHub del proyecto. Este proyecto se ha probado solamente en Linux, aunque
+debería de funcionar en otros Sistemas operativos, ya que se ha realizado la
+programación pensando en ello. 
+La guía de instalación la haremos pensado en que se tiene un entorno Linux, que
+es donde únicamente podemos afirmar que funciona el proyecto. Comenzamos
+descargándonos el proyecto desde GitHub, para ello necesitaremos tener instalado
+git, que en las distribuciones de Linux basadas en debian, podemos instalarlo de
+la siguiente manera: 
+
+% TODO comando
+\begin{verbatim}
+sudo apt-get install git
+\end{verbatim}
+
+Ejecutamos el siguiente comando para descargarnos el proyecto: 
+
+\begin{verbatim}
+git clone git@github.com:Virako/Rocamgo.git
+\end{verbatim}
+
+Dentro de esta carpeta nos encontraremos con los últimos cambios realizados en
+el proyecto. Para hacerlo funcionar deberemos ejecutar desde la carpeta raiz,
+que se llamará Rocamgo si no se ha cambiado, el siguiente comando:
+
+\begin{verbatim}
+python src/rocamgo.py
+\end{verbatim}
+
+En estos momentos, las versión que se encuentra en el repositorio, para hacer
+las pruebas no utilizamos cámaras, sino que utilizamos un video, que es con lo
+que hacemos las pruebas. Como el video al cual le hacemos las pruebas ocupa 3GB,
+este archivo no lo adjuntamos, hay que pedírselo a los desarroladores. 
+
+Si queremos utilizar la cámara para hacer la prueba, deberemos de
+comentar/descomentar unas líneas del archivo rocamgo.py, que se encuentra dentro
+de src. Quedando la parte a cambiar de la siguiente manera: % TODO more code xD
+
+\begin{verbatim}
+def main():
+    # Select camera from computer
+    cam = Cameras()
+    cams_found = cam.check_cameras()
+    camera = cam.show_and_select_camera(); threshold=190
+    #camera = CaptureFromFile('prueba2.avi'); threshold=150 # Test videos
+    prev_corners = None
+    current_corners = None
+    good_corners = None
+    ideal_img = None
+    goban = Goban(GOBAN_SIZE)
+
+    while camera: 
+        # Select image from camera 
+        img = camera.get_frame()
+        #img = QueryFrame(camera) # Test videos
+\end{verbatim}
+
+Para que funcione el proyecto, necesitaremos instalar unas cuantas de librerías
+que hemos usado: opencv, unittest, nosetest, numpy, 
+
+Para su instalacion, al igual que para instalar git, ejecutamos lo siguiente:
+
+\begin{verbatim}
+sudo apt-get install python-unittest2 python-opencv python-nose python-numpy
+\end{verbatim}
+
+Con todo esto, ya deberíamos de poder ejecutar el proyecto y que este funcione
+correctamente. En el caso de que exista algún error, contactar con los
+desarroles del proyecto. 
+
+
+\section{Como utilizarlo}
+
+Al ejecutar este proyecto, lo primero que te pedirá si está en modo captura de
+video, será un usuario y una contraseña, los cuales son un usuario del servidor
+IGS, el cual podemos crearnos en la página 
+\url{http://www.pandanet-igs.com/igs_users/register}
+Este usuario se pide para subir la partida a internet mientras se está
+detectando. 
+
+En el caso de que hayamos escogido la opción de detectar el tablero con la
+cámara, la primera ventana será la selección de cámara en el caso de que existan
+más de una, si solo existe una, esta la cogerá por defecto. Para seleccionar la
+cámara que deseemos, pulsamos doble click encima de la cámara deseada.  Tras
+seleccionar la cámara, pedirá el usuario y la contraseña, como en el caso
+anterior. 
+
+
 \section{Actualizaciones}
-\section{Guía paso a paso}
+
+Para actualizaciones del proyecto, una vez lo hayamos descargado con git, solo
+tenemos que entrar dentro del directorio y ejecutar git pull, el cual se
+descargará los últimos cambios que haya en el servidor. 
 
 
 \chapter{Conclusiones}
@@ -1052,6 +1146,10 @@ Guia de accesibilidad
 \section{Que es el go}
 \url{http://es.wikipedia.org/wiki/Go}
 
+\section{Documentación del código del proyecto}
+
+Adjuntada en el archivo 'api.pdf' dentro de la carpeta pdf. 
+También podemos ver esta documentación en html, dentro de la carpeta html. 
 
 
 \end{document}
