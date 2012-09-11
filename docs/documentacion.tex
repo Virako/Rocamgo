@@ -7,6 +7,7 @@
 \usepackage{graphicx} % utilizar enlaces y poder insertar gráficos
 \usepackage{indentfirst} %para identar despues de cada parrafo
 %\usepackage{gensymb} %para añadir el símbolo de los grados celsius, etc
+\usepackage{eurosym} %Paquete para introducir el símbolo del Euro
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,pdftex]{hyperref} 
 \usepackage{hyperref}
 %\title{PROYECTO FINAL\\ DE \\CARRERA \\ ROCAMGO\\}
@@ -49,7 +50,8 @@ Nos gustaría agradecer a:
 \end{itemize}
 
 
-\chapter{Conceptos} 
+\chapter{Conceptos}
+
 \section{Software libre}
 
 El software libre (en inglés free software, aunque esta denominación también se
@@ -129,22 +131,22 @@ quarry, qgo o CGoban. No solo sirven para abrir .sgf, suelen también servir par
 jugar en servidores o contra una IA. % TODO comentar que no existe IA like ajed
 
 
-\chapter{Objetivos}
- 
-\section{Objetivos del programa} 
+\chapter{Objetivos} 
 
+\section{Objetivos del proyecto} 
 
-Nuestro primer objetivo en este proyecto era poder jugar una partida por
-Internet utilizando un tablero real, para ello necesitaríamos un robot que nos
-pusiera las piedras del rival, una cámara para capturar lo que está pasando en
-el tablero y un ordenador conectado a algún servidor de go. Con todo hecho, el
-uso del programa no solo sería el de jugar una partida en tablero físico, sino
-que también podríamos guardar una partida completa observándola, y subirla en
-tiempo real a Internet, cosa que agradeceríamos los jugadores de go, ya que el
-subir una partida de go por streaming o subirla a mano, no es siempre posible, y
-este proyecto ayudaría la facilidad de subir una partida sin tener que estar
-atento durante toda la partida y sin necesitar una gran conexión a Internet, ya
-que con este sistema, la información que enviamos el servidor es mínima. 
+En los inicios de este proyecto, los objetivos que nos propusimos era poder
+jugar una partida por Internet utilizando un tablero real, para ello
+necesitaríamos un robot que nos pusiera las piedras del rival, una cámara para
+capturar lo que está pasando en el tablero y un ordenador conectado a algún
+servidor de go. Con todo hecho, el uso del programa no solo sería el de jugar
+una partida en tablero físico, sino que también podríamos guardar una partida
+completa observándola, y subirla en tiempo real a Internet, cosa que
+agradeceríamos los jugadores de go, ya que el subir una partida de go por
+streaming o subirla a mano, no es siempre posible, y este proyecto ayudaría la
+facilidad de subir una partida sin tener que estar atento durante toda la
+partida y sin necesitar una gran conexión a Internet, ya que con este sistema,
+la información que enviamos el servidor es mínima. 
 
 Si desarrollamos un poco más los objetivos, necesitaríamos un brazo robótico
 rápido y preciso, una cámara que grabase videos con imágenes no muy borrosas,
@@ -158,9 +160,6 @@ que se esté jugando, para poder utilizar este proyecto en los torneos de go y
 subir al menos la partida más interesante que se esté jugando en cada ronda. De
 camino también guardamos la partida en un archivo .sgf [\ref{sgf}], para luego
 poder modificarla con total libertad. 
-
-
-\section{Objetivos del proyecto} 
 
 Con este proyecto pretendemos conocer y mejorar nuestros conocimientos de 
 herramientas y lenguajes de programación, así como de algunas librerías
@@ -759,47 +758,106 @@ conecta a IGS a traves de un usuario registrado siguiendo el protocolo de dicho
 servidorl, que es libre.
 
 
- 
 \chapter{Manual de usuario}
 
 \section{Guia de instalación} 
-
 \section{Actualizaciones}
-
 \section{Guía paso a paso}
+
 
 \chapter{Conclusiones}
 
+Desde el principio de este proyecto, hemos estado aprendiendo bastante sobre las
+librerías de opencv, las cuales son una maravilla y nos han ayudado muchísimo en
+la implementación de este proyecto. Creemos que todavía nos queda mucho que
+aprender sobre estas librerías, las cuales esperamos aprender más en un futuro. 
 
-\chapter{Presupuesto} El presupuesto ha sido de menos 3 euros.
+Cuando nos hemos ido adentrando en el proyecto, nos han ido surgiéndo muchísimos
+problemas, sobre todo con la detección del tablero, ya que lo pensado y la
+realidad, y se han ido distanciando un poco. 
+
+La utilización de git nos ha hecho aprender y abrirnos la mente al utilizar un
+controlador de versiones distribuidos, a parte de servirnos de mucha ayuda al
+ser un proyecto en grupo. 
+
+La gran utilización de python nos ha hecho subir nuestro nivel de programación
+en este lenguaje.
+
+El usar filosofía TDD y hacer test en el proyecto nos han ayudado a realizar
+algunas cosas más rápido y comprobar el correcto funcionamiento de algunas
+funcionalidades, como por ejemplo, en la detección del tablero. Gracias a esto
+conocimos también algunas herramientas como TravisCI, la cual puede sernos de
+gran utilidad más adelante. 
+
+La utilización de Latex, al estar acostumbrados a programar, no nos ha resultado
+muy complicada. Cuando observamos como quedan los documentos, la verdad es que
+nos ha fascinado, y tenemos pensamiento de utilizarlo para otros textos en un
+futuro, es una herramienta que nos ha cautivado.
+
+El conectarnos al servidor de IGS, nos ha hecho que aprendamos a utilizar un
+poco los sockets.
+
+Aunque finalmente no utilizamos arduino para los relojes, también nos llevamos
+un tiempo tocándolos y aprendimos bastante, ya que usamos botones, pantalla
+LCD, potenciómetros y buzzer.
+
+Destacar a vim dentro de todos los editores de texto que hemos utilizado, ya que
+aunque la curva de aprendizaje sea bastante dura, finalmente podemos decir que
+la productividad aumenta. 
+
+Agradecer a toda la comunidad del software libre de nuevo, por que gracias a
+ella, hemos tenido un sistema operativo con un software bastante bueno para la
+realización de todo el proyecto, así como el acceso a una gran cantidad de
+código libre para ver ejemplos de como hacer las cosas, ya que creemos que la
+mejor forma de aprender es con ejemplos. Sin dejar atrás las webs de preguntas y
+respuestas, los foros y los chats, que nos han solucionado más de una duda. 
+
+
+
+\chapter{Presupuesto} 
+
+\begin{itemize}
+    \item Cámara: 30 \euro{}
+    \item Alcohol para resistir programando toda la noche: 50 \euro{}
+\end{itemize}
+
 
 \chapter{Lineas futuras}
 
+El futuro de este proyecto sigue día a día, y esperamos que poco a poco se vaya
+mejorando hasta conseguir todos los objetivos deseados, aunque por temas de
+tiempo o dinero, no hemos podido terminar para este Proyecto Fin de Carrera. 
 
-La principal via de futuro es la posibilidad de conectar un brazo robotico a un
-pc y que este sea capaz de jugar al go correctamente. Para ello es necesario la
-captacion de imagenes y su correcto procesamiento que es lo que se intenta con
-nuestro proyecto. 
+Principalmente queremos seguir mejorando la detección de partida de cara al
+siguiente torneo de go, para ver si podemos llegar a utilizarlo completamente
+para una partida real, en la cual seguramente aprendamos mucho y encontremos
+errores nuevos para poder mejorar, por que como ya nos hemos dado cuenta, la
+realidad se aleja de lo pensado, cada sitio donde se situe el tablero o que
+cámara se escoja, seguramente de nuevos fallos que tendremos que ir puliendo
+poco a poco. Estamos deseando llevar el proyecto al siguiente torneo para ver si
+le gusta a la gente y ver su funcionamento en distintos sitios, con distinta
+luminosidad, distintos jugadores que mueban más o menos el tablero, se usen
+tableros o piedras distintas, en tonalidad sobre todo. 
 
-Una vez conseguido que el brazo robotico funcione, tenemos varias posibilidades
-de juego, las cuales van desde jugar contra la maquina hasta jugar por internet
-sin tener que tocar el ordenador, haciendo que sea mas amigable el jugar por
-internet al go. Ademas damos la opcion de que personas invidentes puedan tambien
-jugar por internet, ya que existen tableros de go especiales para personas
-ciegas, los cuales son perfectamente detectados por nuestro programa.
+Otra de las cosas que ya decidimos a mitad del proyecto de descartar, es hacer
+el brazo robótico, porque un brazo rápido y preciso costaba muy caro, en precio
+o en tiempo. En un futuro tenemos pensado gastarnos ese dinero o tiempo para
+crear el brazo, ya que es una cosa que nos entusiasma bastante. Las
+funcionalidades que aportaría este brazo serían más posibilidades de juego,
+entre las cuales se encuentra que personas invidentes puedan utilizar este
+programa para jugar partidas pos Internet fácilmente, simplemente añadiéndole un
+comando al brazo para que espere a que la mano de la persona invidente lo toque,
+para saber donde a puesto la piedra el brazo. 
 
-Otra via de futuro, es la posibilidad de conectarnos con nuestro programa a
-servidores de go, los cuales tienen numerosos jugadores, pudiendo jugar con
-ellos sin problemas, aunque no tengan el mismo programa que nosotros.
+Una cosa que actualmente tenemos pendiente y llevamos unas semana intercambiando
+correos con los administradores es subir la partida a KGS, por que como el
+protocolo es cerrado, necesitamos que nos hagan algún cliente o algo especial
+para poderlo utilizar. Esperamos que un futuro no muy lejano, las partidas
+puedan subirse a KGS al igual que lo hacemos en IGS. 
 
-Como vemos este proyecto abre varios campos interesantes en el mundo del go,
-haciendo que para nosotros tenga bastante sentido el estar haciendolo. 
-
-Otra via de futuro que nos gustaria llevar a cabo, debido a que nos encanta la
-tecnologia rasperry PI y en general casi todas las placas que estan saliendo
-ahora mismo, poder instalar el programa en una placa de este tipo y con una
-camara conectada por puerto usb, que el usuario pueda ejecutar nuestro programa,
-sin tener que cargar con un pesado portatil. 
+Otras de las cosas que hemos pensado, después de haber comenzado el proyecto, es
+la posibilidad de adaptar este proyecto para que funciones en los móviles o en
+ordenadores de bajo coste como la rasperri Pi. 
 
 
 \chapter{Licencia}
@@ -812,9 +870,11 @@ hacer con una licencia igual a la que regula la obra original. \\ \\
 
 %\includegraphics[scale=5]{licencia.png} 
 
-Autores: \begin{itemize} \item David Medina Velasco. \textbf{Email:}
-cuidadoconeltecho at gmail dot com \item Víctor Ramírez de la Corte.
-\textbf{Email:} virako.9 at gmail dot com \end{itemize}
+Autores: 
+\begin{itemize} 
+    \item David Medina Velasco. \textbf{Email:} cuidadoconeltecho at gmail dot com 
+    \item Víctor Ramírez de la Corte. \textbf{Email:} virako.9 at gmail dot com 
+\end{itemize}
 
 \section{Licencia de Rocamgo}
 
@@ -831,116 +891,121 @@ License along with this program.  If not, see http://www.gnu.org/licenses/
 
 \chapter{Bibliografía}
 
-\subsection{Otros}
-Para comandos de git
-http://alejandroandres.com/blog/2011/06/mi-workflow-con-git/
-Guia de accesibilidad 
-http://www.sidar.org/recur/direc/norm/index.php
+%\subsection{Otros}
+%Para comandos de git
+%http://alejandroandres.com/blog/2011/06/mi-workflow-con-git/
+%Guia de accesibilidad 
+%http://www.sidar.org/recur/direc/norm/index.php
+%
+%
+%\subsection{ Python }
+%Test unitarios para Python
+%http://docs.python.org/library/unittest.html
+%Guia de estilos de Python
+%http://mundogeek.net/traducciones/guia-estilo-python.htm
+%Guia de documentacion de codigo Python
+%http://mundogeek.net/archivos/2008/07/07/documentacion-en-python/
+%Guia de test de Python
+%http://www.magmax.org/2011/11/09/python-pruebas-4.html
+%
+%\subsection{sobre brazos}
+%
+%Diseño de un brazo mecánico
+%https://docs.google.com/viewer?a=v&q=cache:KFj2hb196ZsJ:roboticajoven.mendoza.edu.ar/docu/brazo.pdf+como+hacer+un+brazo+robotico&hl=es&gl=es&pid=bl&srcid=ADGEEShMYLaCI0rVo2aJ_ZGYLSKNMqPSALdq_6dNxeH5HsqGQRJlzYuoUD7uvUnrjPEVmMqjXtCuP0k2l-UbEnwM4b6i-NXMLOrYn01_z5WnaPcj2mbBftlTez4FAUinjUCofOMXfzlR&sig=AHIEtbQKjKllUAt8j7CJ2GxBWGwRsBZfDQ&pli=1
+%
+%Brazo robótico con GNU  Linux
+%http://www.linuxoriente.edu.sv/index.php?readmore=84
+%Brazo robótico por 55
+%http://www.extremetech.com/extreme/98623-how-to-make-a-voice-controlled-robotic-arm-for-55?f=2
+%
+%Tutorial para contruir el robot de 55
+%http://www.aonsquared.co.uk/robot_arm_tutorial_1
+%
+%PDF de un proyecto parecido
+%https://docs.google.com/viewer?a=v&q=cache:XGM9TPc7E8UJ:web.mst.edu/~tk424/portal/research/publications/Robotic%2520Go-Exploring%2520a%2520Different%2520Perspective%2520on%2520Human-Computer%2520Interaction%2520with%2520the%2520Game%2520of%2520Go.pdf+robot+baduk&hl=es&gl=es&pid=bl&srcid=ADGEESh-55_xa73YFXceYpo1s9Q5-n9Eh61ntbpLMHNsz4fmfAINkmuU0UeFRU9P8Wd9wepHbhZtBKvIQFK3FVK4LS648FK8fYI4tZwpY0otLmFghOC7fbpYpkAvSfkUNrz_O4PZpIR8&sig=AHIEtbRyUOpSDpYOuQO2hzEF_ItRujAgaQ
+%
+%Video de proyecto parecido
+%http://www.youtube.com/watch?v=lJehPbpA7AM
+%Video de otro posible brazo
+%http://www.youtube.com/watch?v=d2OBCpbCEc4&feature=player_embedded
+%Página de venta de servos
+%http://www.superrobotica.com/servos.htm
+%
+%
+%\subsection{Internet Go Server (IGS)}
+%
+%Código de protocolo de IGS
+%http://www.koders.com/noncode/fid2C78D24147B76E1CF1196C20428DC7BC62715F38.aspx
+%
+%Cositas de IGS
+%http://gnugos60.blogspot.com/2007/04/internet-go-protocols.html
+%
+%\subsection{Go Text Protocol (GTP)}
+%
+%Este protocolo es el que se usa en la mayoría de los servidores de go. 
+%
+%Documentación del protocolo GTP v2
+%http://www.lysator.liu.se/~gunnar/gtp/gtp2-spec-draft2/gtp2-spec.html 
+%
+%\subsection{GNU Go}
+%
+%Código
+%http://ftp.gnu.org/gnu/gnugo/
+%Documentación
+%http://www.gnu.org/software/gnugo/gnugo_toc.html
+%
+%\subsection{Proyecto parecido}
+%
+%Kifu
+%http://wiki.elphel.com/index.php?title=Kifu:_Go_game_record_(kifu)_generator
+%
+%\subsection{ Pasar el tablero a modelo ideal}
+%
+%Pagina de un ejemplo de como pasar el tablero a modelo ideal
+%http://is.gd/k9k2K
+%
+%
+%\subsection{ Tracking }
+%
+%pagina1
+%http://www.i-programmer.info/news/105-artificial-intelligence/2310-predator-better-than-kinect.html
+%
+%\subsection{Haartraining}
+%
+%Detección rápida de objetos
+%http://note.sonots.com/SciSoftware/haartraining.html
+%Referencia 5 del documento anterior
+%https://docs.google.com/View?docID=drw35kw_6gr8r84fs
+%Programa prueba con codigo
+%http://www.codeproject.com/KB/audio-video/haar_detection.aspx
+%Explicacion
+%http://www.coplec.org/?q=2010/08/05/entrenar-opencv
+%
+%\subsection{Enlaces interesantes sobre detección de objetos}
+%
+%[1]":http://achuwilson.wordpress.com/2011/02/13/object-detection-using-opencv-using-haartraining/
+%* "[2]":http://www710.univ-lyon1.fr/~bouakaz/OpenCV-0.9.5/docs/ref/OpenCVRef_ObjectRecognition.htm
+%* "[3]":http://en.wikipedia.org/wiki/SURF
+%* "[4]":http://en.wikipedia.org/wiki/Object_recognition_(computer_vision)
+%* "[5]":http://en.wikipedia.org/wiki/Template_matching
+%* "[6]":http://en.wikipedia.org/wiki/Pattern_recognition
+%* "[7]":http://www.pigeon.psy.tufts.edu/avc/kirkpatrick/
+%
+%\subsection{ Enlaces de proyectos interesantes}
+%
+%* "Proyecto de go usando un proyector":http://www.youtube.com/watch?feature=player_embedded&v=33Iyr16yhJQ
+%
+%h1. Enlace a cosas relacionadas con imagenes.
+%
+%* "[1]":http://www.google.com/url?sa=t&rct=j&q=recortar%20imagenes%20roi%20opencv&source=web&cd=1&ved=0CB8QFjAA&url=http%3A%2F%2Fdis.um.es%2F~ginesgm%2Ffiles%2Fdoc%2Fpav%2Ftema2.ppt&ei=itA4T_2MBMLBhAfBl8CKAg&usg=AFQjCNGtmUXCybgKwHb5g8-Ns1F7Mdxz1A
+%* "ROI":http://nashruddin.com/OpenCV_Region_of_Interest_(ROI)
 
 
-\subsection{ Python }
-Test unitarios para Python
-http://docs.python.org/library/unittest.html
-Guia de estilos de Python
-http://mundogeek.net/traducciones/guia-estilo-python.htm
-Guia de documentacion de codigo Python
-http://mundogeek.net/archivos/2008/07/07/documentacion-en-python/
-Guia de test de Python
-http://www.magmax.org/2011/11/09/python-pruebas-4.html
 
-\subsection{sobre brazos}
+\chapter{Apendices} 
 
-Diseño de un brazo mecánico
-https://docs.google.com/viewer?a=v&q=cache:KFj2hb196ZsJ:roboticajoven.mendoza.edu.ar/docu/brazo.pdf+como+hacer+un+brazo+robotico&hl=es&gl=es&pid=bl&srcid=ADGEEShMYLaCI0rVo2aJ_ZGYLSKNMqPSALdq_6dNxeH5HsqGQRJlzYuoUD7uvUnrjPEVmMqjXtCuP0k2l-UbEnwM4b6i-NXMLOrYn01_z5WnaPcj2mbBftlTez4FAUinjUCofOMXfzlR&sig=AHIEtbQKjKllUAt8j7CJ2GxBWGwRsBZfDQ&pli=1
+\section{Documentación del código del proyecto} 
 
-Brazo robótico con GNU  Linux
-http://www.linuxoriente.edu.sv/index.php?readmore=84
-Brazo robótico por 55
-http://www.extremetech.com/extreme/98623-how-to-make-a-voice-controlled-robotic-arm-for-55?f=2
+\section{Que es el go} 
 
-Tutorial para contruir el robot de 55
-http://www.aonsquared.co.uk/robot_arm_tutorial_1
-
-PDF de un proyecto parecido
-https://docs.google.com/viewer?a=v&q=cache:XGM9TPc7E8UJ:web.mst.edu/~tk424/portal/research/publications/Robotic%2520Go-Exploring%2520a%2520Different%2520Perspective%2520on%2520Human-Computer%2520Interaction%2520with%2520the%2520Game%2520of%2520Go.pdf+robot+baduk&hl=es&gl=es&pid=bl&srcid=ADGEESh-55_xa73YFXceYpo1s9Q5-n9Eh61ntbpLMHNsz4fmfAINkmuU0UeFRU9P8Wd9wepHbhZtBKvIQFK3FVK4LS648FK8fYI4tZwpY0otLmFghOC7fbpYpkAvSfkUNrz_O4PZpIR8&sig=AHIEtbRyUOpSDpYOuQO2hzEF_ItRujAgaQ
-
-Video de proyecto parecido
-http://www.youtube.com/watch?v=lJehPbpA7AM
-Video de otro posible brazo
-http://www.youtube.com/watch?v=d2OBCpbCEc4&feature=player_embedded
-Página de venta de servos
-http://www.superrobotica.com/servos.htm
-
-
-\subsection{Internet Go Server (IGS)}
-
-Código de protocolo de IGS
-http://www.koders.com/noncode/fid2C78D24147B76E1CF1196C20428DC7BC62715F38.aspx
-
-Cositas de IGS
-http://gnugos60.blogspot.com/2007/04/internet-go-protocols.html
-
-\subsection{Go Text Protocol (GTP)}
-
-Este protocolo es el que se usa en la mayoría de los servidores de go. 
-
-Documentación del protocolo GTP v2
-http://www.lysator.liu.se/~gunnar/gtp/gtp2-spec-draft2/gtp2-spec.html 
-
-\subsection{GNU Go}
-
-Código
-http://ftp.gnu.org/gnu/gnugo/
-Documentación
-http://www.gnu.org/software/gnugo/gnugo_toc.html
-
-\subsection{Proyecto parecido}
-
-Kifu
-http://wiki.elphel.com/index.php?title=Kifu:_Go_game_record_(kifu)_generator
-
-\subsection{ Pasar el tablero a modelo ideal}
-
-Pagina de un ejemplo de como pasar el tablero a modelo ideal
-http://is.gd/k9k2K
-
-
-\subsection{ Tracking }
-
-pagina1
-http://www.i-programmer.info/news/105-artificial-intelligence/2310-predator-better-than-kinect.html
-
-\subsection{Haartraining}
-
-Detección rápida de objetos
-http://note.sonots.com/SciSoftware/haartraining.html
-Referencia 5 del documento anterior
-https://docs.google.com/View?docID=drw35kw_6gr8r84fs
-Programa prueba con codigo
-http://www.codeproject.com/KB/audio-video/haar_detection.aspx
-Explicacion
-http://www.coplec.org/?q=2010/08/05/entrenar-opencv
-
-\subsection{Enlaces interesantes sobre detección de objetos}
-
-[1]":http://achuwilson.wordpress.com/2011/02/13/object-detection-using-opencv-using-haartraining/
-* "[2]":http://www710.univ-lyon1.fr/~bouakaz/OpenCV-0.9.5/docs/ref/OpenCVRef_ObjectRecognition.htm
-* "[3]":http://en.wikipedia.org/wiki/SURF
-* "[4]":http://en.wikipedia.org/wiki/Object_recognition_(computer_vision)
-* "[5]":http://en.wikipedia.org/wiki/Template_matching
-* "[6]":http://en.wikipedia.org/wiki/Pattern_recognition
-* "[7]":http://www.pigeon.psy.tufts.edu/avc/kirkpatrick/
-
-\subsection{ Enlaces de proyectos interesantes}
-
-* "Proyecto de go usando un proyector":http://www.youtube.com/watch?feature=player_embedded&v=33Iyr16yhJQ
-
-h1. Enlace a cosas relacionadas con imagenes.
-
-* "[1]":http://www.google.com/url?sa=t&rct=j&q=recortar%20imagenes%20roi%20opencv&source=web&cd=1&ved=0CB8QFjAA&url=http%3A%2F%2Fdis.um.es%2F~ginesgm%2Ffiles%2Fdoc%2Fpav%2Ftema2.ppt&ei=itA4T_2MBMLBhAfBl8CKAg&usg=AFQjCNGtmUXCybgKwHb5g8-Ns1F7Mdxz1A
-* "ROI":http://nashruddin.com/OpenCV_Region_of_Interest_(ROI)
-
-
-
-\chapter{Apendices} \section{Documentación del código del proyecto} \section{Que
-es el go} \end{document}
+\end{document}
