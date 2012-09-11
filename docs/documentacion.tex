@@ -4,7 +4,7 @@
 \usepackage{anysize} %para los márgenes
 \usepackage{fancyhdr}
 \pagestyle{fancy} %herramientas de encabezado
-%\usepackage[pdftex]{hyperref, graphicx} % utilizar enlaces y poder insertar gráficos
+\usepackage{graphicx} % utilizar enlaces y poder insertar gráficos
 \usepackage{indentfirst} %para identar despues de cada parrafo
 %\usepackage{gensymb} %para añadir el símbolo de los grados celsius, etc
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,pdftex]{hyperref} 
@@ -49,10 +49,11 @@ Nos gustaría agradecer a:
 \end{itemize}
 
 
-\chapter{Conceptos} \section{Software libre}
+\chapter{Conceptos} 
+\section{Software libre}
 
 El software libre (en inglés free software, aunque esta denominación también se
-confunde a veces con "gratis" por la ambigüedad del término "free" en el idioma
+confunde a veces con 'gratis' por la ambigüedad del término 'free' en el idioma
 inglés) es la denominación del software que respeta la libertad de los usuarios
 sobre su producto adquirido y, por tanto, una vez obtenido puede ser usado,
 copiado, estudiado, modificado, y redistribuido libremente. Según la Free
@@ -62,15 +63,15 @@ distribuirlo modificado.
 
 El software libre suele estar disponible gratuitamente, o al precio de costo de
 la distribución a través de otros medios; sin embargo no es obligatorio que sea
-así, por lo tanto no hay que asociar software libre a "software gratuito"
+así, por lo tanto no hay que asociar software libre a 'software gratuito'
 (denominado usualmente freeware), ya que, conservando su carácter de libre,
-puede ser distribuido comercialmente ("software comercial"). Análogamente, el
-"software gratis" o "gratuito" incluye en ocasiones el código fuente; no
+puede ser distribuido comercialmente ('software comercial'). Análogamente, el
+'software gratis' o 'gratuito' incluye en ocasiones el código fuente; no
 obstante, este tipo de software no es libre en el mismo sentido que el software
 libre, a menos que se garanticen los derechos de modificación y redistribución
 de dichas versiones modificadas del programa.
 
-Tampoco debe confundirse software libre con "software de dominio público". Éste
+Tampoco debe confundirse software libre con 'software de dominio público'. Éste
 último es aquel software que no requiere de licencia, pues sus derechos de
 explotación son para toda la humanidad, porque pertenece a todos por igual.
 Cualquiera puede hacer uso de él, siempre con fines legales y consignando su
@@ -113,7 +114,7 @@ por ello es más conocido internacionalmente por su nombre japonés.
 
 
 \section{¿Qué es un archivo .sgf?, para que sirve y como podemos abrirlo}
-%TODO mirar que es label
+
 \label{sgf} Un archivo .sgf es un archivo donde se guarda una partida de
 go. Como el formato es usado también para muchos juegos de tablero, está
 bastante extendido y casi todos los programas de go lo soportan.
@@ -128,9 +129,10 @@ quarry, qgo o CGoban. No solo sirven para abrir .sgf, suelen también servir par
 jugar en servidores o contra una IA. % TODO comentar que no existe IA like ajed
 
 
-\chapter{Objetivos} 
-
+\chapter{Objetivos}
+ 
 \section{Objetivos del programa} 
+
 
 Nuestro primer objetivo en este proyecto era poder jugar una partida por
 Internet utilizando un tablero real, para ello necesitaríamos un robot que nos
@@ -194,7 +196,7 @@ conformarnos la mayoría de las veces con jugar por Internet, lo cual pierde un
 poco la esencia del juego, ese tacto de las piedras, el sonido de contacto de la
 piedra en el tablero, y como no, el estar delante de tu oponente. 
 En los torneos de go, existe una concentración al jugar que parece ser mayor que
-a normalmente tenemos, parece que jugamos mejor y pensamos un poco más nuestras
+la que normalmente tenemos, parece que jugamos mejor y pensamos un poco más nuestras
 jugadas, por lo tanto, si tuvieramos la oportunidad de capturar estas partidas,
 podríamos aprender mucho de ellas, tanto de los aciertos como de los errores. 
 Estas partidas, actualmente se registran de dos formas: 
@@ -318,7 +320,7 @@ utilizado bastante.
 \parskip 2ex
 
 \textbf{''Vim''} es un editor hecho por programadores para programadores. Para
-facilitar la programación, Vim dispone de un modo "editar, compilar, corregir".
+facilitar la programación, Vim dispone de un modo 'editar, compilar, corregir'.
 De la misma forma que los entornos de desarrollo integrados, puede editar el
 código fuente además llamar a un compilador externo, e interpretar sus
 resultados. Si hay errores de compilación, éstos se muestran en una ventana. Los
@@ -537,7 +539,11 @@ luego buscar las intersecciones del tablero y así tener el tablero detectado.
 Pensamos que el tratamiento de esas líneas sería sencillo de procesar, pero al
 existir tantas líneas y tener que buscar tantas intersecciones, se convertía en
 una auténtica locura que no fuimos capaces de abordar, por lo tanto desechamos
-esta implementación. %TODO imagen de las lineas encontradas
+esta implementación. 
+
+\includegraphics[scale=0.6]{detect-lineas.png}
+
+
 Otro de los problemas era que el tablero estaría casi siempre con un poco de
 perspectiva, y entonces no sabríamos que lineas escoger, ya que el tablero, al
 ser de madera contiene muchas betas y podría detectar bastantes lineas que no
@@ -555,7 +561,10 @@ a las intersecciones, usando templates. Esta forma consiste en buscar en la
 imagen que recibimos de la cámara el template de una interseccion (imagen
 que contine solo la interseccion). Con esto conseguíamos detectar casi a la
 perfección casi todas las intersecciones, y las que no sacábamos podíamos
-sacarlas mediante una malla. % TODO imagen chula de intersecciones
+sacarlas mediante una malla. 
+
+\includegraphics[scale=0.6]{detec-intersecciones.png}
+
 El problema de todo esto era el coste de ejecución que conllevaba hacerlo, a
 parte, también nos topábamos con el problema de que necesitábamos un tablero que
 tuviese la mínima perspectiva posible, ya que si no el template no lo pillaría. 
@@ -577,11 +586,16 @@ realización de las fotos y posterior análisis manual, para indicar el lugar de
 tablero. La segunda el tiempo de ejecucion del aprendizaje, suele llevar unas
 dos semanas, en un ordenador potente. Y por último, la tercea y más importante,
 es que despues de las dos primeras, nadie te aseguraba con una minima certeza 
-que esta posibilidad fuese a funcionar. 
+que esta posibilidad fuese a funcionar.
+
+En la siguiente imagen podemos ver un claro ejemplo que usan las camaras de foto
+con este tipo de implementacion.
+
+\includegraphics[scale=1]{haartraining.jpg} 
+
 Estuvimos bastante tiempo investigando y probamos con 40-50 imágenes, en vez de
 con 3000 como mínimo, que es lo que piden, y como esperábamos, fue un fracaso,
 no encontraba tablero ninguno con tan pocas imágenes de aprendizaje. 
-
 
 \paragraph{4ª Implementación: detección mediante contornos}
 
@@ -600,6 +614,7 @@ perdemos el problema de la perspectiva, pues lo que detectamos es el contorno.
 
 
 \subsection{Detección de movimiento del tablero}
+
 Tenemos que comentar que esta implementación fue un poco tardía, ya que nosotros
 suponíamos que el tablero no se movería, pero en casi todas las partidas de
 torneo, inconscientemente, para tener una mejor perspectiva del tablero o
@@ -608,13 +623,15 @@ este problema, nos dimos cuenta de que las implementaciones del tablero que
 hicimos al principio, no nos servían. 
 
 \paragraph{1ª Implementación: detección de cambios en los bordes del tablero}
-Primeramente, para detectar si el tablero se movía o no, buscamos que existieran
+
+En principio, para detectar si el tablero se movía o no, buscamos que existieran
 cambios en los bordes del tablero, ya que si los movemos, estos deben de
 cambiar. Al ver que cada vez que metíamos la mano para poner una piedra,
 empezaba a cogerlo como cambio, o el hecho de que cambiara la luz un poco, daba
 movimiento del tablero, descartamos esta opción. 
 
 \paragraph{2ª Implementación: cambio de esquinas detectados} 
+
 Esta segunda implementación nos pareció impensable la primera vez, ya que lo que
 hacemos es detectar contornos durante todo el tiempo, y cada vez que los
 encuentre, busque si son los mismos que los que ya teníamos o han variado. Si
@@ -628,6 +645,7 @@ sea parecido.
 
 
 \subsection{Deteccion de piedras} 
+
 Una vez detectado el tablero correctamente,
 pensabamos que la deteccion de piedras iba a ser mucho mas facil, aun asi, la
 detección de piedras tambien ha pasado por un ciclo evolutivo de modificaciones
@@ -641,8 +659,8 @@ detectar el orden correcto en el que han sido colocadas y el color de la piedra,
 tenemos que tener en cuenta que también existe la posibilidad de que una piedra
 se retire del tablero. 
 
-\paragraph{1ª implementación: detección de piedras por turnos}
-En los principios del programa, las piedras se detectaban de una forma poco
+\paragraph{1ª implementación: detección de piedras por turnos}s
+En los inicios del programa, las piedras se detectaban de una forma poco
 ortodoxa, pues en gran parte, los jugadores debian decirnos cuando terminaban su
 turno, para asi tomar la foto en el momento justo, y poder analizarla
 correctamente.  La forma de la busqueda de la piedra se hacia por diferencia de
@@ -650,16 +668,21 @@ imagenes, asi, cada vez que un jugador nos indicaba mediante un boton que habia
 terminado el turno, captabamos una imagen y la comparabamos con la anterior, la
 funcion "diff" de OpenCv nos devuelve marcadas las diferencias, que este caso
 serian las piedras, despues dentro de esta imagen, buscamos circulos y
-conseguiamos encontrar las piedras.  Esta forma fue eliminada al poco tiempo,
-pues una de nuestras ideas, es que el jugador no tenga que preocuparse del
-programa, pues esta concentrado jugando. Ademas, los factores externos eran
-demasiados, pues pensamos en modificar los relojes de tiempo, para que el propio
+conseguiamos encontrar las piedras.  
+
+\includegraphics[scale=0.4]{reloj.jpg}
+
+Esta forma fue eliminada al poco tiempo,pues una de nuestras ideas, es que el
+jugador no tenga que preocuparse del programa, pues esta concentrado jugando.
+Ademas, los factores externos eran demasiados, pues pensamos en modificar los
+relojes de tiempo, para que el propio
 boton que indicaba al reloj el final del tiempo, fuese el mismo que nos indicase
 a nosotros el momento de tomar la foto. Con todo esto, lo unico que podiamos
 conseguir es que nuestro programa no fuese funcional, ya que nadie podria hacer
 uso de nuestro programa sin dicho reloj. Tras pensar distintas formas de
 solucionar los problemas que daba dicha implementacion, decidimos cambiar por
 completo la idea.  % TODO poner una explicacion del problema del joseki
+
 
 \paragraph{2ª Implementación: detección por diferencias sin turnos}
 En esta segunda implementación pensamos en suprimir el uso de botones y
@@ -739,7 +762,11 @@ servidorl, que es libre.
  
 \chapter{Manual de usuario}
 
+\section{Guia de instalación} 
 
+\section{Actualizaciones}
+
+\section{Guía paso a paso}
 
 \chapter{Conclusiones}
 
@@ -774,8 +801,7 @@ ahora mismo, poder instalar el programa en una placa de este tipo y con una
 camara conectada por puerto usb, que el usuario pueda ejecutar nuestro programa,
 sin tener que cargar con un pesado portatil. 
 
-\section{Guia de instalación} \section{Actualizaciones} \section{Guía paso a
-paso}
+
 
 
 
