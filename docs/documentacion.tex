@@ -332,15 +332,14 @@ Para este proyecto, la camara es fundamental, ya que esta se encargara de la cap
 
 Debido a que usaremos Opencv para la seleccion de camaras, los diferentes modelos segun la conexion no entran en el ambito de este proyecto, dejando una clara importancia a la resolucion de la imagen, que en gran parte viene dada por el tipo de lente y el metodo de captacion 
 
-La mayor parte de las cámaras digitales se pueden conectar directamente a la computadora para transferir su información. Antiguamente las cámaras tenían que conectarse a través de un Puerto serial. El USB es el método más utilizado aunque algunas cámaras utilizan un puerto FireWire o Bluetooth. La mayor parte de las cámaras son reconocidas como un dispositivo de almacenamiento USB. Algunos modelos, por ejemplo la Kodak EasyShare One puede conectarse a la computadora vía red inalámbrica por el protocolo 802.11 (Wi-Fi).
+La mayor parte de las cámaras digitales se pueden conectar directamente al ordenador para transferir su información. Antiguamente las cámaras tenían que conectarse a través de un Puerto serie. El USB es el método más utilizado aunque algunas cámaras utilizan un puerto FireWire o Bluetooth. La mayor parte de las cámaras son reconocidas como un dispositivo de almacenamiento USB. Algunos modelos, por ejemplo la Kodak EasyShare One puede conectarse a la computadora vía red inalámbrica por el protocolo 802.11 (Wi-Fi).
 
- 
 \section{Historia}
 
 Los conceptos de digitalizar imágenes en escaneres y convertir señales de video a digital anteceden al concepto de tomar cuadros fijos digitalizando así señales de una matriz de elementos sensores discretos. Eugene F. Lally del Jet Propulsion Laboratory publicó la primera descripción de cómo producir fotos fijas en un dominio digital usando un fotosensor en mosaico.2 El propósito era proporcionar información de navegación a los astronautas a bordo durante misiones espaciales. La matriz en mosaico registraba periódicamente fotos fijas de las localizaciones de estrellas y planetas durante el tránsito y cuando se acercaba a un planeta, proporcionaba información adicional de distancias para el orbitaje y como guía para el aterrizaje. El concepto incluyó elementos de diseño que presagiaban la primera cámara fotográfica digital.
 Texas Instruments diseñó una cámara fotográfica análoga sin película en 1972, pero no se sabe si fue finalmente construida. La primera cámara digital registrada fue desarrollada por la empresa Kodak, que encargó la construcción de un prototipo al ingeniero Steven J. Sasson en 1975. Esta cámara usaba los entonces nuevos sensores CCD desarrollados por Fairchild Semiconductor en 1973. Su trabajo dio como fruto una cámara de aproximadamente 4 kg. y que hacía fotos en blanco y negro con una resolución de 0,01 megapíxeles. Utilizó los novedosos chips de estado sólido del CCD. La cámara fotográfica registraba las imágenes en una cinta de cassette y tardó 23 segundos en capturar su primera imagen, en diciembre de 1975. Este prototipo de cámara fotográfica era un ejercicio técnico, no previsto para la producción.
-\subsection{La camara digital verdadera}
-La primera cámara fotográfica digital verdadera que registraba imágenes en un archivo de computadora fue probablemente el modelo DS-1P de Fuji, en 1988, que grababa en una tarjeta de memoria interna de 16 MB y utilizaba una batería para mantener los datos en la memoria. Esta cámara fotográfica nunca fue puesta en venta en los Estados Unidos. La primera cámara fotográfica digital disponible en el mercado fue la Dycam Model 1, en 1991, que también fue vendida con el nombre de Logitech Fotoman. Usaba un sensor CCD, grababa digitalmente las imágenes, y disponía de un cable de conexión para descarga directa en la computadora.3 4 5
+\subsection{La verdadera camara digital }
+La primera cámara fotográfica digital verdadera que registraba imágenes en un archivo de computadora fue probablemente el modelo DS-1P de Fuji, en 1988, que grababa en una tarjeta de memoria interna de 16 MB y utilizaba una batería para mantener los datos en la memoria. Esta cámara fotográfica nunca fue puesta en venta en los Estados Unidos. La primera cámara fotográfica digital disponible en el mercado fue la Dycam Model 1, en 1991, que también fue vendida con el nombre de Logitech Fotoman. Usaba un sensor CCD, grababa digitalmente las imágenes, y disponía de un cable de conexión para descarga directa en la computadora.
 En 1991, Kodak lanzó al mercado su modelo DCS-100, el primero de una larga línea de cámaras fotográficas profesionales SLR de Kodak que fueron basadas, en parte, en cámaras para película, a menudo de marca Nikon. Utilizaba un sensor de 1,3 megapixeles y se vendía en unos 13.000 dolares.
 La transición a formatos digitales fue ayudada por la formación de los primeros estándares JPEG y MPEG en 1988, que permitieron que los archivos de imagen y vídeo se comprimieran para su almacenamiento. La primera cámara fotográfica dirigida a consumidores con una pantalla de cristal líquido en la parte posterior fue la Casio QV-10 en 1995, y la primera cámara fotográfica en utilizar tarjetas de memoria CompactFlash fue la Kodak DC-25 en 1996.
 
@@ -398,6 +397,29 @@ La elección del método para una captura dada, por supuesto, es determinada en 
 
 Recientemente, las mejoras drásticas en cámaras fotográficas de disparo único y el procesamiento de archivos RAW de imagen han hecho de las cámaras fotográficas de disparo único, basadas en CCD casi totalmente predominantes en fotografía comercial, para no mencionar la fotografía digital en su totalidad. Las cámaras fotográficas de disparo único basadas en sensores CMOS suelen ser comunes.
 
+\section{Funcionamiento}
+
+El software de la cámara toma un fotograma de la cámara cada cierto tiempo (puede ser una imagen estática cada medio segundo) y la envía a otro punto para ser visualizada. Si lo que se pretende es utilizar esas imágenes para construir un video, de calidad sin saltos de imagen, se necesitará que la cámara web alcance una tasa de unos 15 a 30 fotogramas por segundo.
+En los videos destinados a ser subidos en Internet o ser enviados a dispositivos móviles, es mejor una cadencia de 14 fotogramas por segundo. De esta manera se consigue ahorrar espacio y aun así seguirá teniendo calidad, aunque podrián ser apreciados ligeros saltos en el movimiento. En nuestro proyecto se usaran 30 fotogramas por segundo.
+
+\section{Camaras de red}
+
+Una de las ideas que tenemos para solventar el problema de la camara era la de usar una camara de red, estas camaras tienen su propia dirección IP y las características
+propias de un ordenador para gestionar la comunicación en la red.
+Todo lo que se precisa para la visualización de las imágenes a través
+de la red se encuentra dentro de la misma unidad.
+Una cámara de red puede describirse como una cámara y un
+ordenador combinados. Se conecta directamente a la red como
+cualquier otro dispositivo de red e incorpora software propio para
+servidor Web, servidor FTP, cliente FTP y cliente de correo electrónico.
+También incluye entradas para alarmas y salida de relé.
+Las cámaras de red más avanzadas también pueden equiparse con
+muchas otras funciones de valor añadido como son la detección de
+movimiento y la salida de vídeo analógico.
+Todo esta funcinalidad está accesible a través de la interfaz de
+programación de la cámara (API) para el desarrollo de aplicaciones de
+alto nivel.
+Ademas debido a las tecnologias sin cables, estas camaras no necesitarian cables para ser conectadas con un PC, haciendo que la colocacion de la camara en un lugar apropiado para la correcta captacion del tablero fuera mucho mas sencillo.
 
 \chapter{Implementación}
 
