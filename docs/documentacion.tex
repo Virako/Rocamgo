@@ -145,10 +145,10 @@ agradeceríamos los jugadores de go, ya que el subir una partida de go por
 streaming o subirla a mano, no es siempre posible, y este proyecto ayudaría la
 facilidad de subir una partida sin tener que estar atento durante toda la
 partida y sin necesitar una gran conexión a Internet, ya que con este sistema,
-la información que enviamos el servidor es mínima. 
+la información que enviamos al servidor es mínima. 
 
 Si desarrollamos un poco más los objetivos, necesitaríamos un brazo robótico
-rápido y preciso, una cámara que grabase videos con imágenes no muy borrosas,
+rápido y preciso, una cámara que grabase videos con imágenes de una buena calidad, para evitar que saliesen borrosas,
 con lo cual podríamos descartar cámaras VGA, y mucho tiempo y conocimientos de
 programación, ya que el tratamiento de imágenes no es simple. 
 
@@ -158,7 +158,17 @@ terminar nuestra idea inicial. Nuestro objetivo actual es subir una partidade go
 que se esté jugando, para poder utilizar este proyecto en los torneos de go y
 subir al menos la partida más interesante que se esté jugando en cada ronda. De
 camino también guardamos la partida en un archivo .sgf [\ref{sgf}], para luego
-poder modificarla con total libertad. 
+poder modificarla con total libertad.
+
+Para que el programa funcione correctamente, debemos tener una maquina con linux como sistema operativo, ya que pretendemos que nuestro programa funcione en cualquier dispositivo capaz de ejecutar este sistema operativo.   
+
+Para ello, a nivel hardware necesitaremos solo una camara web grabando la partida que se este jugando y el tablero de go donde se jugará la partida.
+No obstante, tambien podremos realizar nuestros objetivos tan solo teniendo 
+un video de una partida.
+
+%Imagen de la disposicion hardware correcta, que queremos que se use.
+
+%\includegraphics[scale=0.08]{hardware.jpg}
 
 Con este proyecto pretendemos conocer y mejorar nuestros conocimientos de 
 herramientas y lenguajes de programación, así como de algunas librerías
@@ -641,6 +651,20 @@ factible con los contornos, hemos utilizado esta forma, y no parece ir mal del
 todo, aunque no está asegurado que permaneca tal y como está, si es probable que
 sea parecido. 
 
+\subsection{Idealización del tablero} 
+
+Una vez detectado el tablero correctamente y antes de ponernos a buscar piedras
+por toda la imagen, llegamos a la conclusion que seria mas conveniente conseguir
+el tablero en un modelo ideal, como si las imágenes que recibimos fuesen tomadas
+como nosotros las queremos, que es desde arriba, sin perspectivas.  Gracias a
+opencv conseguimos con la funcion WarpPerspective y GetPerspectiveTransform que 
+la imagen se ponga con una
+perspectiva perfecta, recortando las partes de la imagen donde no está el
+tablero, haciendo asi que la búsqueda de piedras sea una labor mucho más
+sencilla. Para conseguir que esta función nos sirva, tuvimos que hacer un
+testeo bastante amplio, pues las imágenes necesitan ser tratadas anteriormente
+para el correcto funcionamiento de dicha funcion, con filtros como Canny y
+Smooth, para detectar bordes o suavizar la imagen. 
 
 \subsection{Deteccion de piedras} 
 
@@ -657,7 +681,7 @@ detectar el orden correcto en el que han sido colocadas y el color de la piedra,
 tenemos que tener en cuenta que también existe la posibilidad de que una piedra
 se retire del tablero. 
 
-\paragraph{1ª implementación: detección de piedras por turnos}s
+\paragraph{1ª implementación: detección de piedras por turnos}
 En los inicios del programa, las piedras se detectaban de una forma poco
 ortodoxa, pues en gran parte, los jugadores debian decirnos cuando terminaban su
 turno, para asi tomar la foto en el momento justo, y poder analizarla
@@ -708,23 +732,8 @@ momento en el que se puso la piedra, pues aunque tenga que pasar un tiempo para
 asegurar que está la piedra, sabemos el momento en el que se puso. Ademas el
 coste de ejecución es asumible.
 
-
-\subsection{Idealización del tablero} 
-
-Una vez detectado el tablero correctamente y antes de ponernos a buscar piedras
-por toda la imagen, llegamos a la conclusion que seria mas conveniente conseguir
-el tablero en un modelo ideal, como si las imágenes que recibimos fuesen tomadas
-como nosotros las queremos, que es desde arriba, sin perspectivas.  Gracias a
-opencv conseguimos con la funcion WarpPerspective y GetPerspectiveTransform que 
-la imagen se ponga con una
-perspectiva perfecta, recortando las partes de la imagen donde no está el
-tablero, haciendo asi que la búsqueda de piedras sea una labor mucho más
-sencilla. Para conseguir que esta función nos sirva, tuvimos que hacer un
-testeo bastante amplio, pues las imágenes necesitan ser tratadas anteriormente
-para el correcto funcionamiento de dicha funcion, con filtros como Canny y
-Smooth, para detectar bordes o suavizar la imagen. 
-
-\subsection{Buscando colores}%variar una variable. Cambiar el umbral de brillo
+\paragraph{Buscando colores}
+%variar una variable. Cambiar el umbral de brillo
 % meter dentro de la búsqueda de piedras mejor
 
 Como en cada parte del proyecto, esta tambien ha tenido su evolucion desde que
@@ -836,6 +845,8 @@ desarroles del proyecto.
 
 \section{Como utilizarlo}
 
+Antes de empezar, debemos asegurarnos que tenemos preparado el terreno de juego, para ello necesitamos que el tablero este colocado en una superficie lo mas lisa posible y una camara web conectada al PC donde se ejecutará el programa, a poder ser de una buena calidad, apuntando al tablero donde se jugará la partida. Debemos intentar que la camara enfoque correctamente al tablero, centrando este dentro de la imagen lo maximo posible. El programa será capaz de funcionar siempre y cuando en la imagen se vean correctamente todas las partes del tablero.
+
 Al ejecutar este proyecto, lo primero que te pedirá si está en modo captura de
 video, será un usuario y una contraseña, los cuales son un usuario del servidor
 IGS, el cual podemos crearnos en la página 
@@ -867,7 +878,7 @@ aprender sobre estas librerías, las cuales esperamos aprender más en un futuro
 
 Cuando nos hemos ido adentrando en el proyecto, nos han ido surgiéndo muchísimos
 problemas, sobre todo con la detección del tablero, ya que lo pensado y la
-realidad, y se han ido distanciando un poco. 
+realidad, se han ido distanciando un poco. 
 
 La utilización de git nos ha hecho aprender y abrirnos la mente al utilizar un
 controlador de versiones distribuidos, a parte de servirnos de mucha ayuda al
@@ -891,7 +902,7 @@ El conectarnos al servidor de IGS, nos ha hecho que aprendamos a utilizar un
 poco los sockets.
 
 Aunque finalmente no utilizamos arduino para los relojes, también nos llevamos
-un tiempo tocándolos y aprendimos bastante, ya que usamos botones, pantalla
+un tiempo manejandolos y aprendimos bastante, ya que usamos botones, pantalla
 LCD, potenciómetros y buzzer.
 
 Destacar a vim dentro de todos los editores de texto que hemos utilizado, ya que
@@ -942,9 +953,9 @@ protocolo es cerrado, necesitamos que nos hagan algún cliente o algo especial
 para poderlo utilizar. Esperamos que un futuro no muy lejano, las partidas
 puedan subirse a KGS al igual que lo hacemos en IGS. 
 
-Otras de las cosas que hemos pensado, después de haber comenzado el proyecto, es
+Otras de los objetivos del proyecto que no hemos podido realizar, es
 la posibilidad de adaptar este proyecto para que funciones en los móviles o en
-ordenadores de bajo coste como la rasperri Pi. 
+ordenadores de bajo coste como la rasperri Pi. Para ello, tenemos en mente hacer que nuestro proyecto ejecute varios hilos, haciendo que el procesamiento de imagenes sea lo menos pesado posible.
 
 
 \chapter{Licencia}
@@ -979,7 +990,7 @@ License along with this program.  If not, see http://www.gnu.org/licenses/
 \chapter{Bibliografía}
 
 
-\subsection{ Python }
+\subsection{Python }
 Test unitarios para Python
 
 \url{http://docs.python.org/library/unittest.html}
@@ -996,7 +1007,17 @@ Guia de test de Python
 
 \url{http://www.magmax.org/2011/11/09/python-pruebas-4.html}
 
-\subsection{sobre brazos}
+Tambien consultado el libro 'Python para todos', el cual nos ha servido de gran ayuda.
+
+\subsection{Vim}
+
+Empezamos usando como bibliografia la propia del programa, ya que incluye vimtutor, un tutorial basico sobre el manejo de Vim.
+
+Mas tarde comenzamos a practicar en la siguiente pagina:
+
+\url{http://vimgolf.com/}
+
+\subsection{Sobre brazos}
 
 Diseño de un brazo mecánico
 
@@ -1066,14 +1087,14 @@ Kifu
 
 \url{http://wiki.elphel.com/index.php?title=Kifu:_Go_game_record_(kifu)_generator}
 
-\subsection{ Pasar el tablero a modelo ideal}
+\subsection{Pasar el tablero a modelo ideal}
 
 Pagina de un ejemplo de como pasar el tablero a modelo ideal
 
 \url{http://is.gd/k9k2K}
 
 
-\subsection{ Tracking }
+\subsection{Tracking }
 
 Pagina de explicación
 
@@ -1113,14 +1134,14 @@ Explicacion
 
 \url{* "[7]":http://www.pigeon.psy.tufts.edu/avc/kirkpatrick/}
 
-\subsection{ Enlaces de proyectos interesantes}
+\subsection{Enlaces de proyectos interesantes}
 
 Proyecto de go usando un proyector
 
 \url{http://www.youtube.com/watch?feature=player_embedded&v=33Iyr16yhJQ}
 
 
-\subsection{ Enlace a cosas relacionadas con imagenes.} 
+\subsection{Enlace a cosas relacionadas con imagenes.} 
 
 \url{http://www.google.com/url?sa=t&rct=j&q=recortar%20imagenes%20roi%20opencv&source=web&cd=1&ved=0CB8QFjAA&url=http%3A%2F%2Fdis.um.es%2F~ginesgm%2Ffiles%2Fdoc%2Fpav%2Ftema2.ppt&ei=itA4T_2MBMLBhAfBl8CKAg&usg=AFQjCNGtmUXCybgKwHb5g8-Ns1F7Mdxz1A}
 
@@ -1136,6 +1157,9 @@ Guia de accesibilidad
 
 \url{http://www.sidar.org/recur/direc/norm/index.php}
 
+Para Opencv hemos usado el libro de o'reilly books opencv, ademas de la siguiente web
+
+\url{http://opencv.willowgarage.com/}
 
 \chapter{Apendices} 
 
