@@ -15,35 +15,35 @@
 \contentsline {subsection}{\numberline {4.2}Variables}{6}{subsection.4.2}
 \contentsline {section}{\numberline {5}Module src.cte}{7}{section.5}
 \contentsline {subsection}{\numberline {5.1}Variables}{7}{subsection.5.1}
-\contentsline {section}{\numberline {6}Module src.functions}{9}{section.6}
-\contentsline {subsection}{\numberline {6.1}Functions}{9}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Variables}{9}{subsection.6.2}
-\contentsline {section}{\numberline {7}Module src.goban}{10}{section.7}
-\contentsline {subsection}{\numberline {7.1}Variables}{10}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Class Goban}{10}{subsection.7.2}
-\contentsline {subsubsection}{\numberline {7.2.1}Methods}{10}{subsubsection.7.2.1}
-\contentsline {section}{\numberline {8}Module src.igs}{11}{section.8}
-\contentsline {subsection}{\numberline {8.1}Variables}{11}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Class Igs}{11}{subsection.8.2}
-\contentsline {subsubsection}{\numberline {8.2.1}Methods}{11}{subsubsection.8.2.1}
-\contentsline {section}{\numberline {9}Module src.kifu}{12}{section.9}
-\contentsline {subsection}{\numberline {9.1}Variables}{12}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Class Kifu}{12}{subsection.9.2}
-\contentsline {subsubsection}{\numberline {9.2.1}Methods}{12}{subsubsection.9.2.1}
-\contentsline {section}{\numberline {10}Module src.perspective}{13}{section.10}
-\contentsline {subsection}{\numberline {10.1}Functions}{13}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}Variables}{13}{subsection.10.2}
-\contentsline {section}{\numberline {11}Module src.rocamgo}{14}{section.11}
-\contentsline {subsection}{\numberline {11.1}Functions}{14}{subsection.11.1}
-\contentsline {subsection}{\numberline {11.2}Variables}{14}{subsection.11.2}
-\contentsline {section}{\numberline {12}Module src.search\_goban}{15}{section.12}
-\contentsline {subsection}{\numberline {12.1}Functions}{15}{subsection.12.1}
-\contentsline {subsection}{\numberline {12.2}Variables}{15}{subsection.12.2}
-\contentsline {section}{\numberline {13}Module src.search\_stones}{16}{section.13}
-\contentsline {subsection}{\numberline {13.1}Functions}{16}{subsection.13.1}
-\contentsline {subsection}{\numberline {13.2}Variables}{16}{subsection.13.2}
-\contentsline {section}{\numberline {14}Module src.stone}{17}{section.14}
-\contentsline {subsection}{\numberline {14.1}Variables}{17}{subsection.14.1}
-\contentsline {subsection}{\numberline {14.2}Class Stone}{17}{subsection.14.2}
-\contentsline {subsubsection}{\numberline {14.2.1}Methods}{17}{subsubsection.14.2.1}
-\contentsline {section}{Index}{18}{section*.2}
+\contentsline {section}{\numberline {6}Module src.functions}{10}{section.6}
+\contentsline {subsection}{\numberline {6.1}Functions}{10}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Variables}{10}{subsection.6.2}
+\contentsline {section}{\numberline {7}Module src.goban}{11}{section.7}
+\contentsline {subsection}{\numberline {7.1}Variables}{11}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Class Goban}{11}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Methods}{11}{subsubsection.7.2.1}
+\contentsline {section}{\numberline {8}Module src.igs}{12}{section.8}
+\contentsline {subsection}{\numberline {8.1}Variables}{12}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Class Igs}{12}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {8.2.1}Methods}{12}{subsubsection.8.2.1}
+\contentsline {section}{\numberline {9}Module src.kifu}{13}{section.9}
+\contentsline {subsection}{\numberline {9.1}Variables}{13}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Class Kifu}{13}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Methods}{13}{subsubsection.9.2.1}
+\contentsline {section}{\numberline {10}Module src.perspective}{15}{section.10}
+\contentsline {subsection}{\numberline {10.1}Functions}{15}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Variables}{15}{subsection.10.2}
+\contentsline {section}{\numberline {11}Module src.rocamgo}{16}{section.11}
+\contentsline {subsection}{\numberline {11.1}Functions}{16}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Variables}{16}{subsection.11.2}
+\contentsline {section}{\numberline {12}Module src.search\_goban}{17}{section.12}
+\contentsline {subsection}{\numberline {12.1}Functions}{17}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Variables}{17}{subsection.12.2}
+\contentsline {section}{\numberline {13}Module src.search\_stones}{18}{section.13}
+\contentsline {subsection}{\numberline {13.1}Functions}{18}{subsection.13.1}
+\contentsline {subsection}{\numberline {13.2}Variables}{18}{subsection.13.2}
+\contentsline {section}{\numberline {14}Module src.stone}{19}{section.14}
+\contentsline {subsection}{\numberline {14.1}Variables}{19}{subsection.14.1}
+\contentsline {subsection}{\numberline {14.2}Class Stone}{19}{subsection.14.2}
+\contentsline {subsubsection}{\numberline {14.2.1}Methods}{19}{subsubsection.14.2.1}
+\contentsline {section}{Index}{20}{section*.2}

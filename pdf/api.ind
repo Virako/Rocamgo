@@ -1,57 +1,57 @@
 \begin{theindex}
 
-  \item src \textit{(package)}, \hyperpage{2}
-    \subitem src.camera \textit{(module)}, \hyperpage{3}
-      \subsubitem src.camera.Camera \textit{(class)}, \hyperpage{3}
-    \subitem src.cameras \textit{(module)}, \hyperpage{4}
-      \subsubitem src.cameras.Cameras \textit{(class)}, \hyperpage{4}
-    \subitem src.check\_goban\_moved \textit{(module)}, \hyperpage{5}
+  \item src \textit{(package)}, \hyperpage{3}
+    \subitem src.camera \textit{(module)}, \hyperpage{4}
+      \subsubitem src.camera.Camera \textit{(class)}, \hyperpage{4}
+    \subitem src.cameras \textit{(module)}, \hyperpage{5}
+      \subsubitem src.cameras.Cameras \textit{(class)}, \hyperpage{5}
+    \subitem src.check\_goban\_moved \textit{(module)}, \hyperpage{6}
       \subsubitem src.check\_goban\_moved.check\_directions \textit{(function)}, 
-		\hyperpage{5}
+		\hyperpage{6}
       \subsubitem src.check\_goban\_moved.check\_goban\_moved \textit{(function)}, 
-		\hyperpage{5}
+		\hyperpage{6}
       \subsubitem src.check\_goban\_moved.degress\_between\_two\_vectors \textit{(function)}, 
-		\hyperpage{5}
+		\hyperpage{6}
       \subsubitem src.check\_goban\_moved.is\_same\_quadrant \textit{(function)}, 
-		\hyperpage{5}
-    \subitem src.cte \textit{(module)}, \hyperpage{6--7}
-    \subitem src.functions \textit{(module)}, \hyperpage{8}
+		\hyperpage{6}
+    \subitem src.cte \textit{(module)}, \hyperpage{7--9}
+    \subitem src.functions \textit{(module)}, \hyperpage{10}
       \subsubitem src.functions.direction\_between\_two\_points \textit{(function)}, 
-		\hyperpage{8}
+		\hyperpage{10}
       \subsubitem src.functions.distance\_between\_two\_points \textit{(function)}, 
-		\hyperpage{8}
+		\hyperpage{10}
       \subsubitem src.functions.get\_external\_corners \textit{(function)}, 
-		\hyperpage{8}
+		\hyperpage{10}
       \subsubitem src.functions.get\_max\_edge \textit{(function)}, 
-		\hyperpage{8}
-    \subitem src.goban \textit{(module)}, \hyperpage{9}
-      \subsubitem src.goban.Goban \textit{(class)}, \hyperpage{9}
-    \subitem src.igs \textit{(module)}, \hyperpage{10}
-      \subsubitem src.igs.Igs \textit{(class)}, \hyperpage{10}
-    \subitem src.kifu \textit{(module)}, \hyperpage{11}
-      \subsubitem src.kifu.Kifu \textit{(class)}, \hyperpage{11}
-    \subitem src.perspective \textit{(module)}, \hyperpage{12}
+		\hyperpage{10}
+    \subitem src.goban \textit{(module)}, \hyperpage{11}
+      \subsubitem src.goban.Goban \textit{(class)}, \hyperpage{11}
+    \subitem src.igs \textit{(module)}, \hyperpage{12}
+      \subsubitem src.igs.Igs \textit{(class)}, \hyperpage{12}
+    \subitem src.kifu \textit{(module)}, \hyperpage{13--14}
+      \subsubitem src.kifu.Kifu \textit{(class)}, \hyperpage{13--14}
+    \subitem src.perspective \textit{(module)}, \hyperpage{15}
       \subsubitem src.perspective.perspective \textit{(function)}, 
-		\hyperpage{12}
-    \subitem src.rocamgo \textit{(module)}, \hyperpage{13}
-      \subsubitem src.rocamgo.main \textit{(function)}, \hyperpage{13}
-    \subitem src.search\_goban \textit{(module)}, \hyperpage{14}
+		\hyperpage{15}
+    \subitem src.rocamgo \textit{(module)}, \hyperpage{16}
+      \subsubitem src.rocamgo.main \textit{(function)}, \hyperpage{16}
+    \subitem src.search\_goban \textit{(module)}, \hyperpage{17}
       \subsubitem src.search\_goban.count\_perimeter \textit{(function)}, 
-		\hyperpage{14}
+		\hyperpage{17}
       \subsubitem src.search\_goban.detect\_contour \textit{(function)}, 
-		\hyperpage{14}
+		\hyperpage{17}
       \subsubitem src.search\_goban.filter\_image \textit{(function)}, 
-		\hyperpage{14}
+		\hyperpage{17}
       \subsubitem src.search\_goban.get\_corners \textit{(function)}, 
-		\hyperpage{14}
+		\hyperpage{17}
       \subsubitem src.search\_goban.search\_goban \textit{(function)}, 
-		\hyperpage{14}
-    \subitem src.search\_stones \textit{(module)}, \hyperpage{15}
+		\hyperpage{17}
+    \subitem src.search\_stones \textit{(module)}, \hyperpage{18}
       \subsubitem src.search\_stones.check\_color\_stone \textit{(function)}, 
-		\hyperpage{15}
+		\hyperpage{18}
       \subsubitem src.search\_stones.search\_stones \textit{(function)}, 
-		\hyperpage{15}
-    \subitem src.stone \textit{(module)}, \hyperpage{16}
-      \subsubitem src.stone.Stone \textit{(class)}, \hyperpage{16}
+		\hyperpage{18}
+    \subitem src.stone \textit{(module)}, \hyperpage{19}
+      \subsubitem src.stone.Stone \textit{(class)}, \hyperpage{19}
 
 \end{theindex}

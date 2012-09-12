@@ -18,6 +18,25 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+"""
+:var player1: nombre del jugador 1
+:type player1: str
+:var player2: nombre del jugador 2
+:type player2: str
+:var handicap: numero de piedras de ventaja 
+:type handicap: int
+:var path: directorio donde guardaremos las partidas 
+:type path: str
+:var rank_player1: nivel del jugador 1
+:type rank_player1: str
+:var rank_player2: nivel del jugador 2
+:type rank_player2: str
+:var num_jug: número de jugada actual
+:type num_jug: int
+:var dir: dirección del directorio donde guardaremos la partida
+:type dir: str
+"""
+
 import os.path
 from datetime import datetime
 from cte import BLACK
@@ -75,6 +94,7 @@ class Kifu:
                 f.write("\n;W[%s]" %coord)
             else:
                 print _("el color debe ser BLACK or WHITE")
+        self.num_jug += 1
 
 
     def end_file(self):

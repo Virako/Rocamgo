@@ -18,6 +18,23 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+"""
+:var NUM_EDGES: número de esquinas que existen en un tablero
+:type NUM_EDGES: int
+:var RELATION_WEIGHT_HEIGHT: relación anchura/altura que existe en el tablero
+:type RELATION_WEIGHT_HEIGHT: float
+:var MAX_CAMERAS: número máximo de cámaras a buscar
+:type MAX_CAMERAS: int
+:var GOBAN_SIZE: tamaño del tablero
+:type GOBAN_SIZE: int
+:var BLACK: constante para decir que una piedra es negra
+:type BLACK: int
+:var WHITE: constante para decir que una piedra es blanca
+:type WHITE: int
+:var HEADER_SGF: cabecera de un archivo .sgf 
+:type HEADER_SGF: str
+"""
+
 import time
 
 NUM_EDGES = 4
@@ -40,7 +57,7 @@ HEADER_SGF = [ "(;FF[4]GM[1]SZ[%d]" %(GOBAN_SIZE),
 
 """
 FEATURES OF FILES .SGF
-====================================
+======================
 
 * AB: Add Black: locations of Black stones to be placed on the board prior to the first move.
 * AW: Add White: locations of White stones to be placed on the board prior to the first move.
@@ -74,6 +91,5 @@ FEATURES OF FILES .SGF
 * W: a move by White at the location specified by the property value.
 * WR: White Rank: rank of the White player.
 * WT: White Team: name of the White team. 
-
 """
 

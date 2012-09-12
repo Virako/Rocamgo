@@ -18,6 +18,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+"""
+:var s: socket para la conexión con el servidor
+:type s: socket
+:var user: usuario del servidor Igs
+:type user: str
+:var pwd: password correspondiente al usuario de Igs
+:type pwd: str
+"""
 
 from socket import socket
 from cte import GOBAN_SIZE

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2012.8.23)  9 SEP 2012 21:09
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2012.8.23)  12 SEP 2012 02:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,70 +643,65 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ]
 \openout2 = `src.cte-module.aux'.
 
- (./src.cte-module.tex
-Overfull \hbox (33.28583pt too wide) in paragraph at lines 51--52
-\T1/lmr/m/n/10 ====================================  
- []
-
-[7
+ (./src.cte-module.tex [7
 
 
-]) [8]
+] [8]) [9]
 \openout2 = `src.functions-module.aux'.
 
- (./src.functions-module.tex) [9
+ (./src.functions-module.tex) [10
 
 
 ]
 \openout2 = `src.goban-module.aux'.
 
- (./src.goban-module.tex) [10
+
+(./src.goban-module.tex) [11
 
 
 ]
 \openout2 = `src.igs-module.aux'.
 
-
-(./src.igs-module.tex) [11
+ (./src.igs-module.tex) [12
 
 
 ]
 \openout2 = `src.kifu-module.aux'.
 
- (./src.kifu-module.tex) [12
+
+(./src.kifu-module.tex [13
 
 
-]
+]) [14]
 \openout2 = `src.perspective-module.aux'.
 
-
-(./src.perspective-module.tex) [13
+ (./src.perspective-module.tex) [15
 
 
 ]
 \openout2 = `src.rocamgo-module.aux'.
 
- (./src.rocamgo-module.tex) [14
+
+(./src.rocamgo-module.tex) [16
 
 
 ]
 \openout2 = `src.search_goban-module.aux'.
 
-
-(./src.search_goban-module.tex) [15
+ (./src.search_goban-module.tex) [17
 
 
 ]
 \openout2 = `src.search_stones-module.aux'.
 
- (./src.search_stones-module.tex) [16
+
+(./src.search_stones-module.tex) [18
 
 
 ]
 \openout2 = `src.stone-module.aux'.
 
-
-(./src.stone-module.tex) [17
+ (./src.stone-module.tex) [19
 
 
 ] (./api.ind
@@ -779,7 +774,7 @@ Overfull \hbox (1.99496pt too wide) in paragraph at lines 52--54
 T1/lmr/m/n/10 , [][][][][][] 
  []
 
-[18
+[20
 
 
 
@@ -794,27 +789,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
 (./src.search_stones-module.aux) (./src.stone-module.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 136.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
-
-
-Package rerunfilecheck Warning: File `api.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `api.out':
-(rerunfilecheck)             Before: 6EB0A3316331D8338004B9E64205669C;2840
-(rerunfilecheck)             After:  02A12CD7FC4FF79B7B80DAF562446EB2;2882.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `api.out' has not changed.
+(rerunfilecheck)             Checksum: 02A12CD7FC4FF79B7B80DAF562446EB2;2882.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
  ) 
 Here is how much of TeX's memory you used:
- 6129 strings out of 495060
- 89527 string characters out of 3182053
- 174337 words of memory out of 3000000
- 9102 multiletter control sequences out of 15000+200000
+ 6130 strings out of 495060
+ 89539 string characters out of 3182053
+ 182429 words of memory out of 3000000
+ 9103 multiletter control sequences out of 15000+200000
  64555 words of font info for 58 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  32i,11n,43p,426b,431s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on api.dvi (18 pages, 99828 bytes).
+Output written on api.dvi (20 pages, 111416 bytes).

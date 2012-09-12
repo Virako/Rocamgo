@@ -18,6 +18,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+"""
+:var capture: valor de la captura actual
+:type capture: Capture
+:var index: índice de cámara
+:type index: int
+"""
+
 from sys import path
 path.append('/usr/lib/pymodules/python2.7')
 from cv import QueryFrame

@@ -18,6 +18,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+"""
+:var goban: matriz de piedras puestas
+:type goban: list 
+:var statistical: matriz de estadísticas para comprobar piedras buenas o malas
+:type statistical: list
+:var stones: piedras a comprobar para añadir a estadísticas
+:type stones: list
+:var kifu: Objeto Kifu
+:type kifu: Kifu
+:var igs: Objeto Igs
+:type igs: Igs
+"""
 
 from src.cte import GOBAN_SIZE
 from src.cte import WHITE

@@ -18,6 +18,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+"""
+:var color: color de la piedra
+:type color: int
+:var img: imagen donde se encuentra la piedra
+:type img: IplImage
+:var pix: pixel donde se encuentra la piedra dentro de la imagen
+:type pix: tuple
+:var pt: coordenada del tablero donde se encuentra la piedra
+:type pt: tuple
+:var x: coordenada x del tablero donde se encuentra la piedra 
+:type x: int
+:var y: coordenada y del tablero donde se encuentra la piedra 
+:type y: int
+"""
 
 from src.cte import GOBAN_SIZE
 from src.cte import WHITE
