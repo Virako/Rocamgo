@@ -371,6 +371,38 @@ Hemos utilizado esta herramienta para aprender y con la finalidad de que
 comprobara todos nuestros test después de cada push al servidor, está bien para
 saber como ha ido evolucionando nuestro proyecto. 
 
+
+\subsection{Profilers y Runsnake}
+
+Los \textbf{''profilers''} son herramientas para el profiling, que sirven para
+medir el rendimiento de nuestro código, comprobando el tiempo que tarda cada
+función y el número de veces que se ejecuta. Entre los profilers que hay en
+python, tenemos las opciones de Profiler, cProfiler y hotshot.
+
+\parskip 2ex
+
+El \textbf{''Runsnake''} es un programa que abre ficheros
+generados por los profiler cProfiler y Profiler, lo cual es mucho más amigable
+que ver la salida en texto plano. Podemos ver un ejemplo en la siguiente imagen. 
+
+\includegraphics[scale=0.33]{runsnake.png}
+
+\parskip 2ex
+Para hacer profiling en este proyecto hemos utilizado los tres profilers
+mencionados anteriormente, Profiler y cProfiler funcionan exactamente igual, con
+la diferencia de que uno está escrito en C y otro en python, por lo cual,
+intentamos utilizar en un principio cProfiler, que funciona con mayor rapidez, y
+si este no podemos importarlo, utilizamos Profiler, que está escrito en
+python. Esto lo utilizamos ejecutando nuestro proyecto, con lo cual tenemos que
+ir interactuando con él para que vaya haciendo las llamadas necesarias y
+comprobar que funciones tardan más y donde pueden existir cuellos de botella. 
+El hotshot lo utilizamos por que al realizar los test, la herramienta de
+nosetest tiene la funcionalidad de comprobar el rendimiento del código
+utilizando esta herramienta de profiling. La salida que genera no podemos leerla
+con runsnake, para ello, tenemos que transformar esa salida utilizando
+$hotshot2stats.py$
+
+
 \subsection{Editores de texto: Geany, Gedit y Vim}
 
 \textbf{''Geany''} es un editor de texto ligero basado en Scintilla con características
@@ -1064,7 +1096,7 @@ License along with this program.  If not, see http://www.gnu.org/licenses/
 \chapter{Bibliografía}
 
 
-\subsection{Python }
+\section{Python }
 Test unitarios para Python
 
 \url{http://docs.python.org/library/unittest.html}
@@ -1083,7 +1115,7 @@ Guia de test de Python
 
 Tambien consultado el libro 'Python para todos', el cual nos ha servido de gran ayuda.
 
-\subsection{Vim}
+\section{Vim}
 
 Empezamos usando como bibliografia la propia del programa, ya que incluye vimtutor, un tutorial basico sobre el manejo de Vim.
 
@@ -1091,7 +1123,7 @@ Mas tarde comenzamos a practicar en la siguiente pagina:
 
 \url{http://vimgolf.com/}
 
-\subsection{Sobre brazos}
+\section{Sobre brazos}
 
 Diseño de un brazo mecánico
 
@@ -1127,7 +1159,7 @@ Página de venta de servos
 \url{http://www.superrobotica.com/servos.htm}
 
 
-\subsection{Internet Go Server (IGS)}
+\section{Internet Go Server (IGS)}
 
 Código de protocolo de IGS
 
@@ -1137,7 +1169,7 @@ Cositas de IGS
 
 \url{http://gnugos60.blogspot.com/2007/04/internet-go-protocols.html}
 
-\subsection{Go Text Protocol (GTP)}
+\section{Go Text Protocol (GTP)}
 
 Este protocolo es el que se usa en la mayoría de los servidores de go. 
 
@@ -1145,7 +1177,7 @@ Documentación del protocolo GTP v2
 
 \url{http://www.lysator.liu.se/~gunnar/gtp/gtp2-spec-draft2/gtp2-spec.html }
 
-\subsection{GNU Go}
+\section{GNU Go}
 
 Código
 
@@ -1155,26 +1187,26 @@ Documentación
 
 \url{http://www.gnu.org/software/gnugo/gnugo_toc.html}
 
-\subsection{Proyecto parecido}
+\section{Proyecto parecido}
 
 Kifu
 
 \url{http://wiki.elphel.com/index.php?title=Kifu:_Go_game_record_(kifu)_generator}
 
-\subsection{Pasar el tablero a modelo ideal}
+\section{Pasar el tablero a modelo ideal}
 
 Pagina de un ejemplo de como pasar el tablero a modelo ideal
 
 \url{http://is.gd/k9k2K}
 
 
-\subsection{Tracking }
+\section{Tracking }
 
 Pagina de explicación
 
 \url{http://www.i-programmer.info/news/105-artificial-intelligence/2310-predator-better-than-kinect.html}
 
-\subsection{Haartraining}
+\section{Haartraining}
 
 Detección rápida de objetos
 
@@ -1192,7 +1224,7 @@ Explicacion
 
 \url{http://www.coplec.org/?q=2010/08/05/entrenar-opencv}
 
-\subsection{Enlaces interesantes sobre detección de objetos}
+\section{Enlaces interesantes sobre detección de objetos}
 
 \url{*"[1]":http://achuwilson.wordpress.com/2011/02/13/object-detection-using-opencv-using-haartraining/}
 
@@ -1208,20 +1240,20 @@ Explicacion
 
 \url{* "[7]":http://www.pigeon.psy.tufts.edu/avc/kirkpatrick/}
 
-\subsection{Enlaces de proyectos interesantes}
+\section{Enlaces de proyectos interesantes}
 
 Proyecto de go usando un proyector
 
 \url{http://www.youtube.com/watch?feature=player_embedded&v=33Iyr16yhJQ}
 
 
-\subsection{Enlace a cosas relacionadas con imagenes.} 
+\section{Enlace a cosas relacionadas con imagenes.} 
 
 \url{http://www.google.com/url?sa=t&rct=j&q=recortar%20imagenes%20roi%20opencv&source=web&cd=1&ved=0CB8QFjAA&url=http%3A%2F%2Fdis.um.es%2F~ginesgm%2Ffiles%2Fdoc%2Fpav%2Ftema2.ppt&ei=itA4T_2MBMLBhAfBl8CKAg&usg=AFQjCNGtmUXCybgKwHb5g8-Ns1F7Mdxz1A}
 
 \url{http://nashruddin.com/OpenCV_Region_of_Interest_(ROI)}
 
-\subsection{Otros}
+\section{Otros}
 
 Para comandos de git
 
@@ -1235,11 +1267,8 @@ Para Opencv hemos usado el libro de o'reilly books opencv, ademas de la siguient
 
 \url{http://opencv.willowgarage.com/}
 
-\chapter{Apendices} 
+\chapter{Apéndice A: Documentación del proyecto} 
 
-
-
-\section{Documentación del código del proyecto} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               Includes                                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1260,12 +1289,8 @@ Para Opencv hemos usado el libro de o'reilly books opencv, ademas de la siguient
 \include{src.stone-module}
 
 
-\section{Que es el go}
+\chapter{Apéndice B: ¿Qué es el go?} 
 \url{http://es.wikipedia.org/wiki/Go}
-
-\section{Documentación del proyecto en html}
-
-Dentro de la carpeta html podemos ver toda esta documentación. 
 
 
 \end{document}
