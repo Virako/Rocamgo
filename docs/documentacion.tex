@@ -125,9 +125,113 @@ Nos gustaría agradecer a:
 \end{itemize}
 
 
-\chapter{Conceptos}
+\chapter{Introduccion}
 
-\section{Software libre}
+\section{Antecedentes y motivación}
+
+La asistencia a unos cuantos de torneos de go, el amor por este maravilloso
+juego y las ganas de aprender más y subir de nivel, nos hicieron pensar en crear
+un programa para grabar nuestras propias partidas y poder jugar en un tablero
+físico mediante Internet, ya que el jugar en un tablero físico motiva bastante
+más que jugar con un tablero digital por internet. Como aquí en España el juego todavía no está muy
+extendido y no existen tantos Clubes como en Korea o en Japón, tenemos que
+conformarnos la mayoría de las veces con jugar por Internet, lo cual pierde un
+poco la esencia del juego, ese tacto de las piedras, el sonido de contacto de la
+piedra en el tablero, y como no, el estar delante de tu oponente. 
+En los torneos de go, existe una concentración al jugar que parece ser mayor que
+la que normalmente tenemos, parece que jugamos mejor y pensamos un poco más nuestras
+jugadas, por lo tanto, si tuvieramos la oportunidad de capturar estas partidas,
+podríamos aprender mucho de ellas, tanto de los aciertos como de los errores. 
+Estas partidas, actualmente se registran de dos formas: 
+\begin{itemize}
+    \item Utilizando el método antiguo, registrando la partida en un kifu. 
+    \item Utilizando la tecnología, móviles, ordenadores, tablets, ...
+\end{itemize} 
+
+La partida puede registrarla alguno de los dos jugadores, lo cual puede
+desconcentrar un poco al jugador, ya que no estará totalmente centrado en la
+partida; o una persona ajena a la partida, la cual debe permanecer 1 o 2 horas
+como mínimo delante del tablero apuntando todas esas jugadas. 
+
+Como nota decimos que los jugadores que son muy fuertes, suelen acordarse de la
+partida entera, pero al no ser este nuestro caso, ni el de otros muchos, nos
+viene mejor una ayuda. 
+
+\parskip 2ex
+Todo esto nos llevó a pensar hacer este software, tanto para mejorar la forma de
+registrar estas partidas para que todos podamos verla, como para poder grabar
+nuestras propias partidas y poder ver nuestros errores una vez acabada, para así
+mejorar. 
+
+\section{Objetivos} 
+
+Los objetivos de este proyecto son poder jugar contra una maquina al go en un tablero real. Dicha maquina podra estar manejada por otra persona a traves de internet, o por una inteligencia artificial.
+
+Para que esto sea posible, necesitaremos el siguiente hardware:
+\begin{itemize}
+    \item Un brazo robótico. Para realizar los movimientos fisicos de la maquina.
+    \item Una cámara que grabase videos. Para la captacion del tablero y movimientos del jugador oponente.
+    \item Una placa Arduino. Para llevar el reloj, los turnos y poder coordinar el brazo con el ordenador en caso de ser necesario. 
+    \item Es necesario un ordenador donde conectar una cámara y con
+    procesamiento suficiente para ejecutar nuestro programa. 
+\end{itemize}
+
+Con los materiales anteriormente citados y teniendo claro a donde queremos llegar, nos damos cuenta que nuestro proyecto cubre ademas otras necesidades, pues el uso del programa no solo sería el de jugar
+una partida en tablero físico, sino que también podríamos guardar una partida
+completa observándola, y subirla en tiempo real a Internet, cosa que
+agradeceríamos los jugadores de go, ya que el subir una partida de go por
+streaming o subirla a mano, no es siempre posible, y este proyecto facilitaría
+la subida de una partida sin tener que estar atento durante toda la partida y
+sin necesitar una gran conexión a Internet, ya que con este sistema, la
+información que enviamos al servidor es mínima. 
+%Imagen de la disposicion hardware correcta, que queremos que se use.
+%\includegraphics[scale=0.08]{hardware.jpg}
+
+Con este proyecto pretendemos conocer y mejorar nuestros conocimientos de 
+herramientas y lenguajes de programación, así como de algunas librerías
+interesantes, entre las cuales se encuentra OpenCv, librería sobre el
+tratamiento de imágenes, el cual se encuentra actualmete en pleno auge. 
+
+Al ser un proyecto donde trabajaremos más de una persona, entran en juego el
+compañerismo, responsabilidad y comunicación. 
+
+Los principales objetivos de aprendizaje son:
+\begin{itemize} 
+    \item Python para el desarrollo del programa. 
+    \item OpenCv para el tratamiento de imágenes. 
+    \item Gtk para el entorno de ventanas del programa. 
+    \item Unittest2 para el testeo del código. 
+    \item Epydoc para la documentación del código. 
+    \item Git para el control de versiones. 
+    \item Redmine para gestión del proyecto. 
+    \item Glade para el desarrollo visual de interface grafica con gtk.
+    \item Latex para escribir la documentación. 
+\end{itemize}
+
+
+\section{Planificacion y fases del proyecto}
+
+En el desarrollo de este proyecto fin de carrera, han intervenido un
+conjunto de fases que abarcan desde el aprendizaje de las
+diferentes tecnologías hasta el desarrollo de un proyecto
+software como tal.
+Estas son las fases que se han seguido:
+\begin{itemize} 
+	 \item Aprendizaje tecnologías de brazos mecanicos
+	 \item Aprendizaje tecnología de Arduino
+	 \item Aprendizaje tecnologías de camaras
+	 \item Aprendizaje tecnologia Opencv
+	 \item Implementacion
+	 \item Creacion del manual del ususario
+	 \item Desarrollo de las conclusiones obtenidas
+	 \item Desarrollo de las lineas futuras
+	 \item Pruebas de implementación
+	 \item Preparación de la documentación de proyecto y defensa del proyecto
+	 
+\end{itemize}
+\section{Conceptos}
+
+\subsection{Software libre}
 
 El software libre (en inglés free software, aunque esta denominación también se
 confunde a veces con 'gratis' por la ambigüedad del término 'free' en el idioma
@@ -158,7 +262,7 @@ este, habitualmente 70 años. Si un autor condiciona su uso bajo una licencia,
 por muy débil que sea, ya no es del dominio público.
 
 
-\section{¿Qué es el go?}
+\subsection{¿Qué es el go?}
 
 El go es un juego de mesa estratégico por turnos para dos jugadores. Es 
 también conocido como igo (japonés), weiqi (chino) o baduk (coreano). El go 
@@ -190,7 +294,7 @@ popularidad en otras partes del mundo. El go llegó a Europa a través de Japón
 por ello es más conocido internacionalmente por su nombre japonés.
 
 
-\section{¿Qué es un archivo .sgf?, para que sirve y como podemos abrirlo}
+\subsection{¿Qué es un archivo .sgf?, para que sirve y como podemos abrirlo}
 
 \label{sgf} Un archivo .sgf es un archivo donde se guarda una partida de
 go. Como el formato es usado también para muchos juegos de tablero, está
@@ -210,96 +314,89 @@ en la actualidad una IA capaz de ganar a ningún profesional del go.
 \includegraphics[scale=0.33]{quarry.png}
 
 
-\chapter{Objetivos} 
+\chapter{Brazos mecanicos}
+\section{Introduccion}
+\section{Historia}
+\section{Modelos}
 
-\section{Objetivos del proyecto} 
+\chapter{Arduino}
+\section{Introduccion}
+\section{Historia}
+\section{Modelos}
+\section{Arquitectura}
 
-En los inicios de este proyecto, los objetivos que nos propusimos era poder
-jugar una partida por Internet utilizando un tablero real, para ello
-necesitaríamos un robot que nos pusiera las piedras del rival, una cámara para
-capturar lo que está pasando en el tablero y un ordenador conectado a algún
-servidor de go. Con todo hecho, el uso del programa no solo sería el de jugar
-una partida en tablero físico, sino que también podríamos guardar una partida
-completa observándola, y subirla en tiempo real a Internet, cosa que
-agradeceríamos los jugadores de go, ya que el subir una partida de go por
-streaming o subirla a mano, no es siempre posible, y este proyecto facilitaría
-la subida de una partida sin tener que estar atento durante toda la partida y
-sin necesitar una gran conexión a Internet, ya que con este sistema, la
-información que enviamos al servidor es mínima. 
+\chapter{Camaras}
+\section{Introduccion}
 
-Si desarrollamos un poco más los objetivos, necesitaríamos:
-\begin{itemize}
-    \item Un brazo robótico rápido y preciso
-    \item Una cámara que grabase videos con imágenes de buena calidad, para 
-    evitar que saliesen borrosas, con lo cual podríamos descartar
-    cámaras VGA. 
-    \item Mucho tiempo y conocimientos de programación, ya que el tratamiento 
-    de imágenes no es simple. 
-    \item Es necesario un ordenador donde conectar una cámara y con
-    procesamiento suficiente para ejecutar nuestro programa. 
-\end{itemize}
+Para este proyecto, la camara es fundamental, ya que esta se encargara de la captacion de imagenes, tanto para la deteccion del tablero y las piedras del jugador como para situar correctamente la piedra que queremos colocar en su sitio.
 
-%Imagen de la disposicion hardware correcta, que queremos que se use.
+Debido a que usaremos Opencv para la seleccion de camaras, los diferentes modelos segun la conexion no entran en el ambito de este proyecto, dejando una clara importancia a la resolucion de la imagen, que en gran parte viene dada por el tipo de lente y el metodo de captacion 
 
-%\includegraphics[scale=0.08]{hardware.jpg}
+La mayor parte de las cámaras digitales se pueden conectar directamente a la computadora para transferir su información. Antiguamente las cámaras tenían que conectarse a través de un Puerto serial. El USB es el método más utilizado aunque algunas cámaras utilizan un puerto FireWire o Bluetooth. La mayor parte de las cámaras son reconocidas como un dispositivo de almacenamiento USB. Algunos modelos, por ejemplo la Kodak EasyShare One puede conectarse a la computadora vía red inalámbrica por el protocolo 802.11 (Wi-Fi).
 
-Con este proyecto pretendemos conocer y mejorar nuestros conocimientos de 
-herramientas y lenguajes de programación, así como de algunas librerías
-interesantes, entre las cuales se encuentra OpenCv, librería sobre el
-tratamiento de imágenes, el cual se encuentra actualmete en pleno auge. 
+ 
+\section{Historia}
 
-Al ser un proyecto donde trabajaremos más de una persona, entran en juego el
-compañerismo, responsabilidad y comunicación. 
+Los conceptos de digitalizar imágenes en escaneres y convertir señales de video a digital anteceden al concepto de tomar cuadros fijos digitalizando así señales de una matriz de elementos sensores discretos. Eugene F. Lally del Jet Propulsion Laboratory publicó la primera descripción de cómo producir fotos fijas en un dominio digital usando un fotosensor en mosaico.2 El propósito era proporcionar información de navegación a los astronautas a bordo durante misiones espaciales. La matriz en mosaico registraba periódicamente fotos fijas de las localizaciones de estrellas y planetas durante el tránsito y cuando se acercaba a un planeta, proporcionaba información adicional de distancias para el orbitaje y como guía para el aterrizaje. El concepto incluyó elementos de diseño que presagiaban la primera cámara fotográfica digital.
+Texas Instruments diseñó una cámara fotográfica análoga sin película en 1972, pero no se sabe si fue finalmente construida. La primera cámara digital registrada fue desarrollada por la empresa Kodak, que encargó la construcción de un prototipo al ingeniero Steven J. Sasson en 1975. Esta cámara usaba los entonces nuevos sensores CCD desarrollados por Fairchild Semiconductor en 1973. Su trabajo dio como fruto una cámara de aproximadamente 4 kg. y que hacía fotos en blanco y negro con una resolución de 0,01 megapíxeles. Utilizó los novedosos chips de estado sólido del CCD. La cámara fotográfica registraba las imágenes en una cinta de cassette y tardó 23 segundos en capturar su primera imagen, en diciembre de 1975. Este prototipo de cámara fotográfica era un ejercicio técnico, no previsto para la producción.
+\subsection{La camara digital verdadera}
+La primera cámara fotográfica digital verdadera que registraba imágenes en un archivo de computadora fue probablemente el modelo DS-1P de Fuji, en 1988, que grababa en una tarjeta de memoria interna de 16 MB y utilizaba una batería para mantener los datos en la memoria. Esta cámara fotográfica nunca fue puesta en venta en los Estados Unidos. La primera cámara fotográfica digital disponible en el mercado fue la Dycam Model 1, en 1991, que también fue vendida con el nombre de Logitech Fotoman. Usaba un sensor CCD, grababa digitalmente las imágenes, y disponía de un cable de conexión para descarga directa en la computadora.3 4 5
+En 1991, Kodak lanzó al mercado su modelo DCS-100, el primero de una larga línea de cámaras fotográficas profesionales SLR de Kodak que fueron basadas, en parte, en cámaras para película, a menudo de marca Nikon. Utilizaba un sensor de 1,3 megapixeles y se vendía en unos 13.000 dolares.
+La transición a formatos digitales fue ayudada por la formación de los primeros estándares JPEG y MPEG en 1988, que permitieron que los archivos de imagen y vídeo se comprimieran para su almacenamiento. La primera cámara fotográfica dirigida a consumidores con una pantalla de cristal líquido en la parte posterior fue la Casio QV-10 en 1995, y la primera cámara fotográfica en utilizar tarjetas de memoria CompactFlash fue la Kodak DC-25 en 1996.
 
-Los principales objetivos en este proyecto en su comienzo, era aprender:
-\begin{itemize} 
-    \item Python para el desarrollo del programa. 
-    \item OpenCv para el tratamiento de imágenes. 
-    \item Gtk para el entorno de ventanas del programa. 
-    \item Unittest2 para el testeo del código. 
-    \item Epydoc para la documentación del código. 
-    \item Git para el control de versiones. 
-    \item Redmine para gestión del proyecto. 
-    \item Glade para el desarrollo visual de interface grafica con gtk.
-    \item Latex para escribir la documentación. 
-\end{itemize}
+El mercado para las cámaras fotográficas digitales dirigidas al consumidor estaba formado originalmente por cámaras fotográficas de baja resolución. En 1997 se ofrecieron las primeras cámaras fotográficas para consumidores de un megapixel. La primera cámara fotográfica que ofreció la capacidad de registrar clips de vídeo pudo haber sido la Ricoh RDC-1 en 1995.
+En 1999 con la introducción del Nikon D1, una cámara fotográfica de 2.74 megapixeles, que fue una de las primeras SLR digitales, la compañía se convirtió en un fabricante importante, y, con un costo inicial de menos de 6.000 dolares, era asequible tanto para fotógrafos profesionales como para consumidores de alto perfil. Esta cámara fotográfica también utilizaba lentes Nikon F, lo que significaba que los fotógrafos podrían utilizar muchas de las mismas lentes que ya tenían para sus cámaras de película.
+En el 2003 se presentó la Digital Rebel de Canon, también conocida como la 300D, una cámara fotográfica dirigida a consumidores de 6 megapixeles y la primera DSLR que tenía un costo inferior a 1.000 dolares.
+En el 2008 se presentó en la Feria de Alemania, una cámara LEICA de medio formato con una resolución de 37 megapixeles.
 
+\subsection{Historia de las Camaras web}
 
-\chapter{Antecedentes y motivación}
+En el Departamento de Informática de la Universidad de Cambridge la cafetera estaba situada en un sótano. Si alguien quería un café tenía que bajar desde su despacho y, si lo había, servirse una taza. Si no lo había, tenía que hacerlo. Las normas decían que el que se termina la cafetera debe rellenarla, pero siempre había listos que no cumplian con las normas.
+En 1991, Quentin Stafford-Fraser y Paul Jardetzky, que compartían despacho, hartos de bajar tres plantas y encontrarse la cafetera vacía decidieron pasar al contraataque. Diseñaron un protocolo cliente-servidor que conectándolo a una cámara, trasmitía una imagen de la cafetera a una resolución de 128 x 128 pixels.
+Así, desde la pantalla de su ordenador sabían cuando era el momento propicio para bajar a por un café, y de paso sabían quienes eran los que se acababan la cafetera y no la volvían a llenar. El protocolo se llamó XCoffee y tras unos meses de depuración se decidieron a comercializarlo. En 1992 salió a la venta la primera cámara web llamada XCam.
 
-La asistencia a unos cuantos de torneos de go, el amor por este maravilloso
-juego y las ganas de aprender más y subir de nivel, nos hicieron pensar en crear
-un programa para grabar nuestras propias partidas y poder jugar en un tablero
-físico mediante Internet, ya que el jugar en un tablero físico motiva bastante
-más que jugar por internet. Como aquí en España el juego todavía no está muy
-extendido y no existen tantos Clubes como en Korea o en Japón, tenemos que
-conformarnos la mayoría de las veces con jugar por Internet, lo cual pierde un
-poco la esencia del juego, ese tacto de las piedras, el sonido de contacto de la
-piedra en el tablero, y como no, el estar delante de tu oponente. 
-En los torneos de go, existe una concentración al jugar que parece ser mayor que
-la que normalmente tenemos, parece que jugamos mejor y pensamos un poco más nuestras
-jugadas, por lo tanto, si tuvieramos la oportunidad de capturar estas partidas,
-podríamos aprender mucho de ellas, tanto de los aciertos como de los errores. 
-Estas partidas, actualmente se registran de dos formas: 
-\begin{itemize}
-    \item Utilizando el método antiguo, registrando la partida en un kifu. 
-    \item Utilizando la tecnología, móviles, ordenadores, tablets, ...
-\end{itemize} 
+\section{Resolucion}
 
-La partida puede registrarla alguno de los dos jugadores, lo cual puede
-desconcentrar un poco al jugador, ya que no estará totalmente centrado en la
-partida; o una persona ajena a la partida, la cual debe permanecer 1 o 2 horas
-como mínimo delante del tablero apuntando todas esas jugadas. 
+La resolución de una cámara fotográfica digital está limitada por el sensor de la cámara (generalmente un CCD o un Sensor CMOS) que responde a las señales de luz, substituyendo el trabajo de la película en fotografía tradicional. El sensor se compone de millones de “cubos” que se cargan en respuesta a la luz. Generalmente, estos cubos responden solamente a una gama limitada de longitudes de onda ligeras, debido a un filtro del color sobre cada uno. Cada uno de estos cubos se llama un píxel, y se utiliza un algoritmo de mosaicismo e interpolación para unir la imagen de cada gama de longitud de onda por pixel en una imagen del RGB donde están las tres imágenes por píxel para representar un color completo.
 
-Como nota decimos que los jugadores que son muy fuertes, suelen acordarse de la
-partida entera, pero al no ser este nuestro caso, ni el de otros muchos, nos
-viene mejor una ayuda. 
+Los dispositivos CCD transportan la carga a través del chip hasta un conversor analógico-digital. Éste convierte el valor de cada uno de los píxeles en un valor digital midiendo la carga que le llega. Dependiendo del número de bits del conversor obtendremos una imagen con mayor o menor gama de color. Por ejemplo, si se utilizase un sólo bit tendríamos valores de 0 y 1, y sólo podríamos representar presencia o ausencia de luz, lo que supondría una imagen en blanco y negro puro.
 
-\parskip 2ex
-Todo esto nos llevó a pensar hacer este software, tanto para mejorar la forma de
-registrar estas partidas para que todos podamos verla, como para poder grabar
-nuestras propias partidas y poder ver nuestros errores una vez acabada, para así
-mejorar. 
+Por otro lado, los aparatos CMOS contienen varios transistores en cada píxel. El proceso de conversión digital se produce en la propia estructura del sensor, por lo que no se necesita un conversor añadido. Su proceso de fabricación es más sencillo, y hace que las cámaras que utilizan esta tecnología resulten más baratas.
+
+La cantidad de pixeles resultante en la imagen determina su tamaño. Por ejemplo una imagen de 640 pixeles de ancho por 480 pixeles de alto tendrá 307,200 pixels, o aproximadamente 307 kilopixeles; una imagen de 3872 pixeles de alto por 2592 pixeles de ancho tendrá 10.036.224 pixeles, o aproximadamente 10 megapixeles.
+
+Según la experiencia fotográfica de los profesionales en dicho campo afirman que una fotografía química realizada por una cámara compacta daría como resultado una fotografía de 30 megapixeles.
+
+\section{Lentes}
+
+La lente de la cámara enfoca la imagen en el sensor de imagen
+(CCD). Antes de llegar al sensor la imagen pasa por el filtro óptico que
+elimina cualquier luz infrarroja de forma que se muestren los colores
+correctos, haciéndose así una primera corrección de imagen.
+
+El sensor de imagen convierte dicha imagen en un flujo de datos
+digitales; éstos pueden entonces ser comprimidos siguiendo diversos
+estándares de compresión de imágenes y a continuación ya pueden
+ser transferidos por la red, encapsulados en algún formato.
+
+En este proceso de compresión y envío de datos, se pueden aplicar
+diversas técnicas para optimizar el uso de ancho de banda disponible,
+perdiendo calidad de imagen pero ganando en velocidad de
+transferencia en imágenes por segundo.
+
+\section{Metodos de captacion de imagen}
+
+Desde que las primeras cámaras digitales fueron introducidas al mercado, han existido tres métodos principales de capturar la imagen, según configuración de hardware del sensor y de los filtros de color.
+
+El primer método se denomina de disparo único, en referencia al número de veces que el sensor de la cámara fotográfica se expone a la luz que pasa a través de la lente. Los sistemas de disparo único utilizan un CCD con un filtro de Bayer, o tres sensores de imagen independientes (uno para cada uno de los colores primarios aditivos: rojo, verde, y azul) que se exponen a la misma imagen mediante un sistema óptico de separación de imagen.
+
+El segundo método se denomina de multidisparo, porque el sensor se expone a la imagen en una secuencia de tres o más aperturas del obturador de la lente. Hay varios métodos de aplicación de esta técnica. El más común era originalmente utilizar un único sensor de imagen con tres filtros (de nuevo rojo, verde y azul) colocados delante del sensor para obtener la información aditiva del color. Otro método de multidisparo utiliza un solo CCD con un filtro de Bayer pero mueve la posición física del sensor en el plano del foco de la lente para componer una imagen de más alta resolución que la que el CCD permitiría de otra manera. Una tercera versión combina los dos métodos sin un filtro de Bayer en el sensor.
+
+El tercer método se llama exploración porque el sensor se mueve a través del plano focal como el sensor de un explorador (scanner) de escritorio. Sus sensores lineares o tri-lineares utilizan solamente una sola línea de fotosensores, o tres líneas para los tres colores. En algunos casos, la exploración es lograda rotando la cámara fotográfica entera; una cámara fotográfica con línea rotativa ofrece imágenes de resolución total muy alta.
+
+La elección del método para una captura dada, por supuesto, es determinada en gran parte por el tema a ser fotografiado. Es generalmente inadecuado intentar fotografiar un tema que se mueva con cualquier cosa que no sea un sistema de disparo único. Sin embargo, con sistemas de exploración o multidisparo, se obtiene la más alta fidelidad de color y tamaños y resoluciones más grandes. Esto hace de estas técnicas más atractivas para fotógrafos comerciales que trabajan con fotografías de temas inmóviles en formato grande.
+
+Recientemente, las mejoras drásticas en cámaras fotográficas de disparo único y el procesamiento de archivos RAW de imagen han hecho de las cámaras fotográficas de disparo único, basadas en CCD casi totalmente predominantes en fotografía comercial, para no mencionar la fotografía digital en su totalidad. Las cámaras fotográficas de disparo único basadas en sensores CMOS suelen ser comunes.
 
 
 \chapter{Implementación}
@@ -619,7 +716,7 @@ implementaciones, ya que hemos tenido que desechar muchas de ellas por motivos
 diferentes que nos hemos ido encontrando. 
 
 
-\subsection{Detección de la cámara} 
+\section{Detección de la cámara} 
 Funcionalidad que nos busca y nos selecciona la cámara que queramos usar,
 siempre y cuando exista alguna en nuestro ordenador. 
 
@@ -639,7 +736,7 @@ es una forma mejorada de detectar las cámaras, ya que no hay problemas si hemos
 enchufado y desenchufado cámaras anteriormente. 
 
 
-\subsection{Detección del tablero} 
+\section{Detección del tablero} 
 Funcionalidad para la detección del tablero, ya sea de las intersecciones o de
 las esquinas, para luego poder ubicar la posición de las piedras de alguna
 manera. 
@@ -725,7 +822,7 @@ la luminosidad de las imágenes), hemos considerado que es la correcta. Además,
 perdemos el problema de la perspectiva, pues lo que detectamos es el contorno.
 
 
-\subsection{Detección de movimiento del tablero}
+\section{Detección de movimiento del tablero}
 
 Tenemos que comentar que esta implementación fue un poco tardía, ya que nosotros
 suponíamos que el tablero no se movería, pero en casi todas las partidas de
@@ -755,7 +852,7 @@ factible con los contornos, hemos utilizado esta forma, y no parece ir mal del
 todo, aunque no está asegurado que permaneca tal y como está, si es probable que
 sea parecido. 
 
-\subsection{Idealización del tablero} 
+\section{Idealización del tablero} 
 
 Una vez detectado el tablero correctamente y antes de ponernos a buscar piedras
 por toda la imagen, llegamos a la conclusion que seria mas conveniente conseguir
@@ -770,7 +867,7 @@ testeo bastante amplio, pues las imágenes necesitan ser tratadas anteriormente
 para el correcto funcionamiento de dicha funcion, con filtros como Canny y
 Smooth, para detectar bordes o suavizar la imagen. 
 
-\subsection{Deteccion de piedras} 
+\section{Deteccion de piedras} 
 
 Una vez detectado el tablero correctamente,
 pensabamos que la deteccion de piedras iba a ser mucho mas facil, aun asi, la
@@ -860,7 +957,7 @@ fallos a veces, para evitar esto, hay que variar una variable, siendo este uno
 de los puntos a seguir trabajando en un futuro en nuestro programa.
 
 
-\subsection{Conexión con el servidor}
+\section{Conexión con el servidor}
 
 Para la conexión al servidor comenzamos intentandolo con los servidores de KGS,
 pero la falta de documentacion de protocolos de dicho servidor y el tener un
