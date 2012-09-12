@@ -20,19 +20,19 @@
 
 """
 :var NUM_EDGES: número de esquinas que existen en un tablero
-:type NUM_EDGES: int
+:Type NUM_EDGES: int
 :var RELATION_WEIGHT_HEIGHT: relación anchura/altura que existe en el tablero
-:type RELATION_WEIGHT_HEIGHT: float
+:Type RELATION_WEIGHT_HEIGHT: float
 :var MAX_CAMERAS: número máximo de cámaras a buscar
-:type MAX_CAMERAS: int
+:Type MAX_CAMERAS: int
 :var GOBAN_SIZE: tamaño del tablero
-:type GOBAN_SIZE: int
+:Type GOBAN_SIZE: int
 :var BLACK: constante para decir que una piedra es negra
-:type BLACK: int
+:Type BLACK: int
 :var WHITE: constante para decir que una piedra es blanca
-:type WHITE: int
+:Type WHITE: int
 :var HEADER_SGF: cabecera de un archivo .sgf 
-:type HEADER_SGF: str
+:Type HEADER_SGF: str
 """
 
 import time

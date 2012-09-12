@@ -23,35 +23,38 @@ from cte import GOBAN_SIZE
 from math import hypot
 
 def distance_between_two_points(p1, p2):
-    """ Halla la distancia entre dos puntos dados. 
-    :param p1: punto 1
-    :type p1: tuple
-    :param p2: punto 2
-    :type p2: tuple
-    :return: distancia entre dos puntos
-    :rtype: float
+    """Halla la distancia entre dos puntos dados. 
+
+    :Param p1: punto 1
+    :Type p1: tuple
+    :Param p2: punto 2
+    :Type p2: tuple
+    :Return: distancia entre dos puntos
+    :Rtype: float
     """
     return hypot( p1[0]-p2[0], p1[1]-p2[1] )
 
 
 def direction_between_two_points(p1, p2):
-    """ Halla la direccion entre dos puntos dados. 
-    :param p1: punto 1
-    :type p1: tuple
-    :param p2: punto 2
-    :type p2: tuple
-    :return: dirección del punto 1 al punto 2
-    :rtype: tuple
+    """Halla la direccion entre dos puntos dados. 
+
+    :Param p1: punto 1
+    :Type p1: tuple
+    :Param p2: punto 2
+    :Type p2: tuple
+    :Return: dirección del punto 1 al punto 2
+    :Rtype: tuple
     """
     return (p2[0]-p1[0], p2[1]-p1[1])
 
 
 def get_max_edge(corners):
-    """ Halla la arista más larga dado 4 puntos. 
-    :param corners: lista de 4 puntos
-    :type corners: list
-    :return: máxima distancia entre 4 puntos
-    :rtype: int
+    """Halla la arista más larga dado 4 puntos. 
+
+    :Param corners: lista de 4 puntos
+    :Type corners: list
+    :Return: máxima distancia entre 4 puntos
+    :Rtype: int
     """
     edges = []
     for c in xrange(NUM_EDGES):
@@ -61,12 +64,12 @@ def get_max_edge(corners):
 
 
 def get_external_corners(corners):
-    """ Halla los corners externos en el caso de que haber capturando los
-    internos. 
-    :param corners: lista de 4 puntos
-    :type corners: list
-    :return: lista con los 4 corners exteriores
-    :rtype: list
+    """Halla los corners externos en el caso de que haber capturando los internos. 
+
+    :Param corners: lista de 4 puntos
+    :Type corners: list
+    :Return: lista con los 4 corners exteriores
+    :Rtype: list
     """
     external_corners = [] # the orden of corners are ul, dl, dr, ur
     for c in range(len(corners)):

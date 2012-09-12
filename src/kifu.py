@@ -20,21 +20,21 @@
 
 """
 :var player1: nombre del jugador 1
-:type player1: str
+:Type player1: str
 :var player2: nombre del jugador 2
-:type player2: str
+:Type player2: str
 :var handicap: numero de piedras de ventaja 
-:type handicap: int
+:Type handicap: int
 :var path: directorio donde guardaremos las partidas 
-:type path: str
+:Type path: str
 :var rank_player1: nivel del jugador 1
-:type rank_player1: str
+:Type rank_player1: str
 :var rank_player2: nivel del jugador 2
-:type rank_player2: str
+:Type rank_player2: str
 :var num_jug: número de jugada actual
-:type num_jug: int
+:Type num_jug: int
 :var dir: dirección del directorio donde guardaremos la partida
-:type dir: str
+:Type dir: str
 """
 
 import os.path
@@ -45,29 +45,30 @@ from cte import HEADER_SGF
 import cte
 
 class Kifu:
-    """ Clase para crear un fichero .sgf y guardar la partida. """
+    """Clase para crear un fichero .sgf y guardar la partida. """
 
     def __init__(self, player1="j1", player2="j2", handicap=0, path="sgf", \
             rank_player1='20k', rank_player2='20k'):
-        """ Inicializamos configuración del archivo sgf. 
-        :param  player1: nombre del jugador 1
-        :type  player1: str
-        :keyword  player1: j1 por defecto
-        :param  player2: nombre del jugador 2
-        :type  player2: str
-        :keyword  player2: j2 por defecto
-        :param  handicap: handicap dado en la partida
-        :type  handicap: int
-        :keyword  handicap: ninguno por defecto (0)
-        :param  path: ruta relativa donde guardamos el fichero
-        :type  path: str
-        :keyword  path: carpeta sgf por defecto
-        :param  rank_player1: rango del jugador 1
-        :type  rank_player1: str
-        :keyword  rank_player1: 20k por defecto, nivel de inicio en el go
-        :param  rank_player2: rango del jugador 2
-        :type  rank_player2: str
-        :keyword  rank_player2: 20k por defecto, nivel de inicio en el go """
+        """Inicializamos configuración del archivo sgf. 
+
+        :Param  player1: nombre del jugador 1
+        :Type  player1: str
+        :Keyword  player1: j1 por defecto
+        :Param  player2: nombre del jugador 2
+        :Type  player2: str
+        :Keyword  player2: j2 por defecto
+        :Param  handicap: handicap dado en la partida
+        :Type  handicap: int
+        :Keyword  handicap: ninguno por defecto (0)
+        :Param  path: ruta relativa donde guardamos el fichero
+        :Type  path: str
+        :Keyword  path: carpeta sgf por defecto
+        :Param  rank_player1: rango del jugador 1
+        :Type  rank_player1: str
+        :Keyword  rank_player1: 20k por defecto, nivel de inicio en el go
+        :Param  rank_player2: rango del jugador 2
+        :Type  rank_player2: str
+        :Keyword  rank_player2: 20k por defecto, nivel de inicio en el go """
         self.num_jug = 0
         self.player_black = player1
         self.player_white = player2
@@ -81,11 +82,12 @@ class Kifu:
 
 
     def add_stone(self, pos, color):
-        """ Añadir piedra al sgf. 
-        :param pos: posición de la piedra
-        :type pos: tuple
-        :param color: color de la piedra 
-        :type color: int """
+        """Añadir piedra al sgf. 
+
+        :Param pos: posición de la piedra
+        :Type pos: tuple
+        :Param color: color de la piedra 
+        :Type color: int """
         coord = chr(pos[0]+97) + chr(pos[1]+97) 
         with open(self.dir, "a") as f:
             if color == BLACK:
@@ -98,7 +100,7 @@ class Kifu:
 
 
     def end_file(self):
-        """ Cerrar el fichero y dejarlo listo para poder abrirlo."""
+        """Cerrar el fichero y dejarlo listo para poder abrirlo."""
         with open(self.dir, "a") as f:
             f.write(")")
 

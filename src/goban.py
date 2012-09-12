@@ -20,15 +20,15 @@
 
 """
 :var goban: matriz de piedras puestas
-:type goban: list 
+:Type goban: list 
 :var statistical: matriz de estadísticas para comprobar piedras buenas o malas
-:type statistical: list
+:Type statistical: list
 :var stones: piedras a comprobar para añadir a estadísticas
-:type stones: list
+:Type stones: list
 :var kifu: Objeto Kifu
-:type kifu: Kifu
+:Type kifu: Kifu
 :var igs: Objeto Igs
-:type igs: Igs
+:Type igs: Igs
 """
 
 from src.cte import GOBAN_SIZE
@@ -38,17 +38,13 @@ from src.kifu import Kifu
 from igs import Igs
 
 class Goban:
-    """ Clase tablero, contiene la matriz de estadíticas y funciones para
-    rellenar el tablero. """
+    """Clase tablero, contiene la matriz de estadíticas y funciones para rellenar el tablero. """
 
     def __init__(self, size):
-        """ Crea dos matrices de tamaño pasado por parámetro, una para
-        estadísticas y otra para guardar el estado de las piedras. Creamos un
-        set de piedras para ir guardando las piedras que estemos comprobando.
-        También inicializa un kifu para guardar la partida y un el objetos igs 
-        que se encargará de conectarse con el servidor que subirá la partida. 
-        :param size: tamaño del tablero
-        :type size: int """
+        """Crea dos matrices de tamaño pasado por parámetro, una para estadísticas y otra para guardar el estado de las piedras. Creamos un set de piedras para ir guardando las piedras que estemos comprobando.  También inicializa un kifu para guardar la partida y un el objetos igs que se encargará de conectarse con el servidor que subirá la partida. 
+
+        :Param size: tamaño del tablero
+        :Type size: int """
         self.size = size
         # El valor 0 es para ir sumando(hay piedra) o restando(no hay)
         # El valor 8 es el nº de veces a buscar antes de hacer la estadística
@@ -62,13 +58,10 @@ class Goban:
     
 
     def add_stones_to_statistical(self, stones):
-        """ Recorremos la lista de piedras pasadas por parámetros para buscar
-        hacer comprobaciones estadísticas en esas piedras, luego recorremos la
-        lista de piedras guardada y la actualizamos. Actualiza kifu, igs y el
-        tablero donde guardamos el estado de las piedras cuando detecta
-        estadísticamente que una piedra se ha puesto.
-        :param stones: lista de piedras
-        :type stones: list """
+        """Recorremos la lista de piedras pasadas por parámetros para buscar hacer comprobaciones estadísticas en esas piedras, luego recorremos la lista de piedras guardada y la actualizamos. Actualiza kifu, igs y el tablero donde guardamos el estado de las piedras cuando detecta estadísticamente que una piedra se ha puesto.
+
+        :Param stones: lista de piedras
+        :Type stones: list """
         
         for st in stones:
             self.statistical[st.x][st.y][0] += 1

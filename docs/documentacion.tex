@@ -9,10 +9,79 @@
 %\usepackage{gensymb} %para añadir el símbolo de los grados celsius, etc
 \usepackage{eurosym} %Paquete para introducir el símbolo del Euro
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,pdftex]{hyperref} 
-\usepackage{hyperref}
-%\title{PROYECTO FINAL\\ DE \\CARRERA \\ ROCAMGO\\}
-%\date{Version 1.0, \today}
-\author{David Medina Velasco \and Víctor Ramírez de la Corte}
+%\usepackage{hyperref}
+
+\usepackage{alltt, parskip, fancyhdr, boxedminipage}
+\usepackage{makeidx, multirow, longtable, tocbibind, amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fullpage}
+\usepackage[usenames]{color}
+\setlength{\headheight}{16pt}
+\setlength{\headsep}{24pt}
+\setlength{\topmargin}{-\headsep}
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{2ex}
+\setlength{\fboxrule}{2\fboxrule}
+\newlength{\BCL} % base class length, for base trees.
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+\definecolor{py@keywordcolour}{rgb}{1,0.45882,0}
+\definecolor{py@stringcolour}{rgb}{0,0.666666,0}
+\definecolor{py@commentcolour}{rgb}{1,0,0}
+\definecolor{py@ps1colour}{rgb}{0.60784,0,0}
+\definecolor{py@ps2colour}{rgb}{0.60784,0,1}
+\definecolor{py@inputcolour}{rgb}{0,0,0}
+\definecolor{py@outputcolour}{rgb}{0,0,1}
+\definecolor{py@exceptcolour}{rgb}{1,0,0}
+\definecolor{py@defnamecolour}{rgb}{1,0.5,0.5}
+\definecolor{py@builtincolour}{rgb}{0.58039,0,0.58039}
+\definecolor{py@identifiercolour}{rgb}{0,0,0}
+\definecolor{py@linenumcolour}{rgb}{0.4,0.4,0.4}
+\definecolor{py@inputcolour}{rgb}{0,0,0}
+% Prompt
+\newcommand{\pysrcprompt}[1]{\textcolor{py@ps1colour}{\small\textbf{#1}}}
+\newcommand{\pysrcmore}[1]{\textcolor{py@ps2colour}{\small\textbf{#1}}}
+% Source code
+\newcommand{\pysrckeyword}[1]{\textcolor{py@keywordcolour}{\small\textbf{#1}}}
+\newcommand{\pysrcbuiltin}[1]{\textcolor{py@builtincolour}{\small\textbf{#1}}}
+\newcommand{\pysrcstring}[1]{\textcolor{py@stringcolour}{\small\textbf{#1}}}
+\newcommand{\pysrcdefname}[1]{\textcolor{py@defnamecolour}{\small\textbf{#1}}}
+\newcommand{\pysrcother}[1]{\small\textbf{#1}}
+% Comments
+\newcommand{\pysrccomment}[1]{\textcolor{py@commentcolour}{\small\textbf{#1}}}
+% Output
+\newcommand{\pysrcoutput}[1]{\textcolor{py@outputcolour}{\small\textbf{#1}}}
+% Exceptions
+\newcommand{\pysrcexcept}[1]{\textcolor{py@exceptcolour}{\small\textbf{#1}}}
+\newlength{\funcindent}
+\newlength{\funcwidth}
+\setlength{\funcindent}{1cm}
+\setlength{\funcwidth}{\textwidth}
+\addtolength{\funcwidth}{-2\funcindent}
+\newlength{\varindent}
+\newlength{\varnamewidth}
+\newlength{\vardescrwidth}
+\newlength{\varwidth}
+\setlength{\varindent}{1cm}
+\setlength{\varnamewidth}{.3\textwidth}
+\setlength{\varwidth}{\textwidth}
+\addtolength{\varwidth}{-4\tabcolsep}
+\addtolength{\varwidth}{-3\arrayrulewidth}
+\addtolength{\varwidth}{-2\varindent}
+\setlength{\vardescrwidth}{\varwidth}
+\addtolength{\vardescrwidth}{-\varnamewidth}
+\newenvironment{Ventry}[1]%
+ {\begin{list}{}{%
+   \renewcommand{\makelabel}[1]{\texttt{##1:}\hfil}%
+   \settowidth{\labelwidth}{\texttt{#1:}}%
+   \setlength{\leftmargin}{\labelsep}%
+   \addtolength{\leftmargin}{\labelwidth}}}%
+ {\end{list}}
+
+\definecolor{UrlColor}{rgb}{0,0.08,0.45}
+%\usepackage[dvips, pagebackref, pdfcreator={epydoc 3.0.1}, bookmarks=true, bookmarksopen=false, pdfpagemode=UseOutlines, colorlinks=true, linkcolor=black, anchorcolor=black, citecolor=black, filecolor=black, menucolor=black, pagecolor=black, urlcolor=UrlColor]{hyperref}
+
 
 \fancyhead[R]{}
 \fancyhead[C]{}
@@ -21,8 +90,13 @@
 %fancyhdr --> paquete con bastantes herramientas para el encabezado y pie de página
 
 \begin{document}
-\part*{PROYECTO\\ FINAL\\ DE \\CARRERA \\ ROCAMGO\\}
-%\maketitle
+
+%\part*{PROYECTO\\ FINAL\\ DE \\CARRERA \\ ROCAMGO\\}
+
+\title{PROYECTO\\ FINAL\\ DE \\CARRERA \\ ROCAMGO\\}
+%\date{Version 1.0, \today}
+\author{David Medina Velasco \and Víctor Ramírez de la Corte}
+\maketitle
 
 \marginsize{3cm}{2cm}{2cm}{2cm} % márgenes {izq}{der}{up}{down}.
 \tableofcontents  %indice
@@ -1166,14 +1240,32 @@ Para Opencv hemos usado el libro de o'reilly books opencv, ademas de la siguient
 
 
 \section{Documentación del código del proyecto} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                               Includes                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{src-module}
+\include{src.camera-module}
+\include{src.cameras-module}
+\include{src.check_goban_moved-module}
+\include{src.cte-module}
+\include{src.functions-module}
+\include{src.goban-module}
+\include{src.igs-module}
+\include{src.kifu-module}
+\include{src.perspective-module}
+\include{src.rocamgo-module}
+\include{src.search_goban-module}
+\include{src.search_stones-module}
+\include{src.stone-module}
+
 
 \section{Que es el go}
 \url{http://es.wikipedia.org/wiki/Go}
 
-\section{Documentación del código del proyecto}
+\section{Documentación del proyecto en html}
 
-Adjuntada en el archivo 'api.pdf' dentro de la carpeta pdf. 
-También podemos ver esta documentación en html, dentro de la carpeta html. 
+Dentro de la carpeta html podemos ver toda esta documentación. 
 
 
 \end{document}

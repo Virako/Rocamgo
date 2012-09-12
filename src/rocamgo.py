@@ -19,37 +19,37 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """:var cam: Objeto Cameras 
-:type cam: Cameras
+:Type cam: Cameras
 :var cams_found: número de cámaras encontradas en el ordenador
-:type cams_found: int
+:Type cams_found: int
 :var camera: cámara que estamos usando
-:type camera: Camera
+:Type camera: Camera
 :var prev_corners: esquinas del tablero anteriores encontradas
-:type prev_corners: list
+:Type prev_corners: list
 :var current_corners: esquinas actuales del tablero encontradas
-:type current_corners: list
+:Type current_corners: list
 :var good_corners: últimas esquinas buenas encontradas
-:type good_corners: list
+:Type good_corners: list
 :var img: imagen actual sacada de la cámara o video
-:type img: IplImage 
+:Type img: IplImage 
 :var ideal_img: tablero en formato ideal
-:type ideal_img: IplImage 
+:Type ideal_img: IplImage 
 :var goban: Objeto tablero
-:type goban: Goban
+:Type goban: Goban
 :var circles: circulos encontrado en la imagen
-:type circles: CvMat
+:Type circles: CvMat
 :var false_stones: contador para piedras falsas, no son negras o blancas
-:type false_stones: int
+:Type false_stones: int
 :var stones: piedras detectadas como negras o blancas
-:type stones: list
+:Type stones: list
 :var pt: centro de la piedra
-:type pt: tuple
+:Type pt: tuple
 :var radious: radio de la piedra
-:type radious: float
+:Type radious: float
 :var color: color de la piedra
-:type color: int
+:Type color: int
 :var key: tecla pulsada       
-:type key: int
+:Type key: int
 """
 
 from src.cameras import Cameras

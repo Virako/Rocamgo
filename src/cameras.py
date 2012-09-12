@@ -20,9 +20,9 @@
 
 """
 :var cameras: lista de cámaras 
-:type cameras: list
+:Type cameras: list
 :var camera: cámara seleccionada
-:type camera: Capture
+:Type camera: Capture
 """
 
 from sys import path
@@ -38,7 +38,7 @@ from src.camera import Camera
 from src.cte import *
 
 class Cameras:
-    """ Clase para abrir las cámaras disponibles en el ordenador. """
+    """Clase para abrir las cámaras disponibles en el ordenador. """
 
     def __init__(self):
         #cam = Camera()
@@ -48,27 +48,28 @@ class Cameras:
         self.camera = None
 
     def on_mouse(self, event, x, y, flags, camera):
-        """ Capturador de eventos de click de ratón. 
-        :param event: Evento capturado.  
-        :type event: int
-        :param x: posición x del ratón. 
-        :type x: int
-        :param y: posición y del ratón. 
-        :type y: int
-        :param camera: objeto Camera. 
-        :type camera: Camera
+        """Capturador de eventos de click de ratón. 
+
+        :Param event: Evento capturado.  
+        :Type event: int
+        :Param x: posición x del ratón. 
+        :Type x: int
+        :Param y: posición y del ratón. 
+        :Type y: int
+        :Param camera: objeto Camera. 
+        :Type camera: Camera
         """
         if event == CV_EVENT_LBUTTONDBLCLK: 
             self.camera = camera
 
     def check_cameras(self, num=MAX_CAMERAS):
-        """ Comprueba las cámaras disponibles. 
-        :param num: máximo número de cámaras a comprobar
-        :keyword num: el valor por defecto es 99, ya que en Linux es lo
-        permitido
-        :param num: int
-        :return: lista de cámaras disponibles
-        :rtype: list of Camera
+        """Comprueba las cámaras disponibles. 
+
+        :Param num: máximo número de cámaras a comprobar
+        :Keyword num: 99 por defecto, ya que en Linux es lo permitido
+        :Param num: int
+        :Return: lista de cámaras disponibles
+        :Rtype: list of Camera
         """
         n = 0
         while len(self.cameras) < num and n <= MAX_CAMERAS: 
@@ -80,10 +81,10 @@ class Cameras:
         return len(self.cameras)
 
     def show_and_select_camera(self):
-        """ Muestra las cámaras disponibles en ventanas y da la opción de
-        seleccionar una de ellas pulsando doble click.
-        :return: cámara seleccionada
-        :rtype: Camera """
+        """Muestra las cámaras disponibles en ventanas y da la opción de seleccionar una de ellas pulsando doble click.
+
+        :Return: cámara seleccionada
+        :Rtype: Camera """
         if not self.cameras:
             return self.camera
         elif len(self.cameras) == 1:

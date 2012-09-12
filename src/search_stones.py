@@ -36,14 +36,15 @@ from src.cte import WHITE
 
 
 def search_stones(img, corners, dp=1.7):
-    """ Devuelve las circunferencias encontradas en una imagen.
-    :param img: imagen donde buscaremos las circunferencias
-    :type img: IplImage
-    :param corners: lista de esquinas
-    :type corners: list
-    :param dp: profundidad de búsqueda de círculos
-    :type dp: int
-    :keyword dp: 1.7 era el valor que mejor funcionaba. Prueba y error """
+    """Devuelve las circunferencias encontradas en una imagen.
+
+    :Param img: imagen donde buscaremos las circunferencias
+    :Type img: IplImage
+    :Param corners: lista de esquinas
+    :Type corners: list
+    :Param dp: profundidad de búsqueda de círculos
+    :Type dp: int
+    :Keyword dp: 1.7 era el valor que mejor funcionaba. Prueba y error """
     gray = CreateMat(img.width, img.height,CV_8UC1)
     CvtColor(img, gray, CV_BGR2GRAY)
     
@@ -67,17 +68,17 @@ def search_stones(img, corners, dp=1.7):
 
 
 def check_color_stone(pt, radious, img, threshold=190):
-    """ Devuelve el color de la piedra dado el centro y el radio de la piedra y
-    una imagen. También desechamos las piedras que no sean negras o blancas.
-    :param pt: centro de la piedra
-    :type pt: tuple
-    :param radious: radio de la piedra
-    :type radious: int
-    :param img: imagen donde comprobaremos el color de ciertos pixeles
-    :type img: IplImage
-    :param threshold: umbral de blanco
-    :type threshold: int
-    :keyword threshold: 190 cuando hay buena luminosidad """
+    """Devuelve el color de la piedra dado el centro y el radio de la piedra y una imagen. También desechamos las piedras que no sean negras o blancas.
+
+    :Param pt: centro de la piedra
+    :Type pt: tuple
+    :Param radious: radio de la piedra
+    :Type radious: int
+    :Param img: imagen donde comprobaremos el color de ciertos pixeles
+    :Type img: IplImage
+    :Param threshold: umbral de blanco
+    :Type threshold: int
+    :Keyword threshold: 190 cuando hay buena luminosidad """
     
     black_total = 0
     white_total = 0

@@ -48,8 +48,8 @@
 \indexentry{src \textit{(package)}!src.igs \textit{(module)}|)}{12}
 \indexentry{src \textit{(package)}!src.kifu \textit{(module)}|(hyperpage}{13}
 \indexentry{src \textit{(package)}!src.kifu \textit{(module)}!src.kifu.Kifu \textit{(class)}|(hyperpage}{13}
-\indexentry{src \textit{(package)}!src.kifu \textit{(module)}!src.kifu.Kifu \textit{(class)}!src.kifu.Kifu.\_\_init\_\_ \textit{(method)}|hyperpage}{13}
-\indexentry{src \textit{(package)}!src.kifu \textit{(module)}!src.kifu.Kifu \textit{(class)}!src.kifu.Kifu.add\_stone \textit{(method)}|hyperpage}{13}
+\indexentry{src \textit{(package)}!src.kifu \textit{(module)}!src.kifu.Kifu \textit{(class)}!src.kifu.Kifu.\_\_init\_\_ \textit{(method)}|hyperpage}{14}
+\indexentry{src \textit{(package)}!src.kifu \textit{(module)}!src.kifu.Kifu \textit{(class)}!src.kifu.Kifu.add\_stone \textit{(method)}|hyperpage}{14}
 \indexentry{src \textit{(package)}!src.kifu \textit{(module)}!src.kifu.Kifu \textit{(class)}!src.kifu.Kifu.end\_file \textit{(method)}|hyperpage}{14}
 \indexentry{src \textit{(package)}!src.kifu \textit{(module)}!src.kifu.Kifu \textit{(class)}|)}{14}
 \indexentry{src \textit{(package)}!src.kifu \textit{(module)}|)}{14}
@@ -65,17 +65,17 @@
 \indexentry{src \textit{(package)}!src.search\_goban \textit{(module)}!src.search\_goban.filter\_image \textit{(function)}|hyperpage}{17}
 \indexentry{src \textit{(package)}!src.search\_goban \textit{(module)}!src.search\_goban.detect\_contour \textit{(function)}|hyperpage}{17}
 \indexentry{src \textit{(package)}!src.search\_goban \textit{(module)}!src.search\_goban.search\_goban \textit{(function)}|hyperpage}{17}
-\indexentry{src \textit{(package)}!src.search\_goban \textit{(module)}|)}{17}
-\indexentry{src \textit{(package)}!src.search\_stones \textit{(module)}|(hyperpage}{18}
-\indexentry{src \textit{(package)}!src.search\_stones \textit{(module)}!src.search\_stones.search\_stones \textit{(function)}|hyperpage}{18}
-\indexentry{src \textit{(package)}!src.search\_stones \textit{(module)}!src.search\_stones.check\_color\_stone \textit{(function)}|hyperpage}{18}
-\indexentry{src \textit{(package)}!src.search\_stones \textit{(module)}|)}{18}
-\indexentry{src \textit{(package)}!src.stone \textit{(module)}|(hyperpage}{19}
-\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}|(hyperpage}{19}
-\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_init\_\_ \textit{(method)}|hyperpage}{19}
-\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_str\_\_ \textit{(method)}|hyperpage}{19}
-\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_eq\_\_ \textit{(method)}|hyperpage}{19}
-\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_cmp\_\_ \textit{(method)}|hyperpage}{19}
-\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_hash\_\_ \textit{(method)}|hyperpage}{19}
-\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}|)}{19}
-\indexentry{src \textit{(package)}!src.stone \textit{(module)}|)}{19}
+\indexentry{src \textit{(package)}!src.search\_goban \textit{(module)}|)}{18}
+\indexentry{src \textit{(package)}!src.search\_stones \textit{(module)}|(hyperpage}{19}
+\indexentry{src \textit{(package)}!src.search\_stones \textit{(module)}!src.search\_stones.search\_stones \textit{(function)}|hyperpage}{19}
+\indexentry{src \textit{(package)}!src.search\_stones \textit{(module)}!src.search\_stones.check\_color\_stone \textit{(function)}|hyperpage}{19}
+\indexentry{src \textit{(package)}!src.search\_stones \textit{(module)}|)}{19}
+\indexentry{src \textit{(package)}!src.stone \textit{(module)}|(hyperpage}{20}
+\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}|(hyperpage}{20}
+\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_init\_\_ \textit{(method)}|hyperpage}{20}
+\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_str\_\_ \textit{(method)}|hyperpage}{20}
+\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_eq\_\_ \textit{(method)}|hyperpage}{20}
+\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_cmp\_\_ \textit{(method)}|hyperpage}{20}
+\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}!src.stone.Stone.\_\_hash\_\_ \textit{(method)}|hyperpage}{20}
+\indexentry{src \textit{(package)}!src.stone \textit{(module)}!src.stone.Stone \textit{(class)}|)}{21}
+\indexentry{src \textit{(package)}!src.stone \textit{(module)}|)}{21}

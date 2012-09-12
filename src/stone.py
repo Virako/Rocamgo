@@ -20,17 +20,17 @@
 
 """
 :var color: color de la piedra
-:type color: int
+:Type color: int
 :var img: imagen donde se encuentra la piedra
-:type img: IplImage
+:Type img: IplImage
 :var pix: pixel donde se encuentra la piedra dentro de la imagen
-:type pix: tuple
+:Type pix: tuple
 :var pt: coordenada del tablero donde se encuentra la piedra
-:type pt: tuple
+:Type pt: tuple
 :var x: coordenada x del tablero donde se encuentra la piedra 
-:type x: int
+:Type x: int
 :var y: coordenada y del tablero donde se encuentra la piedra 
-:type y: int
+:Type y: int
 """
 
 from src.cte import GOBAN_SIZE
@@ -39,21 +39,21 @@ from src.cte import BLACK
 
 
 class Stone:
-    """ Clase piedra. """
+    """Clase piedra. """
     def __init__(self, color, img=None, pix=None, pt=None):
-        """ Inicializamos una piedra, si no tenemos la posición, buscamos cual
-        es esa posición dado una imagen ideal y un pixel. 
-        :param color: color de la piedra, BLACK or WHITE
-        :type color: int 
-        :param img: imagen en formato ideal
-        :type img: IplImage
-        :keyword img: None si no le pasamos ninguna imagen por parámetro
-        :param pix: pixel donde se encuentra la piedra en la imagen
-        :type pix: tuple
-        :keyword pix: None si no le pasamos ningun pixel por parámetro
-        :param pt: punto donde se encuentra la piedra en el tablero
-        :type pt: tuple
-        :keyword pt: None si no le pasamos ningún punto parámetro. """
+        """Inicializamos una piedra, si no tenemos la posición, buscamos cual es esa posición dado una imagen ideal y un pixel. 
+
+        :Param color: color de la piedra, BLACK or WHITE
+        :Type color: int 
+        :Param img: imagen en formato ideal
+        :Type img: IplImage
+        :Keyword img: None si no le pasamos ninguna imagen por parámetro
+        :Param pix: pixel donde se encuentra la piedra en la imagen
+        :Type pix: tuple
+        :Keyword pix: None si no le pasamos ningun pixel por parámetro
+        :Param pt: punto donde se encuentra la piedra en el tablero
+        :Type pt: tuple
+        :Keyword pt: None si no le pasamos ningún punto parámetro. """
         if not img and not pix:
             self.pt = pt
         elif not pt:

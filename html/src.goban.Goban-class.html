@@ -57,8 +57,7 @@
 </table>
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class Goban</h1><p class="nomargin-top"><span class="codelink"><a href="src.goban-pysrc.html#Goban">source&nbsp;code</a></span></p>
-<p>Clase tablero, contiene la matriz de estad&#237;ticas y funciones para 
-  rellenar el tablero.</p>
+Clase tablero, contiene la matriz de estad&#237;ticas y funciones para rellenar el tablero.
 
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
@@ -85,28 +84,14 @@
         <tr>
           <td><span class="summary-sig"><a href="src.goban.Goban-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">size</span>)</span><br />
-      Crea dos matrices de tama&#241;o pasado por par&#225;metro, una para 
-      estad&#237;sticas y otra para guardar el estado de las piedras.</td>
+      Crea dos matrices de tama&#241;o pasado por par&#225;metro, una para estad&#237;sticas y otra para guardar el estado de las piedras. Creamos un set de piedras para ir guardando las piedras que estemos comprobando.  Tambi&#233;n inicializa un kifu para guardar la partida y un el objetos igs que se encargar&#225; de conectarse con el servidor que subir&#225; la partida.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="src.goban-pysrc.html#Goban.__init__">source&nbsp;code</a></span>
-            <br /><span class="codelink"><a href="javascript:void(0);" onclick="toggleCallGraph('call_graph_for___init___3-summary-div');return false;">call&nbsp;graph</a></span>&nbsp;
+            
           </td>
         </tr>
       </table>
-      <div style="display:none" id="call_graph_for___init___3-summary-div"><center>
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr><td><center>  <map id="call_graph_for___init___3" name="call_graph_for___init___3">
-<area shape="rect" id="node1" href="src.goban.Goban-class.html#__init__" title="__init__()" alt="" coords="219,33,325,66"/>
-<area shape="rect" id="node2" href="src.igs.Igs-class.html#__init__" title="igs.Igs.__init__()" alt="" coords="383,5,551,38"/>
-<area shape="rect" id="node3" href="src.kifu.Kifu-class.html#__init__" title="kifu.Kifu.__init__()" alt="" coords="373,61,560,94"/>
-<area shape="rect" id="node4" href="src.rocamgo-module.html#main" title="rocamgo.main()" alt="" coords="5,33,171,66"/>
-</map>
-  <img src="call_graph_for___init___3.gif" alt='' usemap="#call_graph_for___init___3" ismap="ismap" class="graph-without-title" />
-</center></td></tr>
-  <tr><th>Call Graph</th></tr>
-</table><br />
-</center></div>
-
+      
     </td>
   </tr>
 <tr>
@@ -117,29 +102,14 @@
         <tr>
           <td><span class="summary-sig"><a href="src.goban.Goban-class.html#add_stones_to_statistical" class="summary-sig-name">add_stones_to_statistical</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">stones</span>)</span><br />
-      Recorremos la lista de piedras pasadas por par&#225;metros para buscar 
-      hacer comprobaciones estad&#237;sticas en esas piedras, luego recorremos 
-      la lista de piedras guardada y la actualizamos.</td>
+      Recorremos la lista de piedras pasadas por par&#225;metros para buscar hacer comprobaciones estad&#237;sticas en esas piedras, luego recorremos la lista de piedras guardada y la actualizamos. Actualiza kifu, igs y el tablero donde guardamos el estado de las piedras cuando detecta estad&#237;sticamente que una piedra se ha puesto.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="src.goban-pysrc.html#Goban.add_stones_to_statistical">source&nbsp;code</a></span>
-            <br /><span class="codelink"><a href="javascript:void(0);" onclick="toggleCallGraph('call_graph_for_add_stones_to_s-summary-div');return false;">call&nbsp;graph</a></span>&nbsp;
+            
           </td>
         </tr>
       </table>
-      <div style="display:none" id="call_graph_for_add_stones_to_s-summary-div"><center>
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr><td><center>  <map id="call_graph_for_add_stones_to_s" name="call_graph_for_add_stones_to_s">
-<area shape="rect" id="node1" href="src.goban.Goban-class.html#add_stones_to_statistical" title="add_stones_to_statistical()" alt="" coords="219,33,485,66"/>
-<area shape="rect" id="node2" href="src.igs.Igs-class.html#add_stone" title="igs.Igs.add_stone()" alt="" coords="543,5,735,38"/>
-<area shape="rect" id="node3" href="src.kifu.Kifu-class.html#add_stone" title="kifu.Kifu.add_stone()" alt="" coords="533,61,744,94"/>
-<area shape="rect" id="node4" href="src.rocamgo-module.html#main" title="rocamgo.main()" alt="" coords="5,33,171,66"/>
-</map>
-  <img src="call_graph_for_add_stones_to_s.gif" alt='' usemap="#call_graph_for_add_stones_to_s" ismap="ismap" class="graph-without-title" />
-</center></td></tr>
-  <tr><th>Call Graph</th></tr>
-</table><br />
-</center></div>
-
+      
     </td>
   </tr>
 <tr>
@@ -206,29 +176,15 @@
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="src.goban-pysrc.html#Goban.__init__">source&nbsp;code</a></span>&nbsp;
-    <br /><span class="codelink"><a href="javascript:void(0);" onclick="toggleCallGraph('call_graph_for___init___3-div');return false;">call&nbsp;graph</a></span>&nbsp;</td>
+    </td>
   </tr></table>
-  <div style="display:none" id="call_graph_for___init___3-div"><center>
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr><td><center>  <map id="call_graph_for___init___3" name="call_graph_for___init___3">
-<area shape="rect" id="node1" href="src.goban.Goban-class.html#__init__" title="__init__()" alt="" coords="219,33,325,66"/>
-<area shape="rect" id="node2" href="src.igs.Igs-class.html#__init__" title="igs.Igs.__init__()" alt="" coords="383,5,551,38"/>
-<area shape="rect" id="node3" href="src.kifu.Kifu-class.html#__init__" title="kifu.Kifu.__init__()" alt="" coords="373,61,560,94"/>
-<area shape="rect" id="node4" href="src.rocamgo-module.html#main" title="rocamgo.main()" alt="" coords="5,33,171,66"/>
-</map>
-  <img src="call_graph_for___init___3.gif" alt='' usemap="#call_graph_for___init___3" ismap="ismap" class="graph-without-title" />
-</center></td></tr>
-  <tr><th>Call Graph</th></tr>
-</table><br />
-</center></div>
-
-  <p>Crea dos matrices de tama&#241;o pasado por par&#225;metro, una para 
-  estad&#237;sticas y otra para guardar el estado de las piedras. Creamos un set
-  de piedras para ir guardando las piedras que estemos comprobando. Tambi&#233;n
-  inicializa un kifu para guardar la partida y un el objetos igs que se 
-  encargar&#225; de conectarse con el servidor que subir&#225; la partida. :param 
-  size: tama&#241;o del tablero :type size: int</p>
+  
+  Crea dos matrices de tama&#241;o pasado por par&#225;metro, una para estad&#237;sticas y otra para guardar el estado de las piedras. Creamos un set de piedras para ir guardando las piedras que estemos comprobando.  Tambi&#233;n inicializa un kifu para guardar la partida y un el objetos igs que se encargar&#225; de conectarse con el servidor que subir&#225; la partida.
   <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>size</code></strong> (int) - tama&#241;o del tablero</li>
+    </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -244,29 +200,15 @@
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="src.goban-pysrc.html#Goban.add_stones_to_statistical">source&nbsp;code</a></span>&nbsp;
-    <br /><span class="codelink"><a href="javascript:void(0);" onclick="toggleCallGraph('call_graph_for_add_stones_to_s-div');return false;">call&nbsp;graph</a></span>&nbsp;</td>
+    </td>
   </tr></table>
-  <div style="display:none" id="call_graph_for_add_stones_to_s-div"><center>
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr><td><center>  <map id="call_graph_for_add_stones_to_s" name="call_graph_for_add_stones_to_s">
-<area shape="rect" id="node1" href="src.goban.Goban-class.html#add_stones_to_statistical" title="add_stones_to_statistical()" alt="" coords="219,33,485,66"/>
-<area shape="rect" id="node2" href="src.igs.Igs-class.html#add_stone" title="igs.Igs.add_stone()" alt="" coords="543,5,735,38"/>
-<area shape="rect" id="node3" href="src.kifu.Kifu-class.html#add_stone" title="kifu.Kifu.add_stone()" alt="" coords="533,61,744,94"/>
-<area shape="rect" id="node4" href="src.rocamgo-module.html#main" title="rocamgo.main()" alt="" coords="5,33,171,66"/>
-</map>
-  <img src="call_graph_for_add_stones_to_s.gif" alt='' usemap="#call_graph_for_add_stones_to_s" ismap="ismap" class="graph-without-title" />
-</center></td></tr>
-  <tr><th>Call Graph</th></tr>
-</table><br />
-</center></div>
-
-  <p>Recorremos la lista de piedras pasadas por par&#225;metros para buscar 
-  hacer comprobaciones estad&#237;sticas en esas piedras, luego recorremos la 
-  lista de piedras guardada y la actualizamos. Actualiza kifu, igs y el 
-  tablero donde guardamos el estado de las piedras cuando detecta 
-  estad&#237;sticamente que una piedra se ha puesto. :param stones: lista de 
-  piedras :type stones: list</p>
+  
+  Recorremos la lista de piedras pasadas por par&#225;metros para buscar hacer comprobaciones estad&#237;sticas en esas piedras, luego recorremos la lista de piedras guardada y la actualizamos. Actualiza kifu, igs y el tablero donde guardamos el estado de las piedras cuando detecta estad&#237;sticamente que una piedra se ha puesto.
   <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>stones</code></strong> (list) - lista de piedras</li>
+    </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -297,7 +239,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Sep 11 13:44:28 2012
+    Generated by Epydoc 3.0.1 on Wed Sep 12 04:59:33 2012
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

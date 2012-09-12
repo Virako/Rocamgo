@@ -55,6 +55,6 @@ Scanning input file api.idx....
    -- Extra `!' at position 84 of first argument.
 done (57 entries accepted, 24 rejected).
 Sorting entries....done (307 comparisons).
-Generating output file api.ind....done (57 lines written, 0 warnings).
+Generating output file api.ind....done (59 lines written, 0 warnings).
 Output written in api.ind.
 Transcript written in api.ilg.

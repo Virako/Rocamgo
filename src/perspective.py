@@ -36,14 +36,15 @@ from functions import get_external_corners
 
 
 def perspective(img, corners): 
-    """ Crea una imagen en modelo ideal del tablero dado en perspectiva.
-    :param img: imagen con el tablero en perspectiva
-    :todo comprobar de que tipo es la imagen TODO
-    :type img: IplImage or CvMat
-    :param corners: lista de las esquinas del tablero
-    :type corners: list
-    :return: imagen en modelo ideal
-    :rtype: IplImage
+    """Crea una imagen en modelo ideal del tablero dado en perspectiva.
+
+    :Param img: imagen con el tablero en perspectiva
+    :Todo: comprobar de que tipo es la imagen TODO
+    :Type img: IplImage or CvMat
+    :Param corners: lista de las esquinas del tablero
+    :Type corners: list
+    :Return: imagen en modelo ideal
+    :Rtype: IplImage
     """
 
     max_edge = get_max_edge(corners)

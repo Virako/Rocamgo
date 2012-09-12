@@ -85,22 +85,11 @@
       Devuelve las circunferencias encontradas en una imagen.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="src.search_stones-pysrc.html#search_stones">source&nbsp;code</a></span>
-            <br /><span class="codelink"><a href="javascript:void(0);" onclick="toggleCallGraph('call_graph_for_search_stones-summary-div');return false;">call&nbsp;graph</a></span>&nbsp;
+            
           </td>
         </tr>
       </table>
-      <div style="display:none" id="call_graph_for_search_stones-summary-div"><center>
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr><td><center>  <map id="call_graph_for_search_stones" name="call_graph_for_search_stones">
-<area shape="rect" id="node1" href="src.rocamgo-module.html#main" title="rocamgo.main()" alt="" coords="5,5,171,38"/>
-<area shape="rect" id="node2" href="src.search_stones-module.html#search_stones" title="search_stones()" alt="" coords="220,5,385,38"/>
-</map>
-  <img src="call_graph_for_search_stones.gif" alt='' usemap="#call_graph_for_search_stones" ismap="ismap" class="graph-without-title" />
-</center></td></tr>
-  <tr><th>Call Graph</th></tr>
-</table><br />
-</center></div>
-
+      
     </td>
   </tr>
 <tr>
@@ -113,26 +102,14 @@
         <span class="summary-sig-arg">radious</span>,
         <span class="summary-sig-arg">img</span>,
         <span class="summary-sig-arg">threshold</span>=<span class="summary-sig-default">190</span>)</span><br />
-      Devuelve el color de la piedra dado el centro y el radio de la piedra
-      y una imagen.</td>
+      Devuelve el color de la piedra dado el centro y el radio de la piedra y una imagen. Tambi&#233;n desechamos las piedras que no sean negras o blancas.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="src.search_stones-pysrc.html#check_color_stone">source&nbsp;code</a></span>
-            <br /><span class="codelink"><a href="javascript:void(0);" onclick="toggleCallGraph('call_graph_for_check_color_sto-summary-div');return false;">call&nbsp;graph</a></span>&nbsp;
+            
           </td>
         </tr>
       </table>
-      <div style="display:none" id="call_graph_for_check_color_sto-summary-div"><center>
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr><td><center>  <map id="call_graph_for_check_color_sto" name="call_graph_for_check_color_sto">
-<area shape="rect" id="node1" href="src.rocamgo-module.html#main" title="rocamgo.main()" alt="" coords="5,5,171,38"/>
-<area shape="rect" id="node2" href="src.search_stones-module.html#check_color_stone" title="check_color_stone()" alt="" coords="219,5,421,38"/>
-</map>
-  <img src="call_graph_for_check_color_sto.gif" alt='' usemap="#call_graph_for_check_color_sto" ismap="ismap" class="graph-without-title" />
-</center></td></tr>
-  <tr><th>Call Graph</th></tr>
-</table><br />
-</center></div>
-
+      
     </td>
   </tr>
 </table>
@@ -192,26 +169,18 @@
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="src.search_stones-pysrc.html#search_stones">source&nbsp;code</a></span>&nbsp;
-    <br /><span class="codelink"><a href="javascript:void(0);" onclick="toggleCallGraph('call_graph_for_search_stones-div');return false;">call&nbsp;graph</a></span>&nbsp;</td>
+    </td>
   </tr></table>
-  <div style="display:none" id="call_graph_for_search_stones-div"><center>
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr><td><center>  <map id="call_graph_for_search_stones" name="call_graph_for_search_stones">
-<area shape="rect" id="node1" href="src.rocamgo-module.html#main" title="rocamgo.main()" alt="" coords="5,5,171,38"/>
-<area shape="rect" id="node2" href="src.search_stones-module.html#search_stones" title="search_stones()" alt="" coords="220,5,385,38"/>
-</map>
-  <img src="call_graph_for_search_stones.gif" alt='' usemap="#call_graph_for_search_stones" ismap="ismap" class="graph-without-title" />
-</center></td></tr>
-  <tr><th>Call Graph</th></tr>
-</table><br />
-</center></div>
-
-  <p>Devuelve las circunferencias encontradas en una imagen. :param img: 
-  imagen donde buscaremos las circunferencias :type img: IplImage :param 
-  corners: lista de esquinas :type corners: list :param dp: profundidad de 
-  b&#250;squeda de c&#237;rculos :type dp: int :keyword dp: 1.7 era el valor que 
-  mejor funcionaba. Prueba y error</p>
+  
+  Devuelve las circunferencias encontradas en una imagen.
   <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>img</code></strong> (IplImage) - imagen donde buscaremos las circunferencias</li>
+        <li><strong class="pname"><code>corners</code></strong> (list) - lista de esquinas</li>
+        <li><strong class="pname"><code>dp</code></strong> (int) - profundidad de b&#250;squeda de c&#237;rculos</li>
+        <li><strong class="pname"><code>dp</code></strong> (int) - 1.7 era el valor que mejor funcionaba. Prueba y error</li>
+    </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -229,28 +198,19 @@
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="src.search_stones-pysrc.html#check_color_stone">source&nbsp;code</a></span>&nbsp;
-    <br /><span class="codelink"><a href="javascript:void(0);" onclick="toggleCallGraph('call_graph_for_check_color_sto-div');return false;">call&nbsp;graph</a></span>&nbsp;</td>
+    </td>
   </tr></table>
-  <div style="display:none" id="call_graph_for_check_color_sto-div"><center>
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr><td><center>  <map id="call_graph_for_check_color_sto" name="call_graph_for_check_color_sto">
-<area shape="rect" id="node1" href="src.rocamgo-module.html#main" title="rocamgo.main()" alt="" coords="5,5,171,38"/>
-<area shape="rect" id="node2" href="src.search_stones-module.html#check_color_stone" title="check_color_stone()" alt="" coords="219,5,421,38"/>
-</map>
-  <img src="call_graph_for_check_color_sto.gif" alt='' usemap="#call_graph_for_check_color_sto" ismap="ismap" class="graph-without-title" />
-</center></td></tr>
-  <tr><th>Call Graph</th></tr>
-</table><br />
-</center></div>
-
-  <p>Devuelve el color de la piedra dado el centro y el radio de la piedra 
-  y una imagen. Tambi&#233;n desechamos las piedras que no sean negras o 
-  blancas. :param pt: centro de la piedra :type pt: tuple :param radious: 
-  radio de la piedra :type radious: int :param img: imagen donde 
-  comprobaremos el color de ciertos pixeles :type img: IplImage :param 
-  threshold: umbral de blanco :type threshold: int :keyword threshold: 190 
-  cuando hay buena luminosidad</p>
+  
+  Devuelve el color de la piedra dado el centro y el radio de la piedra y una imagen. Tambi&#233;n desechamos las piedras que no sean negras o blancas.
   <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>pt</code></strong> (tuple) - centro de la piedra</li>
+        <li><strong class="pname"><code>radious</code></strong> (int) - radio de la piedra</li>
+        <li><strong class="pname"><code>img</code></strong> (IplImage) - imagen donde comprobaremos el color de ciertos pixeles</li>
+        <li><strong class="pname"><code>threshold</code></strong> (int) - umbral de blanco</li>
+        <li><strong class="pname"><code>threshold</code></strong> (int) - 190 cuando hay buena luminosidad</li>
+    </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -281,7 +241,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Sep 11 13:44:28 2012
+    Generated by Epydoc 3.0.1 on Wed Sep 12 04:59:33 2012
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

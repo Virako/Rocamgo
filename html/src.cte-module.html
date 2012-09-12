@@ -75,56 +75,62 @@
 </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
+      <span class="summary-type">int</span>
     </td><td class="summary">
-        <a name="NUM_EDGES"></a><span class="summary-name">NUM_EDGES</span> = <code title="4">4</code>
+        <a name="NUM_EDGES"></a><span class="summary-name">NUM_EDGES</span> = <code title="4">4</code><br />
+      n&#250;mero de esquinas que existen en un tablero
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+        <a name="RELATION_WEIGHT_HEIGHT"></a><span class="summary-name">RELATION_WEIGHT_HEIGHT</span> = <code title="0.933333333333">0.933333333333</code><br />
+      relaci&#243;n anchura/altura que existe en el tablero
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="MAX_CAMERAS"></a><span class="summary-name">MAX_CAMERAS</span> = <code title="99">99</code><br />
+      n&#250;mero m&#225;ximo de c&#225;maras a buscar
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="GOBAN_SIZE"></a><span class="summary-name">GOBAN_SIZE</span> = <code title="19">19</code><br />
+      tama&#241;o del tablero
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="BLACK"></a><span class="summary-name">BLACK</span> = <code title="1">1</code><br />
+      constante para decir que una piedra es negra
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="WHITE"></a><span class="summary-name">WHITE</span> = <code title="2">2</code><br />
+      constante para decir que una piedra es blanca
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="RELATION_WEIGHT_HEIGHT"></a><span class="summary-name">RELATION_WEIGHT_HEIGHT</span> = <code title="0.933333333333">0.933333333333</code>
+        <a name="current_date"></a><span class="summary-name">current_date</span> = <code title="'12 Sep 2012'"><code class="variable-quote">'</code><code class="variable-string">12 Sep 2012</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="MAX_CAMERAS"></a><span class="summary-name">MAX_CAMERAS</span> = <code title="99">99</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="GOBAN_SIZE"></a><span class="summary-name">GOBAN_SIZE</span> = <code title="19">19</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="BLACK"></a><span class="summary-name">BLACK</span> = <code title="1">1</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="WHITE"></a><span class="summary-name">WHITE</span> = <code title="2">2</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="current_date"></a><span class="summary-name">current_date</span> = <code title="'11 Sep 2012'"><code class="variable-quote">'</code><code class="variable-string">11 Sep 2012</code><code class="variable-quote">'</code></code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
+      <span class="summary-type">str</span>
     </td><td class="summary">
         <a href="src.cte-module.html#HEADER_SGF" class="summary-name">HEADER_SGF</a> = <code title="['(;FF[4]GM[1]SZ[19]',
  '''
@@ -135,7 +141,7 @@ HA[0]''',
 KM[6.5]''',
  '''
 ..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">(;FF[4]GM[1]SZ[19]</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\nAP[Rocamgo]</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\nHA[0]</code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code><br />
-      FEATURES OF FILES .SGF ====================================
+      cabecera de un archivo .sgf
     </td>
   </tr>
 <tr>
@@ -170,35 +176,43 @@ KM[6.5]''',
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <h3 class="epydoc">HEADER_SGF</h3>
-  <p>FEATURES OF FILES .SGF ====================================</p>
-  <p>* AB: Add Black: locations of Black stones to be placed on the board 
-  prior to the first move. * AW: Add White: locations of White stones to be
-  placed on the board prior to the first move. * AN: Annotations: name of 
-  the person commenting the game. * AP: Application: application that was 
-  used to create the SGF file (e.g. CGOban2,...). * B: a move by Black at 
-  the location specified by the property value. * BR: Black Rank: rank of 
-  the Black player. * BT: Black Team: name of the Black team. * C: Comment:
-  a comment. * CP: Copyright: copyright information. See Kifu Copyright 
-  Discussion. * DT: Date: date of the game. * EV: Event: name of the event 
-  (e.g. 58th Honinbo Title Match). * FF: File format: version of SGF 
-  specification governing this SGF file. * GM: Game: type of game 
-  represented by this SGF file. A property value of 1 refers to Go. * GN: 
-  Game Name: name of the game record. * HA: Handicap: the number of 
-  handicap stones given to Black. Placment of the handicap stones are set 
-  using the AB property. * KM: Komi: komi. * ON: Opening: information about
-  the opening (fuseki), rarely used in any file. * OT: Overtime: overtime 
-  system. * PB: Black Name: name of the black player. * PC: Place: place 
-  where the game was played (e.g.: Tokyo). * PL: Player: color of player to
-  start. * PW: White Name: name of the white player. * RE: Result: result, 
-  usually in the format &quot;B+R&quot; (Black wins by resign) or 
-  &quot;B+3.5&quot; (black wins by 3.5 moku). * RO: Round: round (e.g.: 5th
-  game). * RU: Rules: ruleset (e.g.: Japanese). * SO: Source: source of the
-  SGF file. * SZ: Size: size of the board, non square boards are supported.
-  * TM: Time limit: time limit in seconds. * US: User: name of the person 
-  who created the SGF file. * W: a move by White at the location specified 
-  by the property value. * WR: White Rank: rank of the White player. * WT: 
-  White Team: name of the White team.</p>
+  <ul class="rst-simple">
+<li>AB: Add Black: locations of Black stones to be placed on the board prior to the first move.</li>
+<li>AW: Add White: locations of White stones to be placed on the board prior to the first move.</li>
+<li>AN: Annotations: name of the person commenting the game.</li>
+<li>AP: Application: application that was used to create the SGF file (e.g. CGOban2,...).</li>
+<li>B: a move by Black at the location specified by the property value.</li>
+<li>BR: Black Rank: rank of the Black player.</li>
+<li>BT: Black Team: name of the Black team.</li>
+<li>C: Comment: a comment.</li>
+<li>CP: Copyright: copyright information. See Kifu Copyright Discussion.</li>
+<li>DT: Date: date of the game.</li>
+<li>EV: Event: name of the event (e.g. 58th Honinbo Title Match).</li>
+<li>FF: File format: version of SGF specification governing this SGF file.</li>
+<li>GM: Game: type of game represented by this SGF file. A property value of 1 refers to Go.</li>
+<li>GN: Game Name: name of the game record.</li>
+<li>HA: Handicap: the number of handicap stones given to Black. Placment of the handicap stones are set using the AB property.</li>
+<li>KM: Komi: komi.</li>
+<li>ON: Opening: information about the opening (fuseki), rarely used in any file.</li>
+<li>OT: Overtime: overtime system.</li>
+<li>PB: Black Name: name of the black player.</li>
+<li>PC: Place: place where the game was played (e.g.: Tokyo).</li>
+<li>PL: Player: color of player to start.</li>
+<li>PW: White Name: name of the white player.</li>
+<li>RE: Result: result, usually in the format &quot;B+R&quot; (Black wins by resign) or &quot;B+3.5&quot; (black wins by 3.5 moku).</li>
+<li>RO: Round: round (e.g.: 5th game).</li>
+<li>RU: Rules: ruleset (e.g.: Japanese).</li>
+<li>SO: Source: source of the SGF file.</li>
+<li>SZ: Size: size of the board, non square boards are supported.</li>
+<li>TM: Time limit: time limit in seconds.</li>
+<li>US: User: name of the person who created the SGF file.</li>
+<li>W: a move by White at the location specified by the property value.</li>
+<li>WR: White Rank: rank of the White player.</li>
+<li>WT: White Team: name of the White team.</li>
+</ul>
   <dl class="fields">
+    <dt>Type:</dt>
+      <dd>str</dd>
   </dl>
   <dl class="fields">
     <dt>Value:</dt>
@@ -244,7 +258,7 @@ KM[6.5]''',
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Sep 11 13:44:28 2012
+    Generated by Epydoc 3.0.1 on Wed Sep 12 04:59:33 2012
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

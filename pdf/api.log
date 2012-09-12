@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2012.8.23)  12 SEP 2012 02:49
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.8.23)  12 SEP 2012 05:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -136,13 +136,18 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: dvips.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 130.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count92
 ))
 \BCL=\skip57
 Package color Info: Redefining color py@inputcolour on input line 37.
@@ -380,15 +385,15 @@ Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -401,7 +406,7 @@ Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
 )
@@ -429,23 +434,33 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen105
-\Hy@linkcounter=\count92
-\Hy@pagecounter=\count93
+\Hy@linkcounter=\count93
+\Hy@pagecounter=\count94
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count94
+\Hy@SavedSpaceFactor=\count95
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+
+! Package hyperref Error: Wrong DVI mode driver option `dvips',
+(hyperref)                because pdfTeX or LuaTeX is running in PDF mode.
+
+See the hyperref package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3941 \ProcessKeyvalOptions{Hyp}
+                                 
+? 
 Package hyperref Info: Option `bookmarks' set `true' on input line 3941.
 Package hyperref Info: Option `bookmarksopen' set `false' on input line 3941.
 Package hyperref Info: Option `colorlinks' set `true' on input line 3941.
-
 
 Package hyperref Warning: Option `pagecolor' is not available anymore.
 
@@ -464,14 +479,14 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count95
+\c@Hy@tempcnt=\count96
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4653.
-\Fld@menulength=\count96
+\Fld@menulength=\count97
 \Field@Width=\dimen106
 \Fld@charsize=\dimen107
 Package hyperref Info: Hyper figures OFF on input line 5773.
@@ -483,26 +498,19 @@ Package hyperref Info: Link coloring with OCG OFF on input line 5798.
 Package hyperref Info: PDF/A mode OFF on input line 5803.
 LaTeX Info: Redefining \ref on input line 5843.
 LaTeX Info: Redefining \pageref on input line 5847.
-\Hy@abspage=\count97
-\c@Item=\count98
-\c@Hfootnote=\count99
+\Hy@abspage=\count98
+\c@Item=\count99
+\c@Hfootnote=\count100
 )
 
-Package hyperref Message: Driver: hdvips.
+Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hdvips.def
-File: hdvips.def 2012/05/13 v6.82q Hyperref driver for dvips
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pdfmark.def
-File: pdfmark.def 2012/05/13 v6.82q Hyperref definitions for pdfmark specials
-\pdf@docset=\toks19
-\pdf@box=\box30
-\pdf@toks=\toks20
-\pdf@defaulttoks=\toks21
-\Fld@listcount=\count100
-\c@bookmark@seq@number=\count101
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
+\Fld@listcount=\count101
+\c@bookmark@seq@number=\count102
 \Hy@SectionHShift=\skip64
-))
+)
 \@indexfile=\write3
 \openout3 = `api.idx'.
 
@@ -535,16 +543,29 @@ LaTeX Font Info:    Try loading font information for T1+lmr on input line 82.
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen108
+\scratchbox=\box30
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen109
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks20
+)
 \AtBeginShipoutBox=\box31
 Package hyperref Info: Link coloring ON on input line 82.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count102
+\c@section@level=\count109
 )
 LaTeX Info: Redefining \ref on input line 82.
 LaTeX Info: Redefining \pageref on input line 82.
@@ -599,17 +620,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 3.
  [1
 
-])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write5
 \openout5 = `api.toc'.
 
-
-[2]
+ [2]
 \openout2 = `src-module.aux'.
 
  (./src-module.tex
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 26.
- (/usr/share/texmf/tex/latex/lm/omslmr.fd
+
+(/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
@@ -688,93 +709,94 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ]
 \openout2 = `src.search_goban-module.aux'.
 
- (./src.search_goban-module.tex) [17
+ (./src.search_goban-module.tex [17
 
 
-]
+]) [18]
 \openout2 = `src.search_stones-module.aux'.
 
 
-(./src.search_stones-module.tex) [18
+(./src.search_stones-module.tex) [19
 
 
 ]
 \openout2 = `src.stone-module.aux'.
 
- (./src.stone-module.tex) [19
+ (./src.stone-module.tex) [20
 
 
-] (./api.ind
-Overfull \hbox (12.72285pt too wide) in paragraph at lines 9--11
+] [21]
+(./api.ind
+Overfull \hbox (12.72285pt too wide) in paragraph at lines 11--13
 []| \T1/lmr/m/n/10 src.check_goban_moved.check_directions \T1/lmr/m/it/10 (func
 -
  []
 
 
-Overfull \hbox (3.5393pt too wide) in paragraph at lines 11--13
+Overfull \hbox (3.5393pt too wide) in paragraph at lines 13--15
 []| \T1/lmr/m/n/10 src.check_goban_moved.check_goban_moved
  []
 
 
-Overfull \hbox (45.98418pt too wide) in paragraph at lines 13--15
+Overfull \hbox (45.98418pt too wide) in paragraph at lines 15--17
 []| \T1/lmr/m/n/10 src.check_goban_moved.degress_between_two_vectors
  []
 
 
-Overfull \hbox (22.22235pt too wide) in paragraph at lines 15--17
+Overfull \hbox (22.22235pt too wide) in paragraph at lines 17--19
 []| \T1/lmr/m/n/10 src.check_goban_moved.is_same_quadrant \T1/lmr/m/it/10 (func
 -
  []
 
 
-Overfull \hbox (24.72227pt too wide) in paragraph at lines 19--21
+Overfull \hbox (24.72227pt too wide) in paragraph at lines 21--23
 []| \T1/lmr/m/n/10 src.functions.direction_between_two_points \T1/lmr/m/it/10 (
 func-
  []
 
 
-Overfull \hbox (21.97234pt too wide) in paragraph at lines 21--23
+Overfull \hbox (21.97234pt too wide) in paragraph at lines 23--25
 []| \T1/lmr/m/n/10 src.functions.distance_between_two_points \T1/lmr/m/it/10 (f
 unc-
  []
 
 
-Overfull \hbox (1.57831pt too wide) in paragraph at lines 23--25
+Overfull \hbox (1.57831pt too wide) in paragraph at lines 25--27
 []| \T1/lmr/m/n/10 src.functions.get_external_corners \T1/lmr/m/it/10 (func-tio
 n)\T1/lmr/m/n/10 ,
  []
 
 
-Overfull \hbox (1.24428pt too wide) in paragraph at lines 39--41
+Overfull \hbox (1.24428pt too wide) in paragraph at lines 41--43
 []| \T1/lmr/m/n/10 src.search_goban.count_perimeter \T1/lmr/m/it/10 (func-tion)
 \T1/lmr/m/n/10 ,
  []
 
 
-Overfull \hbox (7.27252pt too wide) in paragraph at lines 41--43
+Overfull \hbox (7.27252pt too wide) in paragraph at lines 43--45
 []| \T1/lmr/m/n/10 src.search_goban.detect_contour \T1/lmr/m/it/10 (func-tion)\
-T1/lmr/m/n/10 , [][][][][][] 
+T1/lmr/m/n/10 , [][]19[][] 
  []
 
 
-Overfull \hbox (0.66098pt too wide) in paragraph at lines 47--49
+Overfull \hbox (0.66098pt too wide) in paragraph at lines 49--51
 []| \T1/lmr/m/n/10 src.search_goban.search_goban \T1/lmr/m/it/10 (func-tion)\T1
-/lmr/m/n/10 , [][][][][][] 
+/lmr/m/n/10 , [][]19[][] 
  []
 
 
-Overfull \hbox (10.8285pt too wide) in paragraph at lines 50--52
+Overfull \hbox (10.8285pt too wide) in paragraph at lines 52--54
 []| \T1/lmr/m/n/10 src.search_stones.check_color_stone \T1/lmr/m/it/10 (func-ti
 on)\T1/lmr/m/n/10 ,
  []
 
 
-Overfull \hbox (1.99496pt too wide) in paragraph at lines 52--54
+Overfull \hbox (1.99496pt too wide) in paragraph at lines 54--56
 []| \T1/lmr/m/n/10 src.search_stones.search_stones \T1/lmr/m/it/10 (func-tion)\
-T1/lmr/m/n/10 , [][][][][][] 
+T1/lmr/m/n/10 , [][]21[][] 
  []
 
-[20
+[22
 
 
 
@@ -787,19 +809,35 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
 (./src.igs-module.aux) (./src.kifu-module.aux) (./src.perspective-module.aux)
 (./src.rocamgo-module.aux) (./src.search_goban-module.aux)
 (./src.search_stones-module.aux) (./src.stone-module.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 136.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
 Package rerunfilecheck Info: File `api.out' has not changed.
 (rerunfilecheck)             Checksum: 02A12CD7FC4FF79B7B80DAF562446EB2;2882.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
  ) 
 Here is how much of TeX's memory you used:
- 6130 strings out of 495060
- 89539 string characters out of 3182053
- 182429 words of memory out of 3000000
- 9103 multiletter control sequences out of 15000+200000
+ 6420 strings out of 495059
+ 92662 string characters out of 3182030
+ 184417 words of memory out of 3000000
+ 9299 multiletter control sequences out of 15000+200000
  64555 words of font info for 58 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 32i,11n,43p,426b,431s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,11n,43p,426b,437s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{page.23} has been referenced but does not exist, 
+replaced by a fixed one
 
-Output written on api.dvi (20 pages, 111416 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri1
+0.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmro10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on api.pdf (22 pages, 273571 bytes).
+PDF statistics:
+ 498 PDF objects out of 1000 (max. 8388607)
+ 459 compressed objects within 5 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
+

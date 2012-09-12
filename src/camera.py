@@ -20,9 +20,9 @@
 
 """
 :var capture: valor de la captura actual
-:type capture: Capture
+:Type capture: Capture
 :var index: índice de cámara
-:type index: int
+:Type index: int
 """
 
 from sys import path
@@ -31,27 +31,29 @@ from cv import QueryFrame
 from cv import CaptureFromCAM
 
 class Camera:
-    """ Clase para inicializar la cámara. """
+    """Clase para inicializar la cámara. """
     def __init__(self):
         self.capture = None
         self.index = None
     
     def open_camera(self, index):
-        """ Abrir cámara con opencv. 
-        :param index: índice de la cámara. 
-        :type index: int. """
+        """Abrir cámara con opencv. 
+
+        :Param index: índice de la cámara.
+        :Type index: int
+        """
         self.capture = CaptureFromCAM(index)
         self.index = index
 
     def get_frame(self):
-        """ Obtener una imagen desde la cámara. """
+        """Obtener una imagen desde la cámara. """
         return QueryFrame( self.capture )
 
     def is_open(self):
-        """ Comprueba si la cámara está abierta. """
+        """Comprueba si la cámara está abierta. """
         return self.capture
         
     def close_camera(self):
-        """ Cierra la cámara. """
+        """Cierra la cámara. """
         self.capture = None
 
