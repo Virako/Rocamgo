@@ -8,6 +8,8 @@
 \usepackage{indentfirst} %para identar despues de cada parrafo
 %\usepackage{gensymb} %para añadir el símbolo de los grados celsius, etc
 \usepackage{eurosym} %Paquete para introducir el símbolo del Euro
+\pretolerance=2000 % Evitar partir las palabras
+\tolerance=3000
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,pdftex]{hyperref} 
 %\usepackage{hyperref}
 
@@ -102,7 +104,7 @@
 \tableofcontents  %indice
 
  
-\chapter*{Preambulo} 
+\chapter*{Preámbulo} 
 
 Nos gustaría agradecer a: 
 \begin{itemize} 
@@ -113,7 +115,7 @@ Nos gustaría agradecer a:
     recibido su apoyo.  
     \item A D.Francisco Sivianes Castillo, nuestro tutor del proyecto, el cual 
     nos ha dedicado todo el tiempo que hemos requerido sin miramientos, 
-    ayudandonos con nuestras dudas y guiandonos para la correcta finalización 
+    ayudándonos con nuestras dudas y guiándonos para la correcta finalización 
     del proyecto.  
     \item A D.Carlos Manuel Martin Cornejo, el cual ha colaborado con la 
     realización de la conexión con los servidores de go.  
@@ -194,14 +196,18 @@ por ello es más conocido internacionalmente por su nombre japonés.
 go. Como el formato es usado también para muchos juegos de tablero, está
 bastante extendido y casi todos los programas de go lo soportan.
 
-El archivo .sgf nos sirve para comentar una partida (como podemos ver en la
-imagen) y hacer pruebas directamente desde un programa. Otro de los muchos
+El archivo .sgf nos sirve para comentar una partida y hacer pruebas directamente
+desde un programa. Otro de los muchos
 usos que tiene es guardar todas tus partidas para poder verlas en un futuro sin
-ocupar apenas espacio en el disco. % TODO añadir imagen
+ocupar apenas espacio en el disco. 
 
 Algunos programas que existen para abrir los .sgf pueden ser, por ejemplo,
-quarry, qgo o CGoban. No solo sirven para abrir .sgf, suelen también servir para
-jugar en servidores o contra una IA. % TODO comentar que no existe IA like ajed
+quarry, qgo o CGoban. Podemos ver más abajo una imagen del programa quarry. No
+solo sirven para abrir .sgf, suelen también servir para jugar en servidores o
+contra una IA. Aprovechamos que hemos hablado de IA para comentar que no existe
+en la actualidad una IA capaz de ganar a ningún profesional del go.
+
+\includegraphics[scale=0.33]{quarry.png}
 
 
 \chapter{Objetivos} 
@@ -216,29 +222,22 @@ servidor de go. Con todo hecho, el uso del programa no solo sería el de jugar
 una partida en tablero físico, sino que también podríamos guardar una partida
 completa observándola, y subirla en tiempo real a Internet, cosa que
 agradeceríamos los jugadores de go, ya que el subir una partida de go por
-streaming o subirla a mano, no es siempre posible, y este proyecto ayudaría la
-facilidad de subir una partida sin tener que estar atento durante toda la
-partida y sin necesitar una gran conexión a Internet, ya que con este sistema,
-la información que enviamos al servidor es mínima. 
+streaming o subirla a mano, no es siempre posible, y este proyecto facilitaría
+la subida de una partida sin tener que estar atento durante toda la partida y
+sin necesitar una gran conexión a Internet, ya que con este sistema, la
+información que enviamos al servidor es mínima. 
 
-Si desarrollamos un poco más los objetivos, necesitaríamos un brazo robótico
-rápido y preciso, una cámara que grabase videos con imágenes de una buena calidad, para evitar que saliesen borrosas,
-con lo cual podríamos descartar cámaras VGA, y mucho tiempo y conocimientos de
-programación, ya que el tratamiento de imágenes no es simple. 
-
-Al investigar bastante sobre todos estos temas, nuestro objetivo cambió un poco
-de cara a presentar el Proyecto Fin de Carrera, aunque en un futuro queremos
-terminar nuestra idea inicial. Nuestro objetivo actual es subir una partidade go
-que se esté jugando, para poder utilizar este proyecto en los torneos de go y
-subir al menos la partida más interesante que se esté jugando en cada ronda. De
-camino también guardamos la partida en un archivo .sgf [\ref{sgf}], para luego
-poder modificarla con total libertad.
-
-Para que el programa funcione correctamente, debemos tener una maquina con linux como sistema operativo, ya que pretendemos que nuestro programa funcione en cualquier dispositivo capaz de ejecutar este sistema operativo.   
-
-Para ello, a nivel hardware necesitaremos solo una camara web grabando la partida que se este jugando y el tablero de go donde se jugará la partida.
-No obstante, tambien podremos realizar nuestros objetivos tan solo teniendo 
-un video de una partida.
+Si desarrollamos un poco más los objetivos, necesitaríamos:
+\begin{itemize}
+    \item Un brazo robótico rápido y preciso
+    \item Una cámara que grabase videos con imágenes de buena calidad, para 
+    evitar que saliesen borrosas, con lo cual podríamos descartar
+    cámaras VGA. 
+    \item Mucho tiempo y conocimientos de programación, ya que el tratamiento 
+    de imágenes no es simple. 
+    \item Es necesario un ordenador donde conectar una cámara y con
+    procesamiento suficiente para ejecutar nuestro programa. 
+\end{itemize}
 
 %Imagen de la disposicion hardware correcta, que queremos que se use.
 
@@ -255,7 +254,7 @@ compañerismo, responsabilidad y comunicación.
 Los principales objetivos en este proyecto en su comienzo, era aprender:
 \begin{itemize} 
     \item Python para el desarrollo del programa. 
-    \item OpenCv para el tratamiento de imagenes. 
+    \item OpenCv para el tratamiento de imágenes. 
     \item Gtk para el entorno de ventanas del programa. 
     \item Unittest2 para el testeo del código. 
     \item Epydoc para la documentación del código. 
@@ -309,7 +308,6 @@ mejorar.
 
 
 \subsection{Latex} 
-% Explicacion
 LaTeX es un sistema de composición de textos que está formado mayoritariamente 
 por órdenes construidas a partir de comandos de TeX (lenguaje «de bajo nivel»,
 en el sentido de que sus acciones últimas son muy elementales) pero con la 
@@ -689,10 +687,10 @@ a jugar la partida, estas intersecciones se tapan.
 \paragraph{3ª Implementación: Haartraining, aprendizaje}
 
 Tras dos intentos fallidos, comenzamos a estudiar la siguiente idea, sacada de
-distintos programas de camaras de fotos, los cuales detectan y recuadran la
+distintos programas de cámaras de fotos, los cuales detectan y recuadran la
 cara. Esta forma de hacerlo se llama HaarTraining, y consiste en enseñarle al
 ordenador a buscar un tablero, introduciendo en un programa de aprendizaje
-imagenes donde estén los tableros, indicandole la posicion. En ese proceso de
+imágenes donde estén los tableros, indicandole la posicion. En ese proceso de
 aprendizaje tambien hay que enseñarle fotos que no contengan el tablero.
 Después de estudiarlo, nos dimos cuenta de varias cosas que hicieron que no
 continuásemos por este camino. La primera de ellas es el tiempo dedicado a la
@@ -702,7 +700,7 @@ dos semanas, en un ordenador potente. Y por último, la tercea y más importante
 es que despues de las dos primeras, nadie te aseguraba con una minima certeza 
 que esta posibilidad fuese a funcionar.
 
-En la siguiente imagen podemos ver un claro ejemplo que usan las camaras de foto
+En la siguiente imagen podemos ver un claro ejemplo que usan las cámaras de foto
 con este tipo de implementacion.
 
 \includegraphics[scale=1]{haartraining.jpg} 
@@ -792,7 +790,7 @@ En los inicios del programa, las piedras se detectaban de una forma poco
 ortodoxa, pues en gran parte, los jugadores debian decirnos cuando terminaban su
 turno, para asi tomar la foto en el momento justo, y poder analizarla
 correctamente.  La forma de la busqueda de la piedra se hacia por diferencia de
-imagenes, asi, cada vez que un jugador nos indicaba mediante un boton que habia
+imágenes, asi, cada vez que un jugador nos indicaba mediante un boton que habia
 terminado el turno, captabamos una imagen y la comparabamos con la anterior, la
 funcion "diff" de OpenCv nos devuelve marcadas las diferencias, que este caso
 serian las piedras, despues dentro de esta imagen, buscamos circulos y
@@ -854,20 +852,20 @@ momento, para ello una vez que detectamos una piedra, debemos asegurarnos de que
 color es. La forma de hacerlo es buscando en el punto central donde esta situada
 la piedra e ir a su pixel y analizar el color. Gracias a openCv esta labor es
 relativamente sencilla, pero nos dimos cuenta, debido a la calidad de las
-imagenes, que no todo iba a ser color de rosa. El gran problema que tenemos es
-que las piedras al ser redondeadas, la camara capta reflejos de dichas piedras
+imágenes, que no todo iba a ser color de rosa. El gran problema que tenemos es
+que las piedras al ser redondeadas, la cámara capta reflejos de dichas piedras
 haciendo que el color de las piedras pueda llegar a confundirse facilmente si no
 cogen un numero amplio de muestras para saber el color. Aun asi, los test dan
 fallos a veces, para evitar esto, hay que variar una variable, siendo este uno
 de los puntos a seguir trabajando en un futuro en nuestro programa.
 
 
-\subsection{Conexion con el servidor}
+\subsection{Conexión con el servidor}
 
-Para la conexion al servidor comenzamos intentandolo con los servidores de KGS,
+Para la conexión al servidor comenzamos intentandolo con los servidores de KGS,
 pero la falta de documentacion de protocolos de dicho servidor y el tener un
 protocolo cerrado hizo imposible esta tarea. Aun asi, queremos hacer posible la
-conexion a este servidor, pues es de los mas usados. Actualmente el programa se
+conexión a este servidor, pues es de los mas usados. Actualmente el programa se
 conecta a IGS a traves de un usuario registrado siguiendo el protocolo de dicho
 servidorl, que es libre.
 
@@ -888,7 +886,6 @@ descargándonos el proyecto desde GitHub, para ello necesitaremos tener instalad
 git, que en las distribuciones de Linux basadas en debian, podemos instalarlo de
 la siguiente manera: 
 
-% TODO comando
 \begin{verbatim}
 sudo apt-get install git
 \end{verbatim}
@@ -914,7 +911,7 @@ este archivo no lo adjuntamos, hay que pedírselo a los desarroladores.
 
 Si queremos utilizar la cámara para hacer la prueba, deberemos de
 comentar/descomentar unas líneas del archivo rocamgo.py, que se encuentra dentro
-de src. Quedando la parte a cambiar de la siguiente manera: % TODO more code xD
+de src. Quedando la parte a cambiar de la siguiente manera: 
 
 \begin{verbatim}
 def main():
@@ -951,9 +948,16 @@ desarroles del proyecto.
 
 \section{Como utilizarlo}
 
-Antes de empezar, debemos asegurarnos que tenemos preparado el terreno de juego, para ello necesitamos que el tablero este colocado en una superficie lo mas lisa posible y una camara web conectada al PC donde se ejecutará el programa, a poder ser de una buena calidad, apuntando al tablero donde se jugará la partida. Debemos intentar que la camara enfoque correctamente al tablero, centrando este dentro de la imagen lo maximo posible. El programa será capaz de funcionar siempre y cuando en la imagen se vean correctamente todas las partes del tablero.
+Antes de empezar, debemos asegurarnos que tenemos preparado el terreno de juego,
+para ello necesitamos que el tablero este colocado en una superficie lo mas lisa
+posible y una cámara conectada al PC donde se ejecutará el programa, a poder
+ser de una buena calidad, apuntando al tablero donde se jugará la partida.
+Debemos intentar que la cámara enfoque correctamente al tablero, centrando este
+dentro de la imagen lo máximo posible. El programa será capaz de funcionar
+siempre y cuando en la imagen se vean correctamente todas las partes del
+tablero.
 
-Al ejecutar este proyecto, lo primero que te pedirá si está en modo captura de
+Al ejecutar este proyecto, lo primero que te pedirá, si está en modo captura de
 video, será un usuario y una contraseña, los cuales son un usuario del servidor
 IGS, el cual podemos crearnos en la página 
 \url{http://www.pandanet-igs.com/igs_users/register}
@@ -976,6 +980,14 @@ descargará los últimos cambios que haya en el servidor.
 
 
 \chapter{Conclusiones}
+
+Como hemos comentado anteriormente en la implementación del proyecto, nos hemos
+dado cuenta de que nuestros objetivos iniciales para este Proyecto Fin de
+Carrera eran demasiado ambiciosos, por lo cual no hemos podido completar todos
+los objetivos de cara al proyecto. Se ha conseguido realizar gran parte del
+software que teniamos pensado, pero debido al coste, tanto temporal como
+económico del brazo robótico, hemos dejado esta parte para una línea futura,
+centrándonos principalmente en la captación de imágenes y su tratamiento.
 
 Desde el principio de este proyecto, hemos estado aprendiendo bastante sobre las
 librerías de opencv, las cuales son una maravilla y nos han ayudado muchísimo en
@@ -1024,9 +1036,7 @@ respuestas, los foros y los chats, que nos han solucionado más de una duda.
 
 
 
-
-
-\chapter{Lineas futuras}
+\chapter{Líneas futuras}
 
 El futuro de este proyecto sigue día a día, y esperamos que poco a poco se vaya
 mejorando hasta conseguir todos los objetivos deseados, aunque por temas de
@@ -1059,9 +1069,11 @@ protocolo es cerrado, necesitamos que nos hagan algún cliente o algo especial
 para poderlo utilizar. Esperamos que un futuro no muy lejano, las partidas
 puedan subirse a KGS al igual que lo hacemos en IGS. 
 
-Otras de los objetivos del proyecto que no hemos podido realizar, es
-la posibilidad de adaptar este proyecto para que funciones en los móviles o en
-ordenadores de bajo coste como la rasperri Pi. Para ello, tenemos en mente hacer que nuestro proyecto ejecute varios hilos, haciendo que el procesamiento de imagenes sea lo menos pesado posible.
+Otras de los objetivos del proyecto que no hemos podido realizar, es la
+posibilidad de adaptar este proyecto para que funciones en los móviles o en
+ordenadores de bajo coste como la rasperri Pi. Para ello, tenemos en mente hacer
+que nuestro proyecto ejecute varios hilos, haciendo que el procesamiento de
+imágenes sea lo menos pesado posible.
 
 
 \chapter{Licencia}
@@ -1247,7 +1259,7 @@ Proyecto de go usando un proyector
 \url{http://www.youtube.com/watch?feature=player_embedded&v=33Iyr16yhJQ}
 
 
-\section{Enlace a cosas relacionadas con imagenes.} 
+\section{Enlace a cosas relacionadas con imágenes.} 
 
 \url{http://www.google.com/url?sa=t&rct=j&q=recortar%20imagenes%20roi%20opencv&source=web&cd=1&ved=0CB8QFjAA&url=http%3A%2F%2Fdis.um.es%2F~ginesgm%2Ffiles%2Fdoc%2Fpav%2Ftema2.ppt&ei=itA4T_2MBMLBhAfBl8CKAg&usg=AFQjCNGtmUXCybgKwHb5g8-Ns1F7Mdxz1A}
 
