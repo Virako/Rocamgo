@@ -314,10 +314,431 @@ en la actualidad una IA capaz de ganar a ningún profesional del go.
 \includegraphics[scale=0.33]{quarry.png}
 
 
-\chapter{Brazos mecanicos}
+\chapter{Robot indistrial}
+
 \section{Introduccion}
+
+Existen ciertas dificultades a la hora de establecer una definición formal de lo
+que es un robot industrial. 
+
+La primera de ellas surge de la diferencia
+conceptual entre el mercado japonés y el euro-americano de lo que es un robot y
+lo que es un manipulador. Así, mientras que para los japoneses un robot
+industrial es cualquier dispositivo mecánico dotado de articulaciones móviles
+destinado a la manipulación, el mercado occidental es más restrictivo, exigiendo
+una mayor complejidad, sobre todo en lo relativo al control. 
+
+En segundo lugar, y
+centrándose ya en el concepto occidental, aunque existe una idea común acerca de
+lo que es un robot industrial, no es fácil ponerse de acuerdo a la hora de
+establecer una definición formal. Además, la evolución de la robótica ha ido
+obligando a diferentes actualizaciones de su definición.
+
+La definición mas comúnmente aceptada posiblemente sea la de la Asociación de
+Industrias Robóticas (RIA), según la cual:
+
+$Un robot industrial es un manipulador multifuncional reprogramable, capaz de
+mover materias, piezas, herramientas, o dispositivos especiales, según
+trayectorias variables, programadas para realizar tareas diversas.$
+
+Esta definición, ligeramente modificada, ha sido adoptada por la Organización
+Internacional de Estándares (ISO) que define al robot industrial como:
+
+$Manipulador multifuncional reprogramable con varios grados de libertad, capaz de
+manipular materias, piezas, herramientas o dispositivos especiales según
+trayectorias variables programadas para realizar tareas diversas.$
+
+Se incluye en esta definición la necesidad de que el robot tenga varios grados
+de libertad. Una definición más completa es la establecida por la Asociación
+Francesa de Normalización (AFNOR), que define primero el manipulador y,
+basándose en dicha definición, el robot:
+
+$Manipulador: mecanismo formado generalmente por elementos en serie, articulados
+entre sí, destinado al agarre y desplazamiento de objetos. Es multifuncional y
+puede ser gobernado directamente por un operador humano o mediante dispositivo
+lógico.$
+
+$Robot: manipulador automático servo-controlado, reprogramable, polivalente,
+capaz de posicionar y orientar piezas, útiles o dispositivos especiales,
+siguiendo trayectoria variables reprogramables, para la ejecución de tareas
+variadas. Normalmente tiene la forma de uno o varios brazos terminados en una
+muñeca. Su unidad de control incluye un dispositivo de memoria y ocasionalmente
+de percepción del entorno. Normalmente su uso es el de realizar una tarea de
+manera cíclica, pudiéndose adaptar a otra sin cambios permanentes en su
+material.$
+
+Por ultimo, la Federación Internacional de Robótica (IFR) distingue entre robot
+industrial de manipulación y otros robots:
+
+$Por robot industrial de manipulación se entiende una maquina de manipulación
+automática, reprogramable y multifuncional con tres o más ejes que pueden
+posicionar y orientar materias, piezas, herramientas o dispositivos especiales
+para la ejecución de trabajos diversos en las diferentes etapas de la producción
+industrial, ya sea en una posición fija o en movimiento.$
+
+En esta definición se debe entender que la reprogramabilidad y la multifunción
+se consiguen sin modificaciones físicas del robot.
+
+Común en todas las definiciones anteriores es la aceptación del robot industrial
+como un brazo mecánico con capacidad de manipulación y que incorpora un control
+más o menos complejo. Un sistema robotizado, en cambio, es un concepto más
+amplio. Engloba todos aquellos dispositivos que realizan tareas de forma
+automática en sustitución de un ser humano y que pueden incorporar o no a uno
+ovarios robots, siendo esto ultimo lo mas frecuente.
+
 \section{Historia}
-\section{Modelos}
+
+George Charles Devol fue el fundador del primer robot industrial.
+Además, junto a Joseph F. Engelberger fundó Unimation, la primera empresa de
+robótica de la historia.
+
+Debido a la fusión de la creatividad de Devol y las dotes comerciales de
+Engelberger, consiguieron en 1960 un contrato con la General Motors para
+instalar un brazo robótico, el Unimate, en su fábrica de Trenton (Nueva Jersey).
+La máquina, con un peso de 1.800 kg, fue considerada el primer robot industrial
+de la historia y su función era la de levantar y apilar grandes piezas de metal
+caliente.
+
+En 1968, Engelberger visitó Japón y consiguió firmar acuerdos con Kawasaki para
+la construcción de robots del tipo Unimate. El crecimiento de la robótica en
+Japón tuvo como consecuencia directa que Japón adelantara a Estados Unidos
+gracias a Nissan, que formó la primera asociación robótica del mundo: la
+Asociación Robótica Industrial de Japón (JIRA) en 1972. 
+
+En 1973 KUKA construyó su primer robot industrial, conocido como FAMULUS. Se
+trataba del primer robot del mundo con seis ejes de accionamiento
+electromecánico.
+
+En 1974 tuvo lugar la creación del Instituto de
+Robótica de América (RIA).
+
+En 1978, el primer robot programable de Devol se transformaría en el robot PUMA
+(Programmable Universal Machine for Assembly), inventado por Víctor Scheinman. El PUMA era capaz de mover un
+objeto y colocarlo en cualquier orientación en un lugar deseado que estuviera a
+su alcance. El concepto básico multiarticulado del PUMA es la base de la mayoría
+de los robots actuales.
+
+En 1980 se fundó la Federación Internacional de Robótica con sede en Suecia.
+En la actualidad, la mayoría de robots están destinados a un uso industrial para
+labores como el ensamblaje, soldadura y desplazamiento de materiales.
+
+\section{Clasificación del robot industrial}
+
+Aunque nadie se pone totalmente de acuerdo en la forma de clasificar, ya que
+dependiendo de algunas características se clasifican de distinta forma. Una de
+las formas en la que podemos clasificarlos, sería la siguiente: 
+\begin{itemize}
+    \item Robots manipuladores
+    Son sistemas mecánicos multifuncionales, con un sencillo sistema de control,
+    que permite gobernar el movimiento de sus elementos, de modo manual o de
+    secuencia(fija o variable).  Estos dispositivos suelen emplearse cuando las
+    funciones de trabajo son sencillas y repetitivas.
+    \item Robots de aprendizaje o repetición
+    Son manipuladores que se limitan a repetir una secuencia de movimientos,
+    previamente ejecutada por un operador humano, haciendo uso de un
+    controlador manual o un dispositivo auxiliar. Programación gestual. 
+    Estos robots son los mas conocidos hoy día.
+    \item Robot de computadores
+    Son manipuladores o sistemas mecánicos multifuncionales, controlados por un
+    computador, que habitualmente suele ser un microordenador. Programación textual. 
+    Ofrece grandes ventajas y exigen personal cualificado capaz de desarrollar
+    programas similares a los de tipo informático.
+    \item Robots inteligentes
+    Similares a los anteriores, pero además son capaces de relacionarse con el mundo
+    que les rodea a través de sensores y tomar decisiones en tiempo real (auto
+    programable).
+    Son poco conocidos y están en fase experimental. 
+    De momento, son muy poco conocidos en el mercado
+    \item Micro-robots
+    Con fines educacionales, de entretenimiento o investigación, existen numerosos
+    robots de formación o micro-robots a un precio muy asequible y, cuya estructura
+    y funcionamiento son similares a los de aplicación industrial.
+\end{itemize}
+
+
+\section{Componentes}
+
+Los componentes que forman parte de la totalidad del robot son:
+
+\begin{itemize}
+    \item Manipulador
+    \item Controlador
+    \item Dispositivos de entrada y salida de datos
+    \item Dispositivos especiales
+\end{itemize}
+
+
+\subsection{Manipulador}
+
+Mecánicamente, es el componente principal. Está formado por una serie de
+elementos estructurales sólidos o eslabones unidos mediante articulaciones
+que permiten un movimiento relativo entre cada dos eslabones consecutivos. 
+
+Las partes que conforman el manipulador son el cuerpo, el brazo, la muñeca y el
+actuador final. 
+
+Cada articulación provee al robot de un grado de libertad como mínimo. En
+otras palabras, las articulaciones permiten al manipulador realizar
+movimientos lineales o angulares. Existen dos tipos, lineal y rotacional. 
+
+La orientación de un eslabón del manipulador se determina
+mediante los elementos roll, pitch y yaw
+
+A la muñeca de un manipulador le corresponden los movimientos o grados de
+libertad siguientes: giro, elevación y desviación. No todas las muñecas pueden
+realizar estos 3 movimientos. 
+
+El actuador final es un dispositivo que se une a la muñeca del
+brazo del robot con la finalidad de activarlo para la realización de una
+tarea específica. Existen distintos tipos de elementos
+terminales para realizar diferentes funcionalidades. Los diversos
+tipos podemos dividirlos en dos grandes categorías: pinzas y herramientas.
+
+
+\subsection{Controlador}
+Es el que regula cada uno de los movimientos del manipulador, las acciones,
+cálculos y procesado de la información. El controlador recibe y envía señales a
+otras máquinas-herramientas y almacena programas.
+
+Existen varios grados de control en función del tipo de
+parámetros que se regulan, lo que da lugar a los siguientes tipos de
+controladores:
+\begin{itemize}
+    \item De posición:
+    El controlador interviene únicamente en el control de la posición del
+    elemento terminal.
+    \item Cinemático: 
+    En este caso el control se realiza sobre la posición y la velocidad.
+    \item Dinámico:
+    Además de regular la velocidad y la posición, controla las propiedades
+    dinámicas del manipulador y de los elementos asociados a él.
+    \item Adaptativo: 
+    Engloba todas las regulaciones anteriores y, además, se ocupa de controlar 
+    la variación de las características del manipulador al variar la posición.
+\end{itemize}
+
+
+\subsection{Dispositivos de entrada y salida}
+Los más comunes son: teclado, monitor y caja de comandos.
+
+Los dispositivos de entrada y salida permiten introducir y, a su vez, ver los
+datos del controlador. Para mandar instrucciones al controlador y para dar de
+alta programas de control, comúnmente se utiliza una computadora adicional. Es
+necesario aclarar que algunos robots únicamente poseen uno de estos componentes.
+En estos casos, uno de los componentes de entrada y salida permite la
+realización de todas las funciones.
+
+Las señales de entrada y salida se obtienen mediante tarjetas electrónicas
+instaladas en el controlador del robot las cuales le permiten tener comunicación
+con otras máquinas-herramientas
+
+
+\subsection{Dispositivos especiales}
+Entre estos se encuentran los ejes que facilitan el movimiento transversal del
+manipulador y las estaciones de ensamblaje, que son utilizadas para sujetar las
+distintas piezas de trabajo.
+
+
+
+\section{Características principales}
+
+Las características mas relevantes de los robots podríamos decir que son las
+siguientes:
+
+\begin{itemize}
+    \item Grados de libertad
+    \item Volumen de trabajo
+    \item Precisión de los movimientos
+    \item Capacidad de carga
+    \item Velocidad
+    \item Tipo de actuadores
+    \item Programabilidad
+\end{itemize}
+ 
+
+    
+\subsection{Grados de libertad}
+
+Son cada uno de los movimientos independientes que
+puede realizar cada articulación con respecto a la anterior. Son los
+parámetros que se precisan para determinar la posición y la orientación del
+elemento terminal del manipulador. El número de grados de libertad del robot
+viene dado por la suma de los grados de libertad de las articulaciones que lo componen.
+Puesto que las articulaciones empleadas suelen ser únicamente de rotación y
+lineal, con un solo grado de libertad cada una, el número de grados de libertad del
+robot suele coincidir con el número de articulaciones que lo componen. 
+
+Puesto que para posicionar y orientar un cuerpo de cualquier manera en el
+espacio son necesarios seis parámetros, tres para definir la posición y tres
+para la orientación, si se pretende que un robot posicione y oriente su
+extremo (y con él la pieza o herramienta manipulada) de cualquier modo en el
+espacio, se precisará al menos seis grados de libertad.
+
+Un mayor número de grados de libertad conlleva un aumento de la flexibilidad
+en el posicionamiento del elemento terminal. Aunque la mayoría de las
+aplicaciones industriales requieren 6 grados de libertad, como las de la soldadura,
+mecanizado y paletización, otras más complejas requieren un número mayor,
+como es el caso en las labores de montaje. Si se trabaja en un entorno con
+obstáculos, el dotar al robot de grados de libertad adicionales le permitirá
+acceder a posiciones y orientaciones de su extremo a las que, como
+consecuencia de los obstáculos, no hubieran llegado con seis grados de
+libertad. Otra situación frecuente es dotar al robot de un grado de libertad
+adicional que le permita desplazarse a lo largo de un carril aumentando así
+el volumen del espacio al que puede acceder. Tareas más sencillas y con
+movimientos más limitados, como las de la pintura y paletización, suelen
+exigir 4 o 5 grados de libertad.
+
+Observando los movimientos del brazo y de la muñeca, podemos determinar el
+número de grados de libertad que presenta un robot. Generalmente, tanto en
+el brazo como en la muñeca, se encuentran desde 1 hasta 3 grados de libertad. 
+
+
+\subsection{Volumen de trabajo}
+
+Las dimensiones de los elementos del manipulador, junto a los grados de
+libertad, definen la zona de trabajo del robot, característica fundamental en
+las fases de selección e implantación del modelo adecuado.
+
+La zona de trabajo se subdivide en áreas diferenciadas entre sí, dependiendo de
+la accesibilidad del del elemento terminal.
+
+El volumen de trabajo de un robot se refiere únicamente al espacio dentro del
+cual puede desplazarse el extremo de su muñeca. Para determinar el volumen de
+trabajo no se toma en cuenta el actuador final. La razón de ello es que a la
+muñeca del robot se le pueden adaptar actuadores finales diferentes.
+
+Vamos a diferenciar 3 tipos:
+\begin{itemize}
+    \item El robot cartesiano y el robot cilíndrico presentan volúmenes de
+    trabajo regulares, generando una figura cúbica.
+    \item El robot de configuración cilíndrica presenta un volumen de trabajo
+    parecido a un cilindro.
+    \item Los robots que poseen una configuración polar, los de brazo articulado
+    y los modelos SCARA presentan un volumen de trabajo irregular. Para
+    determinar el volumen de trabajo de un robot industrial, el fabricante
+    generalmente indica un plano con los límites de movimiento que tiene cada
+    una de las articulaciones del robot.
+\end{itemize}
+
+
+\subsection{Precisión de los movimientos}
+
+La precisión de movimiento en un robot industrial depende de tres factores:
+
+\begin{itemize}
+    \item Resolución espacial, es el incremento más pequeño de movimiento en que
+    el robot puede dividir su volumen de trabajo. 
+    \item Exactitud, es la capacidad de un robot para situar el extremo de su
+    muñeca en un punto señalado dentro del volumen de trabajo.
+    \item Repetibilidad, es la capacidad del robot de regresar al punto
+    programado las veces que sean necesarias. 
+\end{itemize}
+
+
+\subsection{Capacidad de carga}
+
+Es el peso en kilográmos que puede transportar la garra del manipulador. A
+veces, este peso incluye el peso de la propia garra. Esta capacidad, en este
+tipo de robots, suele oscilar entre 0.9 y 205 Kg. 
+
+La capacidad de carga es una de las características que más se tienen en
+cuenta en la selección de un robot, según la tarea a la que se destine. En
+soldadura y mecanizado es común precisar capacidades de carga superiores a los
+50kg.
+
+
+\subsection{Velocidad}
+
+Se refiere a la velocidad máxima alcanzable por el punto de centrode la
+herramienta o por las las articulaciones.
+En muchas ocasiones, una velocidad de trabajo elevada, aumenta
+extraordinariamente el rendimiento del robot, por lo que esta magnitud se valora
+considerablemente en la elección del mismo. En tareas de soldadura y
+manipulación de piezas es muy aconsejable que la velocidad de trabajo sea alta.
+En pintura, mecanizado y ensamblaje, la velocidad debe ser media e incluso baja.
+
+
+\subsection{Tipo de actuadores}
+
+Los elementos motrices que generan el movimiento de las articulaciones pueden
+ser, según la energía que consuma, de los siguientes tipos:
+
+\begin{itemize}
+    \item Los actuadores de tipo olehidráulico se destinan a tareas que requieren una gran
+    potencia y grandes capacidades de carga. Dado el tipo de energía que emplean, se
+    construyen con mecánica de precisión y su coste es elevado. Los robots
+    hidráulicos se diseñan formando un conjunto compacto la central hidráulica, la
+    cabina electrónica de control y el brazo del manipulador.
+    \item La energía neumática dota a sus actuadores de una gran velocidad de respuesta
+    junto a un bajo coste, pero su empleo está siendo sustituido por elementos
+    eléctricos.
+    \item Los motores eléctricos, que cubren la gama de media y baja potencia, acaparan el
+    campo de la Robótica, por su gran precisión en el control de su movimiento y las
+    ventajas inherentes a la energía eléctrica que consumen.
+\end{itemize}
+
+
+\subsection{Programabilidad}
+
+La inclusión del controlador de tipo microelectrónica en los robots
+industriales, permite la programación del robot de muy diversas formas.
+
+En general, los modernos sistemas de robots admiten la programación manual,
+mediante un modulo de programación. Las programaciones gestual y textual,
+controlan diversos aspectos del funcionamiento del manipulador:
+
+\begin{itemize}
+    \item Control de la velocidad y la aceleración.  
+    \item Saltos de programa condicionales.  
+    \item Temporizaciones y pausas.  
+    \item Edición, modificación, depuración y ampliación de programas.  
+    \item Funciones de seguridad.  
+    \item Funciones de sincronización con otras maquinas.  
+    \item Uso de lenguajes específicos de Robótica.
+\end{itemize}
+
+
+\section{Selección de robot industrial}
+
+\begin{itemize}
+    \item El tipo de nuestro robot debe de ser con control por computador, ya
+    que necesitamos programar hacia donde queremos que vaya en cada momento, sin
+    tener que pulsar botones manualmente. 
+    \item Los grados de libertad tenemos suficiente con 6, como suelen ser los
+    más típicos. 
+    \item El volumen de trabajo buscado es aproximadamente de 0,50 metros
+    cúbicos, por lo tanto, podríamos buscar un robot cartesiano o uno de
+    configuración polar. Nosotros descartamos el cartesiano por que las
+    dimensiones de este para estar fuera del tablero y no estorbar tenían que
+    ser muy grandes, por lo tanto, buscamos un robot con configuración polar que
+    llegue al menos a una distancia de 0'5 metros. 
+    \item Respecto a la precisión de este robot, tenemos que buscar uno que
+    tenga bastante, ya que las piedras en una partidade go se encuentran muy
+    juntas y una diferencia de pocos milímetros podría entorpecer demasiado. 
+    \item Respecto a la capacidad de carga que necesitamos es ínfima, por que
+    las piedras de go no pesan mucho. 
+    \item Por último, y pensamos que bastante importante, el tipo de actuador para
+    coger este robot. Hemos visto bastantes tipos y pensado unos cuantos, pero
+    al tener los problemas de que las piedras son convexas por ambos lados y de
+    cristal, debemos de tomar mucha precaución a la hora de seleccionar. Quizás
+    la mejor elección sean una pinzas con antideslizantes.
+    \item Otra de las cosas que buscamos es que no sea muy caro, ya que el
+    presupuesto que tenemos no es mucho. 
+\end{itemize}
+
+
+No existe actualmente en el mercado ninguna opción que cumpla todos estos
+requisitos, ya que un robot que sea preciso, rápido y un volumen como el que
+necesitamos, tienen un precio mayor de los 1000 \euro.
+
+También hemos encontrado un robot que cuesta solamente unos 50-60 \euro, pero es
+lento, poco preciso y con un volumen que no llega ni a la mitad del tablero.
+
+La conclusión a la que llegamos llegado a este punto fue la de abandonar la
+parte de hacer el robot. 
+
+
+
 
 \chapter{Arduino}
 \section{Introduccion}
