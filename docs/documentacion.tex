@@ -321,9 +321,351 @@ en la actualidad una IA capaz de ganar a ningún profesional del go.
 
 \chapter{Arduino}
 \section{Introduccion}
-\section{Historia}
+En este proyecto, arduino se utilizará para la creacion del reloj, que indica el tiempo que le queda a cada jugador, a su vez arduino le indicara al programa cuando ha terminado el turno de un jugador y cuando ha empezado otro.
+
+Tambien como hemos visto anteriormente, dado a la diversidad de brazos que hay en el mercado, es muy probable que se use para el manejo del brazo que se usara para hacer los movimientos físicos.
+
+Arduino es una plataforma de electrónica abierta para la creación de prototipos basada en software y hardware flexibles y fáciles de usar. Se creó para artistas, diseñadores, aficionados y cualquiera interesado en crear entornos u objetos interactivos.
+
+Arduino puede tomar información del entorno a través de sus pines de entrada de toda una gama de sensores y puede afectar aquello que le rodea controlando luces, motores y otros actuadores. El microcontrolador en la placa Arduino se programa mediante el lenguaje de programación Arduino (basasdo en Wiring) y el entorno de desarrollo Arduino (basado en Processing). Los proyectos hechos con Arduino pueden ejecutarse sin necesidad de conectar a un ordenador, si bien tienen la posibilidad de hacerlo y comunicar con diferentes tipos de software (p.ej. Flash, Processing, MaxMSP).
+
+Las placas pueden ser hechas a mano o compradas montadas de fábrica; el software puede ser descargado de forma gratuita. Los ficheros de diseño de referencia (CAD) están disponibles bajo una licencia abierta, así pues eres libre de adaptarlos a tus necesidades.
+Arduino recibió una Mención Honorífica en la sección Digital Communities de la edición del 2006 del Ars Electronica Prix. El equipo Arduino (Arduino team) es: Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino, and David Mellis. Credits
+
+\section{¿Que es Arduino?}
+
+Arduino es una herramienta para hacer que los ordenadores puedan sentir y controlar el mundo físico a través de tu ordenador personal. Es una plataforma de desarrollo de computación física (physical computing) de código abierto, basada en una placa con un sencillo microcontrolador y un entorno de desarrollo para crear software (programas) para la placa.
+
+Puedes usar Arduino para crear objetos interactivos, leyendo datos de una gran variedad de interruptores y sensores y controlar multitud de tipos de luces, motores y otros actuadores físicos. Los proyecto de Arduino pueden ser autónomos o comunicarse con un programa (software) que se ejecute en tu ordenador (ej. Flash, Processing, MaxMSP). La placa puedes montarla tu mismo o comprarla ya lista para usar, y el software de desarrollo es abierto y lo puedes descargar gratis.
+
+El lenguaje de programación de Arduino es una implementación de Wiring, una plataforma de computación física parecida, que a su vez se basa en Processing, un entorno de programación multimedia.
+
+
+\section{Ventajas de usar Arduino}
+
+Hay muchos otros microcontroladores y plataformas con microcontroladores disponibles para la computación física. Parallax Basic Stamp, BX-24 de Netmedia, Phidgets, Handyboard del MIT, y muchos otros ofrecen funcionalidades similares. Todas estas herramientas organizan el complicado trabajo de programar un microcontrolador en paquetes fáciles de usar.
+
+Arduino, además de simplificar el proceso de trabajar con microcontroladores, ofrece algunas ventajas respecto a otros sistemas a profesores, estudiantes y amateurs:
+
+\begin{itemize} 
+	 \item Asequible - Las placas Arduino son más asequibles comparadas con otras plataformas de microcontroladores. La versión más cara de un modulo de Arduino puede ser montada a mano, e incluso ya montada cuesta bastante menos de 60 Euros
+	 
+	 \item Multi-Plataforma - El software de Arduino funciona en los sistemas operativos Windows, Macintosh OSX y Linux. La mayoría de los entornos para microcontroladores están limitados a Windows.
+Entorno de programación simple y directo - El entorno de programación de Arduino es fácil de usar para principiantes y lo suficientemente flexible para los usuarios avanzados. Pensando en los profesores, Arduino está basado en el entorno de programación de Procesing con lo que el estudiante que aprenda a programar en este entorno se sentirá familiarizado con el entorno de desarrollo Arduino.
+
+	\item Software ampliable y de código abierto- El software Arduino esta publicado bajo una licencia libre y preparado para ser ampliado por programadores experimentados. El lenguaje puede ampliarse a través de librerías de C++, y si se está interesado en profundizar en los detalles técnicos, se puede dar el salto a la programación en el lenguaje AVR C en el que está basado. De igual modo se puede añadir directamente código en AVR C en tus programas si así lo deseas.
+	
+	\item Hardware ampliable y de Código abierto - Arduino está basado en los microcontroladores ATMEGA168, ATMEGA328 y ATMEGA1280. Los planos de los módulos están publicados bajo licencia Creative Commons, por lo que diseñadores de circuitos con experiencia pueden hacer su propia versión del módulo, ampliándolo u optimizándolo. Incluso usuarios relativamente inexpertos pueden construir la versión para placa de desarrollo para entender cómo funciona y ahorrar algo de dinero.
+\end{itemize}
 \section{Modelos}
-\section{Arquitectura}
+\subsection{Arduino Duemilanove}
+
+\includegraphics[scale=0.5]{ArduinoDuemilanove.jpg}
+
+Esta es la ultima revisión de la placa Arduino USB básica. Se conecta al ordenador con un cable USB estándar y contiene todo lo necesario para programar la placa. Se puede ampliar con gran variedad de shields: placas de extensión con funcionalidades especificas. 
+
+
+
+
+\begin{tabular}{||l | l ||}
+\hline
+\hline
+Microcontrolador & ATmega368 (ATmega168 en versiones anteriores)\\
+\hline
+Voltaje de funcionamiento & 5V\\
+\hline
+Voltaje de entrada (recomendado) & 7-12V\\
+\hline
+Voltaje de entrada (limite) & 6-20V\\
+\hline
+Pines E/S digitales & 14 (6 proporcionan salida PWM)\\
+\hline
+Pines de entrada analógica & 6\\
+\hline
+Intensidad por pin & 40 mA\\
+\hline
+Intensidad en pin & 3.3V	50 mA\\
+\hline
+Memoria Flash & 16 KB (ATmega168)\\
+\hline
+Memoria Flash & 32 KB (ATmega328)\\
+\hline
+SRAM & 1 KB (ATmega168)\\
+\hline
+SRAM & 2 KB (ATmega328)\\
+\hline
+EEPROM & 512 bytes (ATmega168)\\
+\hline
+EEPROM & 1 KB (ATmega328)\\
+\hline
+Velocidad de reloj & 16 MHz\\
+\hline
+\hline
+\end{tabular}
+
+\subsection{Arduino Diecimila}
+
+\includegraphics[scale=0.6]{ArduinoDiecimilaComponents.jpg}
+
+ Esta es la revisión anterior de la placa USB básica. 
+
+\begin{tabular}{||l | l ||}
+\hline
+\hline
+Microcontrolador & ATmega168\\
+\hline
+Voltaje de funcionamiento & 5V\\
+\hline
+Voltaje de entrada (recomendado) & 7-12 V\\
+\hline
+Voltaje de entrada (limites) & 6-20 V\\
+\hline
+Pines E/S Digitales & 14 (de ellos 6 son salidas PWM)\\
+\hline
+Pines de entrada Analógica & 6\\
+\hline
+Intensidad por pin de E/S & 40 mA\\
+\hline
+Intensidad por pin de 3.3V & 50 mA\\
+\hline
+Memoria Flash & 16 KB (2 KB reservados para el gestor de arranque)\\
+\hline
+SRAM & 1 KB\\
+\hline
+EEPROM & 512 bytes\\
+\hline
+Velocidad del reloj & 16 MHz\\
+\hline
+\hline
+\end{tabular}
+
+\subsection{Nano}
+
+\includegraphics[scale=0.6]{NanoFront.jpg}
+
+El Arduino Nano es una pequeña y completa placa basada en el ATmega328 (Arduino Nano 3.0) o ATmega168 (Arduino Nano 2.x) que se usa conectándola a una protoboard. Tiene más o menos la misma funcionalidad que el Arduino Duemilanove, pero con una presentación diferente. No posee conector para alimentación externa, y funciona con un cable USB Mini-B en vez de el cable estandar. El nano fue diseñado y está siendo producido por Gravitech.
+
+\begin{tabular}{||l | l ||}
+\hline
+\hline
+Microcontrolador & Atmel ATmega168 o ATmega328\\
+\hline
+Tensión de Operación (nivel lógico) & 5 V\\
+\hline
+Tensión de Entrada (recomendado) & 7-12 V\\
+\hline
+Tensión de Entrada (límites) & 6-20 V\\
+\hline
+Pines E/S Digitales & 14 (de los cuales 6 proveen de salida PWM\\
+\hline
+Entradas Analógicas & 8\\
+\hline
+Corriente máx por cada PIN de E/S & 40 mA\\
+\hline
+Memoria Flash & 16 KB (ATmega168)\\
+\hline
+SRAM & 1 KB (ATmega168)\\
+\hline
+EEPROM & 512 bytes (ATmega168)\\
+\hline
+Frecuencia de reloj & 16 MHz\\
+\hline
+Dimensiones & 18,5mm x 43.2mm\\
+\hline
+\hline
+\end{tabular}
+
+\subsection{Arduino Mega}
+
+\includegraphics[scale=0.6]{ArduinoMega.jpg}
+
+Mas grande y potente placa Arduino, compatible con los shields de Duemilanove y Diecimila. Mas Info
+
+\subsection{Arduino Bluetooth}
+
+El Arduino BT contiene un modulo bluetooth que permite comunicarse y programarse sin cables. Es compatible con los shields de Arduino. 
+El módulo Bluetooth utilizado es el Bluegiga WT11, la versión iWrap. El módulo Bluetooth se puede configurar con comandos enviados a través del puerto serie del ATmega168. Un programa para configurar el nombre y código del módulo bluetooth se ejecuta una vez en cada BT Arduino. El nombre se establece en ARDUINOBT y el código de acceso en 12345. Para obtener detalles más completos, ve al código fuente del programa Initialization. El ATmega168 viene precargado con un gestor de arranque que te permite subir sketches al consejo de administración a través de bluetooth. El código fuente del gestor de arranque está disponible en el repositorio SVN de Arduino.
+
+\subsection{Arduino LilyPad}
+
+\includegraphics[scale=0.6]{LilyPad_3.jpg}
+
+Diseñado para aplicaciones sobre prendas, esta placa puede ser cosida a la ropa y es de color purpura y con un diseño con estilo. 
+
+\begin{tabular}{||l | l ||}
+\hline
+\hline
+Microcontrolador & ATmega168V o ATmega328V\\
+\hline
+Voltaje de funcionamiento & 2.7-5.5 V\\
+\hline
+Voltaje de entrada & 2.7-5.5 V\\
+\hline
+Pines E/S Digitales & 14 (de las cuales 6 proporcionan salida PWM)\\
+\hline
+Pines Entradas Analógicas Input Pins & 6\\
+\hline
+Intensidad por pin & 40 mA\\
+\hline
+Memora Flash & 16 KB \\
+\hline
+SRAM & 1 KB\\
+\hline
+EEPROM & 512 bytes\\
+\hline
+Velocidad de reloj & 8 MHz\\
+\hline
+\hline
+\end{tabular}
+
+
+\subsection{Arduino Fio}
+
+\includegraphics[scale=0.6]{ArduinoFio.jpg}
+
+Diseñada para aplicaciones inalámbricas. Incluye un zócalo para XBee, un conector para baterías LiPo y electrónica para cargar baterías. 
+
+\begin{tabular}{||l | l ||}
+\hline
+\hline
+Microcontrolador & ATmega328P\\
+\hline
+Voltaje de trabajo & 3.3V\\
+\hline
+Voltaje de Entrada & 3.35 -12 V\\
+\hline
+Voltaje de Entrada en Carga & 3.7 - 7 V\\
+\hline
+Pines E/S Digital & 14 (of which 6 provide PWM output)\\
+\hline
+Pines de Entrada Analógica & 8\\
+\hline
+Corriente DC por pin E/S & 40 mA\\
+\hline
+Memoria Flas & 	32 KB (of which 2 KB used by bootloader)\\
+\hline
+SRAM & 2 KB\\
+\hline
+EEPROM & 1 KB\\
+\hline
+Frecuencia de Reloj & 8 MHz\\
+\hline
+\hline
+\end{tabular}
+
+\subsection{Arduino Mini}
+
+\includegraphics[scale=0.6]{arduino_mini.jpg}
+
+La placa Arduino mas pequeña. Funciona perfectamente en una placa de desarrollo o en aplicaciones donde el espacio es primordial. Se conecta al ordenador usando el adaptador Mini USB. 
+
+\begin{tabular}{||l | l ||}
+\hline
+\hline
+Microcontrolador & ATmega168\\
+\hline
+Voltaje de funcionamiento & 5V\\
+\hline
+Voltaje de entrada & 7-9 V\\
+\hline
+Pines E/S digital & 14 (6 pueden ser usadas como salidas PWM)\\
+\hline
+Pines entrada analógica & 8 (de las cuales 4 se extienden en pines)\\
+\hline
+DC Corriente continua por pin E/S & 40 mA\\
+\hline
+Memoria Flash & 16 KB (de las cuales 2 KB son usadas por el bootloader)\\
+\hline
+SRAM & 1 KB\\
+\hline
+EEPROM & 512 bytes\\
+\hline
+Velocidad de reloj & 16 MHz\\
+\hline
+\hline
+\end{tabular}
+
+\subsection{Arduino Adaptador Mini USB}
+
+\includegraphics[scale=0.6]{mini_usb.jpg}
+
+Esta placa convierte una conexión USB a TX y RX de 5 voltios que se puede conectar directamente al Arduino Mini u otros microcontroladores, permitiéndoles comunicarse con el ordenador. Se basa en el chip de FTDI FT232RL, (los controladores se incluyen con el software de Arduino).
+
+\subsection{Arduino Pro}
+
+\includegraphics[scale=0.6]{ArduinoPro.jpg}
+
+Esta placa esta diseñada para aquellos que quien dejar la placa incrustada en el proyecto: es mas barata que la Diecimila y se puede alimentar fácilmente con baterías. pero requiere de componentes extra y montaje. 
+
+\begin{tabular}{||l | l ||}
+\hline
+\hline
+Microcontrolador & ATmega168 o ATmega328\\
+\hline
+Voltaje de funcionamiento & 3.3v o 5v\\
+\hline
+Voltaje de entrada & 3.35 -12v o 5 - 12v\\
+\hline
+Pines digitales de E/S & 14 (6 de los cuales tienen salida PWM)\\
+\hline
+Pines de entrada analógica & 6\\
+\hline
+Intensidad máxima por E/S & 40 mAv\\
+\hline
+Memoria Flash & 16KB en el ATmega168 y 32KB con el ATmega328 \\
+\hline
+SRAM & 1KB\\
+\hline
+EEPROM & 512 bytes\\
+\hline
+Velocidad de Reloj & 8 MHz o 16 MHz\\
+\hline
+\hline
+\end{tabular}
+
+\subsection{Arduino Pro Mini}
+
+\includegraphics[scale=0.6]{ArduinoProMini.jpg}
+
+Como la Pro, la Pro Mini esta diseñada para usuarios avanzados que requieren de bajo coste, menor tamaño y dispuestos a un poco de trabajo extra. 
+
+\begin{tabular}{||l | l ||}
+\hline
+\hline
+Microcontrolador & ATmega168\\
+\hline
+Voltaje de funcionamiento & 3.3v o 5v (dependiento del modelo)\\
+\hline
+Voltaje de entrada & 3.35 -12v o 5 - 12v\\
+\hline
+Pines digitales de E/S & 14 (6 de los cuales tienen salida PWM)\\
+\hline
+Pines de entrada analógica & 6\\
+\hline
+Intensidad máxima por E/S & 40 mA\\
+\hline
+Memoria Flash & 16KB\\
+\hline
+SRAM & 1KB\\
+\hline
+EEPROM & 512 bytes\\
+\hline
+Velocidad de Reloj & 8 MHz (modelo de 3.3v) o 16 MHz (modelo de 5v)\\
+\hline
+\hline
+\end{tabular}
+
+\subsection{Arduino Serial}
+
+\includegraphics[scale=0.6]{arduino.jpg}
+
+Es una placa básica que utiliza una interfaz RS232 para comunicarse con el ordenador o para la carga de sketches. Esta placa es fácil de montar, incluso como ejercicio de aprendizaje. Se ha diseñado para utilizar los componentes más simples posibles, de manera que sea fácil de construir, incluso si buscas las componentes en la tienda de la esquina.
+
+
+
+
+
+
 
 \chapter{Camaras}
 \section{Introduccion}
