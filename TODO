@@ -54,6 +54,7 @@ Detectar cuando se han muerto algunas piedras, para poder piedras donde hayan
   muerto alguna anteriormente. 
 Verbose para detectar errores y ayudar a los desarroladores.Guardar foto o video
 Añadir a agradecimientos todas las personas que han colaborado con el SL.  
+Refactoring en deteccion de color, no hace falta comprobar tantas veces. MARCELO
 
 
 

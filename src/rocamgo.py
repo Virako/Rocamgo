@@ -65,6 +65,7 @@ from src.cte import WHITE
 from src.cte import GOBAN_SIZE
 from copy import copy
 from sys import path
+from record import Record
 path.append('/usr/lib/pymodules/python2.7')
 from cv import ShowImage
 from cv import WaitKey
@@ -88,12 +89,13 @@ def main():
     good_corners = None
     ideal_img = None
     goban = Goban(GOBAN_SIZE)
-
+    record = Record('p1.avi', QueryFrame(camera))
 
     while camera: 
         # Select image from camera 
         #img = camera.get_frame()
         img = QueryFrame(camera) # Test videos
+        record.add_frame(img)
 
         # previous corners
         prev_corners = copy(current_corners)
@@ -153,7 +155,7 @@ def main():
         # Upload to internet
 
         # FPS
-        key = WaitKey(20)
+        key = WaitKey(1)
         if key == 27: # Esc
             goban.kifu.end_file()
             goban.igs.close()
