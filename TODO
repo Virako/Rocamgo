@@ -1,11 +1,3 @@
-Recuperar REDMINE del server de Sugus.
-Documentación. 
-Class goban
-Search_stone
-Pillar tablero bien pillado (hacer comprobaciones de que está bien)
-Git stash con todas las cosas antiguas. 
-
-
 HECHO:
 ------
 Crear imagenes a partir de cam o file
@@ -25,21 +17,29 @@ igsconection
 cuando detecte que se ha movido el tablero, comprobar si el tablero movido
   es igual que el anterior o parecido, deben de existir una distancia similar
   entre los puntos que la de los anteriores corners.comprobar direccion. 
+Recuperar REDMINE del server de Sugus.
+Rellenar en la doc los programas que hemos usado y por que, y añadir fotos. 
+Parser para record, --video, --camera
+Modificar lo camara
+Documentar las clases y sacar con epydoc las cosas (rellenar las mas IMP.)
+Alias cgoban e igspanda (javaws en mi ordenador)
+Documentación. 
+Class goban
+Search_stone
+Profiler (medio hecho) with nosetest. Code:
+    from hotshot import stats
+    stats.load('output_nosetest')
+    stats.dump('output_transform') # You can read with runsnake
 
 
 
 HACIENDO:
 ---------
-1. profiler (medio hecho) with nosetest. Code:
-    from hotshot import stats
-    stats.load('output_nosetest')
-    stats.dump('output_transform') # You can read with runsnake
-2. Rellenar en la doc los programas que hemos usado y por que, y añadir fotos. 
+1. crear test para la camara, para deteccion de tablero, movimiento, piedras
 
 
 POR HACER:
 ----------
-Documentar las clases y sacar con epydoc las cosas (rellenar las mas IMP.)
 Manual de usuario. Mirar el setup.py e instalar herramientas necesarias.
 Bibliografía. Redmine. Gantt. 
 Revisar toda la Doc que hay. Aumentar lo que hay y coregir errores.  
@@ -47,7 +47,6 @@ Como apendices. Poner manuales: go, git, vim, python, opencv, travis,tdd, etc.
 Test_search_stone: se necesita un video o una secuencia larga de imágenes
 Hilos
 Profiler pero para mirar la memoria, hay cosillas chulas por ahi parece :P
-Alias cgoban e igspanda (javaws en mi ordenador)
 Guardar en que orden se han detectado las piedras para no insertar antes una
   piedra que haya entrado despues 
 Detectar cuando se han muerto algunas piedras, para poder piedras donde hayan
@@ -55,6 +54,7 @@ Detectar cuando se han muerto algunas piedras, para poder piedras donde hayan
 Verbose para detectar errores y ayudar a los desarroladores.Guardar foto o video
 Añadir a agradecimientos todas las personas que han colaborado con el SL.  
 Refactoring en deteccion de color, no hace falta comprobar tantas veces. MARCELO
+Pillar tablero bien pillado (hacer comprobaciones de que está bien)
 
 
 
@@ -63,57 +63,3 @@ FUTURO LEJANO OESTE
 Detectar el color de las piedras color1(centro), color2(hoshi). threshold
 Podemos emitir un pitido para no tener que estar delante de la camara.
 
-
-===============================================================================
-===============================================================================
-===============================================================================
-===============================================================================
-
-travisCI
-========
-añadir a la bibliografia esta página, esto es para la implementacion: 
-http://www.genbetadev.com/sistemas-de-control-de-versiones/travis-ci-sistema-distribuido-de-integracion-continua-libre-integrado-con-github
-añadir la siguiente como un pequeño tutorial de travis ci
-http://about.travis-ci.org/es/docs/user/getting-started/
-
-
-geany-gedit-vim
-===============
-http://es.wikipedia.org/wiki/Geany
-
-Gedit: te viene por defecto en Debian con gnome, tiene autoguardado, coloreado
-de sintaxis, plugins, etc etc
-
-
-poner en tutoriales lo del vimgolf y eso. 
-Vim: genialidad, explayarme. vimgolf, vimtips, wiki tips, chat de vim de
-freenode, stackoverflow, amigos 
-
-
-svn-git
-=======
-Usando svn no estábamos mal, pero queríamos aprender un poco y nos movimos a
-git. La verdad que es chocarse con un muro y una ideología distinta, ya que git
-es ajsdhalksjdhsjakhd, pero a la larga nos hemos ido alegrando de su
-utilizacion, ya que las cosas que se pueden hacer y su forma de trabajar es
-estupenda. 
-
-
-python librerias(nosetest, numpy, profile?, epydoc, opencv, )
-=============================================================
-nosetest --> los test comencé a realizarlos con unittests, pero nosetest decian
-que era mejor, hace los profiler tb, etc etc
-
-opencv --> totalmente necesario y una gran libreria para todo lo que sea
-tratmiento de imagenes
-epydoc 
-
-
-protocol IGS, protocol KGS
-=============================================================
-IGS --> con la ayuda de zeta.
-http://www.pandanet.co.jp/English/commands/term/termcommands1.html
-
-KGS --> he tenido que hablar con los administradores de KGS para poder utilizar
-este servicio, aunque aun estamos a la espera de que nos contesten para poder
-añadir esta implementacion. 

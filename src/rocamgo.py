@@ -75,27 +75,42 @@ from cv import QueryFrame
 from cv import Get1D
 from cv import Round
 from cv import CV_RGB
+import argparse
 
 
-def main():
 
-    # Select camera from computer
-    #cam = Cameras()
-    #cams_found = cam.check_cameras()
-    #camera = cam.show_and_select_camera(); threshold=190
-    camera = CaptureFromFile('prueba2.avi'); threshold=150 # Test videos
+def main(parser):
+
+    print "Camer, video, record"
+    print parser.camera
+    print parser.video
+    print parser.record
+
+    if parser.camera:
+        cam = Cameras()
+        cams_found = cam.check_cameras(int(parser.camera))
+        camera = cam.show_and_select_camera()
+        # TODO
+        threshold=190
+    elif parser.video:
+        camera = CaptureFromFile(parser.video)
+        threshold=150 
+    if parser.record:
+        record = Record(parser.record, QueryFrame(camera))
+
     prev_corners = None
     current_corners = None
     good_corners = None
     ideal_img = None
     goban = Goban(GOBAN_SIZE)
-    record = Record('p1.avi', QueryFrame(camera))
 
     while camera: 
         # Select image from camera 
+        # TODO
         #img = camera.get_frame()
         img = QueryFrame(camera) # Test videos
-        record.add_frame(img)
+        if parser.record:
+            record.add_frame(img)
 
         # previous corners
         prev_corners = copy(current_corners)
@@ -108,7 +123,7 @@ def main():
         # Check goban moved 
         if check_goban_moved(prev_corners, current_corners):
             good_corners = copy(current_corners)
-            print "MOVED"
+            #print "MOVED"
         
         if good_corners:
             # Paint corners for tested 
@@ -162,4 +177,19 @@ def main():
             break
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description='Rocamgo option. ')
+    parser.add_argument('--camera', action='store',
+        help='Numbers of cameras in the computer. ')
+    parser.add_argument('--video', action='store',  help='Filename video. ')
+    parser.add_argument('--record', action='store',
+         help='Record video for help to developers. ')
+    parser.add_argument('--version', action='version', version='Rocamgo 0.33')
+    results = parser.parse_args()
+    if (results.camera and results.video) or \
+        (not results.camera and not results.video):
+        print "Select camera OR video."
+        parser.print_help()
+        exit()
+
+    # TODO evitar los dos argumentos a la vez
+    main(results)

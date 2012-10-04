@@ -34,7 +34,8 @@ from cv import WaitKey
 from cv import SetMouseCallback
 from cv import CV_EVENT_LBUTTONDBLCLK
 from cv import CV_EVENT_LBUTTONDOWN
-from src.camera import Camera
+from cv import CaptureFromCAM
+from cv import QueryFrame
 from src.cte import *
 
 class Cameras:
@@ -56,8 +57,8 @@ class Cameras:
         :Type x: int
         :Param y: posición y del ratón. 
         :Type y: int
-        :Param camera: objeto Camera. 
-        :Type camera: Camera
+        :Param camera: objeto Capture 
+        :Type camera: Capture
         """
         if event == CV_EVENT_LBUTTONDBLCLK: 
             self.camera = camera
@@ -69,15 +70,17 @@ class Cameras:
         :Keyword num: 99 por defecto, ya que en Linux es lo permitido
         :Param num: int
         :Return: lista de cámaras disponibles
-        :Rtype: list of Camera
+        :Rtype: list of Capture
         """
         n = 0
         while len(self.cameras) < num and n <= MAX_CAMERAS: 
-            camera = Camera() 
-            camera.open_camera(n)
-            if camera.get_frame(): 
+            camera = CaptureFromCAM(n)
+            if QueryFrame(camera):
                 self.cameras.append(camera)
             n += 1
+        if num != MAX_CAMERAS and len(self.cameras) != num:
+            print "Found %d of %d cameras. " %(len(self.cameras), num)
+            exit()
         return len(self.cameras)
 
     def show_and_select_camera(self):
@@ -92,8 +95,8 @@ class Cameras:
         elif len(self.cameras) > 1:
             while not self.camera:
                 for camera in self.cameras:
-                    name_windows = str(camera.index)
-                    img = camera.get_frame()
+                    name_windows = camera.__str__()
+                    img = QueryFrame(camera)
                     ShowImage(name_windows, img)
                     key = WaitKey(60)
                     # TODO select camera push the key
