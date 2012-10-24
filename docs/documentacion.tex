@@ -1186,6 +1186,28 @@ Ademas debido a las tecnologias sin cables, estas camaras no necesitarian cables
 
 \chapter{Implementación}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                               Includes                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\include{src-module}
+%\include{src.camera-module} v
+%\include{src.cameras-module} v
+%\include{src.check_goban_moved-module}v
+%\include{src.cte-module}
+%\include{src.functions-module}
+%\include{src.goban-module}v
+%\include{src.igs-module}v
+%\include{src.kifu-module}v
+%\include{src.perspective-module}v
+%\include{src.rocamgo-module}
+%\include{src.search_goban-module} v
+%\include{src.search_stones-module} v
+%\include{src.stone-module} v
+
+
 \section{Herramientas utilizadas}
 
 
@@ -1482,7 +1504,7 @@ Al igual que con el sistema operativo ha ocurrido con el entorno de escritorio,
 gracias a que en la comunidad del Software Libre se ofrecen inifinidad de
 posibilidades de entornos, cada uno hemos utilizado el que más nos gustaba.
 
-\section {Implementación del proyecto}
+\section{Implementación del proyecto}
 
 Como todo proyecto, la implementacion la hemos dividido en funcionalidades que
 queriamos que tuviese el proyecto. Las principales funcionalidades, que a su vez
@@ -1498,8 +1520,9 @@ las hemos dividido para hacer un codigo mas legible y modular, son:
 
 La realización de este proyecto a supuesto muchísimos cambios en las
 implementaciones, ya que hemos tenido que desechar muchas de ellas por motivos
-diferentes que nos hemos ido encontrando. 
+diferentes que nos hemos ido encontrando. Hemos decidido ir explicando la evolucion y aprendizaje de cada parte de software del proyecto, añadiendo despues la api correspondiente a esa parte. A continuacion adjuntamos la api del main.
 
+\include{src.rocamgo-module}
 
 \section{Detección de la cámara} 
 Funcionalidad que nos busca y nos selecciona la cámara que queramos usar,
@@ -1520,6 +1543,8 @@ si no que debería de funcionar en cualquier sistema operativo. También decir q
 es una forma mejorada de detectar las cámaras, ya que no hay problemas si hemos
 enchufado y desenchufado cámaras anteriormente. 
 
+\include{src.camera-module}
+\include{src.cameras-module}
 
 \section{Detección del tablero} 
 Funcionalidad para la detección del tablero, ya sea de las intersecciones o de
@@ -1606,6 +1631,8 @@ han fallado son debido a la mala calidad de las imágenes (sobre todo a causa de
 la luminosidad de las imágenes), hemos considerado que es la correcta. Además,
 perdemos el problema de la perspectiva, pues lo que detectamos es el contorno.
 
+\include{src.search_goban-module}
+
 
 \section{Detección de movimiento del tablero}
 
@@ -1637,6 +1664,8 @@ factible con los contornos, hemos utilizado esta forma, y no parece ir mal del
 todo, aunque no está asegurado que permaneca tal y como está, si es probable que
 sea parecido. 
 
+\include{src.check_goban_moved-module}
+
 \section{Idealización del tablero} 
 
 Una vez detectado el tablero correctamente y antes de ponernos a buscar piedras
@@ -1651,6 +1680,8 @@ sencilla. Para conseguir que esta función nos sirva, tuvimos que hacer un
 testeo bastante amplio, pues las imágenes necesitan ser tratadas anteriormente
 para el correcto funcionamiento de dicha funcion, con filtros como Canny y
 Smooth, para detectar bordes o suavizar la imagen. 
+
+\include{src.perspective-module}
 
 \section{Deteccion de piedras} 
 
@@ -1741,6 +1772,8 @@ cogen un numero amplio de muestras para saber el color. Aun asi, los test dan
 fallos a veces, para evitar esto, hay que variar una variable, siendo este uno
 de los puntos a seguir trabajando en un futuro en nuestro programa.
 
+\include{src.search_stones-module} 
+\include{src.stone-module}
 
 \section{Conexión con el servidor}
 
@@ -1751,6 +1784,14 @@ conexión a este servidor, pues es de los mas usados. Actualmente el programa se
 conecta a IGS a traves de un usuario registrado siguiendo el protocolo de dicho
 servidorl, que es libre.
 
+\include{src.igs-module}
+
+\section{Creacion del archivo .sgf}
+
+Para la creacion del archivo .sgf no tuvimos muchos problemas ya que es un archivo de texto
+que esta estandarizado.
+
+\include{src.kifu-module}
 
 \chapter{Manual de usuario}
 
@@ -2163,24 +2204,6 @@ Para Opencv hemos usado el libro de o'reilly books opencv, ademas de la siguient
 
 \chapter{Apéndice A: Documentación del proyecto} 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                               Includes                                %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\include{src-module}
-\include{src.camera-module}
-\include{src.cameras-module}
-\include{src.check_goban_moved-module}
-\include{src.cte-module}
-\include{src.functions-module}
-\include{src.goban-module}
-\include{src.igs-module}
-\include{src.kifu-module}
-\include{src.perspective-module}
-\include{src.rocamgo-module}
-\include{src.search_goban-module}
-\include{src.search_stones-module}
-\include{src.stone-module}
 
 
 \chapter{Apéndice B: ¿Qué es el go?} 
