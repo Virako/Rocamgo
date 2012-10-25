@@ -178,18 +178,14 @@ def main(parser):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Rocamgo option. ')
-    parser.add_argument('--camera', action='store',
-        help='Numbers of cameras in the computer. ')
-    parser.add_argument('--video', action='store',  help='Filename video. ')
     parser.add_argument('--record', action='store',
          help='Record video for help to developers. ')
     parser.add_argument('--version', action='version', version='Rocamgo 0.33')
+    capture_source_arg_group = parser.add_mutually_exclusive_group(required='true')
+    capture_source_arg_group.add_argument('--camera', action='store',
+        help='Numbers of cameras in the computer. ')
+    capture_source_arg_group.add_argument('--video', action='store', 
+        help='Filename video. ')
     results = parser.parse_args()
-    if (results.camera and results.video) or \
-        (not results.camera and not results.video):
-        print "Select camera OR video."
-        parser.print_help()
-        exit()
 
-    # TODO evitar los dos argumentos a la vez
     main(results)
