@@ -3,18 +3,18 @@ HECHO:
 Crear imagenes a partir de cam o file
 Seleccionar los corners utilizando clicks de raton (se puede mejorar. zoom)
 Test de search_goban 
-search_goban mejorar 
-hacer fotos para los test (mover piedra, mover tablero, ...)
-perspective
-test_check_goban_moved. Solo cuando devuelva False despues de True. 
+Search_goban mejorar 
+Hacer fotos para los test (mover piedra, mover tablero, ...)
+Perspective
+Test_check_goban_moved. Solo cuando devuelva False despues de True. 
 Class kifu
 3 commit en el master 
     search_goban
     check_goban_moved
     perspective and search_stone
-kifu y crear .sgf
-igsconection
-cuando detecte que se ha movido el tablero, comprobar si el tablero movido
+Kifu y crear .sgf
+Igsconection
+Cuando detecte que se ha movido el tablero, comprobar si el tablero movido
   es igual que el anterior o parecido, deben de existir una distancia similar
   entre los puntos que la de los anteriores corners.comprobar direccion. 
 Recuperar REDMINE del server de Sugus.
@@ -35,7 +35,7 @@ Profiler (medio hecho) with nosetest. Code:
 
 HACIENDO:
 ---------
-1. crear test para la camara, para deteccion de tablero, movimiento, piedras
+1. Crear test para la camara, para deteccion de tablero, movimiento, piedras
 
 
 POR HACER:
@@ -55,6 +55,52 @@ Verbose para detectar errores y ayudar a los desarroladores.Guardar foto o video
 Añadir a agradecimientos todas las personas que han colaborado con el SL.  
 Refactoring en deteccion de color, no hace falta comprobar tantas veces. MARCELO
 Pillar tablero bien pillado (hacer comprobaciones de que está bien)
+Añadir al paser que no pille Internet y estructurar bien lo de Internet. IGS. 
+BTK: 
+    la idea era usar máscaras de color para buscar las piedras
+    puedes verlo aplicado al tracking de objetos en
+    http://www.aishack.in/2010/07/tracking-colored-objects-in-opencv/
+    la idea es buscar objetos blancos primero y negros después
+    aproximas los círculos en ambas imágenes y haces una unión
+    y ya tienes todas las piedras del tablero
+    así sabrías el color de ambos grupos de piedras de una vez
+    sin tener que iterar cada círculo y hacer una estimación de color
+
+    Problema del joseki, explicar en la DOC
+
+    Kifu e IGS se llaman desde goban, MAL, CAMBIAR
+
+    Mucho acoplamiento en goban y poca abstracción en rocamgo(patron observador)
+
+    Kaya server, API para retransmitir. MIRAR
+
+    En MAC, la camara integrada te la pilla dos veces el opencv. COMROBAR.
+
+    Gomill y kombilo, dos proyectos que puede ayudar. 
+
+    Tablero visual para ver la partida (podria servir para corregir errores)
+
+    Soportar diferentes reglas y detectar superkos: hashes Zobrist.
+
+    sys.append("Opencv para Travis") # quitar y comprobar en TravisCI.
+        Antes mejorar los test. 
+
+    Cambiar un poco el Spanglish.
+
+    Paquete src, estructurar un poco mejor todo en modulos y paquetes. 
+    Rocamgo.py el unico que debe de estar dentro de src, todo los demas en src
+    pero en modulos y eso, organizado por funciones.
+        search_goban, search_stones, perspective.... paquete detection
+        igs, kifu -> paquete player
+
+    Patron estrategia. Así no borro otras estrategias y no tengo que viajar en
+        el tiempo para ver las alternativas. 
+
+    Epydoc no tiene sentido en github, y la doc ... bueno.
+
+    En travis, on_tag -> make dist -> publish. Crear reglas para que pushee
+    desde TravisCI la doc generada con epydoc. 
+
 
 
 
