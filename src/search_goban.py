@@ -47,6 +47,7 @@ def count_perimeter(seq):
     :Rtype: float
     """
     ant = False
+    perimeter = 0
     for (a,b) in seq:
         if ant:
             perimeter += sqrt((ant[0]-a)**2 + (ant[1]-b)**2)
