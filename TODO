@@ -101,6 +101,8 @@ BTK:
     En travis, on_tag -> make dist -> publish. Crear reglas para que pushee
     desde TravisCI la doc generada con epydoc. 
 
+    7000 llamadas a distance_between_two_points, problema en check_goban_moved:
+    CalcOpticalFlowPyrLK para detectar los mmovientos de las esquinas del goban.
 
 
 

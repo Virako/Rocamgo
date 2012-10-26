@@ -66,7 +66,6 @@ from src.cte import GOBAN_SIZE
 from copy import copy
 from sys import path
 from record import Record
-path.append('/usr/lib/pymodules/python2.7')
 from cv import ShowImage
 from cv import WaitKey
 from cv import Circle

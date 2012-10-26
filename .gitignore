@@ -1,6 +1,10 @@
 *.py[co]
 .*.swp
 *.aux
+*.out
+*.toc
+*.sty
+*.log
 
 # Packages
 *.egg
