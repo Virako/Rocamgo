@@ -122,6 +122,10 @@ Nos gustaría agradecer a:
     \item A Jaime Cornejo Pérez, por ayudarnos con el logo y comunicación con 
     los administradores del servidor de KGS.  
     \item A nuestros familiares, parejas y amigos.
+    \item A Btk???, que casi al finalizar el PFC nos ha ayudado mucho aportando
+    nuevas ideas y formas de mejorar todo el proyecto, las cuales no hemos
+    podido llevar a cabo, pero que en un futuro, con su ayuda, acabaremos
+    mejorándolas. % TODO
 \end{itemize}
 
 
@@ -136,12 +140,14 @@ físico mediante Internet, ya que el jugar en un tablero físico motiva bastante
 más que jugar con un tablero digital por internet. Como aquí en España el juego todavía no está muy
 extendido y no existen tantos Clubes como en Korea o en Japón, tenemos que
 conformarnos la mayoría de las veces con jugar por Internet, lo cual pierde un
-poco la esencia del juego, ese tacto de las piedras, el sonido de contacto de la
-piedra en el tablero, y como no, el estar delante de tu oponente. 
+poco la esencia del juego: ese tacto de las piedras, el sonido de contacto de la
+piedra en el tablero, y como no, la presencia de tu oponente frente a tí.
+
 En los torneos de go, existe una concentración al jugar que parece ser mayor que
 la que normalmente tenemos, parece que jugamos mejor y pensamos un poco más nuestras
 jugadas, por lo tanto, si tuvieramos la oportunidad de capturar estas partidas,
-podríamos aprender mucho de ellas, tanto de los aciertos como de los errores. 
+podríamos aprender mucho de ellas, tanto de los aciertos como de los errores; y
+tanto de los nuestros como de los de los demás. 
 Estas partidas, actualmente se registran de dos formas: 
 \begin{itemize}
     \item Utilizando el método antiguo, registrando la partida en un kifu. 
@@ -153,82 +159,92 @@ desconcentrar un poco al jugador, ya que no estará totalmente centrado en la
 partida; o una persona ajena a la partida, la cual debe permanecer 1 o 2 horas
 como mínimo delante del tablero apuntando todas esas jugadas. 
 
-Como nota decimos que los jugadores que son muy fuertes, suelen acordarse de la
+Añadir que, los jugadores que son muy fuertes, suelen acordarse de la
 partida entera, pero al no ser este nuestro caso, ni el de otros muchos, nos
 viene mejor una ayuda. 
 
 \parskip 2ex
 Todo esto nos llevó a pensar hacer este software, tanto para mejorar la forma de
-registrar estas partidas para que todos podamos verla, como para poder grabar
+registrar estas partidas, para que todos podamos verla, como para poder grabar
 nuestras propias partidas y poder ver nuestros errores una vez acabada, para así
-mejorar. 
+mejorar en este juego. 
 
 \section{Objetivos} 
 
-Los objetivos de este proyecto son poder jugar contra una maquina al go en un tablero real. Dicha maquina podra estar manejada por otra persona a traves de internet, o por una inteligencia artificial.
+Los objetivos de este proyecto son: 
+\begin{itemize}
+    \item Jugar contra una máquinas al go en un tablero físico. 
+    \item Jugar contra otras personas a través de Internet, utilizando un
+    tablero físico. 
+    \item Capturar partidas de go completas, ya sea en torneos o en partidas
+    libres que juegues contra cualquier persona. 
+    \item Subir estas partidas capturadas en tiempo real a servidores de go. 
+\end{itemize}
 
 Para que esto sea posible, necesitaremos el siguiente hardware:
 \begin{itemize}
     \item Un brazo robótico. Para realizar los movimientos fisicos de la maquina.
-    \item Una cámara que grabase videos. Para la captacion del tablero y movimientos del jugador oponente.
-    \item Una placa Arduino. Para llevar el reloj, los turnos y poder coordinar el brazo con el ordenador en caso de ser necesario. 
-    \item Es necesario un ordenador donde conectar una cámara y con
-    procesamiento suficiente para ejecutar nuestro programa. 
+    \item Una cámara que grabe videos. Para la captacion del tablero y
+    movimientos del jugador oponente.
+    \item Una placa Arduino. Para llevar el reloj, los turnos y poder coordinar
+    el brazo con el ordenador en caso de ser necesario. 
+    \item Un ordenador donde conectar la cámara, el brazo, el arduino, y donde
+    ejecutar el programa que realice todo el tratamiento de imágenes necesario.
 \end{itemize}
 
-Con los materiales anteriormente citados y teniendo claro a donde queremos llegar, nos damos cuenta que nuestro proyecto cubre ademas otras necesidades, pues el uso del programa no solo sería el de jugar
-una partida en tablero físico, sino que también podríamos guardar una partida
-completa observándola, y subirla en tiempo real a Internet, cosa que
-agradeceríamos los jugadores de go, ya que el subir una partida de go por
-streaming o subirla a mano, no es siempre posible, y este proyecto facilitaría
-la subida de una partida sin tener que estar atento durante toda la partida y
-sin necesitar una gran conexión a Internet, ya que con este sistema, la
-información que enviamos al servidor es mínima. 
 %Imagen de la disposicion hardware correcta, que queremos que se use.
 %\includegraphics[scale=0.08]{hardware.jpg}
 
-Con este proyecto pretendemos conocer y mejorar nuestros conocimientos de 
-herramientas y lenguajes de programación, así como de algunas librerías
-interesantes, entre las cuales se encuentra OpenCv, librería sobre el
-tratamiento de imágenes, el cual se encuentra actualmete en pleno auge. 
-
-Al ser un proyecto donde trabajaremos más de una persona, entran en juego el
-compañerismo, responsabilidad y comunicación. 
-
-Los principales objetivos de aprendizaje son:
-\begin{itemize} 
-    \item Python para el desarrollo del programa. 
-    \item OpenCv para el tratamiento de imágenes. 
-    \item Gtk para el entorno de ventanas del programa. 
-    \item Unittest2 para el testeo del código. 
-    \item Epydoc para la documentación del código. 
-    \item Git para el control de versiones. 
-    \item Redmine para gestión del proyecto. 
-    \item Glade para el desarrollo visual de interface grafica con gtk.
-    \item Latex para escribir la documentación. 
+Otros de los objetivos que tenemos con este proyecto, a parte de realizar las
+acciones anteriormente mencionadas, son: 
+\begin{itemize}
+    \item Conocer y mejorar nuestros conocimientos del lenguaje de programación
+    python, así como de algunas bibliotecas interesantes, como la biblioteca de
+    OpenCv, la cual nos ayudará muchísimo en el tratamiento de imágenes, el cual
+    se encuentra actualmete en pleno auge. 
+    \item Al ser un proyecto donde trabajaremos más de una persona, entran en
+    juego el compañerismo, responsabilidad y comunicación. 
+    \item Aprender a utiliar un controlador de versiones distribuidos, para el
+    que utilizaremos Git. 
+    \item Aprendizaje de TDD, que también se encuentra ahora en pleno auge. 
+    \item Utilización de un gestor de proyectos como Redmine. 
+    \item Creación de la documentación del proyecto con Latex. 
 \end{itemize}
 
 
 \section{Planificacion y fases del proyecto}
 
-En el desarrollo de este proyecto fin de carrera, han intervenido un
-conjunto de fases que abarcan desde el aprendizaje de las
-diferentes tecnologías hasta el desarrollo de un proyecto
-software como tal.
+En el desarrollo de este proyecto fin de carrera, han intervenido un conjunto de
+fases que abarcan desde el aprendizaje de las diferentes tecnologías hasta el
+desarrollo de un proyecto software como tal.
 Estas son las fases que se han seguido:
 \begin{itemize} 
-	 \item Aprendizaje tecnologías de brazos mecanicos
-	 \item Aprendizaje tecnología de Arduino
-	 \item Aprendizaje tecnologías de camaras
-	 \item Aprendizaje tecnologia Opencv
-	 \item Implementacion
-	 \item Creacion del manual del ususario
-	 \item Desarrollo de las conclusiones obtenidas
-	 \item Desarrollo de las lineas futuras
-	 \item Pruebas de implementación
-	 \item Preparación de la documentación de proyecto y defensa del proyecto
+	\item Aprendizaje de hardware:
+    \begin{itemize} 
+        \item Robot industrial.
+        \item Arduino.
+        \item Cámaras.
+    \end{itemize}
+    \item Aprendizaje software:
+    \begin{itemize} 
+        \item Python. 
+        \item Opencv. 
+        \item TDD con python.
+        \item Latex.
+        \item Git, controlador de versiones distribuido. 
+        \item Otras herramientas que necesitemos durante el trascurso del
+        proyecto. 
+    \end{itemize}
+    \item Como estructurar un proyecto de software libre 
+    \item Estructura interna del proyecto. 
+	\item Implementacion.
+	\item Creacion del manual del usuario.
+	\item Desarrollo de las conclusiones obtenidas.
+	\item Desarrollo de las lineas futuras.
+	\item Preparación de la documentación de proyecto y defensa del proyecto.
 	 
 \end{itemize}
+
 \section{Conceptos}
 
 \subsection{Software libre}
@@ -314,9 +330,9 @@ en la actualidad una IA capaz de ganar a ningún profesional del go.
 \includegraphics[scale=0.33]{quarry.png}
 
 
-\chapter{Robot indistrial}
+\chapter{Robot industrial}
 
-\section{Introduccion}
+\section{Introducción}
 
 Existen ciertas dificultades a la hora de establecer una definición formal de lo
 que es un robot industrial. 
@@ -328,53 +344,52 @@ industrial es cualquier dispositivo mecánico dotado de articulaciones móviles
 destinado a la manipulación, el mercado occidental es más restrictivo, exigiendo
 una mayor complejidad, sobre todo en lo relativo al control. 
 
-En segundo lugar, y
-centrándose ya en el concepto occidental, aunque existe una idea común acerca de
-lo que es un robot industrial, no es fácil ponerse de acuerdo a la hora de
-establecer una definición formal. Además, la evolución de la robótica ha ido
-obligando a diferentes actualizaciones de su definición.
+En segundo lugar, y centrándose ya en el concepto occidental, aunque existe una
+idea común acerca de lo que es un robot industrial, no es fácil ponerse de
+acuerdo a la hora de establecer una definición formal. Además, la evolución de
+la robótica ha ido obligando a diferentes actualizaciones de su definición.
 
 La definición mas comúnmente aceptada posiblemente sea la de la Asociación de
 Industrias Robóticas (RIA), según la cual:
 
-$Un robot industrial es un manipulador multifuncional reprogramable, capaz de
+\emph{Un robot industrial es un manipulador multifuncional reprogramable, capaz de
 mover materias, piezas, herramientas, o dispositivos especiales, según
-trayectorias variables, programadas para realizar tareas diversas.$
+trayectorias variables, programadas para realizar tareas diversas.}
 
 Esta definición, ligeramente modificada, ha sido adoptada por la Organización
 Internacional de Estándares (ISO) que define al robot industrial como:
 
-$Manipulador multifuncional reprogramable con varios grados de libertad, capaz de
+\emph{Manipulador multifuncional reprogramable con varios grados de libertad, capaz de
 manipular materias, piezas, herramientas o dispositivos especiales según
-trayectorias variables programadas para realizar tareas diversas.$
+trayectorias variables programadas para realizar tareas diversas.}
 
 Se incluye en esta definición la necesidad de que el robot tenga varios grados
 de libertad. Una definición más completa es la establecida por la Asociación
 Francesa de Normalización (AFNOR), que define primero el manipulador y,
 basándose en dicha definición, el robot:
 
-$Manipulador: mecanismo formado generalmente por elementos en serie, articulados
+\emph{Manipulador: mecanismo formado generalmente por elementos en serie, articulados
 entre sí, destinado al agarre y desplazamiento de objetos. Es multifuncional y
 puede ser gobernado directamente por un operador humano o mediante dispositivo
-lógico.$
+lógico.}
 
-$Robot: manipulador automático servo-controlado, reprogramable, polivalente,
+\emph{Robot: manipulador automático servo-controlado, reprogramable, polivalente,
 capaz de posicionar y orientar piezas, útiles o dispositivos especiales,
 siguiendo trayectoria variables reprogramables, para la ejecución de tareas
 variadas. Normalmente tiene la forma de uno o varios brazos terminados en una
 muñeca. Su unidad de control incluye un dispositivo de memoria y ocasionalmente
 de percepción del entorno. Normalmente su uso es el de realizar una tarea de
 manera cíclica, pudiéndose adaptar a otra sin cambios permanentes en su
-material.$
+material.}
 
 Por ultimo, la Federación Internacional de Robótica (IFR) distingue entre robot
 industrial de manipulación y otros robots:
 
-$Por robot industrial de manipulación se entiende una maquina de manipulación
+\emph{Por robot industrial de manipulación se entiende una maquina de manipulación
 automática, reprogramable y multifuncional con tres o más ejes que pueden
 posicionar y orientar materias, piezas, herramientas o dispositivos especiales
 para la ejecución de trabajos diversos en las diferentes etapas de la producción
-industrial, ya sea en una posición fija o en movimiento.$
+industrial, ya sea en una posición fija o en movimiento.}
 
 En esta definición se debe entender que la reprogramabilidad y la multifunción
 se consiguen sin modificaciones físicas del robot.
@@ -534,7 +549,7 @@ con otras máquinas-herramientas
 
 
 \subsection{Dispositivos especiales}
-Entre estos se encuentran los ejes que facilitan el movimiento transversal del
+Entre estos se encuentran los ejes que fácilitan el movimiento transversal del
 manipulador y las estaciones de ensamblaje, que son utilizadas para sujetar las
 distintas piezas de trabajo.
 
@@ -741,49 +756,113 @@ parte de hacer el robot.
 
 
 \chapter{Arduino}
-\section{Introduccion}
-En este proyecto, arduino se utilizará para la creacion del reloj, que indica el tiempo que le queda a cada jugador, a su vez arduino le indicara al programa cuando ha terminado el turno de un jugador y cuando ha empezado otro.
+\section{Introducción}
+En este proyecto, arduino se utilizará para la creacion del reloj, que indica el
+tiempo que le queda a cada jugador, a su vez arduino le indicara al programa
+cuando ha terminado el turno de un jugador y cuando ha empezado otro.
 
-Tambien como hemos visto anteriormente, dado a la diversidad de brazos que hay en el mercado, es muy probable que se use para el manejo del brazo que se usara para hacer los movimientos físicos.
+Tambien como hemos visto anteriormente, dado a la diversidad de brazos que hay
+en el mercado, es muy probable que se use para el manejo del brazo que se usara
+para hacer los movimientos físicos.
 
-Arduino es una plataforma de electrónica abierta para la creación de prototipos basada en software y hardware flexibles y fáciles de usar. Se creó para artistas, diseñadores, aficionados y cualquiera interesado en crear entornos u objetos interactivos.
+Arduino es una plataforma de electrónica abierta para la creación de prototipos
+basada en software y hardware flexibles y fáciles de usar. Se creó para
+artistas, diseñadores, aficionados y cualquiera interesado en crear entornos u
+objetos interactivos.
 
-Arduino puede tomar información del entorno a través de sus pines de entrada de toda una gama de sensores y puede afectar aquello que le rodea controlando luces, motores y otros actuadores. El microcontrolador en la placa Arduino se programa mediante el lenguaje de programación Arduino (basasdo en Wiring) y el entorno de desarrollo Arduino (basado en Processing). Los proyectos hechos con Arduino pueden ejecutarse sin necesidad de conectar a un ordenador, si bien tienen la posibilidad de hacerlo y comunicar con diferentes tipos de software (p.ej. Flash, Processing, MaxMSP).
+Arduino puede tomar información del entorno a través de sus pines de entrada de
+toda una gama de sensores y puede afectar aquello que le rodea controlando
+luces, motores y otros actuadores. El microcontrolador en la placa Arduino se
+programa mediante el lenguaje de programación Arduino (basasdo en Wiring) y el
+entorno de desarrollo Arduino (basado en Processing). Los proyectos hechos con
+Arduino pueden ejecutarse sin necesidad de conectar a un ordenador, si bien
+tienen la posibilidad de hacerlo y comunicar con diferentes tipos de software
+(p.ej. Flash, Processing, MaxMSP).
 
-Las placas pueden ser hechas a mano o compradas montadas de fábrica; el software puede ser descargado de forma gratuita. Los ficheros de diseño de referencia (CAD) están disponibles bajo una licencia abierta, así pues eres libre de adaptarlos a tus necesidades.
-Arduino recibió una Mención Honorífica en la sección Digital Communities de la edición del 2006 del Ars Electronica Prix. El equipo Arduino (Arduino team) es: Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino, and David Mellis. Credits
+Las placas pueden ser hechas a mano o compradas montadas de fábrica; el software
+puede ser descargado de forma gratuita. Los ficheros de diseño de referencia
+(CAD) están disponibles bajo una licencia abierta, así pues eres libre de
+adaptarlos a tus necesidades.
+Arduino recibió una Mención Honorífica en la sección Digital Communities de la
+edición del 2006 del Ars Electronica Prix. El equipo Arduino (Arduino team) es:
+Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino, and David Mellis.
+Credits
 
 \section{¿Que es Arduino?}
 
-Arduino es una herramienta para hacer que los ordenadores puedan sentir y controlar el mundo físico a través de tu ordenador personal. Es una plataforma de desarrollo de computación física (physical computing) de código abierto, basada en una placa con un sencillo microcontrolador y un entorno de desarrollo para crear software (programas) para la placa.
+Arduino es una herramienta para hacer que los ordenadores puedan sentir y
+controlar el mundo físico a través de tu ordenador personal. Es una plataforma
+de desarrollo de computación física (physical computing) de código abierto,
+basada en una placa con un sencillo microcontrolador y un entorno de desarrollo
+para crear software (programas) para la placa.
 
-Puedes usar Arduino para crear objetos interactivos, leyendo datos de una gran variedad de interruptores y sensores y controlar multitud de tipos de luces, motores y otros actuadores físicos. Los proyecto de Arduino pueden ser autónomos o comunicarse con un programa (software) que se ejecute en tu ordenador (ej. Flash, Processing, MaxMSP). La placa puedes montarla tu mismo o comprarla ya lista para usar, y el software de desarrollo es abierto y lo puedes descargar gratis.
+Puedes usar Arduino para crear objetos interactivos, leyendo datos de una gran
+variedad de interruptores y sensores y controlar multitud de tipos de luces,
+motores y otros actuadores físicos. Los proyecto de Arduino pueden ser autónomos
+o comunicarse con un programa (software) que se ejecute en tu ordenador (ej.
+Flash, Processing, MaxMSP). La placa puedes montarla tu mismo o comprarla ya
+lista para usar, y el software de desarrollo es abierto y lo puedes descargar
+gratis.
 
-El lenguaje de programación de Arduino es una implementación de Wiring, una plataforma de computación física parecida, que a su vez se basa en Processing, un entorno de programación multimedia.
+El lenguaje de programación de Arduino es una implementación de Wiring, una
+plataforma de computación física parecida, que a su vez se basa en Processing,
+un entorno de programación multimedia.
 
 
 \section{Ventajas de usar Arduino}
 
-Hay muchos otros microcontroladores y plataformas con microcontroladores disponibles para la computación física. Parallax Basic Stamp, BX-24 de Netmedia, Phidgets, Handyboard del MIT, y muchos otros ofrecen funcionalidades similares. Todas estas herramientas organizan el complicado trabajo de programar un microcontrolador en paquetes fáciles de usar.
+Hay muchos otros microcontroladores y plataformas con microcontroladores
+disponibles para la computación física. Parallax Basic Stamp, BX-24 de Netmedia,
+Phidgets, Handyboard del MIT, y muchos otros ofrecen funcionalidades similares.
+Todas estas herramientas organizan el complicado trabajo de programar un
+microcontrolador en paquetes fáciles de usar.
 
-Arduino, además de simplificar el proceso de trabajar con microcontroladores, ofrece algunas ventajas respecto a otros sistemas a profesores, estudiantes y amateurs:
+Arduino, además de simplificar el proceso de trabajar con microcontroladores,
+ofrece algunas ventajas respecto a otros sistemas a profesores, estudiantes y
+amateurs:
 
 \begin{itemize} 
-	 \item Asequible - Las placas Arduino son más asequibles comparadas con otras plataformas de microcontroladores. La versión más cara de un modulo de Arduino puede ser montada a mano, e incluso ya montada cuesta bastante menos de 60 Euros
-	 
-	 \item Multi-Plataforma - El software de Arduino funciona en los sistemas operativos Windows, Macintosh OSX y Linux. La mayoría de los entornos para microcontroladores están limitados a Windows.
-Entorno de programación simple y directo - El entorno de programación de Arduino es fácil de usar para principiantes y lo suficientemente flexible para los usuarios avanzados. Pensando en los profesores, Arduino está basado en el entorno de programación de Procesing con lo que el estudiante que aprenda a programar en este entorno se sentirá familiarizado con el entorno de desarrollo Arduino.
+    \item Asequible - Las placas Arduino son más asequibles comparadas con
+    otras plataformas de microcontroladores. La versión más cara de un modulo
+    de Arduino puede ser montada a mano, e incluso ya montada cuesta bastante
+    menos de 60 Euros
+    
+    \item Multi-Plataforma - El software de Arduino funciona en los sistemas
+    operativos Windows, Macintosh OSX y Linux. La mayoría de los entornos para
+    microcontroladores están limitados a Windows.
+    Entorno de programación simple y directo - El entorno de programación de Arduino
+    es fácil de usar para principiantes y lo suficientemente flexible para los
+    usuarios avanzados. Pensando en los profesores, Arduino está basado en el
+    entorno de programación de Procesing con lo que el estudiante que aprenda a
+    programar en este entorno se sentirá familiarizado con el entorno de desarrollo
+    Arduino.
 
-	\item Software ampliable y de código abierto- El software Arduino esta publicado bajo una licencia libre y preparado para ser ampliado por programadores experimentados. El lenguaje puede ampliarse a través de librerías de C++, y si se está interesado en profundizar en los detalles técnicos, se puede dar el salto a la programación en el lenguaje AVR C en el que está basado. De igual modo se puede añadir directamente código en AVR C en tus programas si así lo deseas.
+    \item Software ampliable y de código abierto- El software Arduino esta
+    publicado bajo una licencia libre y preparado para ser ampliado por
+    programadores experimentados. El lenguaje puede ampliarse a través de
+    bibliotecas de C++, y si se está interesado en profundizar en los detalles
+    técnicos, se puede dar el salto a la programación en el lenguaje AVR C en el
+    que está basado. De igual modo se puede añadir directamente código en AVR C
+    en tus programas si así lo deseas.
 	
-	\item Hardware ampliable y de Código abierto - Arduino está basado en los microcontroladores ATMEGA168, ATMEGA328 y ATMEGA1280. Los planos de los módulos están publicados bajo licencia Creative Commons, por lo que diseñadores de circuitos con experiencia pueden hacer su propia versión del módulo, ampliándolo u optimizándolo. Incluso usuarios relativamente inexpertos pueden construir la versión para placa de desarrollo para entender cómo funciona y ahorrar algo de dinero.
+    \item Hardware ampliable y de Código abierto - Arduino está basado en los
+    microcontroladores ATMEGA168, ATMEGA328 y ATMEGA1280. Los planos de los
+    módulos están publicados bajo licencia Creative Commons, por lo que
+    diseñadores de circuitos con experiencia pueden hacer su propia versión del
+    módulo, ampliándolo u optimizándolo. Incluso usuarios relativamente
+    inexpertos pueden construir la versión para placa de desarrollo para
+    entender cómo funciona y ahorrar algo de dinero.
 \end{itemize}
+
 \section{Modelos}
 \subsection{Arduino Duemilanove}
 
 \includegraphics[scale=0.5]{ArduinoDuemilanove.jpg}
 
-Esta es la ultima revisión de la placa Arduino USB básica. Se conecta al ordenador con un cable USB estándar y contiene todo lo necesario para programar la placa. Se puede ampliar con gran variedad de shields: placas de extensión con funcionalidades especificas. 
+Esta es la ultima revisión de la placa Arduino USB básica. Se conecta al
+ordenador con un cable USB estándar y contiene todo lo necesario para programar
+la placa. Se puede ampliar con gran variedad de shields: placas de extensión con
+funcionalidades especificas. 
 
 
 
@@ -864,7 +943,12 @@ Velocidad del reloj & 16 MHz\\
 
 \includegraphics[scale=0.6]{NanoFront.jpg}
 
-El Arduino Nano es una pequeña y completa placa basada en el ATmega328 (Arduino Nano 3.0) o ATmega168 (Arduino Nano 2.x) que se usa conectándola a una protoboard. Tiene más o menos la misma funcionalidad que el Arduino Duemilanove, pero con una presentación diferente. No posee conector para alimentación externa, y funciona con un cable USB Mini-B en vez de el cable estandar. El nano fue diseñado y está siendo producido por Gravitech.
+El Arduino Nano es una pequeña y completa placa basada en el ATmega328 (Arduino
+Nano 3.0) o ATmega168 (Arduino Nano 2.x) que se usa conectándola a una
+protoboard. Tiene más o menos la misma funcionalidad que el Arduino Duemilanove,
+pero con una presentación diferente. No posee conector para alimentación
+externa, y funciona con un cable USB Mini-B en vez de el cable estandar. El nano
+fue diseñado y está siendo producido por Gravitech.
 
 \begin{tabular}{||l | l ||}
 \hline
@@ -904,14 +988,24 @@ Mas grande y potente placa Arduino, compatible con los shields de Duemilanove y 
 
 \subsection{Arduino Bluetooth}
 
-El Arduino BT contiene un modulo bluetooth que permite comunicarse y programarse sin cables. Es compatible con los shields de Arduino. 
-El módulo Bluetooth utilizado es el Bluegiga WT11, la versión iWrap. El módulo Bluetooth se puede configurar con comandos enviados a través del puerto serie del ATmega168. Un programa para configurar el nombre y código del módulo bluetooth se ejecuta una vez en cada BT Arduino. El nombre se establece en ARDUINOBT y el código de acceso en 12345. Para obtener detalles más completos, ve al código fuente del programa Initialization. El ATmega168 viene precargado con un gestor de arranque que te permite subir sketches al consejo de administración a través de bluetooth. El código fuente del gestor de arranque está disponible en el repositorio SVN de Arduino.
+El Arduino BT contiene un modulo bluetooth que permite comunicarse y programarse
+sin cables. Es compatible con los shields de Arduino. 
+El módulo Bluetooth utilizado es el Bluegiga WT11, la versión iWrap. El módulo
+Bluetooth se puede configurar con comandos enviados a través del puerto serie
+del ATmega168. Un programa para configurar el nombre y código del módulo
+bluetooth se ejecuta una vez en cada BT Arduino. El nombre se establece en
+ARDUINOBT y el código de acceso en 12345. Para obtener detalles más completos,
+ve al código fuente del programa Initialization. El ATmega168 viene precargado
+con un gestor de arranque que te permite subir sketches al consejo de
+administración a través de bluetooth. El código fuente del gestor de arranque
+está disponible en el repositorio SVN de Arduino.
 
 \subsection{Arduino LilyPad}
 
 \includegraphics[scale=0.6]{LilyPad_3.jpg}
 
-Diseñado para aplicaciones sobre prendas, esta placa puede ser cosida a la ropa y es de color purpura y con un diseño con estilo. 
+Diseñado para aplicaciones sobre prendas, esta placa puede ser cosida a la ropa
+y es de color purpura y con un diseño con estilo. 
 
 \begin{tabular}{||l | l ||}
 \hline
@@ -944,7 +1038,8 @@ Velocidad de reloj & 8 MHz\\
 
 \includegraphics[scale=0.6]{ArduinoFio.jpg}
 
-Diseñada para aplicaciones inalámbricas. Incluye un zócalo para XBee, un conector para baterías LiPo y electrónica para cargar baterías. 
+Diseñada para aplicaciones inalámbricas. Incluye un zócalo para XBee, un
+conector para baterías LiPo y electrónica para cargar baterías. 
 
 \begin{tabular}{||l | l ||}
 \hline
@@ -978,7 +1073,9 @@ Frecuencia de Reloj & 8 MHz\\
 
 \includegraphics[scale=0.6]{arduino_mini.jpg}
 
-La placa Arduino mas pequeña. Funciona perfectamente en una placa de desarrollo o en aplicaciones donde el espacio es primordial. Se conecta al ordenador usando el adaptador Mini USB. 
+La placa Arduino mas pequeña. Funciona perfectamente en una placa de desarrollo
+o en aplicaciones donde el espacio es primordial. Se conecta al ordenador usando
+el adaptador Mini USB. 
 
 \begin{tabular}{||l | l ||}
 \hline
@@ -1010,13 +1107,18 @@ Velocidad de reloj & 16 MHz\\
 
 \includegraphics[scale=0.6]{mini_usb.jpg}
 
-Esta placa convierte una conexión USB a TX y RX de 5 voltios que se puede conectar directamente al Arduino Mini u otros microcontroladores, permitiéndoles comunicarse con el ordenador. Se basa en el chip de FTDI FT232RL, (los controladores se incluyen con el software de Arduino).
+Esta placa convierte una conexión USB a TX y RX de 5 voltios que se puede
+conectar directamente al Arduino Mini u otros microcontroladores, permitiéndoles
+comunicarse con el ordenador. Se basa en el chip de FTDI FT232RL, (los
+controladores se incluyen con el software de Arduino).
 
 \subsection{Arduino Pro}
 
 \includegraphics[scale=0.6]{ArduinoPro.jpg}
 
-Esta placa esta diseñada para aquellos que quien dejar la placa incrustada en el proyecto: es mas barata que la Diecimila y se puede alimentar fácilmente con baterías. pero requiere de componentes extra y montaje. 
+Esta placa esta diseñada para aquellos que quien dejar la placa incrustada en el
+proyecto: es mas barata que la Diecimila y se puede alimentar fácilmente con
+baterías. pero requiere de componentes extra y montaje. 
 
 \begin{tabular}{||l | l ||}
 \hline
@@ -1048,7 +1150,8 @@ Velocidad de Reloj & 8 MHz o 16 MHz\\
 
 \includegraphics[scale=0.6]{ArduinoProMini.jpg}
 
-Como la Pro, la Pro Mini esta diseñada para usuarios avanzados que requieren de bajo coste, menor tamaño y dispuestos a un poco de trabajo extra. 
+Como la Pro, la Pro Mini esta diseñada para usuarios avanzados que requieren de
+bajo coste, menor tamaño y dispuestos a un poco de trabajo extra. 
 
 \begin{tabular}{||l | l ||}
 \hline
@@ -1080,7 +1183,11 @@ Velocidad de Reloj & 8 MHz (modelo de 3.3v) o 16 MHz (modelo de 5v)\\
 
 \includegraphics[scale=0.6]{arduino.jpg}
 
-Es una placa básica que utiliza una interfaz RS232 para comunicarse con el ordenador o para la carga de sketches. Esta placa es fácil de montar, incluso como ejercicio de aprendizaje. Se ha diseñado para utilizar los componentes más simples posibles, de manera que sea fácil de construir, incluso si buscas las componentes en la tienda de la esquina.
+Es una placa básica que utiliza una interfaz RS232 para comunicarse con el
+ordenador o para la carga de sketches. Esta placa es fácil de montar, incluso
+como ejercicio de aprendizaje. Se ha diseñado para utilizar los componentes más
+simples posibles, de manera que sea fácil de construir, incluso si buscas las
+componentes en la tienda de la esquina.
 
 
 
@@ -1088,46 +1195,142 @@ Es una placa básica que utiliza una interfaz RS232 para comunicarse con el orde
 
 
 
-\chapter{Camaras}
+\chapter{Cámaras}
 \section{Introduccion}
 
-Para este proyecto, la camara es fundamental, ya que esta se encargara de la captacion de imagenes, tanto para la deteccion del tablero y las piedras del jugador como para situar correctamente la piedra que queremos colocar en su sitio.
+Para este proyecto, la cámara es fundamental, ya que esta se encargara de la
+captacion de imagenes, tanto para la deteccion del tablero y las piedras del
+jugador como para situar correctamente la piedra que queremos colocar en su
+sitio.
 
-Debido a que usaremos Opencv para la seleccion de camaras, los diferentes modelos segun la conexion no entran en el ambito de este proyecto, dejando una clara importancia a la resolucion de la imagen, que en gran parte viene dada por el tipo de lente y el metodo de captacion 
+Debido a que usaremos Opencv para la seleccion de cámaras, los diferentes
+modelos segun la conexion no entran en el ambito de este proyecto, dejando una
+clara importancia a la resolucion de la imagen, que en gran parte viene dada por
+el tipo de lente y el metodo de captacion 
 
-La mayor parte de las cámaras digitales se pueden conectar directamente al ordenador para transferir su información. Antiguamente las cámaras tenían que conectarse a través de un Puerto serie. El USB es el método más utilizado aunque algunas cámaras utilizan un puerto FireWire o Bluetooth. La mayor parte de las cámaras son reconocidas como un dispositivo de almacenamiento USB. Algunos modelos, por ejemplo la Kodak EasyShare One puede conectarse a la computadora vía red inalámbrica por el protocolo 802.11 (Wi-Fi).
+La mayor parte de las cámaras digitales se pueden conectar directamente al
+ordenador para transferir su información. Antiguamente las cámaras tenían que
+conectarse a través de un Puerto serie. El USB es el método más utilizado aunque
+algunas cámaras utilizan un puerto FireWire o Bluetooth. La mayor parte de las
+cámaras son reconocidas como un dispositivo de almacenamiento USB. Algunos
+modelos, por ejemplo la Kodak EasyShare One puede conectarse a la computadora
+vía red inalámbrica por el protocolo 802.11 (Wi-Fi).
 
 \section{Historia}
 
-Los conceptos de digitalizar imágenes en escaneres y convertir señales de video a digital anteceden al concepto de tomar cuadros fijos digitalizando así señales de una matriz de elementos sensores discretos. Eugene F. Lally del Jet Propulsion Laboratory publicó la primera descripción de cómo producir fotos fijas en un dominio digital usando un fotosensor en mosaico.2 El propósito era proporcionar información de navegación a los astronautas a bordo durante misiones espaciales. La matriz en mosaico registraba periódicamente fotos fijas de las localizaciones de estrellas y planetas durante el tránsito y cuando se acercaba a un planeta, proporcionaba información adicional de distancias para el orbitaje y como guía para el aterrizaje. El concepto incluyó elementos de diseño que presagiaban la primera cámara fotográfica digital.
-Texas Instruments diseñó una cámara fotográfica análoga sin película en 1972, pero no se sabe si fue finalmente construida. La primera cámara digital registrada fue desarrollada por la empresa Kodak, que encargó la construcción de un prototipo al ingeniero Steven J. Sasson en 1975. Esta cámara usaba los entonces nuevos sensores CCD desarrollados por Fairchild Semiconductor en 1973. Su trabajo dio como fruto una cámara de aproximadamente 4 kg. y que hacía fotos en blanco y negro con una resolución de 0,01 megapíxeles. Utilizó los novedosos chips de estado sólido del CCD. La cámara fotográfica registraba las imágenes en una cinta de cassette y tardó 23 segundos en capturar su primera imagen, en diciembre de 1975. Este prototipo de cámara fotográfica era un ejercicio técnico, no previsto para la producción.
-\subsection{La verdadera camara digital }
-La primera cámara fotográfica digital verdadera que registraba imágenes en un archivo de computadora fue probablemente el modelo DS-1P de Fuji, en 1988, que grababa en una tarjeta de memoria interna de 16 MB y utilizaba una batería para mantener los datos en la memoria. Esta cámara fotográfica nunca fue puesta en venta en los Estados Unidos. La primera cámara fotográfica digital disponible en el mercado fue la Dycam Model 1, en 1991, que también fue vendida con el nombre de Logitech Fotoman. Usaba un sensor CCD, grababa digitalmente las imágenes, y disponía de un cable de conexión para descarga directa en la computadora.
-En 1991, Kodak lanzó al mercado su modelo DCS-100, el primero de una larga línea de cámaras fotográficas profesionales SLR de Kodak que fueron basadas, en parte, en cámaras para película, a menudo de marca Nikon. Utilizaba un sensor de 1,3 megapixeles y se vendía en unos 13.000 dolares.
-La transición a formatos digitales fue ayudada por la formación de los primeros estándares JPEG y MPEG en 1988, que permitieron que los archivos de imagen y vídeo se comprimieran para su almacenamiento. La primera cámara fotográfica dirigida a consumidores con una pantalla de cristal líquido en la parte posterior fue la Casio QV-10 en 1995, y la primera cámara fotográfica en utilizar tarjetas de memoria CompactFlash fue la Kodak DC-25 en 1996.
+Los conceptos de digitalizar imágenes en escaneres y convertir señales de video
+a digital anteceden al concepto de tomar cuadros fijos digitalizando así señales
+de una matriz de elementos sensores discretos. Eugene F. Lally del Jet
+Propulsion Laboratory publicó la primera descripción de cómo producir fotos
+fijas en un dominio digital usando un fotosensor en mosaico.2 El propósito era
+proporcionar información de navegación a los astronautas a bordo durante
+misiones espaciales. La matriz en mosaico registraba periódicamente fotos fijas
+de las localizaciones de estrellas y planetas durante el tránsito y cuando se
+acercaba a un planeta, proporcionaba información adicional de distancias para el
+orbitaje y como guía para el aterrizaje. El concepto incluyó elementos de diseño
+que presagiaban la primera cámara fotográfica digital.
+Texas Instruments diseñó una cámara fotográfica análoga sin película en 1972,
+pero no se sabe si fue finalmente construida. La primera cámara digital
+registrada fue desarrollada por la empresa Kodak, que encargó la construcción de
+un prototipo al ingeniero Steven J. Sasson en 1975. Esta cámara usaba los
+entonces nuevos sensores CCD desarrollados por Fairchild Semiconductor en 1973.
+Su trabajo dio como fruto una cámara de aproximadamente 4 kg. y que hacía fotos
+en blanco y negro con una resolución de 0,01 megapíxeles. Utilizó los novedosos
+chips de estado sólido del CCD. La cámara fotográfica registraba las imágenes en
+una cinta de cassette y tardó 23 segundos en capturar su primera imagen, en
+diciembre de 1975. Este prototipo de cámara fotográfica era un ejercicio
+técnico, no previsto para la producción.
+\subsection{La verdadera cámara digital }
+La primera cámara fotográfica digital verdadera que registraba imágenes en un
+archivo de computadora fue probablemente el modelo DS-1P de Fuji, en 1988, que
+grababa en una tarjeta de memoria interna de 16 MB y utilizaba una batería para
+mantener los datos en la memoria. Esta cámara fotográfica nunca fue puesta en
+venta en los Estados Unidos. La primera cámara fotográfica digital disponible en
+el mercado fue la Dycam Model 1, en 1991, que también fue vendida con el nombre
+de Logitech Fotoman. Usaba un sensor CCD, grababa digitalmente las imágenes, y
+disponía de un cable de conexión para descarga directa en la computadora.
+En 1991, Kodak lanzó al mercado su modelo DCS-100, el primero de una larga línea
+de cámaras fotográficas profesionales SLR de Kodak que fueron basadas, en parte,
+en cámaras para película, a menudo de marca Nikon. Utilizaba un sensor de 1,3
+megapixeles y se vendía en unos 13.000 dolares.
+La transición a formatos digitales fue ayudada por la formación de los primeros
+estándares JPEG y MPEG en 1988, que permitieron que los archivos de imagen y
+vídeo se comprimieran para su almacenamiento. La primera cámara fotográfica
+dirigida a consumidores con una pantalla de cristal líquido en la parte
+posterior fue la Casio QV-10 en 1995, y la primera cámara fotográfica en
+utilizar tarjetas de memoria CompactFlash fue la Kodak DC-25 en 1996.
 
-El mercado para las cámaras fotográficas digitales dirigidas al consumidor estaba formado originalmente por cámaras fotográficas de baja resolución. En 1997 se ofrecieron las primeras cámaras fotográficas para consumidores de un megapixel. La primera cámara fotográfica que ofreció la capacidad de registrar clips de vídeo pudo haber sido la Ricoh RDC-1 en 1995.
-En 1999 con la introducción del Nikon D1, una cámara fotográfica de 2.74 megapixeles, que fue una de las primeras SLR digitales, la compañía se convirtió en un fabricante importante, y, con un costo inicial de menos de 6.000 dolares, era asequible tanto para fotógrafos profesionales como para consumidores de alto perfil. Esta cámara fotográfica también utilizaba lentes Nikon F, lo que significaba que los fotógrafos podrían utilizar muchas de las mismas lentes que ya tenían para sus cámaras de película.
-En el 2003 se presentó la Digital Rebel de Canon, también conocida como la 300D, una cámara fotográfica dirigida a consumidores de 6 megapixeles y la primera DSLR que tenía un costo inferior a 1.000 dolares.
-En el 2008 se presentó en la Feria de Alemania, una cámara LEICA de medio formato con una resolución de 37 megapixeles.
+El mercado para las cámaras fotográficas digitales dirigidas al consumidor
+estaba formado originalmente por cámaras fotográficas de baja resolución. En
+1997 se ofrecieron las primeras cámaras fotográficas para consumidores de un
+megapixel. La primera cámara fotográfica que ofreció la capacidad de registrar
+clips de vídeo pudo haber sido la Ricoh RDC-1 en 1995.
+En 1999 con la introducción del Nikon D1, una cámara fotográfica de 2.74
+megapixeles, que fue una de las primeras SLR digitales, la compañía se convirtió
+en un fabricante importante, y, con un costo inicial de menos de 6.000 dolares,
+era asequible tanto para fotógrafos profesionales como para consumidores de alto
+perfil. Esta cámara fotográfica también utilizaba lentes Nikon F, lo que
+significaba que los fotógrafos podrían utilizar muchas de las mismas lentes que
+ya tenían para sus cámaras de película.
+En el 2003 se presentó la Digital Rebel de Canon, también conocida como la 300D,
+una cámara fotográfica dirigida a consumidores de 6 megapixeles y la primera
+DSLR que tenía un costo inferior a 1.000 dolares.
+En el 2008 se presentó en la Feria de Alemania, una cámara LEICA de medio
+formato con una resolución de 37 megapixeles.
 
 \subsection{Historia de las Camaras web}
 
-En el Departamento de Informática de la Universidad de Cambridge la cafetera estaba situada en un sótano. Si alguien quería un café tenía que bajar desde su despacho y, si lo había, servirse una taza. Si no lo había, tenía que hacerlo. Las normas decían que el que se termina la cafetera debe rellenarla, pero siempre había listos que no cumplian con las normas.
-En 1991, Quentin Stafford-Fraser y Paul Jardetzky, que compartían despacho, hartos de bajar tres plantas y encontrarse la cafetera vacía decidieron pasar al contraataque. Diseñaron un protocolo cliente-servidor que conectándolo a una cámara, trasmitía una imagen de la cafetera a una resolución de 128 x 128 pixels.
-Así, desde la pantalla de su ordenador sabían cuando era el momento propicio para bajar a por un café, y de paso sabían quienes eran los que se acababan la cafetera y no la volvían a llenar. El protocolo se llamó XCoffee y tras unos meses de depuración se decidieron a comercializarlo. En 1992 salió a la venta la primera cámara web llamada XCam.
+En el Departamento de Informática de la Universidad de Cambridge la cafetera
+estaba situada en un sótano. Si alguien quería un café tenía que bajar desde su
+despacho y, si lo había, servirse una taza. Si no lo había, tenía que hacerlo.
+Las normas decían que el que se termina la cafetera debe rellenarla, pero
+siempre había listos que no cumplian con las normas.
+En 1991, Quentin Stafford-Fraser y Paul Jardetzky, que compartían despacho,
+hartos de bajar tres plantas y encontrarse la cafetera vacía decidieron pasar al
+contraataque. Diseñaron un protocolo cliente-servidor que conectándolo a una
+cámara, trasmitía una imagen de la cafetera a una resolución de 128 x 128
+pixels.
+Así, desde la pantalla de su ordenador sabían cuando era el momento propicio
+para bajar a por un café, y de paso sabían quienes eran los que se acababan la
+cafetera y no la volvían a llenar. El protocolo se llamó XCoffee y tras unos
+meses de depuración se decidieron a comercializarlo. En 1992 salió a la venta la
+primera cámara web llamada XCam.
 
-\section{Resolucion}
+\section{Resolución}
 
-La resolución de una cámara fotográfica digital está limitada por el sensor de la cámara (generalmente un CCD o un Sensor CMOS) que responde a las señales de luz, substituyendo el trabajo de la película en fotografía tradicional. El sensor se compone de millones de “cubos” que se cargan en respuesta a la luz. Generalmente, estos cubos responden solamente a una gama limitada de longitudes de onda ligeras, debido a un filtro del color sobre cada uno. Cada uno de estos cubos se llama un píxel, y se utiliza un algoritmo de mosaicismo e interpolación para unir la imagen de cada gama de longitud de onda por pixel en una imagen del RGB donde están las tres imágenes por píxel para representar un color completo.
+La resolución de una cámara fotográfica digital está limitada por el sensor de
+la cámara (generalmente un CCD o un Sensor CMOS) que responde a las señales de
+luz, substituyendo el trabajo de la película en fotografía tradicional. El
+sensor se compone de millones de “cubos” que se cargan en respuesta a la luz.
+Generalmente, estos cubos responden solamente a una gama limitada de longitudes
+de onda ligeras, debido a un filtro del color sobre cada uno. Cada uno de estos
+cubos se llama un píxel, y se utiliza un algoritmo de mosaicismo e interpolación
+para unir la imagen de cada gama de longitud de onda por pixel en una imagen del
+RGB donde están las tres imágenes por píxel para representar un color completo.
 
-Los dispositivos CCD transportan la carga a través del chip hasta un conversor analógico-digital. Éste convierte el valor de cada uno de los píxeles en un valor digital midiendo la carga que le llega. Dependiendo del número de bits del conversor obtendremos una imagen con mayor o menor gama de color. Por ejemplo, si se utilizase un sólo bit tendríamos valores de 0 y 1, y sólo podríamos representar presencia o ausencia de luz, lo que supondría una imagen en blanco y negro puro.
+Los dispositivos CCD transportan la carga a través del chip hasta un conversor
+analógico-digital. Éste convierte el valor de cada uno de los píxeles en un
+valor digital midiendo la carga que le llega. Dependiendo del número de bits del
+conversor obtendremos una imagen con mayor o menor gama de color. Por ejemplo,
+si se utilizase un sólo bit tendríamos valores de 0 y 1, y sólo podríamos
+representar presencia o ausencia de luz, lo que supondría una imagen en blanco y
+negro puro.
 
-Por otro lado, los aparatos CMOS contienen varios transistores en cada píxel. El proceso de conversión digital se produce en la propia estructura del sensor, por lo que no se necesita un conversor añadido. Su proceso de fabricación es más sencillo, y hace que las cámaras que utilizan esta tecnología resulten más baratas.
+Por otro lado, los aparatos CMOS contienen varios transistores en cada píxel. El
+proceso de conversión digital se produce en la propia estructura del sensor, por
+lo que no se necesita un conversor añadido. Su proceso de fabricación es más
+sencillo, y hace que las cámaras que utilizan esta tecnología resulten más
+baratas.
 
-La cantidad de pixeles resultante en la imagen determina su tamaño. Por ejemplo una imagen de 640 pixeles de ancho por 480 pixeles de alto tendrá 307,200 pixels, o aproximadamente 307 kilopixeles; una imagen de 3872 pixeles de alto por 2592 pixeles de ancho tendrá 10.036.224 pixeles, o aproximadamente 10 megapixeles.
+La cantidad de pixeles resultante en la imagen determina su tamaño. Por ejemplo
+una imagen de 640 pixeles de ancho por 480 pixeles de alto tendrá 307,200
+pixels, o aproximadamente 307 kilopixeles; una imagen de 3872 pixeles de alto
+por 2592 pixeles de ancho tendrá 10.036.224 pixeles, o aproximadamente 10
+megapixeles.
 
-Según la experiencia fotográfica de los profesionales en dicho campo afirman que una fotografía química realizada por una cámara compacta daría como resultado una fotografía de 30 megapixeles.
+Según la experiencia fotográfica de los profesionales en dicho campo afirman que
+una fotografía química realizada por una cámara compacta daría como resultado
+una fotografía de 30 megapixeles.
 
 \section{Lentes}
 
@@ -1146,28 +1349,69 @@ diversas técnicas para optimizar el uso de ancho de banda disponible,
 perdiendo calidad de imagen pero ganando en velocidad de
 transferencia en imágenes por segundo.
 
-\section{Metodos de captacion de imagen}
+\section{Métodos de captacion de imagen}
 
-Desde que las primeras cámaras digitales fueron introducidas al mercado, han existido tres métodos principales de capturar la imagen, según configuración de hardware del sensor y de los filtros de color.
+Desde que las primeras cámaras digitales fueron introducidas al mercado, han
+existido tres métodos principales de capturar la imagen, según configuración de
+hardware del sensor y de los filtros de color.
 
-El primer método se denomina de disparo único, en referencia al número de veces que el sensor de la cámara fotográfica se expone a la luz que pasa a través de la lente. Los sistemas de disparo único utilizan un CCD con un filtro de Bayer, o tres sensores de imagen independientes (uno para cada uno de los colores primarios aditivos: rojo, verde, y azul) que se exponen a la misma imagen mediante un sistema óptico de separación de imagen.
+El primer método se denomina de disparo único, en referencia al número de veces
+que el sensor de la cámara fotográfica se expone a la luz que pasa a través de
+la lente. Los sistemas de disparo único utilizan un CCD con un filtro de Bayer,
+o tres sensores de imagen independientes (uno para cada uno de los colores
+primarios aditivos: rojo, verde, y azul) que se exponen a la misma imagen
+mediante un sistema óptico de separación de imagen.
 
-El segundo método se denomina de multidisparo, porque el sensor se expone a la imagen en una secuencia de tres o más aperturas del obturador de la lente. Hay varios métodos de aplicación de esta técnica. El más común era originalmente utilizar un único sensor de imagen con tres filtros (de nuevo rojo, verde y azul) colocados delante del sensor para obtener la información aditiva del color. Otro método de multidisparo utiliza un solo CCD con un filtro de Bayer pero mueve la posición física del sensor en el plano del foco de la lente para componer una imagen de más alta resolución que la que el CCD permitiría de otra manera. Una tercera versión combina los dos métodos sin un filtro de Bayer en el sensor.
+El segundo método se denomina de multidisparo, porque el sensor se expone a la
+imagen en una secuencia de tres o más aperturas del obturador de la lente. Hay
+varios métodos de aplicación de esta técnica. El más común era originalmente
+utilizar un único sensor de imagen con tres filtros (de nuevo rojo, verde y
+azul) colocados delante del sensor para obtener la información aditiva del
+color. Otro método de multidisparo utiliza un solo CCD con un filtro de Bayer
+pero mueve la posición física del sensor en el plano del foco de la lente para
+componer una imagen de más alta resolución que la que el CCD permitiría de otra
+manera. Una tercera versión combina los dos métodos sin un filtro de Bayer en el
+sensor.
 
-El tercer método se llama exploración porque el sensor se mueve a través del plano focal como el sensor de un explorador (scanner) de escritorio. Sus sensores lineares o tri-lineares utilizan solamente una sola línea de fotosensores, o tres líneas para los tres colores. En algunos casos, la exploración es lograda rotando la cámara fotográfica entera; una cámara fotográfica con línea rotativa ofrece imágenes de resolución total muy alta.
+El tercer método se llama exploración porque el sensor se mueve a través del
+plano focal como el sensor de un explorador (scanner) de escritorio. Sus
+sensores lineares o tri-lineares utilizan solamente una sola línea de
+fotosensores, o tres líneas para los tres colores. En algunos casos, la
+exploración es lograda rotando la cámara fotográfica entera; una cámara
+fotográfica con línea rotativa ofrece imágenes de resolución total muy alta.
 
-La elección del método para una captura dada, por supuesto, es determinada en gran parte por el tema a ser fotografiado. Es generalmente inadecuado intentar fotografiar un tema que se mueva con cualquier cosa que no sea un sistema de disparo único. Sin embargo, con sistemas de exploración o multidisparo, se obtiene la más alta fidelidad de color y tamaños y resoluciones más grandes. Esto hace de estas técnicas más atractivas para fotógrafos comerciales que trabajan con fotografías de temas inmóviles en formato grande.
+La elección del método para una captura dada, por supuesto, es determinada en
+gran parte por el tema a ser fotografiado. Es generalmente inadecuado intentar
+fotografiar un tema que se mueva con cualquier cosa que no sea un sistema de
+disparo único. Sin embargo, con sistemas de exploración o multidisparo, se
+obtiene la más alta fidelidad de color y tamaños y resoluciones más grandes.
+Esto hace de estas técnicas más atractivas para fotógrafos comerciales que
+trabajan con fotografías de temas inmóviles en formato grande.
 
-Recientemente, las mejoras drásticas en cámaras fotográficas de disparo único y el procesamiento de archivos RAW de imagen han hecho de las cámaras fotográficas de disparo único, basadas en CCD casi totalmente predominantes en fotografía comercial, para no mencionar la fotografía digital en su totalidad. Las cámaras fotográficas de disparo único basadas en sensores CMOS suelen ser comunes.
+Recientemente, las mejoras drásticas en cámaras fotográficas de disparo único y
+el procesamiento de archivos RAW de imagen han hecho de las cámaras fotográficas
+de disparo único, basadas en CCD casi totalmente predominantes en fotografía
+comercial, para no mencionar la fotografía digital en su totalidad. Las cámaras
+fotográficas de disparo único basadas en sensores CMOS suelen ser comunes.
 
 \section{Funcionamiento}
 
-El software de la cámara toma un fotograma de la cámara cada cierto tiempo (puede ser una imagen estática cada medio segundo) y la envía a otro punto para ser visualizada. Si lo que se pretende es utilizar esas imágenes para construir un video, de calidad sin saltos de imagen, se necesitará que la cámara web alcance una tasa de unos 15 a 30 fotogramas por segundo.
-En los videos destinados a ser subidos en Internet o ser enviados a dispositivos móviles, es mejor una cadencia de 14 fotogramas por segundo. De esta manera se consigue ahorrar espacio y aun así seguirá teniendo calidad, aunque podrián ser apreciados ligeros saltos en el movimiento. En nuestro proyecto se usaran 30 fotogramas por segundo.
+El software de la cámara toma un fotograma de la cámara cada cierto tiempo
+(puede ser una imagen estática cada medio segundo) y la envía a otro punto para
+ser visualizada. Si lo que se pretende es utilizar esas imágenes para construir
+un video, de calidad sin saltos de imagen, se necesitará que la cámara web
+alcance una tasa de unos 15 a 30 fotogramas por segundo.
+En los videos destinados a ser subidos en Internet o ser enviados a dispositivos
+móviles, es mejor una cadencia de 14 fotogramas por segundo. De esta manera se
+consigue ahorrar espacio y aun así seguirá teniendo calidad, aunque podrián ser
+apreciados ligeros saltos en el movimiento. En nuestro proyecto se usaran 30
+fotogramas por segundo.
 
 \section{Camaras de red}
 
-Una de las ideas que tenemos para solventar el problema de la camara era la de usar una camara de red, estas camaras tienen su propia dirección IP y las características
+Una de las ideas que tenemos para solventar el problema de la cámara era la de
+usar una cámara de red, estas cámaras tienen su propia dirección IP y las
+características
 propias de un ordenador para gestionar la comunicación en la red.
 Todo lo que se precisa para la visualización de las imágenes a través
 de la red se encuentra dentro de la misma unidad.
@@ -1182,42 +1426,141 @@ movimiento y la salida de vídeo analógico.
 Todo esta funcinalidad está accesible a través de la interfaz de
 programación de la cámara (API) para el desarrollo de aplicaciones de
 alto nivel.
-Ademas debido a las tecnologias sin cables, estas camaras no necesitarian cables para ser conectadas con un PC, haciendo que la colocacion de la camara en un lugar apropiado para la correcta captacion del tablero fuera mucho mas sencillo.
-
-\chapter{Implementación}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                               Includes                                %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\include{src-module}
-%\include{src.camera-module} v
-%\include{src.cameras-module} v
-%\include{src.check_goban_moved-module}v
-%\include{src.cte-module}
-%\include{src.functions-module}
-%\include{src.goban-module}v
-%\include{src.igs-module}v
-%\include{src.kifu-module}v
-%\include{src.perspective-module}v
-%\include{src.rocamgo-module}
-%\include{src.search_goban-module} v
-%\include{src.search_stones-module} v
-%\include{src.stone-module} v
+Ademas debido a las tecnologias sin cables, estas cámaras no necesitarian cables
+para ser conectadas con un PC, haciendo que la colocacion de la cámara en un
+lugar apropiado para la correcta captacion del tablero fuera mucho mas sencillo.
 
 
-\section{Herramientas utilizadas}
+\chapter{Python}
+
+Python es un Lenguaje de programación interpretado cuya filosofía hace hincapié
+en una sintaxis muy limpia y que favorezca un código legible.
+
+Se trata de un lenguaje de programación multiparadigma, ya que soporta
+orientación a objetos, programación imperativa y, en menor medida, programación
+funcional. Es un lenguaje interpretado, usa tipado dinámico, es fuertemente
+tipado y multiplataforma.
+
+Es administrado por la Python Software Foundation. Posee una licencia de código
+abierto, denominada Python Software Foundation License, que es compatible con
+la Licencia pública general de GNU a partir de la versión 2.1.1, e incompatible
+en ciertas versiones anteriores.
+
+Los usuarios de Python se refieren a menudo a la Filosofía Python, que es
+bastante análoga a la filosofía de Unix. El código que sigue los principios de
+Python de legibilidad y transparencia se dice que es "pythonico".
+Contrariamente, el código opaco u ofuscado es bautizado como "no pythonico"
+("unpythonic" en inglés). Estos principios fueron famosamente descritos por el
+desarrollador de Python Tim Peters en El Zen de Python
+
+\begin{itemize}
+    \item Bello es mejor que feo.
+    \item Explícito es mejor que implícito.
+    \item Simple es mejor que complejo.
+    \item Complejo es mejor que complicado.
+    \item Plano es mejor que anidado.
+    \item Disperso es mejor que denso.
+    \item La legibilidad cuenta.
+    \item Los casos especiales no son tan especiales como para quebrantar las
+    reglas.
+    \item Aunque lo práctico gana a la pureza.
+    \item Los errores nunca deberían dejarse pasar silenciosamente.
+    \item A menos que hayan sido silenciados explícitamente.
+    \item Frente a la ambigüedad, rechaza la tentación de adivinar.
+    \item Debería haber una -y preferiblemente sólo una- manera obvia de
+    hacerlo.
+    \item Aunque esa manera puede no ser obvia al principio a menos que usted
+    sea holandés.15
+    \item Ahora es mejor que nunca.
+    \item Aunque nunca es a menudo mejor que ya mismo.
+    \item Si la implementación es difícil de explicar, es una mala idea.
+    \item Si la implementación es fácil de explicar, puede que sea una buena
+    idea.
+    \item Los espacios de nombres (namespaces) son una gran idea ¡Hagamos más de
+    esas cosas!
+\end{itemize}
 
 
-\subsection{Latex} 
+\parskip 2ex
+Hemos elegido este lenguaje por su sencillez y por utilizar algo distinto a lo
+que utilizamos en la facultad. Este lenguaje nos ha llamado la atención mucho
+porque es simple y fácil, y actualmente se está utilizando cada vez más. Python
+contiene una gran variedad de bibliotecas, lo que ayuda a que un programa
+escrito en Python contenga un número de líneas muy por debajo de la media de los
+demás lenguajes. 
+
+
+\chapter{TDD con python}
+
+Desarrollo guiado por pruebas, o Test-driven development (TDD) es una práctica
+de programación que involucra otras dos prácticas: Escribir las pruebas primero
+(Test First Development) y Refactorización (Refactoring). Para escribir las
+pruebas generalmente se utilizan las pruebas unitarias (unit test en inglés). En
+primer lugar, se escribe una prueba y se verifica que las pruebas fallan. A
+continuación, se implementa el código que hace que la prueba pase
+satisfactoriamente y seguidamente se refactoriza el código escrito. El propósito
+del desarrollo guiado por pruebas es lograr un código limpio que funcione. La
+idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las
+pruebas pasen se garantizará que el software cumple con los requisitos que se han
+establecido.
+
+\parskip 2ex
+Llegamos a la conclusión de que utilizaríamos TDD porque habíamos leído
+anteriormente sobre ello y nos parecía un buen método de probar nuestro código y
+de que nos quede un código más limpio. A alguna personas esto le parecerá una
+pérdida de tiempo, pero nosotros creemos que es invertir en el futuro, y que
+finalmente ese tiempo se amortiza, incluso se recupera. Como casi todo lo que
+estamos utilizando, TDD no se queda atrás, también está ahora mismo en auge y es
+una metodología que están implatando muchas empresas, las cuales buscan a
+personas que sepan algo sobre ello. 
+
+
+\chapter{Opencv}
+
+OpenCV es una biblioteca libre de visión artificial originalmente desarrollada
+por Intel. Desde que apareció su primera versión alfa en el mes de enero de
+1999, se ha utilizado en infinidad de aplicaciones. Desde sistemas de seguridad
+con detección de movimiento, hasta aplicaciones de control de procesos donde se
+requiere reconocimiento de objetos. Esto se debe a que su publicación se da bajo
+licencia BSD, que permite que sea usada libremente para propósitos comerciales y
+de investigación con las condiciones en ella expresadas.
+
+OpenCV es multiplataforma, existiendo versiones para GNU/Linux, Mac OS X y
+Windows. Contiene más de 500 funciones que abarcan una gran gama de áreas en el
+proceso de visión, como reconocimiento de objetos (reconocimiento facial),
+calibración de cámaras, visión estereo y visión robótica.
+
+El proyecto pretende proporcionar un entorno de desarrollo fácil de utilizar y
+altamente eficiente. Esto se ha logrado, realizando su programación en código C
+y C++ optimizados, aprovechando además las capacidades que proveen los
+procesadores multinúcleo. OpenCV puede además utilizar el sistema de primitivas
+de rendimiento integradas de Intel, un conjunto de rutinas de bajo nivel
+específicas para procesadores Intel.
+
+\parskip 2ex
+Anteriomente esta herramienta la habíamos utilizado para pequeñas cosillas,
+aunque principalmente, habíamos visto vistos videos y programas de ejemplos de
+utilización, con los cuales hemos visto una pequeña parte del potencial de esta
+biblioteca. 
+
+Cuando hemos comenzado a utilizarla, hemos agradecido mucho el trabajo de las
+personas que han hecho esta biblioteca, ya que nos ha solucionado muchos
+problemas, aunque aun así, para la buena utilización de la biblioteca se
+necesita mucho conocomiento, el cual hemos intentado ir aprendiendo poco a poco
+con el uso de algunas de sus funciones.
+
+Como no iba a ser menos, esta biblioteca está completamente en auge, y su
+utilización es cada vez mayor en la actualidad. La Kinect utiliza esta
+biblioteca para muchas cosas, ya que fácilita mucho la programación. 
+
+\chapter{Latex}
+
 LaTeX es un sistema de composición de textos que está formado mayoritariamente 
 por órdenes construidas a partir de comandos de TeX (lenguaje «de bajo nivel»,
 en el sentido de que sus acciones últimas son muy elementales) pero con la 
 ventaja añadida de poder aumentar las capacidades de LaTeX utilizando comandos 
 propios del TeX descritos en The TeXbook. Esto es lo que convierte a LaTeX en 
-una herramienta práctica y útil pues, a su facilidad de uso, se une toda la 
+una herramienta práctica y útil pues, a su fácilidad de uso, se une toda la 
 potencia de TeX. Estas características hicieron que LaTeX se extendiese 
 rápidamente entre un amplio sector científico y técnico, hasta el punto de 
 convertirse en uso obligado en comunicaciones y congresos, y requerido por 
@@ -1245,118 +1588,20 @@ casos para usos especializados.
 
 \parskip 2ex
 Nosotros hemos utilizado Latex para la documentación, por que queda mucho más
-bonita y nos vendría bien para aprender un poco. 
+bonita y profesional, además siempre viene bien aprender un poco este tipo de
+tecnologías que pueden venirnos bien en un futuro.
 
 
-\subsection{TravisCI}
+\chapter{Git, controlador de versiones distribuido}
 
-Como la integración continua aplicada al desarrollo distribuido está cogiendo
-cada vez más fuerza, hemo aprovechado la herramienta de Travis CI, que es un
-sistema distribuido de generación e integración continua libre.
-Travis CI te permite conectar tu repositorio de Github y probar tus tests
-después de cada push. Soporta múltiples lenguajes, entre los cuales se encuentra
-python, que es el usado por nosotros.
-Travis CI tiene otras ventajas que no hemos usado todavía, pero que no
-descartamos utilizar en un futuro, que es que el entorno de integración continua
-esta compuesto de multiples runtimes o data stores. De este modo, podemos probar
-nuestras librerías o aplicaciones contra distintas configuraciones sin tener que
-tenerlas instaladas localmente. Tienen varias maquinas virtuales preparadas para
-cada combinación, allí puedes instalar MySQL o lo que necesites.
-Lo podemos enganchar sencillamente con nuestro repositorio público de Github en
-un par de pasos para darle acceso de lectura a nuestro código y definir los test
-necesarios. Tanto la documentación, como las herramientas para terceros y la
-guía de desarrolladores con la propia API de Travis CI están bastante bien
-explicadas y detalladas. 
+Antes de comenzar de hablar de git y de los sistemas de control de versiones
+distribuidos, comenzaremos hablando de subversion y su control de versiones
+centralizado. 
 
-\parskip 2ex
-Hemos utilizado esta herramienta para aprender y con la finalidad de que
-comprobara todos nuestros test después de cada push al servidor, está bien para
-saber como ha ido evolucionando nuestro proyecto. 
+\subsection{Subversion}
 
-
-\subsection{Profilers y Runsnake}
-
-Los \textbf{''profilers''} son herramientas para el profiling, que sirven para
-medir el rendimiento de nuestro código, comprobando el tiempo que tarda cada
-función y el número de veces que se ejecuta. Entre los profilers que hay en
-python, tenemos las opciones de Profiler, cProfiler y hotshot.
-
-\parskip 2ex
-
-El \textbf{''Runsnake''} es un programa que abre ficheros
-generados por los profiler cProfiler y Profiler, lo cual es mucho más amigable
-que ver la salida en texto plano. Podemos ver un ejemplo en la siguiente imagen. 
-
-\includegraphics[scale=0.33]{runsnake.png}
-
-\parskip 2ex
-Para hacer profiling en este proyecto hemos utilizado los tres profilers
-mencionados anteriormente, Profiler y cProfiler funcionan exactamente igual, con
-la diferencia de que uno está escrito en C y otro en python, por lo cual,
-intentamos utilizar en un principio cProfiler, que funciona con mayor rapidez, y
-si este no podemos importarlo, utilizamos Profiler, que está escrito en
-python. Esto lo utilizamos ejecutando nuestro proyecto, con lo cual tenemos que
-ir interactuando con él para que vaya haciendo las llamadas necesarias y
-comprobar que funciones tardan más y donde pueden existir cuellos de botella. 
-El hotshot lo utilizamos por que al realizar los test, la herramienta de
-nosetest tiene la funcionalidad de comprobar el rendimiento del código
-utilizando esta herramienta de profiling. La salida que genera no podemos leerla
-con runsnake, para ello, tenemos que transformar esa salida utilizando
-$hotshot2stats.py$
-
-
-\subsection{Editores de texto: Geany, Gedit y Vim}
-
-\textbf{''Geany''} es un editor de texto ligero basado en Scintilla con características
-básicas de entorno de desarrollo integrado (IDE). Está disponible para distintos
-sistemas operativos, como GNU/Linux, Mac OS X, BSD, Solaris y Microsoft Windows.
-Es distribuido como software libre bajo la Licencia Pública General de GNU.
-
-\parskip 2ex
-Nostros empezamos a utilizar este editor ya que nos facilitaba el autocompletado
-y era bastante liviano, tenía coloreado de sintaxis y permitía la programación
-con el lenguaje usado por nosotros, Python. 
-
-\parskip 2ex
-
-\textbf{''Gedit''} es un editor de textos compatible con UTF-8 para GNU/Linux,
-Mac OS X y Microsoft Windows. Diseñado como un editor de textos de propósito
-general, gedit enfatiza la simplicidad y facilidad de uso. Incluye herramientas
-para la edición de código fuente y textos estructurados, como lenguajes de
-marcado. Distribuido bajo las condiciones de la licencia GPL, gedit es software
-libre. 
-
-\parskip 2ex
-Nosotros cambiamos a este editor por que aún era más simple y liviano que Geany,
-y aunque no nos daba un buen autocompletado, tenía todo lo que queríamos,
-coloreado de sintáxis, facilidad de uso, y también hay que tener en cuenta que
-es el editor por defecto del entorno de escritorio GNOME, el cual hemos
-utilizado bastante. 
-
-\parskip 2ex
-
-\textbf{''Vim''} es un editor hecho por programadores para programadores. Para
-facilitar la programación, Vim dispone de un modo 'editar, compilar, corregir'.
-De la misma forma que los entornos de desarrollo integrados, puede editar el
-código fuente además llamar a un compilador externo, e interpretar sus
-resultados. Si hay errores de compilación, éstos se muestran en una ventana. Los
-mensajes de error dirigen al usuario a la zona en la que se han encontrado para
-poder así corregirlos. Entonces vuelve a empezar el ciclo "editar, compilar,
-corregir" y, si es necesario, corregir nuevos errores. El trabajo del
-programador también se ve facilitado por el resaltado de sintaxis y la
-funcionalidad de plegado de código.
-
-\parskip 2ex Empezamos a utilizar este editor ya que está preparado para
-programadores, y su filosofía se basa es hacerlo todo con el mínimo número de
-pulsaciones de teclado, lo cual, cuando nos acostumbremos a utilizarlo,
-conseguiremos una gran mejora de productividad. También decir que Vim es el
-programa que actualmente más plugins tiene, y es altamente configurable, para
-adecuarse al perfil de cada programador, cosa que nos ha gustado muchísimo. 
-
-
-\subsection{Controladores de versiones: Subversion y Git}
-
-\textbf{''Subversion''} es un sistema de control de versiones centralizado diseñado
+\textbf{''Subversion''} es un sistema de control de versiones centralizado
+diseñado
 específicamente para reemplazar a CVS. Es software libre bajo una licencia de
 tipo Apache/BSD y se le conoce también como svn por ser el nombre de la
 herramienta utilizada en la línea de comando.  Una característica importante de
@@ -1376,10 +1621,11 @@ incorrecto a los datos, simplemente deshaga ese cambio.
 
 \parskip 2ex Subversion ya lo habíamos utilizado anteriormente, y es una
 herramienta que nos parece bastante buena, sobre todo por que al ser dos
-personas, nos facilitaba mucho el trabajo, y para las cosas básicas, es bastane
+personas, nos fácilitaba mucho el trabajo, y para las cosas básicas, es bastane
 fácil de utilizar. 
 
-\parskip 2ex
+
+\subsection{Git}
 
 \textbf{''Git''} es un software de control de versiones distribuido diseñado por
 Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento
@@ -1391,37 +1637,157 @@ funcionalidad plena. Hay algunos proyectos de mucha relevancia que ya usan Git,
 en particular, el grupo de programación del kernel de Linux. 
 
 \parskip 2ex 
-Git no lo habíamos utilizado nunca, pero teníamos ganas de aprender y empezamos
-a usarla. Esta herramienta nos ha dado un poco de dolores de cabeza, pero
-finalmente nos está gustando y le estamos viendo bastante ventajas respecto a
-Subversion. 
+Git no lo habíamos utilizado nunca, pero teníamos ganas de aprender y comenzar a
+usarlo, ya que las críticas son muy buenas y de cara al mundo empresarial suelen
+pedir conocimientos de este controlador de versiones. Esta herramienta nos ha
+dado un poco de dolores de cabeza, pero finalmente nos está gustando y le
+estamos encontrando bastantes ventajas respecto a Subversion, como por ejemplo,
+que tienes siempre el servidor completo en tu equipo y puedes pasearte entre las
+distintas versiones sin necesidad de una conexión a Internet.
 
 
-\subsection{Servidores de Go: IGS y KGS} %TODO añadir otros que hay, LLGS 
 
-\textbf{''El servidor IGS''} nos ofrece un gran lugar para jugar, ver, estudiar
-y disfrutar del juego de Go en Internet. Podemos encontrar cientos de jugadores
-de dintintas partes del mundo y diferentes nivelesde juego, desde principiantes
-hasta profesionales. 
+\chapter{Otras herramientas utilizadas}
+
+\section{TravisCI}
+
+Como la integración continua aplicada al desarrollo distribuido está cogiendo
+cada vez más fuerza, hemo aprovechado la herramienta de Travis CI, que es un
+sistema distribuido de generación e integración continua libre.
+Travis CI te permite conectar tu repositorio de Github y probar tus tests
+después de cada push. Soporta múltiples lenguajes, entre los cuales se encuentra
+python, que es el usado por nosotros.
+Travis CI tiene otras ventajas que no hemos usado todavía, pero que no
+descartamos utilizar en un futuro, que es que el entorno de integración continua
+esta compuesto de multiples runtimes o data stores. De este modo, podemos probar
+nuestras bibliotecas o aplicaciones contra distintas configuraciones sin tener que
+tenerlas instaladas localmente. Tienen varias maquinas virtuales preparadas para
+cada combinación, allí puedes instalar MySQL o lo que necesites.
+Lo podemos enganchar sencillamente con nuestro repositorio público de Github en
+un par de pasos para darle acceso de lectura a nuestro código y definir los test
+necesarios. Tanto la documentación, como las herramientas para terceros y la
+guía de desarrolladores con la propia API de Travis CI están bastante bien
+explicadas y detalladas. 
+
+\parskip 2ex
+Hemos utilizado esta herramienta para aprender y con la finalidad de que
+comprobara todos nuestros test después de cada push al servidor, está bien para
+saber como ha ido evoluciónando nuestro proyecto. 
+
+
+\section{Profilers y Runsnake}
+
+\subsection{profilers} 
+
+Son herramientas para el profiling, que sirven para medir el rendimiento de
+nuestro código, comprobando el tiempo que tarda cada función y el número de
+veces que se ejecuta. Entre los profilers que hay en python, tenemos las
+opciones de Profiler, cProfiler y hotshot.
+
+
+\subsection{Runsnake} 
+
+Es un programa que abre ficheros generados por los profiler cProfiler y
+Profiler, lo cual es mucho más amigable que ver la salida en texto plano.
+Podemos ver un ejemplo en la siguiente imagen. 
+
+\includegraphics[scale=0.33]{runsnake.png}
+
+\subsection{Conclusiones}
+
+Para hacer profiling en este proyecto hemos utilizado los tres profilers
+mencionados anteriormente, Profiler y cProfiler funcionan exactamente igual, con
+la diferencia de que uno está escrito en C y otro en python, por lo cual,
+intentamos utilizar en un principio cProfiler, que funciona con mayor rapidez, y
+si este no podemos importarlo, utilizamos Profiler, que está escrito en
+python. Esto lo utilizamos ejecutando nuestro proyecto, con lo cual tenemos que
+ir interactuando con él para que vaya haciendo las llamadas necesarias y
+comprobar que funciones tardan más y donde pueden existir cuellos de botella. 
+El hotshot lo utilizamos por que al realizar los test, la herramienta de
+nosetest tiene la funcionalidad de comprobar el rendimiento del código
+utilizando esta herramienta de profiling. La salida que genera no podemos leerla
+con runsnake, para ello, tenemos que transformar esa salida utilizando
+$hotshot2stats.py$
+
+
+\section{Editores de texto: Geany, Gedit y Vim}
+
+\subsection{Geany} 
+
+Es un editor de texto ligero basado en Scintilla con características básicas de
+entorno de desarrollo integrado (IDE). Está disponible para distintos sistemas
+operativos, como GNU/Linux, Mac OS X, BSD, Solaris y Microsoft Windows.  Es
+distribuido como software libre bajo la Licencia Pública General de GNU.
+
+\parskip 2ex
+Nostros empezamos a utilizar este editor ya que nos fácilitaba el autocompletado
+y era bastante liviano, tenía coloreado de sintaxis y permitía la programación
+con el lenguaje usado por nosotros, Python. 
+
+\subsection{Gedit}
+
+es un editor de textos compatible con UTF-8 para GNU/Linux, Mac OS X y Microsoft
+Windows. Diseñado como un editor de textos de propósito general, gedit enfatiza
+la simplicidad y fácilidad de uso. Incluye herramientas para la edición de
+código fuente y textos estructurados, como lenguajes de marcado. Distribuido
+bajo las condiciones de la licencia GPL, gedit es software libre. 
+
+\parskip 2ex
+Nosotros cambiamos a este editor por que aún era más simple y liviano que Geany,
+y aunque no nos daba un buen autocompletado, tenía todo lo que queríamos,
+coloreado de sintáxis, fácilidad de uso, y también hay que tener en cuenta que
+es el editor por defecto del entorno de escritorio GNOME, el cual hemos
+utilizado bastante. 
+
+\parskip 2ex
+
+\subsection{Vim}
+
+Es un editor hecho por programadores para programadores. Para fácilitar la
+programación, Vim dispone de un modo 'editar, compilar, corregir'.  De la misma
+forma que los entornos de desarrollo integrados, puede editar el código fuente
+además llamar a un compilador externo, e interpretar sus resultados. Si hay
+errores de compilación, éstos se muestran en una ventana. Los mensajes de error
+dirigen al usuario a la zona en la que se han encontrado para poder así
+corregirlos. Entonces vuelve a empezar el ciclo "editar, compilar, corregir" y,
+si es necesario, corregir nuevos errores. El trabajo del programador también se
+ve fácilitado por el resaltado de sintaxis y la funcionalidad de plegado de
+código.
+
+\parskip 2ex 
+Empezamos a utilizar este editor ya que está preparado para
+programadores, y su filosofía se basa es hacerlo todo con el mínimo número de
+pulsaciones de teclado, lo cual, cuando nos acostumbremos a utilizarlo,
+conseguiremos una gran mejora de productividad. También decir que Vim es el
+programa que actualmente más plugins tiene, y es altamente configurable, para
+adecuarse al perfil de cada programador, cosa que nos ha gustado muchísimo. 
+
+
+\section{Servidores de Go: IGS y KGS} %TODO añadir otros que hay, LLGS 
+
+\subsection{El servidor IGS}
+
+Nos ofrece un gran lugar para jugar, ver, estudiar y disfrutar del juego de Go
+en Internet. Podemos encontrar cientos de jugadores de dintintas partes del
+mundo y diferentes nivelesde juego, desde principiantes hasta profesionales. 
 
 \parskip 2ex
 Ademas este servidor ofrece un protocolo de comunicaciones abierto y muy bien
 documentado, el cual hemos utilizado para subir la partida mientras se va
 jugando. 
 
-\parskip 2ex
+\subsection{KGS Go Server}
 
-\textbf{''KGS Go Server''}, llamado comunmente KGS, es un servidor de Go popular
-al cual podemos acceder desde http://www.gokgs.com/. Normalmente hay más de 1500
-personas conectadas en cualquier momento, por lo que es uno de los servidores
-más grandes en el mundo. Muchas de las partidas de perfil alto de los torneos se
-retransmiten en KGS. KGS abrió por primera vez bajo el nombre Igoweb en abril
-de 2000.  Apenas un mes después, el autor hizo un acuerdo con Kiseido y fue
-rebautizado con el Kiseido Go Server. Su nombre se cambió a KGS Go Server en
-2006. William M. Shubert es el desarrollador de KGS. El cliente conocido como
-CGoban3 ha sido escrito en Inglés, y ha sido traducido a muchos idiomas
-diferentes, como japonés, francés, italiano, alemán, chino y español entre
-otros. 
+Llamado comunmente KGS, es un servidor de Go popular al cual podemos acceder
+desde http://www.gokgs.com/. Normalmente hay más de 1500 personas conectadas en
+cualquier momento, por lo que es uno de los servidores más grandes en el mundo.
+Muchas de las partidas de perfil alto de los torneos se retransmiten en KGS. KGS
+abrió por primera vez bajo el nombre Igoweb en abril de 2000.  Apenas un mes
+después, el autor hizo un acuerdo con Kiseido y fue rebautizado con el Kiseido
+Go Server. Su nombre se cambió a KGS Go Server en 2006. William M. Shubert es el
+desarrollador de KGS. El cliente conocido como CGoban3 ha sido escrito en
+Inglés, y ha sido traducido a muchos idiomas diferentes, como japonés, francés,
+italiano, alemán, chino y español entre otros. 
 
 \parskip 2ex
 Nosotros también hemos intentado subir la partida a este servidor, pero el
@@ -1433,19 +1799,21 @@ podemos hacer algo y que se permitan subir partidas a este servidor tan
 conocido. 
 
 
-\subsection{Sistemas Operativos: Debian y Linux Mint}
+\section{Sistemas Operativos: Debian y Linux Mint}
 
-\textbf{''Debian''} es un sistema operativo libre, desarrollado por más de mil
-voluntarios alrededor del mundo, que colaboran a través de Internet.  La
-dedicación de Debian al software libre, su base de voluntarios, su naturaleza no
-comercial y su modelo de desarrollo abierto la distingue de otras distribuciones
-del sistema operativo GNU. Todos estos aspectos y más se recogen en el llamado
-Contrato Social de Debian.  Nació en el año 1993, de la mano del proyecto
-Debian, con la idea de crear un sistema GNU usando Linux como núcleo ya que el
-proyecto Debian, organización responsable de su mantenimiento en la actualidad,
-también desarrolla sistemas GNU basados en otros núcleos (Debian GNU/Hurd,
-Debian GNU/NetBSD y Debian GNU/kFreeBSD).  Uno de sus principales objetivos es
-separar en sus versiones el software libre del software no libre. El modelo de
+\subsection{Debian}
+
+Es un sistema operativo libre, desarrollado por más de mil voluntarios alrededor
+del mundo, que colaboran a través de Internet.  La dedicación de Debian al
+software libre, su base de voluntarios, su naturaleza no comercial y su modelo
+de desarrollo abierto la distingue de otras distribuciones del sistema operativo
+GNU. Todos estos aspectos y más se recogen en el llamado Contrato Social de
+Debian.  Nació en el año 1993, de la mano del proyecto Debian, con la idea de
+crear un sistema GNU usando Linux como núcleo ya que el proyecto Debian,
+organización responsable de su mantenimiento en la actualidad, también
+desarrolla sistemas GNU basados en otros núcleos (Debian GNU/Hurd, Debian
+GNU/NetBSD y Debian GNU/kFreeBSD).  Uno de sus principales objetivos es separar
+en sus versiones el software libre del software no libre. El modelo de
 desarrollo es independiente a empresas, creado por los propios usuarios, sin
 depender de ninguna manera de necesidades comerciales. Debian no vende
 directamente su software, lo pone a disposición de cualquiera en Internet,
@@ -1454,122 +1822,172 @@ mientras se respete su licencia.  Debian Linux puede instalarse utilizando
 distintos mecanismos de instalación, como DVD, CD, Blu-Ray, memorias USB y
 diskettes, e incluso directamente desde la red.
 
-\parskip 2ex
+\subsection{Linux Mint}
 
-\textbf{''Linux Mint''} es una distribución del sistema operativo GNU/Linux, basado en la
-distribución Ubuntu (que a su vez está basada en Debian). A partir del 7 de
-septiembre de 2010 también está disponible una edición basada en Debian.  Linux
-Mint mantiene un inventario actualizado, un sistema operativo estable para el
-usuario medio, con un fuerte énfasis en la usabilidad y facilidad de
-instalación. Es reconocido por ser fácil de usar, especialmente para los
-usuarios sin experiencia previa en Linux.  Linux Mint se compone de muchos
-paquetes de software, los cuales se distribuyen la mayor parte bajo una licencia
-de software libre. La principal licencia utilizada es la GNU General Public
-License (GNU GPL) que, junto con la GNU Lesser General Public License (GNU
-LGPL), declara explícitamente que los usuarios tienen libertad para ejecutar,
-copiar, distribuir, estudiar, cambiar, desarrollar y mejorar el software. Linux
-Mint es financiada por su comunidad de usuarios. Los usuarios individuales y
-empresas que utilizan el sistema operativo pueden actuar como donantes,
-patrocinadores y socios de la distribución. El apoyo financiero de la comunidad
-y la publicidad en el sitio web ayuda a mantener Linux Mint libre y abierta.
+Es una distribución del sistema operativo GNU/Linux, basado en la distribución
+Ubuntu (que a su vez está basada en Debian). A partir del 7 de septiembre de
+2010 también está disponible una edición basada en Debian.  Linux Mint mantiene
+un inventario actualizado, un sistema operativo estable para el usuario medio,
+con un fuerte énfasis en la usabilidad y fácilidad de instalación. Es reconocido
+por ser fácil de usar, especialmente para los usuarios sin experiencia previa en
+Linux.  Linux Mint se compone de muchos paquetes de software, los cuales se
+distribuyen la mayor parte bajo una licencia de software libre. La principal
+licencia utilizada es la GNU General Public License (GNU GPL) que, junto con la
+GNU Lesser General Public License (GNU LGPL), declara explícitamente que los
+usuarios tienen libertad para ejecutar, copiar, distribuir, estudiar, cambiar,
+desarrollar y mejorar el software. Linux Mint es financiada por su comunidad de
+usuarios. Los usuarios individuales y empresas que utilizan el sistema operativo
+pueden actuar como donantes, patrocinadores y socios de la distribución. El
+apoyo financiero de la comunidad y la publicidad en el sitio web ayuda a
+mantener Linux Mint libre y abierta.
 
-\parskip 2ex
+\subsection{Conclusiones}
+
 Como puede observarse, hemos intentado utilizar todas las herramientas libres
 que hemos podido, incluyendo, como no, el sistema operativo. Como cada uno
 tenemos nuestros gustos, cada uno de nosotros hemos utilizados el sitema
 operativo que más se adecuaba a nuestros gustos. 
 
 
-\subsection{Entornos de escritorio: Awesome y Cinnamon}
+\section{Entornos de escritorio: Awesome y Cinnamon}
 
-\textbf{''Awesome''} es un gestor de ventanas para X Window System desarrollado
-en C y lenguaje de programación Lua. Este último también se utiliza para
-configurar y ampliar el gestor de ventanas. Al igual que muchos gestores de
-ventanas del tipo tiling window manager (tipo mosaico), hace lo posible para que
-el usuario pueda manejar productivamente las ventanas sin el uso del ratón.  El
-programa se incorpora en los repositorios de Debian GNU/Linux desde la versión
-lenny en su versión 2. La nueva versión, 3.4.2 For The Restless, se encuentra en
-los repositorios de Ubuntu y en la versión estable de Debian.
+\subsection{Awesome}
 
-\parskip 2ex
+Es un gestor de ventanas para X Window System desarrollado en C y lenguaje de
+programación Lua. Este último también se utiliza para configurar y ampliar el
+gestor de ventanas. Al igual que muchos gestores de ventanas del tipo tiling
+window manager (tipo mosaico), hace lo posible para que el usuario pueda manejar
+productivamente las ventanas sin el uso del ratón.  El programa se incorpora en
+los repositorios de Debian GNU/Linux desde la versión lenny en su versión 2. La
+nueva versión, 3.4.2 For The Restless, se encuentra en los repositorios de
+Ubuntu y en la versión estable de Debian.
 
-\textbf{''Cinnamon''} es una bifurcación de GNOME Shell, desarrollado
-inicialmente por Linux Mint. Intenta proveer un entorno de escritorio más
-tradicional basado en la metáfora de escritorio, como GNOME 2. Cinnamon usa
-Muffin, una bifurcación del gestor de ventanas de GNOME 3 Mutter, como su gestor
-de ventanas desde la versión 1.2.
+\subsection{Cinnamon}
 
-\parskip 2ex
+Es una bifurcación de GNOME Shell, desarrollado inicialmente por Linux Mint.
+Intenta proveer un entorno de escritorio más tradicional basado en la metáfora
+de escritorio, como GNOME 2. Cinnamon usa Muffin, una bifurcación del gestor de
+ventanas de GNOME 3 Mutter, como su gestor de ventanas desde la versión 1.2.
+
+\subsection{Conclusiones}
+
 Al igual que con el sistema operativo ha ocurrido con el entorno de escritorio,
 gracias a que en la comunidad del Software Libre se ofrecen inifinidad de
 posibilidades de entornos, cada uno hemos utilizado el que más nos gustaba.
 
-\section{Implementación del proyecto}
 
-Como todo proyecto, la implementacion la hemos dividido en funcionalidades que
-queriamos que tuviese el proyecto. Las principales funcionalidades, que a su vez
-las hemos dividido para hacer un codigo mas legible y modular, son:
+\chapter{Como estructurar un proyecto de software libre}
+
+Antes de comenzar con el proyecto, como nuestro proyecto será de software libre,
+hemos comprobado otros proyectos por Internet y hemos estado buscando
+información sobre como tenemos que estructurar un proyecto. 
+
+
+
+\chapter{Implementación}
+
+\section{Estrutura interna del proyecto}
+
+La estructura de este proyecto la hemos dividido por funcionalidades, para
+intentar que el código sea lo más legible, entendible y reutlizable posible. Las
+funcionalidades en las que hemos dividido el proyecto son la siguientes:
 \begin{itemize} 
-    \item Detección de cámara.
+    \item Selección de cámara o video para la captura de una partida.
+    \item Detección de cámaras. 
     \item Detección de tablero.
-    \item Detección de movimiento del tablero.
+    \item Comprobación del movimiento del tablero.
     \item Idealización del tablero.
     \item Detección de piedras.
+    \item Procesamiento de piedras. 
     \item Comunicación con el servidor. Transmisión de partida por Internet.
 \end{itemize}
 
 La realización de este proyecto a supuesto muchísimos cambios en las
 implementaciones, ya que hemos tenido que desechar muchas de ellas por motivos
-diferentes que nos hemos ido encontrando. Hemos decidido ir explicando la evolucion y aprendizaje de cada parte de software del proyecto, añadiendo despues la api correspondiente a esa parte. A continuacion adjuntamos la api del main.
+diferentes que nos hemos ido encontrando. Hemos decidido ir explicando la
+evolución y aprendizaje de cada parte de software del proyecto, añadiendo
+despues la api correspondiente a esa parte. A continuacion adjuntamos la api del
+main.
 
 \include{src.rocamgo-module}
 
-\section{Detección de la cámara} 
-Funcionalidad que nos busca y nos selecciona la cámara que queramos usar,
-siempre y cuando exista alguna en nuestro ordenador. 
+\section{Selección de cámara o video para la captura de una partida} 
 
-\paragraph{1ª Implementación: detección de cámaras solo en Linux}
+Esta funcionalidad nos permite seleccionar si queremos utilizar una cámara o un
+video grabado anteriormente para comenzar la captura y subida de la partida a
+Internet.
+
+La opción de cargar un video nos ha servido mayormente a los desarrolladores
+para testear si todo funcionaba correctamente cargando videos previamente
+grabados con situaciones reales que podemos encontrarnos en cualquier tipo de
+partidas. 
+
+
+\section{Detección de la cámara} 
+
+Funcionalidad que nos busca las cámaras que se encuentren enchufadas al PC y nos
+las devuelve para que seleccionemos la que queramos utilizar. Si no existen
+cámaras conectadas al PC, tendremos que usar la funcionalidad de utilizar un
+video como captura, para ver el funcionamiento de este proyecto.  
+
+\subsection{1ª Implementación: detección de cámaras solo en Linux}
 
 Nuestra primera detección de cámaras solo estaba preparada para funcionar en
 Linux, ya que utilizábamos una manera que solo funcionaba en Linux, y la cual,
 si enchufabas y desenchufabas alguna cámara anteriormente, daba fallos, ya que
 capturábamos las cámaras utilizando el dispositivo de video que se encontraban
-en las direcciones /dev/videoX, siendo X el número de la cámara. 
+en las direcciones /dev/videoX, siendo X el número de la cámara. Esta fué una
+solución rápida y fácil a la hora de seleccionar cámaras, y fue posible gracias
+al conocimiento sobre como funcionan los dispositivos el Linux y donde se
+encuentran ubicados. 
 
-\paragraph{2ª Implmentación: detección de cámaras utilizando opencv}
+Respecto a la selección de la cámara, no hemos utilizado ninguna interfaz
+visual, las ventanas donde seleccionamos las cámara las creamos con OpenCv,
+aunque pensamos que en un futuro podríamos utilizar alguna interfaz. 
 
-Esta implementación funciona bastante bien, ya que no solo funciona en Linux, 
-si no que debería de funcionar en cualquier sistema operativo. También decir que
-es una forma mejorada de detectar las cámaras, ya que no hay problemas si hemos
-enchufado y desenchufado cámaras anteriormente. 
+\paragraph{2ª Implmentación: detección de cámaras utilizando OpenCv}
+
+Esta implementación funciona bastante bien, ya que no solo funciona en Linux, si
+no que también funciona en Windows y debería de funcionar en MAC. No hemos
+podido hacer la comprobación ya que no disponemos de ningún MAC. Tenemos que
+destacar que esta forma es una forma mejorada de detectar las cámaras, ya que no
+hay problemas si hemos enchufado y desenchufado cámaras anteriormente.  
+
+En esta segunda implementación no hemos cambiado la forma de seleccionar las
+cámaras y seguimos utilizando OpenCv para la selección. 
 
 \include{src.camera-module}
 \include{src.cameras-module}
 
 \section{Detección del tablero} 
+
 Funcionalidad para la detección del tablero, ya sea de las intersecciones o de
 las esquinas, para luego poder ubicar la posición de las piedras de alguna
-manera. 
+manera. Esta funcionalidad es de una de las que nos ha costado más que funcione
+más o menos bien la mayoría de las veces, ya que con la última implementación
+seguimos encontrando algunos pequeños errores en la detección de tablero
+diferentes. 
 
 \paragraph{1ª Implementación: detección mediante líneas}
-En este intento de implementación intentamos buscar las lineas del trablero 
-mediante el tratamiento de imágenes y la función HoughLines de opencv, para 
+
+En este intento de implementación intentamos buscar las lineas del tablero 
+mediante el tratamiento de imágenes y la función HoughLines de OpenCv, para 
 luego buscar las intersecciones del tablero y así tener el tablero detectado. 
 Pensamos que el tratamiento de esas líneas sería sencillo de procesar, pero al
 existir tantas líneas y tener que buscar tantas intersecciones, se convertía en
-una auténtica locura que no fuimos capaces de abordar, por lo tanto desechamos
-esta implementación. 
+un procesamiento tan inmeso que no fuimos capaces de abordar, y por tanto,
+descartamos al ver que con esta forma, tardaríamos muchísimo en encontrar la
+posición del tablero.
 
 \includegraphics[scale=0.6]{detect-lineas.png}
-
 
 Otro de los problemas era que el tablero estaría casi siempre con un poco de
 perspectiva, y entonces no sabríamos que lineas escoger, ya que el tablero, al
 ser de madera contiene muchas betas y podría detectar bastantes lineas que no
 serían las buscadas. 
 Más adelante nos dimos cuenta de que existe otro problema con esta
-implementación, y es que cuando haya piedras encima del tablero, habrá bastante
-problemas. 
+implementación, y es que cuando existan piedras encima del tablero, estas líneas
+serán tapadas, evitando así poder detectar el tablero más adelante.
  
 
 \paragraph{2ª Implementacion: detección mediante intersecciones}
@@ -1577,19 +1995,22 @@ problemas.
 Despues de entender que la forma anterior de buscar el tablero no era efectiva,
 decidimos ponernos a trabajar en otra idea. Esta vez decidimos hacerlo, atacando
 a las intersecciones, usando templates. Esta forma consiste en buscar en la
-imagen que recibimos de la cámara el template de una interseccion (imagen
+imagen que recibimos de la cámara, el template de una interseccion (imagen
 que contine solo la interseccion). Con esto conseguíamos detectar casi a la
-perfección casi todas las intersecciones, y las que no sacábamos podíamos
-sacarlas mediante una malla. 
+perfección casi todas las intersecciones, y las que no, podíamos sacarlas
+mediante una malla y unos cuantos de cálculos.
 
 \includegraphics[scale=0.6]{detec-intersecciones.png}
 
-El problema de todo esto era el coste de ejecución que conllevaba hacerlo, a
-parte, también nos topábamos con el problema de que necesitábamos un tablero que
-tuviese la mínima perspectiva posible, ya que si no el template no lo pillaría. 
-Como pasa con la anterior implementación, otro problema es que cuando se empieza
-a jugar la partida, estas intersecciones se tapan. 
-
+El problema que nos encontramos con esta implementación, era el coste de
+ejecución que conllevaba todo este proceso y, a parte, también nos toparíamos
+con el problema que hemos mencionado anteriormente de la perspectiva, ya que a
+la más mínima perspectiva, el template ideal no nos serviría, y el coste para
+detectar esto sería aun mayor. 
+También nos encontramos con otro de los problemas que vimos en la anterior
+implementación, el de que las piedras taparían en el transcurso de la partida
+estas intersecciones, con lo cual no podríamos encontrarlas utilizando
+templates.
 
 \paragraph{3ª Implementación: Haartraining, aprendizaje}
 
@@ -1616,40 +2037,58 @@ Estuvimos bastante tiempo investigando y probamos con 40-50 imágenes, en vez de
 con 3000 como mínimo, que es lo que piden, y como esperábamos, fue un fracaso,
 no encontraba tablero ninguno con tan pocas imágenes de aprendizaje. 
 
+
 \paragraph{4ª Implementación: detección mediante contornos}
 
-Finalmente y tras tres intentos fallidos, decidimos hacerlo buscando contornos.
-Gracias a una funcion de openCv conseguimos encontrar la forma que menos fallos
+Finalmente, y tras tres intentos fallidos, decidimos hacerlo buscando contornos.
+Gracias a una función de OpenCv conseguimos encontrar la forma que menos fallos
 nos ha dado, cumple con los requisitos y soluciona casi todos los problemas.
-Esta funcion devuelve contornos, por ello uno de los requisitos que debemos
+Esta función devuelve contornos, por ello uno de los requisitos que debemos
 pedir para la correcta ejecución de este programa es que el fondo donde se
 coloque el tablero, sea lo más liso posible, cosa que podemos conseguir con
-facilidad utilizando un mantel o hule, aunque no es totalmente necesario, pero
-facilita y ayuda al mejor funcionamiento del programa. Debido a la gran cantidad
+fácilidad utilizando un mantel o hule, aunque no es totalmente necesario, pero
+fácilita y ayuda al mejor funcionamiento del programa. Debido a la gran cantidad
 de test que ha pasado correctamente esta implementacion y dado que los test que
 han fallado son debido a la mala calidad de las imágenes (sobre todo a causa de
 la luminosidad de las imágenes), hemos considerado que es la correcta. Además,
 perdemos el problema de la perspectiva, pues lo que detectamos es el contorno.
 
+Cabe destacar de esta implementación, que la búsqueda de contornos nos encuentra
+muchas veces el contorno de la imagen completa, el cual tendremos que desechar
+comprobando que el contorno es demasiado grande para ser del tablero. También
+nos ocurre lo mismo con cualquier contorno más pequeño que encontremos. Por
+último, y como lo que estamos buscando es una tablero, el cual es rectangular,
+tenemos que hacer aproximaciones de estos contornos y descartar aquellas que no
+tengan 4 lados, para así evitar cualquier otro tipo de objetos que no sean
+rectangulares y ocupen una buena superficie. 
+
 \include{src.search_goban-module}
 
 
-\section{Detección de movimiento del tablero}
+\section{Comprobación del movimiento del tablero}
 
 Tenemos que comentar que esta implementación fue un poco tardía, ya que nosotros
 suponíamos que el tablero no se movería, pero en casi todas las partidas de
 torneo, inconscientemente, para tener una mejor perspectiva del tablero o
 acercarlo, el tablero se mueve durante la partida. Así que al encontrarnos con
 este problema, nos dimos cuenta de que las implementaciones del tablero que
-hicimos al principio, no nos servían. 
+hicimos al principio, no nos servían, por eso, el problema de poner piedras en
+el transcurso de la partida y que se tapasen las interesecciones, nos venía muy
+mal. 
 
 \paragraph{1ª Implementación: detección de cambios en los bordes del tablero}
 
 En principio, para detectar si el tablero se movía o no, buscamos que existieran
 cambios en los bordes del tablero, ya que si los movemos, estos deben de
-cambiar. Al ver que cada vez que metíamos la mano para poner una piedra,
-empezaba a cogerlo como cambio, o el hecho de que cambiara la luz un poco, daba
-movimiento del tablero, descartamos esta opción. 
+cambiar. Para ello trazamos líneas entre las esquinas encontradas anteriormente
+del tablero, y seleccionamos unos cuantos de puntos para observar si
+existían cambios muy grandes que detectaran el movimiento del tablero. Nos dimos
+cuenta de que el movimiento del tablero no cambiaba normalmente tanto como
+cuando alguien metía la mano para colocar una piedra, así que sin saber
+exactamente que cambios eran el movimiento del tablero, y que cambios eran de
+una mano, descartamos esta opción. También comprobamos que cualquier cambio de
+luz se detectaría como un movimientodel tablero, así que la entrada y salidas de
+sombras del tablero también afectaban. 
 
 \paragraph{2ª Implementación: cambio de esquinas detectados} 
 
@@ -1657,12 +2096,26 @@ Esta segunda implementación nos pareció impensable la primera vez, ya que lo q
 hacemos es detectar contornos durante todo el tiempo, y cada vez que los
 encuentre, busque si son los mismos que los que ya teníamos o han variado. Si
 han variado, para decidir si ha pillado bien las esquinas o no, utilizamos una
-serie de reglas matemáticas. 
+serie de reglas matemáticas. Estas reglas matemáticas no siempre nos han dado
+resultados satisfactorios, aunque en la mayoría de los casos ha funcionado
+correctamente. Las operaciones matemáticas realizadas han sido 3, como las
+opciones de movimiento de tablero existente que hemos podido comprobar:
+\begin{itemize}
+    \item Los vectores de movimiento que generan las esquinas encontradas
+    primeramente, con las encontradas por segunda vez, deben de tener la misma
+    dirección y sentido, y más o menos la misma distancia. Estó sería un
+    movimiento de arrastre del tablero en una dirección.
+    \item Los vectores de movimiento tienen ls misma dirección dos a dos, y
+    perpendiculares dos a dos también, con sentidos contrarios. Esto sería un
+    movimiento circular del tablero.
+    \item Casi igual que al anterior, exceptuando que uno de los puntos no se
+    mueve. Este caso sería un movimiento del tablero circular sin mover una de
+    las esquinas. 
+\end{itemize}
+
 Quizás el que tardara tanto en detectar el tablero con las implementaciones
 anteriores, no nos hizo pensar en esta forma de hacerlo, pero al ver que es
-factible con los contornos, hemos utilizado esta forma, y no parece ir mal del
-todo, aunque no está asegurado que permaneca tal y como está, si es probable que
-sea parecido. 
+factible con los contornos, hemos utilizado esta forma.
 
 \include{src.check_goban_moved-module}
 
@@ -1672,60 +2125,66 @@ Una vez detectado el tablero correctamente y antes de ponernos a buscar piedras
 por toda la imagen, llegamos a la conclusion que seria mas conveniente conseguir
 el tablero en un modelo ideal, como si las imágenes que recibimos fuesen tomadas
 como nosotros las queremos, que es desde arriba, sin perspectivas.  Gracias a
-opencv conseguimos con la funcion WarpPerspective y GetPerspectiveTransform que 
-la imagen se ponga con una
-perspectiva perfecta, recortando las partes de la imagen donde no está el
+OpenCv, esto lo conseguimos con las funciones WarpPerspective y
+GetPerspectiveTransform. Estas funciones consiguen que la imagen se ponga con
+una perspectiva perfecta, recortando las partes de la imagen donde no está el
 tablero, haciendo asi que la búsqueda de piedras sea una labor mucho más
-sencilla. Para conseguir que esta función nos sirva, tuvimos que hacer un
-testeo bastante amplio, pues las imágenes necesitan ser tratadas anteriormente
-para el correcto funcionamiento de dicha funcion, con filtros como Canny y
-Smooth, para detectar bordes o suavizar la imagen. 
+sencilla. Para conseguir que esta función nos sirva, tuvimos que hacer un testeo
+bastante amplio, pues las imágenes necesitan ser tratadas anteriormente para el
+correcto funcionamiento de dicha funcion, con filtros como Canny y Smooth, para
+detectar bordes o suavizar la imagen. 
+
+Los problemas que hemos tenido principalmente aquí han sido que los puntos
+seleccionados no correspondían con los puntos en los que nosotros queríamos
+poner el tablero en perspectiva, para ello ordenamos los puntos a la hora de
+btener el tablero, y conseguimos que siempre generara una perspectiva adecuada. 
 
 \include{src.perspective-module}
 
-\section{Deteccion de piedras} 
+\section{Detección de piedras} 
 
-Una vez detectado el tablero correctamente,
-pensabamos que la deteccion de piedras iba a ser mucho mas facil, aun asi, la
-detección de piedras tambien ha pasado por un ciclo evolutivo de modificaciones
-hasta madurar lo suficiente la idea, para conseguir finalmente un programa que
-funcione tal y como teniamos pensado desde un primer momento. En un principio
-nos pusimos manos a la obra con la búsqueda de piedras con las diferentes
-implementaciones que os presentamos a continuación.
-También debemos recordar, que la detección de
-piedras, no es solamente detectar donde está cada piedra, también debemos
-detectar el orden correcto en el que han sido colocadas y el color de la piedra,
-tenemos que tener en cuenta que también existe la posibilidad de que una piedra
-se retire del tablero. 
+Una vez detectado el tablero correctamente, pensabamos que la deteccion de
+piedras iba a ser mucho mas fácil, aun así, la detección de piedras tambien ha
+pasado por un ciclo evolutivo de modificaciones hasta madurar lo suficiente la
+idea, para conseguir finalmente un programa que funcione tal y como teniamos
+pensado desde un primer momento. En un principio nos pusimos manos a la obra con
+la búsqueda de piedras con las diferentes implementaciones que os presentamos a
+continuación. También debemos recordar, que la detección de piedras, no es
+solamente detectar donde está cada piedra, también debemos detectar el orden
+correcto en el que han sido colocadas y el color de la piedra, tenemos que tener
+en cuenta que también existe la posibilidad de que una piedra se retire del
+tablero, lo cual ha conseguido que las implementciones se compliquen más aun.   
 
 \paragraph{1ª implementación: detección de piedras por turnos}
+
 En los inicios del programa, las piedras se detectaban de una forma poco
-ortodoxa, pues en gran parte, los jugadores debian decirnos cuando terminaban su
+ortodoxa, pues en gran parte, los jugadores debían decirnos cuando terminaban su
 turno, para asi tomar la foto en el momento justo, y poder analizarla
-correctamente.  La forma de la busqueda de la piedra se hacia por diferencia de
-imágenes, asi, cada vez que un jugador nos indicaba mediante un boton que habia
+correctamente. La forma de la búsqueda de la piedra se hacía por diferencia de
+imágenes, asi, cada vez que un jugador nos indicaba mediante un botón que habia
 terminado el turno, captabamos una imagen y la comparabamos con la anterior, la
-funcion "diff" de OpenCv nos devuelve marcadas las diferencias, que este caso
-serian las piedras, despues dentro de esta imagen, buscamos circulos y
-conseguiamos encontrar las piedras.  
+función CvAbsDiff de OpenCv nos devuelve marcadas las diferencias, que este caso
+serían las piedras, luego, dentro de esta imagen, buscabamos círculos para
+confirmar que eran piedras y no cambios por un cambio de brillo o una mano mal
+metida.
 
 \includegraphics[scale=0.4]{reloj.jpg}
 
-Esta forma fue eliminada al poco tiempo,pues una de nuestras ideas, es que el
-jugador no tenga que preocuparse del programa, pues esta concentrado jugando.
-Ademas, los factores externos eran demasiados, pues pensamos en modificar los
-relojes de tiempo, para que el propio
-boton que indicaba al reloj el final del tiempo, fuese el mismo que nos indicase
-a nosotros el momento de tomar la foto. Con todo esto, lo unico que podiamos
-conseguir es que nuestro programa no fuese funcional, ya que nadie podria hacer
-uso de nuestro programa sin dicho reloj. Tras pensar distintas formas de
-solucionar los problemas que daba dicha implementacion, decidimos cambiar por
-completo la idea.  % TODO poner una explicacion del problema del joseki
+Esta forma fue eliminada al poco tiempo, pues una de nuestras ideas, es que el
+jugador no tenga que preocuparse del programa, pues está concentrado jugando.
+Además, los factores externos eran demasiados, pues pensamos en modificar los
+relojes de tiempo, para que el propio botón que indicaba al reloj el final del
+tiempo, fuese el mismo que nos indicase a nosotros el momento de tomar la foto.
+Con todo esto, lo unico que podiamos conseguir es que nuestro programa no fuese
+funcional, ya que nadie podria hacer uso de nuestro programa sin dicho reloj.
+Tras pensar distintas formas de solucionar los problemas que daba dicha
+implementacion, decidimos cambiar por completo la idea.  
 
 
 \paragraph{2ª Implementación: detección por diferencias sin turnos}
+
 En esta segunda implementación pensamos en suprimir el uso de botones y
-decidimos buscar la diferencia de cada imagen con la anteior, buscando circulos
+decidimos buscar la diferencia de cada imagen con la anteior, buscando círculos
 en esa diferencia. Esta solución nos pareció mucho mejor que la anterior, pero
 empezamos a darnos cuenta que detectaba toda la trayectoria que hacia la piedra
 hasta estar colocada en su sitio, haciendo que el programa nos detectase piedras
@@ -1738,62 +2197,81 @@ demasiado elevada y creaba un tiempo de retreso que se iba acumulando, haciendo
 que en determinado momento fallase el programa.
 
 \paragraph{3ª Implementación: detección por circuferencias y estadística}
+
 Y como dice el refrán, a la tercera va la vencida. Esta vez, ya teniamos más
 experiencia y el tablero ya estaba idealizado. Por esto, pensamos que la mejor
 solución podría ser la más sencilla, para ello, sin hacer tratamiento ni
 diferencias, buscamos círculos en la imagen ideal. Con una matriz de estadística
 temporal, vamos buscando si los círculos se quedan de forma estable en una
 posición, y en tal caso, podemos asegurar que la piedra esta colocada en ese
-lugar, esta solución, ademas permite llevar bien la cuenta de los turnos y el
+lugar, esta solución, ademas, permite llevar bien la cuenta de los turnos y el
 momento en el que se puso la piedra, pues aunque tenga que pasar un tiempo para
 asegurar que está la piedra, sabemos el momento en el que se puso. Ademas el
 coste de ejecución es asumible.
 
-\paragraph{Buscando colores}
-%variar una variable. Cambiar el umbral de brillo
-% meter dentro de la búsqueda de piedras mejor
+Hemos detectado después de varias ejecuciones que cuando tenemos en el tablero
+una cantidad de piedras muy grande, se comienza a utilizar mucho procesador,
+pero no sabemos exactamente porque y tenemos que investigar un poco más. 
 
-Como en cada parte del proyecto, esta tambien ha tenido su evolucion desde que
-empezamos a plantearlo hasta el resultado final, mucho mas pulido y funcional.
+\paragraph{Buscando colores}
+
+Como en cada parte del proyecto, esta tambien ha tenido su evolución desde que
+empezamos a plantearlo hasta el resultado final, mucho más pulido y funcional.
 En un principio y dado que los jugadores nos iban a ir marcando el ritmo de
-turnos, simplemnte debiamos saber si le tocaba colocar a blancas o negras, como
-siempre empiezan negras, por reglas del propio juego, solo debiamos detectar la
-piedra que se colocaba y automaticamente teniamos el color.  Debido a que esto
-cambio a lo largo del tiempo y en la actualidad la forma de encontrar piedras es
-distinta, debemos saber de que color es la piedra que se ha detectado en cada
-momento, para ello una vez que detectamos una piedra, debemos asegurarnos de que
-color es. La forma de hacerlo es buscando en el punto central donde esta situada
-la piedra e ir a su pixel y analizar el color. Gracias a openCv esta labor es
-relativamente sencilla, pero nos dimos cuenta, debido a la calidad de las
-imágenes, que no todo iba a ser color de rosa. El gran problema que tenemos es
-que las piedras al ser redondeadas, la cámara capta reflejos de dichas piedras
-haciendo que el color de las piedras pueda llegar a confundirse facilmente si no
-cogen un numero amplio de muestras para saber el color. Aun asi, los test dan
-fallos a veces, para evitar esto, hay que variar una variable, siendo este uno
-de los puntos a seguir trabajando en un futuro en nuestro programa.
+turnos, simplemente deberíamos de saber si le tocaba colocar a blancas o negras, como
+siempre empiezan negras, por reglas del propio juego, sólo deberíamos de detectar la
+piedra que se colocaba y automáticamente obtendríamos el color. 
+Debido a que esto cambió a lo largo del tiempo y en la actualidad la forma de
+encontrar piedras es distinta, debemos saber de que color es la piedra que se ha
+detectado en cada momento, para ello una vez que detectamos una piedra, debemos
+asegurarnos de que color es. La forma de hacerlo es buscando en el punto central
+donde esta situada la piedra e ir a su pixel y analizar el color. Gracias a
+OpenCv esta labor es relativamente sencilla, pero nos dimos cuenta, debido a la
+calidad de las imágenes, que no todo iba a ser color de rosa. El gran problema
+que tenemos es que las piedras al ser redondeadas, la cámara capta reflejos de
+dichas piedras haciendo que el color de las piedras pueda llegar a confundirse
+fácilmente si no cogen un número amplio de muestras para saber el color. Aun
+asi, los test dan fallos a veces, para evitar esto, tenemos que variar un umbral
+para el color blanco, el cual tenemos pensado en un futuro que se detecte
+automáticamente de alguna forma.
 
 \include{src.search_stones-module} 
 \include{src.stone-module}
 
 \section{Conexión con el servidor}
 
-Para la conexión al servidor comenzamos intentandolo con los servidores de KGS,
-pero la falta de documentacion de protocolos de dicho servidor y el tener un
-protocolo cerrado hizo imposible esta tarea. Aun asi, queremos hacer posible la
-conexión a este servidor, pues es de los mas usados. Actualmente el programa se
+Para la conexión al servidor comenzamos intentándolo con los servidores de KGS,
+pero la falta de documentación de protocolos de dicho servidor y el tener un
+protocolo cerrado hizo imposible esta tarea. Aun así, queremos hacer posible la
+conexión a este servidor, pues es de los más usados. Actualmente el programa se
 conecta a IGS a traves de un usuario registrado siguiendo el protocolo de dicho
 servidorl, que es libre.
+
+Para el intento de conexión con el servidor de KGS hemos contactado con algunos
+administradores de KGS, pero finalmente nos han dicho que no puede ofrecernos
+ninguna API o programa para facilitarnos la subida de una partida, ya que el
+protocolo es cerrado. 
 
 \include{src.igs-module}
 
 \section{Creacion del archivo .sgf}
 
-Para la creacion del archivo .sgf no tuvimos muchos problemas ya que es un archivo de texto
-que esta estandarizado.
+Para la creacion del archivo .sgf no tuvimos muchos problemas ya que es un
+archivo de texto que esta estandarizado y sigue una reglas fáciles de seguir.
+Solo hemos tenido como trabajar con ficheros en python y escribir unas líneas de
+código para conseguir lo deseado.
+
+Desctacar que en el servidor IGS, una de las letras se la sala, y tenemos que
+cambiar el sistema de nombramiento para subir una partida a IGS, del sistema de
+nombramiento que usamos para guardar el sgf. 
 
 \include{src.kifu-module}
 
 \chapter{Manual de usuario}
+
+Descargar el proyecto desde el repositorio Git: TODO % TODO
+Una vez descargado ejecutar python src/rocamgo.py , el cual será una especie de
+comandos.
 
 \section{Guia de instalación} 
 
@@ -1855,13 +2333,13 @@ def main():
         #img = QueryFrame(camera) # Test videos
 \end{verbatim}
 
-Para que funcione el proyecto, necesitaremos instalar unas cuantas de librerías
-que hemos usado: opencv, unittest, nosetest, numpy, 
+Para que funcione el proyecto, necesitaremos instalar unas cuantas de bibliotecas
+que hemos usado: OpenCv, unittest, nosetest, numpy, 
 
 Para su instalacion, al igual que para instalar git, ejecutamos lo siguiente:
 
 \begin{verbatim}
-sudo apt-get install python-unittest2 python-opencv python-nose python-numpy
+sudo apt-get install python-unittest2 python-OpenCv python-nose python-numpy
 \end{verbatim}
 
 Con todo esto, ya deberíamos de poder ejecutar el proyecto y que este funcione
@@ -1913,9 +2391,9 @@ económico del brazo robótico, hemos dejado esta parte para una línea futura,
 centrándonos principalmente en la captación de imágenes y su tratamiento.
 
 Desde el principio de este proyecto, hemos estado aprendiendo bastante sobre las
-librerías de opencv, las cuales son una maravilla y nos han ayudado muchísimo en
+bibliotecas de OpenCv, las cuales son una maravilla y nos han ayudado muchísimo en
 la implementación de este proyecto. Creemos que todavía nos queda mucho que
-aprender sobre estas librerías, las cuales esperamos aprender más en un futuro. 
+aprender sobre estas bibliotecas, las cuales esperamos aprender más en un futuro. 
 
 Cuando nos hemos ido adentrando en el proyecto, nos han ido surgiéndo muchísimos
 problemas, sobre todo con la detección del tablero, ya que lo pensado y la
@@ -2011,7 +2489,8 @@ hacer con una licencia igual a la que regula la obra original. \\ \\
 
 Autores: 
 \begin{itemize} 
-    \item David Medina Velasco. \textbf{Email:} cuidadoconeltecho at gmail dot com 
+    \item David Medina Velasco. \textbf{Email:} cuidadoconeltecho at gmail dot
+    com 
     \item Víctor Ramírez de la Corte. \textbf{Email:} virako.9 at gmail dot com 
 \end{itemize}
 
@@ -2048,11 +2527,13 @@ Guia de test de Python
 
 \url{http://www.magmax.org/2011/11/09/python-pruebas-4.html}
 
-Tambien consultado el libro 'Python para todos', el cual nos ha servido de gran ayuda.
+Tambien consultado el libro 'Python para todos', el cual nos ha servido de gran
+ayuda.
 
 \section{Vim}
 
-Empezamos usando como bibliografia la propia del programa, ya que incluye vimtutor, un tutorial basico sobre el manejo de Vim.
+Empezamos usando como bibliografia la propia del programa, ya que incluye
+vimtutor, un tutorial basico sobre el manejo de Vim.
 
 Mas tarde comenzamos a practicar en la siguiente pagina:
 
@@ -2157,13 +2638,14 @@ Programa prueba con codigo
 
 Explicacion
 
-\url{http://www.coplec.org/?q=2010/08/05/entrenar-opencv}
+\url{http://www.coplec.org/?q=2010/08/05/entrenar-OpenCv}
 
 \section{Enlaces interesantes sobre detección de objetos}
 
-\url{*"[1]":http://achuwilson.wordpress.com/2011/02/13/object-detection-using-opencv-using-haartraining/}
+\url{*"[1]":http://achuwilson.wordpress.com/2011/02/13/object-detection-using-OpenCv-using-haartraining/}
 
-\url{* "[2]":http://www710.univ-lyon1.fr/~bouakaz/OpenCV-0.9.5/docs/ref/OpenCVRef_ObjectRecognition.htm}
+\url{*
+"[2]":http://www710.univ-lyon1.fr/~bouakaz/OpenCV-0.9.5/docs/ref/OpenCVRef_ObjectRecognition.htm}
 
 \url{* "[3]":http://en.wikipedia.org/wiki/SURF}
 
@@ -2184,7 +2666,7 @@ Proyecto de go usando un proyector
 
 \section{Enlace a cosas relacionadas con imágenes.} 
 
-\url{http://www.google.com/url?sa=t&rct=j&q=recortar%20imagenes%20roi%20opencv&source=web&cd=1&ved=0CB8QFjAA&url=http%3A%2F%2Fdis.um.es%2F~ginesgm%2Ffiles%2Fdoc%2Fpav%2Ftema2.ppt&ei=itA4T_2MBMLBhAfBl8CKAg&usg=AFQjCNGtmUXCybgKwHb5g8-Ns1F7Mdxz1A}
+\url{http://www.google.com/url?sa=t&rct=j&q=recortar%20imagenes%20roi%20OpenCv&source=web&cd=1&ved=0CB8QFjAA&url=http%3A%2F%2Fdis.um.es%2F~ginesgm%2Ffiles%2Fdoc%2Fpav%2Ftema2.ppt&ei=itA4T_2MBMLBhAfBl8CKAg&usg=AFQjCNGtmUXCybgKwHb5g8-Ns1F7Mdxz1A}
 
 \url{http://nashruddin.com/OpenCV_Region_of_Interest_(ROI)}
 
@@ -2198,9 +2680,10 @@ Guia de accesibilidad
 
 \url{http://www.sidar.org/recur/direc/norm/index.php}
 
-Para Opencv hemos usado el libro de o'reilly books opencv, ademas de la siguiente web
+Para Opencv hemos usado el libro de o'reilly books OpenCv, ademas de la
+siguiente web
 
-\url{http://opencv.willowgarage.com/}
+\url{http://OpenCv.willowgarage.com/}
 
 \chapter{Apéndice A: Documentación del proyecto} 
 
