@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4papert,woside,openright,titlepage,final]{book}
 \usepackage[spanish]{babel} % Corta palabras en español
 \usepackage[utf8]{inputenc} % Escribir con acentos, ñ,
 \usepackage{anysize} %para los márgenes
@@ -112,24 +112,25 @@ Nos gustaría agradecer a:
     GNU/Linux, los cuales nos han enseñado y ayudado mucho.  
     \item Los compañeros del club de go de Sevilla Ubicuo ki-in, los cuales nos
     han ofrecido lugar y materiales para probar el proyecto y siempre hemos 
-    recibido su apoyo.  
-    \item A D.Francisco Sivianes Castillo, nuestro tutor del proyecto, el cual 
+    recibido su apoyo. Especial mención a Francisco Marcelo, el cual está
+    actualmente colaborando con el código y añadiendo mejoras. 
+    \item A D. Francisco Sivianes Castillo, nuestro tutor del proyecto, el cual 
     nos ha dedicado todo el tiempo que hemos requerido sin miramientos, 
     ayudándonos con nuestras dudas y guiándonos para la correcta finalización 
     del proyecto.  
-    \item A D.Carlos Manuel Martin Cornejo, el cual ha colaborado con la 
+    \item A D. Carlos Manuel Martin Cornejo, el cual ha colaborado con la 
     realización de la conexión con los servidores de go.  
     \item A Jaime Cornejo Pérez, por ayudarnos con el logo y comunicación con 
     los administradores del servidor de KGS.  
-    \item A nuestros familiares, parejas y amigos.
-    \item A Btk???, que casi al finalizar el PFC nos ha ayudado mucho aportando
+    \item A Btk, que casi al finalizar el PFC nos ha ayudado mucho aportando
     nuevas ideas y formas de mejorar todo el proyecto, las cuales no hemos
     podido llevar a cabo, pero que en un futuro, con su ayuda, acabaremos
-    mejorándolas. % TODO
+    mejorándolas.
+    \item A nuestros familiares, parejas y amigos.
 \end{itemize}
 
 
-\chapter{Introduccion}
+\chapter{Introducción}
 
 \section{Antecedentes y motivación}
 
@@ -138,16 +139,16 @@ juego y las ganas de aprender más y subir de nivel, nos hicieron pensar en crea
 un programa para grabar nuestras propias partidas y poder jugar en un tablero
 físico mediante Internet, ya que el jugar en un tablero físico motiva bastante
 más que jugar con un tablero digital por internet. Como aquí en España el juego todavía no está muy
-extendido y no existen tantos Clubes como en Korea o en Japón, tenemos que
+extendido y no existen tantos Clubes como en Corea o en Japón, tenemos que
 conformarnos la mayoría de las veces con jugar por Internet, lo cual pierde un
 poco la esencia del juego: ese tacto de las piedras, el sonido de contacto de la
 piedra en el tablero, y como no, la presencia de tu oponente frente a tí.
 
 En los torneos de go, existe una concentración al jugar que parece ser mayor que
 la que normalmente tenemos, parece que jugamos mejor y pensamos un poco más nuestras
-jugadas, por lo tanto, si tuvieramos la oportunidad de capturar estas partidas,
+jugadas, por lo tanto, si tuviéramos la oportunidad de capturar estas partidas,
 podríamos aprender mucho de ellas, tanto de los aciertos como de los errores; y
-tanto de los nuestros como de los de los demás. 
+tanto de los nuestros como de los demás. 
 Estas partidas, actualmente se registran de dos formas: 
 \begin{itemize}
     \item Utilizando el método antiguo, registrando la partida en un kifu. 
@@ -156,7 +157,7 @@ Estas partidas, actualmente se registran de dos formas:
 
 La partida puede registrarla alguno de los dos jugadores, lo cual puede
 desconcentrar un poco al jugador, ya que no estará totalmente centrado en la
-partida; o una persona ajena a la partida, la cual debe permanecer 1 o 2 horas
+partida; o una persona ajena a la partida, la cual debe permanecer 1 ó 2 horas
 como mínimo delante del tablero apuntando todas esas jugadas. 
 
 Añadir que, los jugadores que son muy fuertes, suelen acordarse de la
@@ -165,26 +166,29 @@ viene mejor una ayuda.
 
 \parskip 2ex
 Todo esto nos llevó a pensar hacer este software, tanto para mejorar la forma de
-registrar estas partidas, para que todos podamos verla, como para poder grabar
+registrar estas partidas, para qué todos podamos verla, como para poder grabar
 nuestras propias partidas y poder ver nuestros errores una vez acabada, para así
 mejorar en este juego. 
+
 
 \section{Objetivos} 
 
 Los objetivos de este proyecto son: 
+
 \begin{itemize}
-    \item Jugar contra una máquinas al go en un tablero físico. 
+    \item Jugar contra una máquina al go en un tablero físico. 
     \item Jugar contra otras personas a través de Internet, utilizando un
     tablero físico. 
     \item Capturar partidas de go completas, ya sea en torneos o en partidas
-    libres que juegues contra cualquier persona. 
+    libres con el que jugar contra cualquier persona. 
     \item Subir estas partidas capturadas en tiempo real a servidores de go. 
 \end{itemize}
 
 Para que esto sea posible, necesitaremos el siguiente hardware:
+
 \begin{itemize}
     \item Un brazo robótico. Para realizar los movimientos fisicos de la maquina.
-    \item Una cámara que grabe videos. Para la captacion del tablero y
+    \item Una cámara que grabe videos. Para la captación del tablero y
     movimientos del jugador oponente.
     \item Una placa Arduino. Para llevar el reloj, los turnos y poder coordinar
     el brazo con el ordenador en caso de ser necesario. 
@@ -192,58 +196,60 @@ Para que esto sea posible, necesitaremos el siguiente hardware:
     ejecutar el programa que realice todo el tratamiento de imágenes necesario.
 \end{itemize}
 
-%Imagen de la disposicion hardware correcta, que queremos que se use.
-%\includegraphics[scale=0.08]{hardware.jpg}
-
 Otros de los objetivos que tenemos con este proyecto, a parte de realizar las
-acciones anteriormente mencionadas, son: 
+acciones anteriormente mencionadas, son:
+
 \begin{itemize}
     \item Conocer y mejorar nuestros conocimientos del lenguaje de programación
     python, así como de algunas bibliotecas interesantes, como la biblioteca de
     OpenCv, la cual nos ayudará muchísimo en el tratamiento de imágenes, el cual
-    se encuentra actualmete en pleno auge. 
+    se encuentra actualmete en pleno auge.
     \item Al ser un proyecto donde trabajaremos más de una persona, entran en
-    juego el compañerismo, responsabilidad y comunicación. 
-    \item Aprender a utiliar un controlador de versiones distribuidos, para el
-    que utilizaremos Git. 
-    \item Aprendizaje de TDD, que también se encuentra ahora en pleno auge. 
-    \item Utilización de un gestor de proyectos como Redmine. 
-    \item Creación de la documentación del proyecto con Latex. 
+    juego el compañerismo, responsabilidad y comunicación.
+    \item Aprender a utilizar un controlador de versiones distribuidos, para el
+    que utilizaremos Git.
+    \item Aprendizaje de TDD, que también se encuentra ahora en pleno auge.
+    \item Utilización de un gestor de proyectos como Redmine.
+    \item Creación de la documentación del proyecto con Latex.
 \end{itemize}
 
 
-\section{Planificacion y fases del proyecto}
+\section{Planificación y fases del proyecto}
 
-En el desarrollo de este proyecto fin de carrera, han intervenido un conjunto de
-fases que abarcan desde el aprendizaje de las diferentes tecnologías hasta el
-desarrollo de un proyecto software como tal.
+\parskip 1ex
+
+En el desarrollo de este proyecto fin de carrera, han intervenido un conjunto
+de fases que abarcan desde el aprendizaje de las diferentes tecnologías hasta
+el desarrollo de un proyecto software como tal.
+
 Estas son las fases que se han seguido:
-\begin{itemize} 
+
+\begin{itemize}
 	\item Aprendizaje de hardware:
-    \begin{itemize} 
+    \begin{itemize}
         \item Robot industrial.
         \item Arduino.
         \item Cámaras.
     \end{itemize}
     \item Aprendizaje software:
-    \begin{itemize} 
-        \item Python. 
-        \item Opencv. 
+    \begin{itemize}
+        \item Python.
+        \item Opencv.
         \item TDD con python.
         \item Latex.
-        \item Git, controlador de versiones distribuido. 
+        \item Git, controlador de versiones distribuido.
         \item Otras herramientas que necesitemos durante el trascurso del
-        proyecto. 
+        proyecto.
     \end{itemize}
-    \item Como estructurar un proyecto de software libre 
-    \item Estructura interna del proyecto. 
-	\item Implementacion.
-	\item Creacion del manual del usuario.
+    \item Cómo estructurar un proyecto de software libre
+    \item Estructura interna del proyecto.
+	\item Implementación.
+	\item Creación del manual del usuario.
 	\item Desarrollo de las conclusiones obtenidas.
-	\item Desarrollo de las lineas futuras.
+	\item Desarrollo de las líneas futuras.
 	\item Preparación de la documentación de proyecto y defensa del proyecto.
-	 
 \end{itemize}
+
 
 \section{Conceptos}
 
@@ -253,8 +259,8 @@ El software libre (en inglés free software, aunque esta denominación también 
 confunde a veces con 'gratis' por la ambigüedad del término 'free' en el idioma
 inglés) es la denominación del software que respeta la libertad de los usuarios
 sobre su producto adquirido y, por tanto, una vez obtenido puede ser usado,
-copiado, estudiado, modificado, y redistribuido libremente. Según la Free
-Software Foundation, el software libre se refiere a la libertad de los usuarios
+copiado, estudiado, modificado, y redistribuido libremente. Según la textit{Free
+Software Foundation}, el software libre se refiere a la libertad de los usuarios
 para ejecutar, copiar, distribuir, estudiar, modificar el software y
 distribuirlo modificado.
 
@@ -275,10 +281,12 @@ Cualquiera puede hacer uso de él, siempre con fines legales y consignando su
 autoría original. Este software sería aquel cuyo autor lo dona a la humanidad o
 cuyos derechos de autor han expirado, tras un plazo contado desde la muerte de
 este, habitualmente 70 años. Si un autor condiciona su uso bajo una licencia,
-por muy débil que sea, ya no es del dominio público.
+por muy débil que sea, ya no es de dominio público.
 
 
 \subsection{¿Qué es el go?}
+
+\includegraphics[scale=0.50]{baduk.png}
 
 El go es un juego de mesa estratégico por turnos para dos jugadores. Es 
 también conocido como igo (japonés), weiqi (chino) o baduk (coreano). El go 
@@ -300,8 +308,8 @@ urgencia y planes a largo plazo más estratégicos.
 
 El go se originó en China hace más de 2 500 años y aunque no se sabe con
 exactitud cuándo fue inventado, hacia el 300 a.C. era ya un pasatiempo popular,
-como viene indicado en una referencia al juego en los Analectas de Confucio.
-Restos arqueológicos muestran que este antiguo juego se jugaba en un tablero de
+como viene indicado en una referencia al juego en Los Analectas de Confucio.
+Restos arqueológicos muestran que este antiguo juego se practicaba en un tablero de
 una cuadrícula de 17 x 17, pero en la época en la que el juego ya había llegado
 a Corea y Japón, sobre el Siglo VII, los tableros habituales eran ya de 19 x 19.
 
@@ -310,7 +318,7 @@ popularidad en otras partes del mundo. El go llegó a Europa a través de Japón
 por ello es más conocido internacionalmente por su nombre japonés.
 
 
-\subsection{¿Qué es un archivo .sgf?, para que sirve y como podemos abrirlo}
+\subsection{¿Qué es un archivo .sgf?, para qué sirve y como podemos abrirlo}
 
 \label{sgf} Un archivo .sgf es un archivo donde se guarda una partida de
 go. Como el formato es usado también para muchos juegos de tablero, está
@@ -318,7 +326,7 @@ bastante extendido y casi todos los programas de go lo soportan.
 
 El archivo .sgf nos sirve para comentar una partida y hacer pruebas directamente
 desde un programa. Otro de los muchos
-usos que tiene es guardar todas tus partidas para poder verlas en un futuro sin
+usos que tiene es guardar todas las partidas para poder verlas en un futuro sin
 ocupar apenas espacio en el disco. 
 
 Algunos programas que existen para abrir los .sgf pueden ser, por ejemplo,
@@ -330,6 +338,7 @@ en la actualidad una IA capaz de ganar a ningún profesional del go.
 \includegraphics[scale=0.33]{quarry.png}
 
 \chapter{Hardware}
+
 \section{Robot industrial}
 
 \subsection{Introducción}
@@ -349,7 +358,7 @@ idea común acerca de lo que es un robot industrial, no es fácil ponerse de
 acuerdo a la hora de establecer una definición formal. Además, la evolución de
 la robótica ha ido obligando a diferentes actualizaciones de su definición.
 
-La definición mas comúnmente aceptada posiblemente sea la de la Asociación de
+La definición más comúnmente aceptada posiblemente sea la de la Asociación de
 Industrias Robóticas (RIA), según la cual:
 
 \emph{Un robot industrial es un manipulador multifuncional reprogramable, capaz de
@@ -382,10 +391,10 @@ de percepción del entorno. Normalmente su uso es el de realizar una tarea de
 manera cíclica, pudiéndose adaptar a otra sin cambios permanentes en su
 material.}
 
-Por ultimo, la Federación Internacional de Robótica (IFR) distingue entre robot
+Por último, la Federación Internacional de Robótica (IFR) distingue entre robot
 industrial de manipulación y otros robots:
 
-\emph{Por robot industrial de manipulación se entiende una maquina de manipulación
+\emph{Por robot industrial de manipulación se entiende una máquina de manipulación
 automática, reprogramable y multifuncional con tres o más ejes que pueden
 posicionar y orientar materias, piezas, herramientas o dispositivos especiales
 para la ejecución de trabajos diversos en las diferentes etapas de la producción
@@ -399,7 +408,7 @@ como un brazo mecánico con capacidad de manipulación y que incorpora un contro
 más o menos complejo. Un sistema robotizado, en cambio, es un concepto más
 amplio. Engloba todos aquellos dispositivos que realizan tareas de forma
 automática en sustitución de un ser humano y que pueden incorporar o no a uno
-ovarios robots, siendo esto ultimo lo mas frecuente.
+o varios robots, siendo esto último lo más frecuente.
 
 \subsection{Historia}
 
@@ -439,9 +448,9 @@ labores como el ensamblaje, soldadura y desplazamiento de materiales.
 
 \subsection{Clasificación del robot industrial}
 
-Aunque nadie se pone totalmente de acuerdo en la forma de clasificar, ya que
-dependiendo de algunas características se clasifican de distinta forma. Una de
-las formas en la que podemos clasificarlos, sería la siguiente: 
+En general, los robots no tienen clasificación estandarizada, dependiendo de
+algunas características se podrían clasifican de distinta forma. Una de las
+formas en la que podemos clasificarlos, sería la siguiente: 
 \begin{itemize}
     \item Robots manipuladores
     Son sistemas mecánicos multifuncionales, con un sencillo sistema de control,
@@ -452,10 +461,10 @@ las formas en la que podemos clasificarlos, sería la siguiente:
     Son manipuladores que se limitan a repetir una secuencia de movimientos,
     previamente ejecutada por un operador humano, haciendo uso de un
     controlador manual o un dispositivo auxiliar. Programación gestual. 
-    Estos robots son los mas conocidos hoy día.
-    \item Robot de computadores
+    Estos robots son los más conocidos hoy día.
+    \item Robot de ordenadores
     Son manipuladores o sistemas mecánicos multifuncionales, controlados por un
-    computador, que habitualmente suele ser un microordenador. Programación textual. 
+    ordenador, que habitualmente suele ser un microordenador. Programación textual. 
     Ofrece grandes ventajas y exigen personal cualificado capaz de desarrollar
     programas similares a los de tipo informático.
     \item Robots inteligentes
@@ -497,7 +506,7 @@ otras palabras, las articulaciones permiten al manipulador realizar
 movimientos lineales o angulares. Existen dos tipos, lineal y rotacional. 
 
 La orientación de un eslabón del manipulador se determina
-mediante los elementos roll, pitch y yaw
+mediante los elementos roll, pitch y yaw.
 
 A la muñeca de un manipulador le corresponden los movimientos o grados de
 libertad siguientes: giro, elevación y desviación. No todas las muñecas pueden
@@ -538,7 +547,7 @@ Los más comunes son: teclado, monitor y caja de comandos.
 
 Los dispositivos de entrada y salida permiten introducir y, a su vez, ver los
 datos del controlador. Para mandar instrucciones al controlador y para dar de
-alta programas de control, comúnmente se utiliza una computadora adicional. Es
+alta programas de control, comúnmente se utiliza un ordenador adicional. Es
 necesario aclarar que algunos robots únicamente poseen uno de estos componentes.
 En estos casos, uno de los componentes de entrada y salida permite la
 realización de todas las funciones.
@@ -549,7 +558,7 @@ con otras máquinas-herramientas
 
 
 \subsubsection{Dispositivos especiales}
-Entre estos se encuentran los ejes que fácilitan el movimiento transversal del
+Entre estos se encuentran los ejes que facilitan el movimiento transversal del
 manipulador y las estaciones de ensamblaje, que son utilizadas para sujetar las
 distintas piezas de trabajo.
 
@@ -557,7 +566,7 @@ distintas piezas de trabajo.
 
 \subsection{Características principales}
 
-Las características mas relevantes de los robots podríamos decir que son las
+Las características más relevantes de los robots podríamos decir que son las
 siguientes:
 
 \begin{itemize}
@@ -615,7 +624,7 @@ libertad, definen la zona de trabajo del robot, característica fundamental en
 las fases de selección e implantación del modelo adecuado.
 
 La zona de trabajo se subdivide en áreas diferenciadas entre sí, dependiendo de
-la accesibilidad del del elemento terminal.
+la accesibilidad del elemento terminal.
 
 El volumen de trabajo de un robot se refiere únicamente al espacio dentro del
 cual puede desplazarse el extremo de su muñeca. Para determinar el volumen de
@@ -664,8 +673,8 @@ soldadura y mecanizado es común precisar capacidades de carga superiores a los
 
 \subsubsection{Velocidad}
 
-Se refiere a la velocidad máxima alcanzable por el punto de centrode la
-herramienta o por las las articulaciones.
+Se refiere a la velocidad máxima alcanzable por el punto de centro de la
+herramienta o por las articulaciones.
 En muchas ocasiones, una velocidad de trabajo elevada, aumenta
 extraordinariamente el rendimiento del robot, por lo que esta magnitud se valora
 considerablemente en la elección del mismo. En tareas de soldadura y
@@ -682,7 +691,7 @@ ser, según la energía que consuma, de los siguientes tipos:
     \item Los actuadores de tipo olehidráulico se destinan a tareas que requieren una gran
     potencia y grandes capacidades de carga. Dado el tipo de energía que emplean, se
     construyen con mecánica de precisión y su coste es elevado. Los robots
-    hidráulicos se diseñan formando un conjunto compacto la central hidráulica, la
+    hidráulicos se diseñan formando un conjunto compacto: la central hidráulica, la
     cabina electrónica de control y el brazo del manipulador.
     \item La energía neumática dota a sus actuadores de una gran velocidad de respuesta
     junto a un bajo coste, pero su empleo está siendo sustituido por elementos
@@ -704,7 +713,7 @@ controlan diversos aspectos del funcionamiento del manipulador:
 
 \begin{itemize}
     \item Control de la velocidad y la aceleración.  
-    \item Saltos de programa condicionales.  
+    \item Saltos de programas condicionales.  
     \item Temporizaciones y pausas.  
     \item Edición, modificación, depuración y ampliación de programas.  
     \item Funciones de seguridad.  
@@ -716,19 +725,19 @@ controlan diversos aspectos del funcionamiento del manipulador:
 \subsection{Selección de robot industrial}
 
 \begin{itemize}
-    \item El tipo de nuestro robot debe de ser con control por computador, ya
+    \item El tipo de nuestro robot debe de ser con control por ordenador, ya
     que necesitamos programar hacia donde queremos que vaya en cada momento, sin
     tener que pulsar botones manualmente. 
     \item Los grados de libertad tenemos suficiente con 6, como suelen ser los
     más típicos. 
     \item El volumen de trabajo buscado es aproximadamente de 0,50 metros
     cúbicos, por lo tanto, podríamos buscar un robot cartesiano o uno de
-    configuración polar. Nosotros descartamos el cartesiano por que las
+    configuración polar. Nosotros descartamos el cartesiano porque las
     dimensiones de este para estar fuera del tablero y no estorbar tenían que
     ser muy grandes, por lo tanto, buscamos un robot con configuración polar que
-    llegue al menos a una distancia de 0'5 metros. 
+    llegue al menos a una distancia de 0,5 metros. 
     \item Respecto a la precisión de este robot, tenemos que buscar uno que
-    tenga bastante, ya que las piedras en una partidade go se encuentran muy
+    tenga bastante, ya que las piedras en una partida de go se encuentran muy
     juntas y una diferencia de pocos milímetros podría entorpecer demasiado. 
     \item Respecto a la capacidad de carga que necesitamos es ínfima, por que
     las piedras de go no pesan mucho. 
@@ -749,8 +758,8 @@ necesitamos, tienen un precio mayor de los 1000 \euro.
 También hemos encontrado un robot que cuesta solamente unos 50-60 \euro, pero es
 lento, poco preciso y con un volumen que no llega ni a la mitad del tablero.
 
-La conclusión a la que llegamos llegado a este punto fue la de abandonar la
-parte de hacer el robot. 
+Por los motivos anteriormente expresados se llegó a un punto concluyente en el
+que se tomó la decisión de no abordar la fase de elaboración del robot.
 
 
 
@@ -758,11 +767,11 @@ parte de hacer el robot.
 \section{Arduino}
 \subsection{Introducción}
 En este proyecto, arduino se utilizará para la creacion del reloj, que indica el
-tiempo que le queda a cada jugador, a su vez arduino le indicara al programa
+tiempo que le queda a cada jugador, a su vez arduino le indicará al programa
 cuando ha terminado el turno de un jugador y cuando ha empezado otro.
 
-Tambien como hemos visto anteriormente, dado a la diversidad de brazos que hay
-en el mercado, es muy probable que se use para el manejo del brazo que se usara
+También como hemos visto anteriormente, dado a la diversidad de brazos que hay
+en el mercado, es muy probable que se use para el manejo del brazo que se usará
 para hacer los movimientos físicos.
 
 Arduino es una plataforma de electrónica abierta para la creación de prototipos
@@ -771,9 +780,9 @@ artistas, diseñadores, aficionados y cualquiera interesado en crear entornos u
 objetos interactivos.
 
 Arduino puede tomar información del entorno a través de sus pines de entrada de
-toda una gama de sensores y puede afectar aquello que le rodea controlando
+toda una gama de sensores y puede afectar a aquello que le rodea controlando
 luces, motores y otros actuadores. El microcontrolador en la placa Arduino se
-programa mediante el lenguaje de programación Arduino (basasdo en Wiring) y el
+programa mediante el lenguaje de programación Arduino (basado en Wiring) y el
 entorno de desarrollo Arduino (basado en Processing). Los proyectos hechos con
 Arduino pueden ejecutarse sin necesidad de conectar a un ordenador, si bien
 tienen la posibilidad de hacerlo y comunicar con diferentes tipos de software
@@ -781,12 +790,11 @@ tienen la posibilidad de hacerlo y comunicar con diferentes tipos de software
 
 Las placas pueden ser hechas a mano o compradas montadas de fábrica; el software
 puede ser descargado de forma gratuita. Los ficheros de diseño de referencia
-(CAD) están disponibles bajo una licencia abierta, así pues eres libre de
-adaptarlos a tus necesidades.
+(CAD) están disponibles bajo una licencia abierta, así pues, eres libre de
+adaptarlos a sus necesidades.
 Arduino recibió una Mención Honorífica en la sección Digital Communities de la
 edición del 2006 del Ars Electronica Prix. El equipo Arduino (Arduino team) es:
 Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino, and David Mellis.
-Credits
 
 \subsection{¿Que es Arduino?}
 
@@ -854,7 +862,9 @@ amateurs:
     entender cómo funciona y ahorrar algo de dinero.
 \end{itemize}
 
+
 \subsection{Modelos}
+
 \subsubsection{Arduino Duemilanove}
 
 \includegraphics[scale=0.5]{ArduinoDuemilanove.jpg}
@@ -862,9 +872,7 @@ amateurs:
 Esta es la ultima revisión de la placa Arduino USB básica. Se conecta al
 ordenador con un cable USB estándar y contiene todo lo necesario para programar
 la placa. Se puede ampliar con gran variedad de shields: placas de extensión con
-funcionalidades especificas. 
-
-
+funcionalidades especificas.
 
 
 \begin{tabular}{||l | l ||}
@@ -907,7 +915,7 @@ Velocidad de reloj & 16 MHz\\
 
 \includegraphics[scale=0.6]{ArduinoDiecimilaComponents.jpg}
 
- Esta es la revisión anterior de la placa USB básica. 
+ Esta es la revisión anterior de la placa USB básica.
 
 \begin{tabular}{||l | l ||}
 \hline
@@ -1073,7 +1081,7 @@ Frecuencia de Reloj & 8 MHz\\
 
 \includegraphics[scale=0.6]{arduino_mini.jpg}
 
-La placa Arduino mas pequeña. Funciona perfectamente en una placa de desarrollo
+La placa Arduino más pequeña. Funciona perfectamente en una placa de desarrollo
 o en aplicaciones donde el espacio es primordial. Se conecta al ordenador usando
 el adaptador Mini USB. 
 
@@ -1117,7 +1125,7 @@ controladores se incluyen con el software de Arduino).
 \includegraphics[scale=0.6]{ArduinoPro.jpg}
 
 Esta placa esta diseñada para aquellos que quien dejar la placa incrustada en el
-proyecto: es mas barata que la Diecimila y se puede alimentar fácilmente con
+proyecto: es más barata que la Diecimila y se puede alimentar fácilmente con
 baterías. pero requiere de componentes extra y montaje. 
 
 \begin{tabular}{||l | l ||}
@@ -1196,24 +1204,24 @@ componentes en la tienda de la esquina.
 
 
 \section{Cámaras}
-\subsection{Introduccion}
+\subsection{Introducción}
 
 Para este proyecto, la cámara es fundamental, ya que esta se encargara de la
-captacion de imagenes, tanto para la deteccion del tablero y las piedras del
+captación de imagenes, tanto para la detección del tablero y las piedras del
 jugador como para situar correctamente la piedra que queremos colocar en su
 sitio.
 
-Debido a que usaremos Opencv para la seleccion de cámaras, los diferentes
+Debido a que usaremos Opencv para la selección de cámaras, los diferentes
 modelos segun la conexion no entran en el ambito de este proyecto, dejando una
-clara importancia a la resolucion de la imagen, que en gran parte viene dada por
-el tipo de lente y el metodo de captacion 
+clara importancia a la resolución de la imagen, que en gran parte viene dada por
+el tipo de lente y el metodo de captación 
 
 La mayor parte de las cámaras digitales se pueden conectar directamente al
 ordenador para transferir su información. Antiguamente las cámaras tenían que
 conectarse a través de un Puerto serie. El USB es el método más utilizado aunque
 algunas cámaras utilizan un puerto FireWire o Bluetooth. La mayor parte de las
 cámaras son reconocidas como un dispositivo de almacenamiento USB. Algunos
-modelos, por ejemplo la Kodak EasyShare One puede conectarse a la computadora
+modelos, por ejemplo la Kodak EasyShare One puede conectarse al ordenador
 vía red inalámbrica por el protocolo 802.11 (Wi-Fi).
 
 \subsection{Historia}
@@ -1242,13 +1250,13 @@ diciembre de 1975. Este prototipo de cámara fotográfica era un ejercicio
 técnico, no previsto para la producción.
 \subsubsection{La verdadera cámara digital }
 La primera cámara fotográfica digital verdadera que registraba imágenes en un
-archivo de computadora fue probablemente el modelo DS-1P de Fuji, en 1988, que
+archivo de ordenador fue probablemente el modelo DS-1P de Fuji, en 1988, que
 grababa en una tarjeta de memoria interna de 16 MB y utilizaba una batería para
 mantener los datos en la memoria. Esta cámara fotográfica nunca fue puesta en
 venta en los Estados Unidos. La primera cámara fotográfica digital disponible en
 el mercado fue la Dycam Model 1, en 1991, que también fue vendida con el nombre
 de Logitech Fotoman. Usaba un sensor CCD, grababa digitalmente las imágenes, y
-disponía de un cable de conexión para descarga directa en la computadora.
+disponía de un cable de conexión para descarga directa en el ordenador.
 En 1991, Kodak lanzó al mercado su modelo DCS-100, el primero de una larga línea
 de cámaras fotográficas profesionales SLR de Kodak que fueron basadas, en parte,
 en cámaras para película, a menudo de marca Nikon. Utilizaba un sensor de 1,3
@@ -1349,7 +1357,7 @@ diversas técnicas para optimizar el uso de ancho de banda disponible,
 perdiendo calidad de imagen pero ganando en velocidad de
 transferencia en imágenes por segundo.
 
-\subsection{Métodos de captacion de imagen}
+\subsection{Métodos de captación de imagen}
 
 Desde que las primeras cámaras digitales fueron introducidas al mercado, han
 existido tres métodos principales de capturar la imagen, según configuración de
@@ -1427,10 +1435,11 @@ Todo esta funcinalidad está accesible a través de la interfaz de
 programación de la cámara (API) para el desarrollo de aplicaciones de
 alto nivel.
 Ademas debido a las tecnologias sin cables, estas cámaras no necesitarian cables
-para ser conectadas con un PC, haciendo que la colocacion de la cámara en un
-lugar apropiado para la correcta captacion del tablero fuera mucho mas sencillo.
+para ser conectadas con un PC, haciendo que la colocación de la cámara en un
+lugar apropiado para la correcta captación del tablero fuera mucho más sencillo.
 
 \chapter{Software}
+
 \section{Python}
 
 Python es un Lenguaje de programación interpretado cuya filosofía hace hincapié
@@ -1554,6 +1563,7 @@ utilización es cada vez mayor en la actualidad. La Kinect utiliza esta
 biblioteca para muchas cosas, ya que fácilita mucho la programación. 
 
 \chapter{Herramientas utilizadas}
+
 \section{Latex}
 
 LaTeX es un sistema de composición de textos que está formado mayoritariamente 
@@ -1606,13 +1616,13 @@ diseñado
 específicamente para reemplazar a CVS. Es software libre bajo una licencia de
 tipo Apache/BSD y se le conoce también como svn por ser el nombre de la
 herramienta utilizada en la línea de comando.  Una característica importante de
-Subversion es que, a diferencia de CVS, los demas archivos con versionamiento no
+Subversion es que, a diferencia de CVS, los demás archivos con versionamiento no
 tienen cada uno un número de revisión independiente, en cambio, todo el
 repositorio tiene un único número de versión que identifica un estado común de
 todos los archivos del repositorio en un instante determinado del repositoro que
 se esta trabajando. Subversion puede acceder al repositorio a través de redes,
-lo que le permite ser usado por personas que se encuentran en distintas
-computadoras. A cierto nivel, la posibilidad de que varias personas puedan
+lo que le permite ser usado por personas que se encuentran en distintos
+ordenadores. A cierto nivel, la posibilidad de que varias personas puedan
 modificar y administrar el mismo conjunto de datos desde sus respectivas
 ubicaciones fomenta la colaboración. Se puede progresar más rápidamente sin un
 único conducto por el cual deban pasar todas las modificaciones. Y puesto que el
@@ -1702,7 +1712,7 @@ la diferencia de que uno está escrito en C y otro en python, por lo cual,
 intentamos utilizar en un principio cProfiler, que funciona con mayor rapidez, y
 si este no podemos importarlo, utilizamos Profiler, que está escrito en
 python. Esto lo utilizamos ejecutando nuestro proyecto, con lo cual tenemos que
-ir interactuando con él para que vaya haciendo las llamadas necesarias y
+ir interactuando con él para qué vaya haciendo las llamadas necesarias y
 comprobar que funciones tardan más y donde pueden existir cuellos de botella. 
 El hotshot lo utilizamos por que al realizar los test, la herramienta de
 nosetest tiene la funcionalidad de comprobar el rendimiento del código
@@ -1764,7 +1774,7 @@ programa que actualmente más plugins tiene, y es altamente configurable, para
 adecuarse al perfil de cada programador, cosa que nos ha gustado muchísimo. 
 
 
-\subsection{Servidores de Go: IGS y KGS} %TODO añadir otros que hay, LLGS 
+\subsection{Servidores de Go: IGS y KGS}
 
 \subsubsection{El servidor IGS}
 
@@ -1773,7 +1783,7 @@ en Internet. Podemos encontrar cientos de jugadores de dintintas partes del
 mundo y diferentes nivelesde juego, desde principiantes hasta profesionales. 
 
 \parskip 2ex
-Ademas este servidor ofrece un protocolo de comunicaciones abierto y muy bien
+Además este servidor ofrece un protocolo de comunicaciones abierto y muy bien
 documentado, el cual hemos utilizado para subir la partida mientras se va
 jugando. 
 
@@ -1857,7 +1867,7 @@ operativo que más se adecuaba a nuestros gustos.
 Es un gestor de ventanas para X Window System desarrollado en C y lenguaje de
 programación Lua. Este último también se utiliza para configurar y ampliar el
 gestor de ventanas. Al igual que muchos gestores de ventanas del tipo tiling
-window manager (tipo mosaico), hace lo posible para que el usuario pueda manejar
+window manager (tipo mosaico), hace lo posible para qué el usuario pueda manejar
 productivamente las ventanas sin el uso del ratón.  El programa se incorpora en
 los repositorios de Debian GNU/Linux desde la versión lenny en su versión 2. La
 nueva versión, 3.4.2 For The Restless, se encuentra en los repositorios de
@@ -1899,7 +1909,7 @@ La realización de este proyecto a supuesto muchísimos cambios en las
 implementaciones, ya que hemos tenido que desechar muchas de ellas por motivos
 diferentes que nos hemos ido encontrando. Hemos decidido ir explicando la
 evolución y aprendizaje de cada parte de software del proyecto, añadiendo
-despues la api correspondiente a esa parte. A continuacion adjuntamos la api del
+despues la api correspondiente a esa parte. A continuación adjuntamos la api del
 main.
 
 \include{src.rocamgo-module}
@@ -1911,17 +1921,17 @@ video grabado anteriormente para comenzar la captura y subida de la partida a
 Internet.
 
 La opción de cargar un video nos ha servido mayormente a los desarrolladores
-para testear si todo funcionaba correctamente cargando videos previamente
+para testear si todo funcionaba correctamente, hemos ido cargando videos previamente
 grabados con situaciones reales que podemos encontrarnos en cualquier tipo de
-partidas. 
+partidas.
 
 
 \section{Detección de la cámara} 
 
 Funcionalidad que nos busca las cámaras que se encuentren enchufadas al PC y nos
-las devuelve para que seleccionemos la que queramos utilizar. Si no existen
+las devuelve para qué seleccionemos la que queramos utilizar. Si no existen
 cámaras conectadas al PC, tendremos que usar la funcionalidad de utilizar un
-video como captura, para ver el funcionamiento de este proyecto.  
+video como captura para ver el funcionamiento de este proyecto.  
 
 \subsection{1ª Implementación: detección de cámaras solo en Linux}
 
@@ -1931,20 +1941,21 @@ si enchufabas y desenchufabas alguna cámara anteriormente, daba fallos, ya que
 capturábamos las cámaras utilizando el dispositivo de video que se encontraban
 en las direcciones /dev/videoX, siendo X el número de la cámara. Esta fué una
 solución rápida y fácil a la hora de seleccionar cámaras, y fue posible gracias
-al conocimiento sobre como funcionan los dispositivos el Linux y donde se
+al conocimiento sobre como funcionan los dispositivos en Linux y donde se
 encuentran ubicados. 
 
 Respecto a la selección de la cámara, no hemos utilizado ninguna interfaz
 visual, las ventanas donde seleccionamos las cámara las creamos con OpenCv,
 aunque pensamos que en un futuro podríamos utilizar alguna interfaz. 
 
-\paragraph{2ª Implmentación: detección de cámaras utilizando OpenCv}
+\subsection{2ª Implmentación: detección de cámaras utilizando OpenCv}
 
 Esta implementación funciona bastante bien, ya que no solo funciona en Linux, si
 no que también funciona en Windows y debería de funcionar en MAC. No hemos
-podido hacer la comprobación ya que no disponemos de ningún MAC. Tenemos que
-destacar que esta forma es una forma mejorada de detectar las cámaras, ya que no
-hay problemas si hemos enchufado y desenchufado cámaras anteriormente.  
+podido hacer la comprobación en MAC ya que no disponemos de ningún dispositivo
+con este sistema operativo. Tenemos que destacar que esta forma es una forma
+mejorada de detectar las cámaras, ya que no hay problemas si hemos enchufado y
+desenchufado cámaras anteriormente.
 
 En esta segunda implementación no hemos cambiado la forma de seleccionar las
 cámaras y seguimos utilizando OpenCv para la selección. 
@@ -1961,9 +1972,9 @@ más o menos bien la mayoría de las veces, ya que con la última implementació
 seguimos encontrando algunos pequeños errores en la detección de tablero
 diferentes. 
 
-\paragraph{1ª Implementación: detección mediante líneas}
+\subsection{1ª Implementación: detección mediante líneas}
 
-En este intento de implementación intentamos buscar las lineas del tablero 
+En este intento de implementación intentamos buscar las líneas del tablero 
 mediante el tratamiento de imágenes y la función HoughLines de OpenCv, para 
 luego buscar las intersecciones del tablero y así tener el tablero detectado. 
 Pensamos que el tratamiento de esas líneas sería sencillo de procesar, pero al
@@ -1975,21 +1986,21 @@ posición del tablero.
 \includegraphics[scale=0.6]{detect-lineas.png}
 
 Otro de los problemas era que el tablero estaría casi siempre con un poco de
-perspectiva, y entonces no sabríamos que lineas escoger, ya que el tablero, al
-ser de madera contiene muchas betas y podría detectar bastantes lineas que no
+perspectiva, y entonces no sabríamos que líneas escoger, ya que el tablero, al
+ser de madera contiene muchas betas y podría detectar bastantes líneas que no
 serían las buscadas. 
 Más adelante nos dimos cuenta de que existe otro problema con esta
 implementación, y es que cuando existan piedras encima del tablero, estas líneas
 serán tapadas, evitando así poder detectar el tablero más adelante.
  
 
-\paragraph{2ª Implementacion: detección mediante intersecciones}
+\subsection{2ª Implementación: detección mediante intersecciones}
 
 Despues de entender que la forma anterior de buscar el tablero no era efectiva,
 decidimos ponernos a trabajar en otra idea. Esta vez decidimos hacerlo, atacando
 a las intersecciones, usando templates. Esta forma consiste en buscar en la
-imagen que recibimos de la cámara, el template de una interseccion (imagen
-que contine solo la interseccion). Con esto conseguíamos detectar casi a la
+imagen que recibimos de la cámara, el template de una intersección (imagen
+que contine solo la intersección). Con esto conseguíamos detectar casi a la
 perfección casi todas las intersecciones, y las que no, podíamos sacarlas
 mediante una malla y unos cuantos de cálculos.
 
@@ -2005,24 +2016,24 @@ implementación, el de que las piedras taparían en el transcurso de la partida
 estas intersecciones, con lo cual no podríamos encontrarlas utilizando
 templates.
 
-\paragraph{3ª Implementación: Haartraining, aprendizaje}
+\subsection{3ª Implementación: Haartraining, aprendizaje}
 
 Tras dos intentos fallidos, comenzamos a estudiar la siguiente idea, sacada de
 distintos programas de cámaras de fotos, los cuales detectan y recuadran la
 cara. Esta forma de hacerlo se llama HaarTraining, y consiste en enseñarle al
 ordenador a buscar un tablero, introduciendo en un programa de aprendizaje
-imágenes donde estén los tableros, indicandole la posicion. En ese proceso de
-aprendizaje tambien hay que enseñarle fotos que no contengan el tablero.
+imágenes donde estén los tableros, indicandole la posición. En ese proceso de
+aprendizaje también hay que enseñarle fotos que no contengan el tablero.
 Después de estudiarlo, nos dimos cuenta de varias cosas que hicieron que no
 continuásemos por este camino. La primera de ellas es el tiempo dedicado a la
 realización de las fotos y posterior análisis manual, para indicar el lugar del
-tablero. La segunda el tiempo de ejecucion del aprendizaje, suele llevar unas
+tablero. La segunda el tiempo de ejecución del aprendizaje, suele llevar unas
 dos semanas, en un ordenador potente. Y por último, la tercea y más importante,
 es que despues de las dos primeras, nadie te aseguraba con una minima certeza 
 que esta posibilidad fuese a funcionar.
 
 En la siguiente imagen podemos ver un claro ejemplo que usan las cámaras de foto
-con este tipo de implementacion.
+con este tipo de implementación.
 
 \includegraphics[scale=1]{haartraining.jpg} 
 
@@ -2031,7 +2042,7 @@ con 3000 como mínimo, que es lo que piden, y como esperábamos, fue un fracaso,
 no encontraba tablero ninguno con tan pocas imágenes de aprendizaje. 
 
 
-\paragraph{4ª Implementación: detección mediante contornos}
+\subsection{4ª Implementación: detección mediante contornos}
 
 Finalmente, y tras tres intentos fallidos, decidimos hacerlo buscando contornos.
 Gracias a una función de OpenCv conseguimos encontrar la forma que menos fallos
@@ -2041,7 +2052,7 @@ pedir para la correcta ejecución de este programa es que el fondo donde se
 coloque el tablero, sea lo más liso posible, cosa que podemos conseguir con
 fácilidad utilizando un mantel o hule, aunque no es totalmente necesario, pero
 fácilita y ayuda al mejor funcionamiento del programa. Debido a la gran cantidad
-de test que ha pasado correctamente esta implementacion y dado que los test que
+de test que ha pasado correctamente esta implementación y dado que los test que
 han fallado son debido a la mala calidad de las imágenes (sobre todo a causa de
 la luminosidad de las imágenes), hemos considerado que es la correcta. Además,
 perdemos el problema de la perspectiva, pues lo que detectamos es el contorno.
@@ -2069,7 +2080,7 @@ hicimos al principio, no nos servían, por eso, el problema de poner piedras en
 el transcurso de la partida y que se tapasen las interesecciones, nos venía muy
 mal. 
 
-\paragraph{1ª Implementación: detección de cambios en los bordes del tablero}
+\subsection{1ª Implementación: detección de cambios en los bordes del tablero}
 
 En principio, para detectar si el tablero se movía o no, buscamos que existieran
 cambios en los bordes del tablero, ya que si los movemos, estos deben de
@@ -2083,7 +2094,7 @@ una mano, descartamos esta opción. También comprobamos que cualquier cambio de
 luz se detectaría como un movimientodel tablero, así que la entrada y salidas de
 sombras del tablero también afectaban. 
 
-\paragraph{2ª Implementación: cambio de esquinas detectados} 
+\subsection{2ª Implementación: cambio de esquinas detectados} 
 
 Esta segunda implementación nos pareció impensable la primera vez, ya que lo que
 hacemos es detectar contornos durante todo el tiempo, y cada vez que los
@@ -2115,7 +2126,7 @@ factible con los contornos, hemos utilizado esta forma.
 \section{Idealización del tablero} 
 
 Una vez detectado el tablero correctamente y antes de ponernos a buscar piedras
-por toda la imagen, llegamos a la conclusion que seria mas conveniente conseguir
+por toda la imagen, llegamos a la conclusion que seria más conveniente conseguir
 el tablero en un modelo ideal, como si las imágenes que recibimos fuesen tomadas
 como nosotros las queremos, que es desde arriba, sin perspectivas.  Gracias a
 OpenCv, esto lo conseguimos con las funciones WarpPerspective y
@@ -2124,7 +2135,7 @@ una perspectiva perfecta, recortando las partes de la imagen donde no está el
 tablero, haciendo asi que la búsqueda de piedras sea una labor mucho más
 sencilla. Para conseguir que esta función nos sirva, tuvimos que hacer un testeo
 bastante amplio, pues las imágenes necesitan ser tratadas anteriormente para el
-correcto funcionamiento de dicha funcion, con filtros como Canny y Smooth, para
+correcto funcionamiento de dicha función, con filtros como Canny y Smooth, para
 detectar bordes o suavizar la imagen. 
 
 Los problemas que hemos tenido principalmente aquí han sido que los puntos
@@ -2136,8 +2147,8 @@ btener el tablero, y conseguimos que siempre generara una perspectiva adecuada.
 
 \section{Detección de piedras} 
 
-Una vez detectado el tablero correctamente, pensabamos que la deteccion de
-piedras iba a ser mucho mas fácil, aun así, la detección de piedras tambien ha
+Una vez detectado el tablero correctamente, pensabamos que la detección de
+piedras iba a ser mucho más fácil, aun así, la detección de piedras también ha
 pasado por un ciclo evolutivo de modificaciones hasta madurar lo suficiente la
 idea, para conseguir finalmente un programa que funcione tal y como teniamos
 pensado desde un primer momento. En un principio nos pusimos manos a la obra con
@@ -2148,7 +2159,7 @@ correcto en el que han sido colocadas y el color de la piedra, tenemos que tener
 en cuenta que también existe la posibilidad de que una piedra se retire del
 tablero, lo cual ha conseguido que las implementciones se compliquen más aun.   
 
-\paragraph{1ª implementación: detección de piedras por turnos}
+\subsection{1ª implementación: detección de piedras por turnos}
 
 En los inicios del programa, las piedras se detectaban de una forma poco
 ortodoxa, pues en gran parte, los jugadores debían decirnos cuando terminaban su
@@ -2166,15 +2177,15 @@ metida.
 Esta forma fue eliminada al poco tiempo, pues una de nuestras ideas, es que el
 jugador no tenga que preocuparse del programa, pues está concentrado jugando.
 Además, los factores externos eran demasiados, pues pensamos en modificar los
-relojes de tiempo, para que el propio botón que indicaba al reloj el final del
+relojes de tiempo, para qué el propio botón que indicaba al reloj el final del
 tiempo, fuese el mismo que nos indicase a nosotros el momento de tomar la foto.
 Con todo esto, lo unico que podiamos conseguir es que nuestro programa no fuese
 funcional, ya que nadie podria hacer uso de nuestro programa sin dicho reloj.
 Tras pensar distintas formas de solucionar los problemas que daba dicha
-implementacion, decidimos cambiar por completo la idea.  
+implementación, decidimos cambiar por completo la idea.  
 
 
-\paragraph{2ª Implementación: detección por diferencias sin turnos}
+\subsection{2ª Implementación: detección por diferencias sin turnos}
 
 En esta segunda implementación pensamos en suprimir el uso de botones y
 decidimos buscar la diferencia de cada imagen con la anteior, buscando círculos
@@ -2189,7 +2200,7 @@ cuenta, al cual había que añadirle la búsqueda de círculos, suma que es
 demasiado elevada y creaba un tiempo de retreso que se iba acumulando, haciendo
 que en determinado momento fallase el programa.
 
-\paragraph{3ª Implementación: detección por circuferencias y estadística}
+\subsection{3ª Implementación: detección por circuferencias y estadística}
 
 Y como dice el refrán, a la tercera va la vencida. Esta vez, ya teniamos más
 experiencia y el tablero ya estaba idealizado. Por esto, pensamos que la mejor
@@ -2199,16 +2210,16 @@ temporal, vamos buscando si los círculos se quedan de forma estable en una
 posición, y en tal caso, podemos asegurar que la piedra esta colocada en ese
 lugar, esta solución, ademas, permite llevar bien la cuenta de los turnos y el
 momento en el que se puso la piedra, pues aunque tenga que pasar un tiempo para
-asegurar que está la piedra, sabemos el momento en el que se puso. Ademas el
+asegurar que está la piedra, sabemos el momento en el que se puso. Además el
 coste de ejecución es asumible.
 
 Hemos detectado después de varias ejecuciones que cuando tenemos en el tablero
 una cantidad de piedras muy grande, se comienza a utilizar mucho procesador,
 pero no sabemos exactamente porque y tenemos que investigar un poco más. 
 
-\paragraph{Buscando colores}
+\subsection{Buscando colores}
 
-Como en cada parte del proyecto, esta tambien ha tenido su evolución desde que
+Como en cada parte del proyecto, esta también ha tenido su evolución desde que
 empezamos a plantearlo hasta el resultado final, mucho más pulido y funcional.
 En un principio y dado que los jugadores nos iban a ir marcando el ritmo de
 turnos, simplemente deberíamos de saber si le tocaba colocar a blancas o negras, como
@@ -2228,7 +2239,8 @@ asi, los test dan fallos a veces, para evitar esto, tenemos que variar un umbral
 para el color blanco, el cual tenemos pensado en un futuro que se detecte
 automáticamente de alguna forma.
 
-\include{src.search_stones-module} 
+\include{src.search_stones-module}
+
 \include{src.stone-module}
 
 \section{Conexión con el servidor}
@@ -2247,9 +2259,9 @@ protocolo es cerrado.
 
 \include{src.igs-module}
 
-\section{Creacion del archivo .sgf}
+\section{Creación del archivo .sgf}
 
-Para la creacion del archivo .sgf no tuvimos muchos problemas ya que es un
+Para la creación del archivo .sgf no tuvimos muchos problemas ya que es un
 archivo de texto que esta estandarizado y sigue una reglas fáciles de seguir.
 Solo hemos tenido como trabajar con ficheros en python y escribir unas líneas de
 código para conseguir lo deseado.
@@ -2259,31 +2271,38 @@ cambiar el sistema de nombramiento para subir una partida a IGS, del sistema de
 nombramiento que usamos para guardar el sgf. 
 
 \include{src.kifu-module}
+
 \chapter{Diagrama de gant}
-A continuación vemos el diagrama de gant, con la explicacion de las horas aproximadas invertidas por cada uno.
+
+A continuación vemos el diagrama de gant, con la explicación de las horas aproximadas invertidas por cada uno.
 
 \includegraphics[scale=0.9]{gant.png}\\
-\includegraphics[scale=0.9]{gant2.png}
+
+\includegraphics[scale=1.4]{gant2.png}
 
 \chapter{Manual de usuario}
 
-Descargar el proyecto desde el repositorio Git: TODO % TODO
-Una vez descargado ejecutar python src/rocamgo.py , el cual será una especie de
-comandos.
-
-\section{Guia de instalación} 
+\section{Guía de instalación} 
 
 Para la instalación del proyecto, al menos de lo que se encuentra activo
 actualmente, porque como hemos comentado, el proyecto no está terminado, pero
 podremos ver los últimos cambios utilizando la última versión disponible en
 GitHub del proyecto. Este proyecto se ha probado solamente en Linux, aunque
-debería de funcionar en otros Sistemas operativos, ya que se ha realizado la
-programación pensando en ello. 
-La guía de instalación la haremos pensado en que se tiene un entorno Linux, que
-es donde únicamente podemos afirmar que funciona el proyecto. Comenzamos
-descargándonos el proyecto desde GitHub, para ello necesitaremos tener instalado
-git, que en las distribuciones de Linux basadas en debian, podemos instalarlo de
-la siguiente manera: 
+debería de funcionar en otros Sistemas Operativos, ya que se ha programado
+con esa intención.
+
+Para que funcione el proyecto, necesitaremos instalar unas cuantas de bibliotecas
+que hemos usado: OpenCv, unittest, nosetest y numpy.
+
+Para su instalación, ejecutamos el siguiente comando:
+
+\begin{verbatim}
+sudo apt-get install python-unittest2 python-OpenCv python-nose python-numpy
+\end{verbatim}
+
+Comenzamos descargándonos el proyecto desde GitHub, para ello necesitaremos
+tener instalado git, que en las distribuciones de Linux basadas en debian,
+podemos instalarlo de la siguiente manera: 
 
 \begin{verbatim}
 sudo apt-get install git
@@ -2296,79 +2315,43 @@ git clone git@github.com:Virako/Rocamgo.git
 \end{verbatim}
 
 Dentro de esta carpeta nos encontraremos con los últimos cambios realizados en
-el proyecto. Para hacerlo funcionar deberemos ejecutar desde la carpeta raiz,
+el proyecto.
+
+
+\section{Cómo utilizarlo}
+
+Para hacerlo funcionar deberemos ejecutar desde la carpeta raiz,
 que se llamará Rocamgo si no se ha cambiado, el siguiente comando:
 
 \begin{verbatim}
 python src/rocamgo.py
 \end{verbatim}
 
-En estos momentos, las versión que se encuentra en el repositorio, para hacer
-las pruebas no utilizamos cámaras, sino que utilizamos un video, que es con lo
-que hacemos las pruebas. Como el video al cual le hacemos las pruebas ocupa 3GB,
-este archivo no lo adjuntamos, hay que pedírselo a los desarroladores. 
+Este comando nos devolverá la ayuda para ejecutar el programa utilizando una
+webcam o un video pasándole la ruta.
 
-Si queremos utilizar la cámara para hacer la prueba, deberemos de
-comentar/descomentar unas líneas del archivo rocamgo.py, que se encuentra dentro
-de src. Quedando la parte a cambiar de la siguiente manera: 
+Si seleccionamos la \textbf{''webcam''}, nos dará a elegir entre las webcam que tengamos, o
+si solo tenemos una, la selecciona por defecto.
 
-\begin{verbatim}
-def main():
-    # Select camera from computer
-    cam = Cameras()
-    cams_found = cam.check_cameras()
-    camera = cam.show_and_select_camera(); threshold=190
-    #camera = CaptureFromFile('prueba2.avi'); threshold=150 # Test videos
-    prev_corners = None
-    current_corners = None
-    good_corners = None
-    ideal_img = None
-    goban = Goban(GOBAN_SIZE)
+Antes de ejecutar el proyecto, debemos asegurarnos que tenemos preparado el
+terreno de juego, para ello necesitamos que el tablero este colocado en una
+superficie lo más lisa posible y la cámara conectada al PC donde se ejecutará
+el programa, a poder ser de una buena calidad, apuntando al tablero donde se
+jugará la partida.  Debemos intentar que la cámara enfoque correctamente al
+tablero, centrando este dentro de la imagen lo máximo posible. El programa será
+capaz de funcionar siempre y cuando en la imagen se vean correctamente todas
+las partes del tablero.
 
-    while camera: 
-        # Select image from camera 
-        img = camera.get_frame()
-        #img = QueryFrame(camera) # Test videos
-\end{verbatim}
+En el caso de que tengamos más de una cámara conectada, nos mostrará ventanas
+con las difrentes cámaras, para seleccionar la cámara que deseemos, pulsamos
+doble click encima de la cámara deseada.
 
-Para que funcione el proyecto, necesitaremos instalar unas cuantas de bibliotecas
-que hemos usado: OpenCv, unittest, nosetest, numpy, 
+Si seleccionamos un \textbf{''video''}, pasamos directamente al siguiente paso. 
 
-Para su instalacion, al igual que para instalar git, ejecutamos lo siguiente:
-
-\begin{verbatim}
-sudo apt-get install python-unittest2 python-OpenCv python-nose python-numpy
-\end{verbatim}
-
-Con todo esto, ya deberíamos de poder ejecutar el proyecto y que este funcione
-correctamente. En el caso de que exista algún error, contactar con los
-desarroles del proyecto. 
-
-
-\section{Como utilizarlo}
-
-Antes de empezar, debemos asegurarnos que tenemos preparado el terreno de juego,
-para ello necesitamos que el tablero este colocado en una superficie lo mas lisa
-posible y una cámara conectada al PC donde se ejecutará el programa, a poder
-ser de una buena calidad, apuntando al tablero donde se jugará la partida.
-Debemos intentar que la cámara enfoque correctamente al tablero, centrando este
-dentro de la imagen lo máximo posible. El programa será capaz de funcionar
-siempre y cuando en la imagen se vean correctamente todas las partes del
-tablero.
-
-Al ejecutar este proyecto, lo primero que te pedirá, si está en modo captura de
-video, será un usuario y una contraseña, los cuales son un usuario del servidor
-IGS, el cual podemos crearnos en la página 
+Luego, tanto si hemo seleccionado cámara como si hemos seleccionado video, nos
+pedirá un nombre de usuario del servidor IGS.  Para crearnos un usuario en este
+servidor, podemos registrarnos en la siguiente página:
 \url{http://www.pandanet-igs.com/igs_users/register}
-Este usuario se pide para subir la partida a internet mientras se está
-detectando. 
-
-En el caso de que hayamos escogido la opción de detectar el tablero con la
-cámara, la primera ventana será la selección de cámara en el caso de que existan
-más de una, si solo existe una, esta la cogerá por defecto. Para seleccionar la
-cámara que deseemos, pulsamos doble click encima de la cámara deseada.  Tras
-seleccionar la cámara, pedirá el usuario y la contraseña, como en el caso
-anterior. 
 
 
 \section{Actualizaciones}
@@ -2459,7 +2442,7 @@ crear el brazo, ya que es una cosa que nos entusiasma bastante. Las
 funcionalidades que aportaría este brazo serían más posibilidades de juego,
 entre las cuales se encuentra que personas invidentes puedan utilizar este
 programa para jugar partidas pos Internet fácilmente, simplemente añadiéndole un
-comando al brazo para que espere a que la mano de la persona invidente lo toque,
+comando al brazo para qué espere a que la mano de la persona invidente lo toque,
 para saber donde a puesto la piedra el brazo. 
 
 Una cosa que actualmente tenemos pendiente y llevamos unas semana intercambiando
@@ -2469,8 +2452,8 @@ para poderlo utilizar. Esperamos que un futuro no muy lejano, las partidas
 puedan subirse a KGS al igual que lo hacemos en IGS. 
 
 Otras de los objetivos del proyecto que no hemos podido realizar, es la
-posibilidad de adaptar este proyecto para que funciones en los móviles o en
-ordenadores de bajo coste como la rasperri Pi. Para ello, tenemos en mente hacer
+posibilidad de adaptar este proyecto para qué funciones en los móviles o en
+ordenadores de bajo coste como la Raspberry Pi. Para ello, tenemos en mente hacer
 que nuestro proyecto ejecute varios hilos, haciendo que el procesamiento de
 imágenes sea lo menos pesado posible.
 
@@ -2501,7 +2484,7 @@ version. \\ \\ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
 or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
 more details. \\ \\ You should have received a copy of the GNU General Public
-License along with this program.  If not, see http://www.gnu.org/licenses/
+License along with this program.  If not, see \url{http://www.gnu.org/licenses/}
 
 
 
@@ -2509,185 +2492,121 @@ License along with this program.  If not, see http://www.gnu.org/licenses/
 
 
 \subsubsection{Python }
-Test unitarios para Python
 
+Test unitarios para Python.
 \url{http://docs.python.org/library/unittest.html}
 
-Guia de estilos de Python
-
+Guía de estilos de Python.
 \url{http://mundogeek.net/traducciones/guia-estilo-python.htm}
 
-Guia de documentacion de codigo Python
-
+Guía de documentación de codigo Python.
 \url{http://mundogeek.net/archivos/2008/07/07/documentacion-en-python/}
 
-Guia de test de Python
-
+Guía de test de Python.
 \url{http://www.magmax.org/2011/11/09/python-pruebas-4.html}
 
-Tambien consultado el libro 'Python para todos', el cual nos ha servido de gran
+También consultado el libro 'Python para todos', el cual nos ha servido de gran
 ayuda.
+\url{http://mundogeek.net/tutorial-python/}
 
 \subsubsection{Vim}
 
 Empezamos usando como bibliografia la propia del programa, ya que incluye
 vimtutor, un tutorial basico sobre el manejo de Vim.
 
-Mas tarde comenzamos a practicar en la siguiente pagina:
-
+Mas tarde comenzamos a practicar en la siguiente pagina.
 \url{http://vimgolf.com/}
 
 \subsubsection{Sobre brazos}
 
-Diseño de un brazo mecánico
+Diseño de un brazo mecánico.
+\url{http://bit.ly/Qy6NOR}
 
-\url{https://docs.google.com/viewer?a=v&q=cache:KFj2hb196ZsJ:roboticajoven.mendoza.edu.ar/docu/brazo.pdf+como+hacer+un+brazo+robotico&hl=es&gl=es&pid=bl&srcid=ADGEEShMYLaCI0rVo2aJ_ZGYLSKNMqPSALdq_6dNxeH5HsqGQRJlzYuoUD7uvUnrjPEVmMqjXtCuP0k2l-UbEnwM4b6i-NXMLOrYn01_z5WnaPcj2mbBftlTez4FAUinjUCofOMXfzlR&sig=AHIEtbQKjKllUAt8j7CJ2GxBWGwRsBZfDQ&pli=1}
-
-Brazo robótico con GNU  Linux
-
+Brazo robótico con GNU  Linux.
 \url{http://www.linuxoriente.edu.sv/index.php?readmore=84}
 
-Brazo robótico por 55 dolares
+Brazo robótico por 55 dolares.
+\url{http://bit.ly/pLGrl6}
 
-\url{http://www.extremetech.com/extreme/98623-how-to-make-a-voice-controlled-robotic-arm-for-55?f=2}
-
-Tutorial para contruir el robot de 55 dolares
-
+Tutorial para contruir el robot de 55 dolares.
 \url{http://www.aonsquared.co.uk/robot_arm_tutorial_1}
 
-PDF de un proyecto parecido
-
-\url{https://docs.google.com/viewer?a=v&q=cache:XGM9TPc7E8UJ:web.mst.edu/~tk424/portal/research/publications/Robotic%2520Go-Exploring%2520a%2520Different%2520Perspective%2520on%2520Human-Computer%2520Interaction%2520with%2520the%2520Game%2520of%2520Go.pdf+robot+baduk&hl=es&gl=es&pid=bl&srcid=ADGEESh-55_xa73YFXceYpo1s9Q5-n9Eh61ntbpLMHNsz4fmfAINkmuU0UeFRU9P8Wd9wepHbhZtBKvIQFK3FVK4LS648FK8fYI4tZwpY0otLmFghOC7fbpYpkAvSfkUNrz_O4PZpIR8&sig=AHIEtbRyUOpSDpYOuQO2hzEF_ItRujAgaQ
-}
-
-Video de proyecto parecido
-
+Video de proyecto parecido.
 \url{http://www.youtube.com/watch?v=lJehPbpA7AM}
 
-Video de otro posible brazo
-
+Video de otro posible brazo.
 \url{http://www.youtube.com/watch?v=d2OBCpbCEc4&feature=player_embedded}
 
-Página de venta de servos
-
+Página de venta de servos.
 \url{http://www.superrobotica.com/servos.htm}
 
 
 \subsubsection{Internet Go Server (IGS)}
 
-Código de protocolo de IGS
-
-\url{http://www.koders.com/noncode/fid2C78D24147B76E1CF1196C20428DC7BC62715F38.aspx}
-
-Cositas de IGS
-
 \url{http://gnugos60.blogspot.com/2007/04/internet-go-protocols.html}
 
 \subsubsection{Go Text Protocol (GTP)}
 
-Este protocolo es el que se usa en la mayoría de los servidores de go. 
-
-Documentación del protocolo GTP v2
-
-\url{http://www.lysator.liu.se/~gunnar/gtp/gtp2-spec-draft2/gtp2-spec.html }
+Documentación del protocolo GTP v2.
+\url{http://www.lysator.liu.se/~gunnar/gtp/gtp2-spec-draft2/gtp2-spec.html}
 
 \subsubsection{GNU Go}
 
-Código
-
+Código.
 \url{http://ftp.gnu.org/gnu/gnugo/}
 
-Documentación
-
+Documentación.
 \url{http://www.gnu.org/software/gnugo/gnugo_toc.html}
 
-\subsubsection{Proyecto parecido}
-
-Kifu
+\subsubsection{Proyecto parecido. Kifu}
 
 \url{http://wiki.elphel.com/index.php?title=Kifu:_Go_game_record_(kifu)_generator}
 
 \subsubsection{Pasar el tablero a modelo ideal}
 
-Pagina de un ejemplo de como pasar el tablero a modelo ideal
-
 \url{http://is.gd/k9k2K}
-
-
-\subsubsection{Tracking }
-
-Pagina de explicación
-
-\url{http://www.i-programmer.info/news/105-artificial-intelligence/2310-predator-better-than-kinect.html}
 
 \subsubsection{Haartraining}
 
-Detección rápida de objetos
-
+Detección rápida de objetos.
 \url{http://note.sonots.com/SciSoftware/haartraining.html}
 
-Referencia 5 del documento anterior
-
+Referencia 5 del documento anterior.
 \url{https://docs.google.com/View?docID=drw35kw_6gr8r84fs}
 
 Programa prueba con codigo
-
 \url{http://www.codeproject.com/KB/audio-video/haar_detection.aspx}
 
-Explicacion
-
+Explicación.
 \url{http://www.coplec.org/?q=2010/08/05/entrenar-OpenCv}
 
 \subsubsection{Enlaces interesantes sobre detección de objetos}
 
-\url{*"[1]":http://achuwilson.wordpress.com/2011/02/13/object-detection-using-OpenCv-using-haartraining/}
+\url{http://en.wikipedia.org/wiki/SURF}
 
-\url{*
-"[2]":http://www710.univ-lyon1.fr/~bouakaz/OpenCV-0.9.5/docs/ref/OpenCVRef_ObjectRecognition.htm}
+\url{http://en.wikipedia.org/wiki/Object_recognition_(computer_vision)}
 
-\url{* "[3]":http://en.wikipedia.org/wiki/SURF}
+\url{http://en.wikipedia.org/wiki/Template_matching}
 
-\url{* "[4]":http://en.wikipedia.org/wiki/Object_recognition_(computer_vision)}
+\url{http://en.wikipedia.org/wiki/Pattern_recognition}
 
-\url{* "[5]":http://en.wikipedia.org/wiki/Template_matching}
+\url{http://www.pigeon.psy.tufts.edu/avc/kirkpatrick/}
 
-\url{* "[6]":http://en.wikipedia.org/wiki/Pattern_recognition}
-
-\url{* "[7]":http://www.pigeon.psy.tufts.edu/avc/kirkpatrick/}
-
-\subsubsection{Enlaces de proyectos interesantes}
-
-Proyecto de go usando un proyector
+\subsubsection{Proyecto interesante. Utilizando un proyector.}
 
 \url{http://www.youtube.com/watch?feature=player_embedded&v=33Iyr16yhJQ}
 
-
-\subsubsection{Enlace a cosas relacionadas con imágenes.} 
-
-\url{http://www.google.com/url?sa=t&rct=j&q=recortar%20imagenes%20roi%20OpenCv&source=web&cd=1&ved=0CB8QFjAA&url=http%3A%2F%2Fdis.um.es%2F~ginesgm%2Ffiles%2Fdoc%2Fpav%2Ftema2.ppt&ei=itA4T_2MBMLBhAfBl8CKAg&usg=AFQjCNGtmUXCybgKwHb5g8-Ns1F7Mdxz1A}
-
-\url{http://nashruddin.com/OpenCV_Region_of_Interest_(ROI)}
-
-\subsubsection{Otros}
-
-Para comandos de git
-
+\subsubsection{Para comandos de git.}
 \url{http://alejandroandres.com/blog/2011/06/mi-workflow-con-git/}
 
-Guia de accesibilidad 
-
+\subsubsection{Guía de accesibilidad.}
 \url{http://www.sidar.org/recur/direc/norm/index.php}
 
-Para Opencv hemos usado el libro de o'reilly books OpenCv, ademas de la
-siguiente web
-
+\subsubsection{Opencv.}
 \url{http://OpenCv.willowgarage.com/}
 
-\chapter{Apéndice A: Documentación del proyecto} 
+\chapter{Apéndice A: ¿Qué es el go?} 
 
-
-
-\chapter{Apéndice B: ¿Qué es el go?} 
 \url{http://es.wikipedia.org/wiki/Go}
 
 
